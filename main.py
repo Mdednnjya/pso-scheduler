@@ -2,6 +2,7 @@ from src.data_loader import load_data, drop_rename_fill_and_replace
 from src.nutrition_enricher import process_dataset
 from src.export_utils import export_to_json, export_summary_csv
 import os
+import pandas as pd
 
 
 def main():
@@ -28,12 +29,30 @@ def main():
         "calsium": "calcium"
     }
 
+    # Periksa apakah fuzzywuzzy sudah terinstal
+    try:
+        import fuzzywuzzy
+    except ImportError:
+        print("Installing fuzzywuzzy package...")
+        import pip
+        pip.main(['install', 'fuzzywuzzy'])
+        pip.main(['install', 'python-Levenshtein'])  # Optional but improves performance
+
     drop_rename_fill_and_replace(input_path, output_path, columns_to_remove, rename_map)
 
     nutrition_path = os.path.join(data_dir, "tkpi_data.csv")
 
     # Load data
     recipes_df, nutrition_df = load_data(recipe_path, nutrition_path)
+
+    # Pastikan semua nilai nutrisi dalam format yang konsisten
+    numeric_columns = ['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
+    for col in numeric_columns:
+        nutrition_df[col] = pd.to_numeric(nutrition_df[col], errors='coerce').fillna(0)
+
+    # Print sample dari data nutrisi untuk debugging
+    print("\nSampel 5 baris data nutrisi:")
+    print(nutrition_df.head(5))
 
     # Proses data
     enriched_df = process_dataset(recipes_df, nutrition_df)
@@ -44,6 +63,19 @@ def main():
 
     export_to_json(enriched_df, json_output_path)
     export_summary_csv(enriched_df, csv_output_path)
+
+    # Tampilkan beberapa statistik
+    print("\nStatistik Hasil Enrichment:")
+    count_with_nutrition = 0
+    total_recipes = len(enriched_df)
+
+    for _, row in enriched_df.iterrows():
+        total_calories = sum(float(ing.get('calories', 0) or 0) for ing in row['Ingredients_Enriched'])
+        if total_calories > 0:
+            count_with_nutrition += 1
+
+    print(f"Total resep: {total_recipes}")
+    print(f"Resep dengan data nutrisi: {count_with_nutrition} ({count_with_nutrition / total_recipes * 100:.1f}%)")
 
 
 if __name__ == "__main__":
