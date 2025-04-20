@@ -54,6 +54,21 @@ def train_cbf_model(input_json_path, model_dir='models/'):
                 'carbohydrates': row['Total_Nutrition'].get('carbohydrates', 0),
                 'fiber': row['Total_Nutrition'].get('dietary_fiber', 0)
             })
+        elif 'Ingredients_Enriched' in df.columns:
+            # Calculate total nutrition from enriched ingredients
+            total_calories = sum(float(ing.get('calories', 0) or 0) for ing in row['Ingredients_Enriched'])
+            total_protein = sum(float(ing.get('protein', 0) or 0) for ing in row['Ingredients_Enriched'])
+            total_fat = sum(float(ing.get('fat', 0) or 0) for ing in row['Ingredients_Enriched'])
+            total_carbs = sum(float(ing.get('carbohydrates', 0) or 0) for ing in row['Ingredients_Enriched'])
+            total_fiber = sum(float(ing.get('fiber', 0) or 0) for ing in row['Ingredients_Enriched'])
+
+            nutrition_data.append({
+                'calories': total_calories,
+                'protein': total_protein,
+                'fat': total_fat,
+                'carbohydrates': total_carbs,
+                'fiber': total_fiber
+            })
         else:
             # Default empty nutrition for recipes without nutrition data
             nutrition_data.append({

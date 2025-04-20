@@ -1,62 +1,62 @@
 [
   {
-    "ID": "37",
-    "Title": "Sate Sapi Goreng",
+    "ID": "53",
+    "Title": "Patin tahu asam pedas",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 3338.0,
+      "protein": 134.7,
+      "fat": 103.4,
+      "carbohydrates": 497.5,
+      "fiber": 69.6
     },
-    "Similarity": 0.6200245463810431
-  },
-  {
-    "ID": "69",
-    "Title": "Pindang Serani Ikan Patin",
-    "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
-    },
-    "Similarity": 0.6060407311931415
-  },
-  {
-    "ID": "64",
-    "Title": "Pindang Patin",
-    "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
-    },
-    "Similarity": 0.6031238539079877
-  },
-  {
-    "ID": "24",
-    "Title": "Tulang ayam rica wangi",
-    "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
-    },
-    "Similarity": 0.5869840690860103
+    "Similarity": 0.7779011906390004
   },
   {
     "ID": "30",
     "Title": "Rica - Rica Ayam",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 3880.0,
+      "protein": 165.4,
+      "fat": 153.0,
+      "carbohydrates": 502.0,
+      "fiber": 80.2
     },
-    "Similarity": 0.5704589387279038
+    "Similarity": 0.7417611365407333
+  },
+  {
+    "ID": "64",
+    "Title": "Pindang Patin",
+    "Nutrition": {
+      "calories": 2878.0,
+      "protein": 100.6,
+      "fat": 79.9,
+      "carbohydrates": 457.8,
+      "fiber": 59.3
+    },
+    "Similarity": 0.7369226290944049
+  },
+  {
+    "ID": "52",
+    "Title": "Opor Ayam + Tahu",
+    "Nutrition": {
+      "calories": 4767.0,
+      "protein": 161.0,
+      "fat": 179.9,
+      "carbohydrates": 670.2,
+      "fiber": 75.6
+    },
+    "Similarity": 0.7280035604319905
+  },
+  {
+    "ID": "79",
+    "Title": "Nasi briyani kambing",
+    "Nutrition": {
+      "calories": 4984.0,
+      "protein": 168.8,
+      "fat": 206.8,
+      "carbohydrates": 671.2,
+      "fiber": 87.5
+    },
+    "Similarity": 0.7263126086737834
   }
 ]
