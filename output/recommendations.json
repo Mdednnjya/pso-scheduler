@@ -1,62 +1,62 @@
 [
   {
-    "ID": "37",
-    "Title": "Sate Sapi Goreng",
+    "ID": "58",
+    "Title": "Tahu Kribo",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 1160.0,
+      "protein": 33.7,
+      "fat": 11.2,
+      "carbohydrates": 168.8,
+      "fiber": 5.3
     },
-    "Similarity": 0.6200245463810431
+    "Similarity": 0.5963778234122833
   },
   {
-    "ID": "69",
-    "Title": "Pindang Serani Ikan Patin",
+    "ID": "51",
+    "Title": "Kentang tahu kuah kecap",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 1943.0,
+      "protein": 72.6,
+      "fat": 99.5,
+      "carbohydrates": 192.0,
+      "fiber": 18.6
     },
-    "Similarity": 0.6060407311931415
+    "Similarity": 0.5877509368897705
   },
   {
-    "ID": "64",
-    "Title": "Pindang Patin",
+    "ID": "61",
+    "Title": "Ikan patin kuah asam pedas",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 2062.0,
+      "protein": 74.0,
+      "fat": 91.5,
+      "carbohydrates": 256.1,
+      "fiber": 36.6
     },
-    "Similarity": 0.6031238539079877
+    "Similarity": 0.5589701168171919
   },
   {
-    "ID": "24",
-    "Title": "Tulang ayam rica wangi",
+    "ID": "57",
+    "Title": "Perkedel tahu",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 2864.0,
+      "protein": 107.4,
+      "fat": 111.8,
+      "carbohydrates": 365.9,
+      "fiber": 31.7
     },
-    "Similarity": 0.5869840690860103
+    "Similarity": 0.5505415108265218
   },
   {
-    "ID": "30",
-    "Title": "Rica - Rica Ayam",
+    "ID": "54",
+    "Title": "Perkedel Tahu Kari Tanpa Telur",
     "Nutrition": {
-      "calories": 0,
-      "protein": 0,
-      "fat": 0,
-      "carbohydrates": 0,
-      "fiber": 0
+      "calories": 1559.0,
+      "protein": 59.6,
+      "fat": 37.4,
+      "carbohydrates": 264.6,
+      "fiber": 19.6
     },
-    "Similarity": 0.5704589387279038
+    "Similarity": 0.5447590015416801
   }
 ]
