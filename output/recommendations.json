@@ -1,0 +1,62 @@
+[
+  {
+    "ID": "37",
+    "Title": "Sate Sapi Goreng",
+    "Nutrition": {
+      "calories": 0,
+      "protein": 0,
+      "fat": 0,
+      "carbohydrates": 0,
+      "fiber": 0
+    },
+    "Similarity": 0.6200245463810431
+  },
+  {
+    "ID": "69",
+    "Title": "Pindang Serani Ikan Patin",
+    "Nutrition": {
+      "calories": 0,
+      "protein": 0,
+      "fat": 0,
+      "carbohydrates": 0,
+      "fiber": 0
+    },
+    "Similarity": 0.6060407311931415
+  },
+  {
+    "ID": "64",
+    "Title": "Pindang Patin",
+    "Nutrition": {
+      "calories": 0,
+      "protein": 0,
+      "fat": 0,
+      "carbohydrates": 0,
+      "fiber": 0
+    },
+    "Similarity": 0.6031238539079877
+  },
+  {
+    "ID": "24",
+    "Title": "Tulang ayam rica wangi",
+    "Nutrition": {
+      "calories": 0,
+      "protein": 0,
+      "fat": 0,
+      "carbohydrates": 0,
+      "fiber": 0
+    },
+    "Similarity": 0.5869840690860103
+  },
+  {
+    "ID": "30",
+    "Title": "Rica - Rica Ayam",
+    "Nutrition": {
+      "calories": 0,
+      "protein": 0,
+      "fat": 0,
+      "carbohydrates": 0,
+      "fiber": 0
+    },
+    "Similarity": 0.5704589387279038
+  }
+]

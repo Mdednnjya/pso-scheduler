@@ -56,6 +56,7 @@ def enrich_ingredients(ingredient_list, nutrition_df):
             continue
 
         # Coba exact matching terlebih dahulu
+        print(f"Matching: {item}")  # Debug 1
         match = nutrition_df[nutrition_df['ingredient'].str.lower() == item.lower()]
 
         if not match.empty:

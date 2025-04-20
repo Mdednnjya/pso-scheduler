@@ -1,8 +1,12 @@
-from src.data_loader import load_data, drop_rename_fill_and_replace
-from src.nutrition_enricher import process_dataset
-from src.export_utils import export_to_json, export_summary_csv
+import sys
+from pathlib import Path
 import os
 import pandas as pd
+
+sys.path.append(str(Path(__file__).parent.parent))
+from src.data.data_loader import load_data, drop_rename_fill_and_replace
+from src.data.nutrition_enricher import process_dataset
+from src.data.export_utils import export_to_json, export_summary_csv
 
 
 def main():
