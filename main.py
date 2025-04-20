@@ -1,4 +1,4 @@
-from src.data_loader import load_data
+from src.data_loader import load_data, drop_rename_fill_and_replace
 from src.nutrition_enricher import process_dataset
 from src.export_utils import export_to_json, export_summary_csv
 import os
@@ -13,6 +13,23 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     recipe_path = os.path.join(data_dir, "combined_dataset.csv")
+
+    # Preprocessing data mentah TKPI hasil scrapping
+    input_path = "data/scrap_tkpi.csv"
+    output_path = "data/tkpi_data.csv"
+    columns_to_remove = [0, 1, 2, -1, -2]
+    rename_map = {
+        "nama bahan makanan": "ingredient",
+        "calori": "calories",
+        "protein": "protein",
+        "fat": "fat",
+        "carbohydrate": "carbohydrates",
+        "fiber": "fiber",
+        "calsium": "calcium"
+    }
+
+    drop_rename_fill_and_replace(input_path, output_path, columns_to_remove, rename_map)
+
     nutrition_path = os.path.join(data_dir, "tkpi_data.csv")
 
     # Load data
