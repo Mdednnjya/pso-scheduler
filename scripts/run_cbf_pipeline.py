@@ -16,13 +16,39 @@ import joblib
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def train_cbf_model(input_json_path, model_dir='models/'):
+def normalize_nutrition_values(nutrition_data, servings=2):
+    """
+    Normalize nutrition values by dividing by the number of servings
+
+    Args:
+        nutrition_data: List of nutrition dictionaries
+        servings: Number of servings to assume (default: 4)
+
+    Returns:
+        List of normalized nutrition dictionaries
+    """
+    normalized_data = []
+    for item in nutrition_data:
+        normalized_item = {
+            'calories': round(item['calories'] / servings, 1),
+            'protein': round(item['protein'] / servings, 1),
+            'fat': round(item['fat'] / servings, 1),
+            'carbohydrates': round(item['carbohydrates'] / servings, 1),
+            'fiber': round(item['fiber'] / servings, 1)
+        }
+        normalized_data.append(normalized_item)
+
+    return normalized_data
+
+
+def train_cbf_model(input_json_path, model_dir='models/', servings=2):
     """
     Train a CBF model on the provided enriched recipe data
 
     Args:
         input_json_path: Path to the enriched recipe JSON data
         model_dir: Directory to save model artifacts
+        servings: Number of servings to normalize nutrition values by
     """
     os.makedirs(model_dir, exist_ok=True)
 
@@ -77,10 +103,23 @@ def train_cbf_model(input_json_path, model_dir='models/'):
                 'calories': 0, 'protein': 0, 'fat': 0, 'carbohydrates': 0, 'fiber': 0
             })
 
+    # Normalize nutrition data by servings
+    print(f"Normalizing nutrition values by {servings} servings...")
+    normalized_nutrition = normalize_nutrition_values(nutrition_data, servings)
+
+    # Print a sample of before/after normalization for verification
+    if len(nutrition_data) > 0:
+        print("\nNutrition normalization example:")
+        print(f"Original: Calories: {nutrition_data[0]['calories']}, Protein: {nutrition_data[0]['protein']}g")
+        print(
+            f"Normalized: Calories: {normalized_nutrition[0]['calories']}, Protein: {normalized_nutrition[0]['protein']}g")
+
     # Validasi nutrisi
-    if sum(nutrition_data[-1].values()) == 0:
-        print(f"Warning: Zero nutrition for recipe ID {row['ID']}")
-        print(f"Ingredients: {row['Ingredients_Enriched']}")
+    for i, (orig, norm) in enumerate(zip(nutrition_data, normalized_nutrition)):
+        if sum(orig.values()) == 0:
+            print(f"Warning: Zero nutrition for recipe ID {df.iloc[i]['ID']}")
+            if 'Ingredients_Enriched' in df.columns:
+                print(f"Ingredients: {df.iloc[i]['Ingredients_Enriched']}")
 
     # Save model artifacts
     joblib.dump(feature_engineer.vectorizer, os.path.join(model_dir, 'tfidf_vectorizer.pkl'))
@@ -89,7 +128,7 @@ def train_cbf_model(input_json_path, model_dir='models/'):
 
     # Save simplified recipe data for recommender
     simplified_df = df[['ID', 'Title']].copy()
-    simplified_df['nutrition'] = nutrition_data
+    simplified_df['nutrition'] = normalized_nutrition  # Use normalized nutrition
 
     # Save ingredients information for preference filtering
     if 'Ingredients_Parsed' in df.columns:
@@ -104,6 +143,7 @@ def train_cbf_model(input_json_path, model_dir='models/'):
     simplified_df.to_json(os.path.join(model_dir, 'meal_data.json'), orient='records', indent=2)
 
     print(f"Model trained on {len(df)} recipes with {feature_matrix.shape[1]} features")
+    print(f"Normalized nutrition data saved to {os.path.join(model_dir, 'meal_data.json')}")
     return feature_matrix, simplified_df
 
 
@@ -229,6 +269,8 @@ def main():
     parser.add_argument('--diet-type', choices=['vegetarian', 'vegan', 'pescatarian'],
                         help='Dietary preference')
     parser.add_argument('--debug', action='store_true', help='Print debug information')
+    parser.add_argument('--servings', type=int, default=4,
+                        help='Number of servings to normalize nutrition values by (default: 4)')
 
     args = parser.parse_args()
 
@@ -238,7 +280,7 @@ def main():
             return
 
         print(f"Training CBF model using {args.input}...")
-        features, df = train_cbf_model(args.input)
+        features, df = train_cbf_model(args.input, servings=args.servings)
         print(f"Model saved to models/ directory")
 
     if args.recommend:

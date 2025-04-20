@@ -3,11 +3,11 @@
     "ID":"1",
     "Title":"Udang saos tiram",
     "nutrition":{
-      "calories":1927.0,
-      "protein":103.5,
-      "fat":28.8,
-      "carbohydrates":254.5,
-      "fiber":20.5
+      "calories":240.9,
+      "protein":12.9,
+      "fat":3.6,
+      "carbohydrates":31.8,
+      "fiber":2.6
     },
     "Ingredients_Parsed":[
       "saos tomat",
@@ -148,11 +148,11 @@
     "ID":"2",
     "Title":"Tumis Sawi Hijau with Shrimp Simple",
     "nutrition":{
-      "calories":1811.0,
-      "protein":95.9,
-      "fat":27.6,
-      "carbohydrates":299.1,
-      "fiber":37.3
+      "calories":226.4,
+      "protein":12.0,
+      "fat":3.5,
+      "carbohydrates":37.4,
+      "fiber":4.7
     },
     "Ingredients_Parsed":[
       "penyedap (saya pakai royko)",
@@ -282,11 +282,11 @@
     "ID":"3",
     "Title":"Tauco udang Pete baby corn",
     "nutrition":{
-      "calories":3515.0,
-      "protein":166.2,
-      "fat":144.5,
-      "carbohydrates":392.9,
-      "fiber":32.0
+      "calories":439.4,
+      "protein":20.8,
+      "fat":18.1,
+      "carbohydrates":49.1,
+      "fiber":4.0
     },
     "Ingredients_Parsed":[
       "papan pete",
@@ -488,11 +488,11 @@
     "ID":"4",
     "Title":"Udang Tumis Pedas Sederhana ",
     "nutrition":{
-      "calories":1724.0,
-      "protein":145.5,
-      "fat":35.4,
-      "carbohydrates":145.5,
-      "fiber":23.9
+      "calories":215.5,
+      "protein":18.2,
+      "fat":4.4,
+      "carbohydrates":18.2,
+      "fiber":3.0
     },
     "Ingredients_Parsed":[
       "bh bawang merah",
@@ -599,11 +599,11 @@
     "ID":"5",
     "Title":"Udang Balado",
     "nutrition":{
-      "calories":1175.0,
-      "protein":101.5,
-      "fat":25.7,
-      "carbohydrates":150.5,
-      "fiber":26.9
+      "calories":146.9,
+      "protein":12.7,
+      "fat":3.2,
+      "carbohydrates":18.8,
+      "fiber":3.4
     },
     "Ingredients_Parsed":[
       "udang ukuran sedang buang kepalanya saja",
@@ -720,11 +720,11 @@
     "ID":"6",
     "Title":"Tumis kacang panjang udang (No Msg)",
     "nutrition":{
-      "calories":1302.0,
-      "protein":80.8,
-      "fat":27.1,
-      "carbohydrates":189.3,
-      "fiber":8.7
+      "calories":162.8,
+      "protein":10.1,
+      "fat":3.4,
+      "carbohydrates":23.7,
+      "fiber":1.1
     },
     "Ingredients_Parsed":[
       "bawang merah ()",
@@ -854,11 +854,11 @@
     "ID":"7",
     "Title":"Mie Kuah Udang Telur Sedap Malam (Non MSG)",
     "nutrition":{
-      "calories":2016.0,
-      "protein":127.5,
-      "fat":46.1,
-      "carbohydrates":212.8,
-      "fiber":32.8
+      "calories":252.0,
+      "protein":15.9,
+      "fat":5.8,
+      "carbohydrates":26.6,
+      "fiber":4.1
     },
     "Ingredients_Parsed":[
       "cabai merah keriting",
@@ -1013,11 +1013,11 @@
     "ID":"8",
     "Title":"Udang Goreng tepung Sambal Matah",
     "nutrition":{
-      "calories":1596.0,
-      "protein":108.8,
-      "fat":35.6,
-      "carbohydrates":226.0,
-      "fiber":37.7
+      "calories":199.5,
+      "protein":13.6,
+      "fat":4.5,
+      "carbohydrates":28.2,
+      "fiber":4.7
     },
     "Ingredients_Parsed":[
       "jeruk nipis",
@@ -1172,11 +1172,11 @@
     "ID":"9",
     "Title":"Sayur Tahu Labu Udang",
     "nutrition":{
-      "calories":2613.0,
-      "protein":143.0,
-      "fat":79.2,
-      "carbohydrates":353.0,
-      "fiber":33.6
+      "calories":326.6,
+      "protein":17.9,
+      "fat":9.9,
+      "carbohydrates":44.1,
+      "fiber":4.2
     },
     "Ingredients_Parsed":[
       "labu",
@@ -1355,11 +1355,11 @@
     "ID":"10",
     "Title":"Labu Siam Udang ",
     "nutrition":{
-      "calories":1975.0,
-      "protein":120.1,
-      "fat":41.0,
-      "carbohydrates":290.2,
-      "fiber":39.7
+      "calories":246.9,
+      "protein":15.0,
+      "fat":5.1,
+      "carbohydrates":36.3,
+      "fiber":5.0
     },
     "Ingredients_Parsed":[
       "saus tiram",
@@ -1514,11 +1514,11 @@
     "ID":"11",
     "Title":"Bola-Bola Tempe",
     "nutrition":{
-      "calories":3278.0,
-      "protein":111.1,
-      "fat":197.2,
-      "carbohydrates":278.4,
-      "fiber":26.5
+      "calories":409.8,
+      "protein":13.9,
+      "fat":24.7,
+      "carbohydrates":34.8,
+      "fiber":3.3
     },
     "Ingredients_Parsed":[
       "merica",
@@ -1661,11 +1661,11 @@
     "ID":"12",
     "Title":"Tumis Kacang Panjang Tempe",
     "nutrition":{
-      "calories":1192.0,
-      "protein":81.2,
-      "fat":50.1,
-      "carbohydrates":112.6,
-      "fiber":21.8
+      "calories":149.0,
+      "protein":10.2,
+      "fat":6.3,
+      "carbohydrates":14.1,
+      "fiber":2.7
     },
     "Ingredients_Parsed":[
       "penyedap rasa",
@@ -1759,11 +1759,11 @@
     "ID":"13",
     "Title":"Sambel teri nasi tahu tempe",
     "nutrition":{
-      "calories":2089.0,
-      "protein":114.8,
-      "fat":76.3,
-      "carbohydrates":251.1,
-      "fiber":26.3
+      "calories":261.1,
+      "protein":14.3,
+      "fat":9.5,
+      "carbohydrates":31.4,
+      "fiber":3.3
     },
     "Ingredients_Parsed":[
       "tahu kuning",
@@ -1894,11 +1894,11 @@
     "ID":"14",
     "Title":"Tempe orek",
     "nutrition":{
-      "calories":1796.0,
-      "protein":106.9,
-      "fat":33.0,
-      "carbohydrates":285.1,
-      "fiber":35.5
+      "calories":224.5,
+      "protein":13.4,
+      "fat":4.1,
+      "carbohydrates":35.6,
+      "fiber":4.4
     },
     "Ingredients_Parsed":[
       "serai memarkan",
@@ -2040,11 +2040,11 @@
     "ID":"15",
     "Title":"Tempe bacem",
     "nutrition":{
-      "calories":3661.0,
-      "protein":102.5,
-      "fat":190.9,
-      "carbohydrates":333.0,
-      "fiber":37.9
+      "calories":457.6,
+      "protein":12.8,
+      "fat":23.9,
+      "carbohydrates":41.6,
+      "fiber":4.7
     },
     "Ingredients_Parsed":[
       "cm lengkuas (memarkan)",
@@ -2211,11 +2211,11 @@
     "ID":"16",
     "Title":"Bakwan Tempe",
     "nutrition":{
-      "calories":1526.0,
-      "protein":49.3,
-      "fat":56.1,
-      "carbohydrates":225.1,
-      "fiber":10.8
+      "calories":190.8,
+      "protein":6.2,
+      "fat":7.0,
+      "carbohydrates":28.1,
+      "fiber":1.4
     },
     "Ingredients_Parsed":[
       "tebal",
@@ -2322,11 +2322,11 @@
     "ID":"17",
     "Title":"Oseng Tempe Bawang Bombay (Eat Clean)",
     "nutrition":{
-      "calories":1543.0,
-      "protein":70.4,
-      "fat":58.6,
-      "carbohydrates":140.0,
-      "fiber":31.3
+      "calories":192.9,
+      "protein":8.8,
+      "fat":7.3,
+      "carbohydrates":17.5,
+      "fiber":3.9
     },
     "Ingredients_Parsed":[
       "saus tiram",
@@ -2409,11 +2409,11 @@
     "ID":"18",
     "Title":"Tumis Bawang Merah, Teri Tempe, Jengkol",
     "nutrition":{
-      "calories":2112.0,
-      "protein":136.2,
-      "fat":49.6,
-      "carbohydrates":274.8,
-      "fiber":19.1
+      "calories":264.0,
+      "protein":17.0,
+      "fat":6.2,
+      "carbohydrates":34.4,
+      "fiber":2.4
     },
     "Ingredients_Parsed":[
       "segenggam ikan teri",
@@ -2556,11 +2556,11 @@
     "ID":"19",
     "Title":"Tempe pete kemangi orek",
     "nutrition":{
-      "calories":1457.0,
-      "protein":74.3,
-      "fat":51.7,
-      "carbohydrates":184.9,
-      "fiber":55.7
+      "calories":182.1,
+      "protein":9.3,
+      "fat":6.5,
+      "carbohydrates":23.1,
+      "fiber":7.0
     },
     "Ingredients_Parsed":[
       "papan petai",
@@ -2702,11 +2702,11 @@
     "ID":"20",
     "Title":"Keripik tempe renyah",
     "nutrition":{
-      "calories":1705.0,
-      "protein":67.7,
-      "fat":39.5,
-      "carbohydrates":284.9,
-      "fiber":50.8
+      "calories":213.1,
+      "protein":8.5,
+      "fat":4.9,
+      "carbohydrates":35.6,
+      "fiber":6.4
     },
     "Ingredients_Parsed":[
       "kaldu bubuk",
@@ -2813,11 +2813,11 @@
     "ID":"21",
     "Title":"Ayam Betutu",
     "nutrition":{
-      "calories":3277.0,
-      "protein":133.4,
-      "fat":94.3,
-      "carbohydrates":426.6,
-      "fiber":76.0
+      "calories":409.6,
+      "protein":16.7,
+      "fat":11.8,
+      "carbohydrates":53.3,
+      "fiber":9.5
     },
     "Ingredients_Parsed":[
       "ruas jari jahe",
@@ -3043,11 +3043,11 @@
     "ID":"22",
     "Title":"Nugget ayam homemade",
     "nutrition":{
-      "calories":3850.0,
-      "protein":115.1,
-      "fat":179.4,
-      "carbohydrates":470.5,
-      "fiber":37.0
+      "calories":481.2,
+      "protein":14.4,
+      "fat":22.4,
+      "carbohydrates":58.8,
+      "fiber":4.6
     },
     "Ingredients_Parsed":[
       "bahan pencelup cair terigu",
@@ -3202,11 +3202,11 @@
     "ID":"23",
     "Title":"Ayam geprek",
     "nutrition":{
-      "calories":1275.0,
-      "protein":45.3,
-      "fat":39.2,
-      "carbohydrates":185.0,
-      "fiber":19.3
+      "calories":159.4,
+      "protein":5.7,
+      "fat":4.9,
+      "carbohydrates":23.1,
+      "fiber":2.4
     },
     "Ingredients_Parsed":[
       "ruas jari kunyit",
@@ -3289,11 +3289,11 @@
     "ID":"24",
     "Title":"Tulang ayam rica wangi",
     "nutrition":{
-      "calories":2746.0,
-      "protein":155.9,
-      "fat":61.7,
-      "carbohydrates":344.6,
-      "fiber":50.7
+      "calories":343.2,
+      "protein":19.5,
+      "fat":7.7,
+      "carbohydrates":43.1,
+      "fiber":6.3
     },
     "Ingredients_Parsed":[
       "garam dan penyedap",
@@ -3496,11 +3496,11 @@
     "ID":"25",
     "Title":"Risoles ragout ayam",
     "nutrition":{
-      "calories":5168.0,
-      "protein":253.0,
-      "fat":141.8,
-      "carbohydrates":680.0,
-      "fiber":54.3
+      "calories":646.0,
+      "protein":31.6,
+      "fat":17.7,
+      "carbohydrates":85.0,
+      "fiber":6.8
     },
     "Ingredients_Parsed":[
       "pelapis",
@@ -3774,11 +3774,11 @@
     "ID":"26",
     "Title":"Ayam sambal balado",
     "nutrition":{
-      "calories":2751.0,
-      "protein":79.0,
-      "fat":103.1,
-      "carbohydrates":246.2,
-      "fiber":18.7
+      "calories":343.9,
+      "protein":9.9,
+      "fat":12.9,
+      "carbohydrates":30.8,
+      "fiber":2.3
     },
     "Ingredients_Parsed":[
       "minyak goreng",
@@ -3909,11 +3909,11 @@
     "ID":"27",
     "Title":"Ayam Woku Manado",
     "nutrition":{
-      "calories":4477.0,
-      "protein":127.3,
-      "fat":248.4,
-      "carbohydrates":465.5,
-      "fiber":63.5
+      "calories":559.6,
+      "protein":15.9,
+      "fat":31.1,
+      "carbohydrates":58.2,
+      "fiber":7.9
     },
     "Ingredients_Parsed":[
       "lbr daun jeruk",
@@ -4176,11 +4176,11 @@
     "ID":"28",
     "Title":"Chicken katsu rumahan",
     "nutrition":{
-      "calories":3844.0,
-      "protein":159.5,
-      "fat":59.8,
-      "carbohydrates":620.3,
-      "fiber":44.5
+      "calories":480.5,
+      "protein":19.9,
+      "fat":7.5,
+      "carbohydrates":77.5,
+      "fiber":5.6
     },
     "Ingredients_Parsed":[
       "mayonaisesaos",
@@ -4466,11 +4466,11 @@
     "ID":"29",
     "Title":"Risoles ragout ayam",
     "nutrition":{
-      "calories":4741.0,
-      "protein":200.9,
-      "fat":140.6,
-      "carbohydrates":626.4,
-      "fiber":47.0
+      "calories":592.6,
+      "protein":25.1,
+      "fat":17.6,
+      "carbohydrates":78.3,
+      "fiber":5.9
     },
     "Ingredients_Parsed":[
       "minyak goreng",
@@ -4732,11 +4732,11 @@
     "ID":"30",
     "Title":"Rica - Rica Ayam",
     "nutrition":{
-      "calories":3880.0,
-      "protein":165.4,
-      "fat":153.0,
-      "carbohydrates":502.0,
-      "fiber":80.2
+      "calories":485.0,
+      "protein":20.7,
+      "fat":19.1,
+      "carbohydrates":62.8,
+      "fiber":10.0
     },
     "Ingredients_Parsed":[
       "kemiri",
@@ -4951,11 +4951,11 @@
     "ID":"31",
     "Title":"Easy Beef Hand Pies ",
     "nutrition":{
-      "calories":4150.0,
-      "protein":190.6,
-      "fat":153.6,
-      "carbohydrates":417.2,
-      "fiber":23.3
+      "calories":518.8,
+      "protein":23.8,
+      "fat":19.2,
+      "carbohydrates":52.1,
+      "fiber":2.9
     },
     "Ingredients_Parsed":[
       "minyak goreng",
@@ -5192,11 +5192,11 @@
     "ID":"32",
     "Title":"Abon Sapi Homemade",
     "nutrition":{
-      "calories":2509.0,
-      "protein":87.5,
-      "fat":94.1,
-      "carbohydrates":361.8,
-      "fiber":51.2
+      "calories":313.6,
+      "protein":10.9,
+      "fat":11.8,
+      "carbohydrates":45.2,
+      "fiber":6.4
     },
     "Ingredients_Parsed":[
       "garam (sesuaikan dengan selera ya)",
@@ -5375,11 +5375,11 @@
     "ID":"33",
     "Title":"Beef Lasagna dgn Saus & Kulit Homemade ",
     "nutrition":{
-      "calories":6848.0,
-      "protein":254.8,
-      "fat":296.5,
-      "carbohydrates":677.2,
-      "fiber":28.5
+      "calories":856.0,
+      "protein":31.9,
+      "fat":37.1,
+      "carbohydrates":84.7,
+      "fiber":3.6
     },
     "Ingredients_Parsed":[
       "kuntum brokoli (tambahan)",
@@ -5760,11 +5760,11 @@
     "ID":"34",
     "Title":"Beef Udon",
     "nutrition":{
-      "calories":4092.0,
-      "protein":110.5,
-      "fat":197.4,
-      "carbohydrates":477.2,
-      "fiber":18.9
+      "calories":511.5,
+      "protein":13.8,
+      "fat":24.7,
+      "carbohydrates":59.6,
+      "fiber":2.4
     },
     "Ingredients_Parsed":[
       "lada kaldu bubuk",
@@ -5965,11 +5965,11 @@
     "ID":"35",
     "Title":"Daging sapi lada hitam",
     "nutrition":{
-      "calories":2224.0,
-      "protein":76.7,
-      "fat":126.8,
-      "carbohydrates":197.0,
-      "fiber":24.5
+      "calories":278.0,
+      "protein":9.6,
+      "fat":15.8,
+      "carbohydrates":24.6,
+      "fiber":3.1
     },
     "Ingredients_Parsed":[
       "kecap manis (me tropicana slim)",
@@ -6158,11 +6158,11 @@
     "ID":"36",
     "Title":"Asem asem buncis daging sapi",
     "nutrition":{
-      "calories":3097.0,
-      "protein":85.5,
-      "fat":162.7,
-      "carbohydrates":337.0,
-      "fiber":31.1
+      "calories":387.1,
+      "protein":10.7,
+      "fat":20.3,
+      "carbohydrates":42.1,
+      "fiber":3.9
     },
     "Ingredients_Parsed":[
       "daging sengkelkisi",
@@ -6376,11 +6376,11 @@
     "ID":"37",
     "Title":"Sate Sapi Goreng",
     "nutrition":{
-      "calories":2814.0,
-      "protein":106.3,
-      "fat":75.4,
-      "carbohydrates":364.9,
-      "fiber":48.3
+      "calories":351.8,
+      "protein":13.3,
+      "fat":9.4,
+      "carbohydrates":45.6,
+      "fiber":6.0
     },
     "Ingredients_Parsed":[
       "merica",
@@ -6583,11 +6583,11 @@
     "ID":"38",
     "Title":"Rawon Sapi Resep Emak ",
     "nutrition":{
-      "calories":5921.0,
-      "protein":175.3,
-      "fat":359.3,
-      "carbohydrates":509.4,
-      "fiber":61.2
+      "calories":740.1,
+      "protein":21.9,
+      "fat":44.9,
+      "carbohydrates":63.7,
+      "fiber":7.7
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -6861,11 +6861,11 @@
     "ID":"39",
     "Title":"Tongseng sapi",
     "nutrition":{
-      "calories":2715.0,
-      "protein":172.7,
-      "fat":106.7,
-      "carbohydrates":279.0,
-      "fiber":51.5
+      "calories":339.4,
+      "protein":21.6,
+      "fat":13.3,
+      "carbohydrates":34.9,
+      "fiber":6.4
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -7114,11 +7114,11 @@
     "ID":"40",
     "Title":"Bulgogi (Semur Daging Sapi ala Korea)",
     "nutrition":{
-      "calories":3255.0,
-      "protein":87.3,
-      "fat":185.6,
-      "carbohydrates":348.7,
-      "fiber":12.2
+      "calories":406.9,
+      "protein":10.9,
+      "fat":23.2,
+      "carbohydrates":43.6,
+      "fiber":1.5
     },
     "Ingredients_Parsed":[
       "madu",
@@ -7321,11 +7321,11 @@
     "ID":"41",
     "Title":"Dadar Telor Cah Toge",
     "nutrition":{
-      "calories":2097.0,
-      "protein":69.9,
-      "fat":55.2,
-      "carbohydrates":351.7,
-      "fiber":22.9
+      "calories":262.1,
+      "protein":8.7,
+      "fat":6.9,
+      "carbohydrates":44.0,
+      "fiber":2.9
     },
     "Ingredients_Parsed":[
       "kaldu bubuk",
@@ -7480,11 +7480,11 @@
     "ID":"42",
     "Title":"Telor dadar ala RM Padang",
     "nutrition":{
-      "calories":2996.0,
-      "protein":127.3,
-      "fat":87.1,
-      "carbohydrates":379.7,
-      "fiber":53.4
+      "calories":374.5,
+      "protein":15.9,
+      "fat":10.9,
+      "carbohydrates":47.5,
+      "fiber":6.7
     },
     "Ingredients_Parsed":[
       "tangkai daun bawang halus",
@@ -7687,11 +7687,11 @@
     "ID":"43",
     "Title":"Sempol Ayam Telur Gulung",
     "nutrition":{
-      "calories":5083.0,
-      "protein":199.8,
-      "fat":203.1,
-      "carbohydrates":618.6,
-      "fiber":19.4
+      "calories":635.4,
+      "protein":25.0,
+      "fat":25.4,
+      "carbohydrates":77.3,
+      "fiber":2.4
     },
     "Ingredients_Parsed":[
       "kaldu jamur bubuk",
@@ -7905,11 +7905,11 @@
     "ID":"44",
     "Title":"Dadar telor cah toge",
     "nutrition":{
-      "calories":1181.0,
-      "protein":62.1,
-      "fat":36.3,
-      "carbohydrates":154.8,
-      "fiber":22.6
+      "calories":147.6,
+      "protein":7.8,
+      "fat":4.5,
+      "carbohydrates":19.4,
+      "fiber":2.8
     },
     "Ingredients_Parsed":[
       "saus tiram",
@@ -8040,11 +8040,11 @@
     "ID":"45",
     "Title":"Tumis buncis orak arik telor",
     "nutrition":{
-      "calories":1088.0,
-      "protein":33.0,
-      "fat":16.5,
-      "carbohydrates":143.1,
-      "fiber":8.0
+      "calories":136.0,
+      "protein":4.1,
+      "fat":2.1,
+      "carbohydrates":17.9,
+      "fiber":1.0
     },
     "Ingredients_Parsed":[
       "minyak goreng",
@@ -8150,11 +8150,11 @@
     "ID":"46",
     "Title":"Kornet tumis telur",
     "nutrition":{
-      "calories":972.0,
-      "protein":34.1,
-      "fat":19.2,
-      "carbohydrates":167.3,
-      "fiber":13.8
+      "calories":121.5,
+      "protein":4.3,
+      "fat":2.4,
+      "carbohydrates":20.9,
+      "fiber":1.7
     },
     "Ingredients_Parsed":[
       "cabe merah besar",
@@ -8295,11 +8295,11 @@
     "ID":"47",
     "Title":"Tempe Goreng Telur",
     "nutrition":{
-      "calories":1339.0,
-      "protein":63.1,
-      "fat":47.9,
-      "carbohydrates":179.5,
-      "fiber":6.1
+      "calories":167.4,
+      "protein":7.9,
+      "fat":6.0,
+      "carbohydrates":22.4,
+      "fiber":0.8
     },
     "Ingredients_Parsed":[
       "bawang putih (ulek halus)",
@@ -8370,11 +8370,11 @@
     "ID":"48",
     "Title":"Cilok isi Telur",
     "nutrition":{
-      "calories":1850.0,
-      "protein":61.7,
-      "fat":41.5,
-      "carbohydrates":314.9,
-      "fiber":29.7
+      "calories":231.2,
+      "protein":7.7,
+      "fat":5.2,
+      "carbohydrates":39.4,
+      "fiber":3.7
     },
     "Ingredients_Parsed":[
       "merica",
@@ -8469,11 +8469,11 @@
     "ID":"49",
     "Title":"Tumis buncis telur",
     "nutrition":{
-      "calories":1829.0,
-      "protein":72.4,
-      "fat":68.2,
-      "carbohydrates":171.5,
-      "fiber":17.4
+      "calories":228.6,
+      "protein":9.1,
+      "fat":8.5,
+      "carbohydrates":21.4,
+      "fiber":2.2
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -8592,11 +8592,11 @@
     "ID":"50",
     "Title":"Semur Telur & Kentang",
     "nutrition":{
-      "calories":3375.0,
-      "protein":128.1,
-      "fat":170.1,
-      "carbohydrates":356.8,
-      "fiber":31.3
+      "calories":421.9,
+      "protein":16.0,
+      "fat":21.3,
+      "carbohydrates":44.6,
+      "fiber":3.9
     },
     "Ingredients_Parsed":[
       "kentang",
@@ -8774,11 +8774,11 @@
     "ID":"51",
     "Title":"Kentang tahu kuah kecap",
     "nutrition":{
-      "calories":1943.0,
-      "protein":72.6,
-      "fat":99.5,
-      "carbohydrates":192.0,
-      "fiber":18.6
+      "calories":242.9,
+      "protein":9.1,
+      "fat":12.4,
+      "carbohydrates":24.0,
+      "fiber":2.3
     },
     "Ingredients_Parsed":[
       "merica",
@@ -8908,11 +8908,11 @@
     "ID":"52",
     "Title":"Opor Ayam + Tahu",
     "nutrition":{
-      "calories":4767.0,
-      "protein":161.0,
-      "fat":179.9,
-      "carbohydrates":670.2,
-      "fiber":75.6
+      "calories":595.9,
+      "protein":20.1,
+      "fat":22.5,
+      "carbohydrates":83.8,
+      "fiber":9.4
     },
     "Ingredients_Parsed":[
       "cm jahe",
@@ -9187,11 +9187,11 @@
     "ID":"53",
     "Title":"Patin tahu asam pedas",
     "nutrition":{
-      "calories":3338.0,
-      "protein":134.7,
-      "fat":103.4,
-      "carbohydrates":497.5,
-      "fiber":69.6
+      "calories":417.2,
+      "protein":16.8,
+      "fat":12.9,
+      "carbohydrates":62.2,
+      "fiber":8.7
     },
     "Ingredients_Parsed":[
       "ruas jari kunyit",
@@ -9442,11 +9442,11 @@
     "ID":"54",
     "Title":"Perkedel Tahu Kari Tanpa Telur",
     "nutrition":{
-      "calories":1559.0,
-      "protein":59.6,
-      "fat":37.4,
-      "carbohydrates":264.6,
-      "fiber":19.6
+      "calories":194.9,
+      "protein":7.5,
+      "fat":4.7,
+      "carbohydrates":33.1,
+      "fiber":2.4
     },
     "Ingredients_Parsed":[
       "agak munjung tepung beras",
@@ -9541,11 +9541,11 @@
     "ID":"55",
     "Title":"Tahu Telur Asin",
     "nutrition":{
-      "calories":1064.0,
-      "protein":93.6,
-      "fat":47.6,
-      "carbohydrates":85.0,
-      "fiber":1.0
+      "calories":133.0,
+      "protein":11.7,
+      "fat":6.0,
+      "carbohydrates":10.6,
+      "fiber":0.1
     },
     "Ingredients_Parsed":[
       "tepung bumbu (kobe)",
@@ -9628,11 +9628,11 @@
     "ID":"56",
     "Title":"Tahu Aci Pedas Manis ",
     "nutrition":{
-      "calories":2482.0,
-      "protein":152.7,
-      "fat":64.9,
-      "carbohydrates":329.7,
-      "fiber":32.6
+      "calories":310.2,
+      "protein":19.1,
+      "fat":8.1,
+      "carbohydrates":41.2,
+      "fiber":4.1
     },
     "Ingredients_Parsed":[
       "tepung kanji",
@@ -9834,11 +9834,11 @@
     "ID":"57",
     "Title":"Perkedel tahu",
     "nutrition":{
-      "calories":2864.0,
-      "protein":107.4,
-      "fat":111.8,
-      "carbohydrates":365.9,
-      "fiber":31.7
+      "calories":358.0,
+      "protein":13.4,
+      "fat":14.0,
+      "carbohydrates":45.7,
+      "fiber":4.0
     },
     "Ingredients_Parsed":[
       "biji merica",
@@ -10004,11 +10004,11 @@
     "ID":"58",
     "Title":"Tahu Kribo",
     "nutrition":{
-      "calories":1160.0,
-      "protein":33.7,
-      "fat":11.2,
-      "carbohydrates":168.8,
-      "fiber":5.3
+      "calories":145.0,
+      "protein":4.2,
+      "fat":1.4,
+      "carbohydrates":21.1,
+      "fiber":0.7
     },
     "Ingredients_Parsed":[
       "tahu kuning",
@@ -10067,11 +10067,11 @@
     "ID":"59",
     "Title":"Tahu aci",
     "nutrition":{
-      "calories":1827.0,
-      "protein":72.0,
-      "fat":65.2,
-      "carbohydrates":250.2,
-      "fiber":22.7
+      "calories":228.4,
+      "protein":9.0,
+      "fat":8.2,
+      "carbohydrates":31.3,
+      "fiber":2.8
     },
     "Ingredients_Parsed":[
       "tepung sagu",
@@ -10190,11 +10190,11 @@
     "ID":"60",
     "Title":"Tahu Kecap Kental Pedas",
     "nutrition":{
-      "calories":1328.0,
-      "protein":78.5,
-      "fat":45.5,
-      "carbohydrates":153.5,
-      "fiber":13.0
+      "calories":166.0,
+      "protein":9.8,
+      "fat":5.7,
+      "carbohydrates":19.2,
+      "fiber":1.6
     },
     "Ingredients_Parsed":[
       "cabe merah kriting",
@@ -10323,11 +10323,11 @@
     "ID":"61",
     "Title":"Ikan patin kuah asam pedas",
     "nutrition":{
-      "calories":2062.0,
-      "protein":74.0,
-      "fat":91.5,
-      "carbohydrates":256.1,
-      "fiber":36.6
+      "calories":257.8,
+      "protein":9.2,
+      "fat":11.4,
+      "carbohydrates":32.0,
+      "fiber":4.6
     },
     "Ingredients_Parsed":[
       "jeruk nipis",
@@ -10542,11 +10542,11 @@
     "ID":"62",
     "Title":"Gurame Bakar",
     "nutrition":{
-      "calories":3239.0,
-      "protein":105.5,
-      "fat":167.5,
-      "carbohydrates":342.8,
-      "fiber":52.8
+      "calories":404.9,
+      "protein":13.2,
+      "fat":20.9,
+      "carbohydrates":42.9,
+      "fiber":6.6
     },
     "Ingredients_Parsed":[
       "ekor gurame",
@@ -10761,11 +10761,11 @@
     "ID":"63",
     "Title":"Pesmol Gurame",
     "nutrition":{
-      "calories":4128.0,
-      "protein":140.0,
-      "fat":140.5,
-      "carbohydrates":607.1,
-      "fiber":67.7
+      "calories":516.0,
+      "protein":17.5,
+      "fat":17.6,
+      "carbohydrates":75.9,
+      "fiber":8.5
     },
     "Ingredients_Parsed":[
       "teh ketumbar bubuk",
@@ -11049,11 +11049,11 @@
     "ID":"64",
     "Title":"Pindang Patin",
     "nutrition":{
-      "calories":2878.0,
-      "protein":100.6,
-      "fat":79.9,
-      "carbohydrates":457.8,
-      "fiber":59.3
+      "calories":359.8,
+      "protein":12.6,
+      "fat":10.0,
+      "carbohydrates":57.2,
+      "fiber":7.4
     },
     "Ingredients_Parsed":[
       "bahan utama",
@@ -11363,11 +11363,11 @@
     "ID":"65",
     "Title":"Siomay Bandung Ikan Tenggiri",
     "nutrition":{
-      "calories":3317.0,
-      "protein":166.5,
-      "fat":115.4,
-      "carbohydrates":416.0,
-      "fiber":35.3
+      "calories":414.6,
+      "protein":20.8,
+      "fat":14.4,
+      "carbohydrates":52.0,
+      "fiber":4.4
     },
     "Ingredients_Parsed":[
       "kentang",
@@ -11582,11 +11582,11 @@
     "ID":"66",
     "Title":"Bandeng Asem Pedas Seger Kuah Kuning ",
     "nutrition":{
-      "calories":2011.0,
-      "protein":49.4,
-      "fat":69.5,
-      "carbohydrates":319.3,
-      "fiber":33.2
+      "calories":251.4,
+      "protein":6.2,
+      "fat":8.7,
+      "carbohydrates":39.9,
+      "fiber":4.2
     },
     "Ingredients_Parsed":[
       "sereh",
@@ -11753,11 +11753,11 @@
     "ID":"67",
     "Title":"Gurami Kuah Asam",
     "nutrition":{
-      "calories":2428.0,
-      "protein":83.5,
-      "fat":45.0,
-      "carbohydrates":379.1,
-      "fiber":50.7
+      "calories":303.5,
+      "protein":10.4,
+      "fat":5.6,
+      "carbohydrates":47.4,
+      "fiber":6.3
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -11995,11 +11995,11 @@
     "ID":"68",
     "Title":"Pepes Ikan Tuna Bumbu Orange",
     "nutrition":{
-      "calories":2662.0,
-      "protein":104.3,
-      "fat":80.8,
-      "carbohydrates":328.0,
-      "fiber":56.7
+      "calories":332.8,
+      "protein":13.0,
+      "fat":10.1,
+      "carbohydrates":41.0,
+      "fiber":7.1
     },
     "Ingredients_Parsed":[
       "cm jahe",
@@ -12235,11 +12235,11 @@
     "ID":"69",
     "Title":"Pindang Serani Ikan Patin",
     "nutrition":{
-      "calories":3003.0,
-      "protein":123.8,
-      "fat":77.3,
-      "carbohydrates":491.9,
-      "fiber":56.8
+      "calories":375.4,
+      "protein":15.5,
+      "fat":9.7,
+      "carbohydrates":61.5,
+      "fiber":7.1
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -12489,11 +12489,11 @@
     "ID":"70",
     "Title":"Pizza Tuna Jagung",
     "nutrition":{
-      "calories":3106.0,
-      "protein":87.7,
-      "fat":62.4,
-      "carbohydrates":492.7,
-      "fiber":35.3
+      "calories":388.2,
+      "protein":11.0,
+      "fat":7.8,
+      "carbohydrates":61.6,
+      "fiber":4.4
     },
     "Ingredients_Parsed":[
       "keju mozarella",
@@ -12704,11 +12704,11 @@
     "ID":"71",
     "Title":"Nasi Goreng Kambing",
     "nutrition":{
-      "calories":3961.0,
-      "protein":167.5,
-      "fat":79.7,
-      "carbohydrates":653.3,
-      "fiber":54.1
+      "calories":495.1,
+      "protein":20.9,
+      "fat":10.0,
+      "carbohydrates":81.7,
+      "fiber":6.8
     },
     "Ingredients_Parsed":[
       "bawang putih",
@@ -12946,11 +12946,11 @@
     "ID":"72",
     "Title":"Soto Kambing simpel",
     "nutrition":{
-      "calories":3630.0,
-      "protein":108.0,
-      "fat":180.6,
-      "carbohydrates":342.9,
-      "fiber":58.6
+      "calories":453.8,
+      "protein":13.5,
+      "fat":22.6,
+      "carbohydrates":42.9,
+      "fiber":7.3
     },
     "Ingredients_Parsed":[
       "minyak goreng",
@@ -13188,11 +13188,11 @@
     "ID":"73",
     "Title":"Nasi Kebuli",
     "nutrition":{
-      "calories":4453.0,
-      "protein":129.6,
-      "fat":169.6,
-      "carbohydrates":628.8,
-      "fiber":84.5
+      "calories":556.6,
+      "protein":16.2,
+      "fat":21.2,
+      "carbohydrates":78.6,
+      "fiber":10.6
     },
     "Ingredients_Parsed":[
       "kasar",
@@ -13454,11 +13454,11 @@
     "ID":"74",
     "Title":"Ungkep daging kambing ",
     "nutrition":{
-      "calories":2092.0,
-      "protein":100.2,
-      "fat":45.3,
-      "carbohydrates":257.8,
-      "fiber":19.9
+      "calories":261.5,
+      "protein":12.5,
+      "fat":5.7,
+      "carbohydrates":32.2,
+      "fiber":2.5
     },
     "Ingredients_Parsed":[
       "ruas jari lengkuas",
@@ -13637,11 +13637,11 @@
     "ID":"75",
     "Title":"Martabak Gule Daging",
     "nutrition":{
-      "calories":5295.0,
-      "protein":182.7,
-      "fat":275.4,
-      "carbohydrates":531.0,
-      "fiber":36.5
+      "calories":661.9,
+      "protein":22.8,
+      "fat":34.4,
+      "carbohydrates":66.4,
+      "fiber":4.6
     },
     "Ingredients_Parsed":[
       "meja yg bersih. dari marmer lebih baik. atau tekel semacamnya",
@@ -13879,11 +13879,11 @@
     "ID":"76",
     "Title":"Tumis sayur sate kambing",
     "nutrition":{
-      "calories":1582.0,
-      "protein":48.0,
-      "fat":32.5,
-      "carbohydrates":263.0,
-      "fiber":68.2
+      "calories":197.8,
+      "protein":6.0,
+      "fat":4.1,
+      "carbohydrates":32.9,
+      "fiber":8.5
     },
     "Ingredients_Parsed":[
       "kentang kotak lalu goreng",
@@ -14061,11 +14061,11 @@
     "ID":"77",
     "Title":"SOP KAKI KAMBING ",
     "nutrition":{
-      "calories":5378.0,
-      "protein":188.7,
-      "fat":197.1,
-      "carbohydrates":678.3,
-      "fiber":75.5
+      "calories":672.2,
+      "protein":23.6,
+      "fat":24.6,
+      "carbohydrates":84.8,
+      "fiber":9.4
     },
     "Ingredients_Parsed":[
       "bahan dihaluskan",
@@ -14399,11 +14399,11 @@
     "ID":"78",
     "Title":"Sop Kepala Kambing",
     "nutrition":{
-      "calories":1929.0,
-      "protein":56.1,
-      "fat":79.4,
-      "carbohydrates":247.8,
-      "fiber":24.0
+      "calories":241.1,
+      "protein":7.0,
+      "fat":9.9,
+      "carbohydrates":31.0,
+      "fiber":3.0
     },
     "Ingredients_Parsed":[
       "merica",
@@ -14534,11 +14534,11 @@
     "ID":"79",
     "Title":"Nasi briyani kambing",
     "nutrition":{
-      "calories":4984.0,
-      "protein":168.8,
-      "fat":206.8,
-      "carbohydrates":671.2,
-      "fiber":87.5
+      "calories":623.0,
+      "protein":21.1,
+      "fat":25.9,
+      "carbohydrates":83.9,
+      "fiber":10.9
     },
     "Ingredients_Parsed":[
       "kapulaga bubuk",
@@ -14824,11 +14824,11 @@
     "ID":"80",
     "Title":"Sate Kambing",
     "nutrition":{
-      "calories":2514.0,
-      "protein":96.0,
-      "fat":65.8,
-      "carbohydrates":388.0,
-      "fiber":48.8
+      "calories":314.2,
+      "protein":12.0,
+      "fat":8.2,
+      "carbohydrates":48.5,
+      "fiber":6.1
     },
     "Ingredients_Parsed":[
       "merica",
