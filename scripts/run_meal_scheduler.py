@@ -1,5 +1,4 @@
-# scripts/run_meal_scheduler.py
-import os
+
 import argparse
 import json
 import sys
@@ -9,6 +8,28 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from src.models.pso_meal_scheduler import MealScheduler
+
+
+def calculate_average_nutrition(meal_plan):
+    """
+    Calculate the correct average daily nutrition from a meal plan
+    """
+    daily_values = []
+
+    # Extract daily nutrition values from each day
+    for day in meal_plan['meal_plan']:
+        daily_values.append(day['daily_nutrition'])
+
+    # Calculate average across days
+    average = {
+        'calories': sum(day['calories'] for day in daily_values) / len(daily_values),
+        'protein': sum(day['protein'] for day in daily_values) / len(daily_values),
+        'fat': sum(day['fat'] for day in daily_values) / len(daily_values),
+        'carbohydrates': sum(day['carbohydrates'] for day in daily_values) / len(daily_values),
+        'fiber': sum(day['fiber'] for day in daily_values) / len(daily_values)
+    }
+
+    return average
 
 
 def main():
@@ -62,6 +83,10 @@ def main():
         excluded_ingredients=args.exclude,
         dietary_type=args.diet_type
     )
+
+    # Fix: Recalculate the average nutrition from daily values
+    corrected_average = calculate_average_nutrition(meal_plan)
+    meal_plan['average_daily_nutrition'] = corrected_average
 
     # Save meal plan
     scheduler.save_meal_plan(meal_plan, args.output)
