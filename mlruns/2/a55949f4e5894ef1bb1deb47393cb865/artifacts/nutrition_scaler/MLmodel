@@ -1,0 +1,13 @@
+artifact_path: nutrition_scaler
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 2.22.0
+model_size_bytes: 708
+model_uuid: 665727282339453d8b2845155181ce3a
+prompts: null
+run_id: a55949f4e5894ef1bb1deb47393cb865
+utc_time_created: '2025-04-25 17:53:55.373500'

@@ -2,6 +2,8 @@
 import argparse
 import json
 import sys
+import os
+import mlflow
 from pathlib import Path
 
 # Add project root to path
@@ -66,51 +68,92 @@ def main():
 
     args = parser.parse_args()
 
-    # Create meal scheduler
-    scheduler = MealScheduler()
+    args.output = os.path.abspath(args.output)
+    os.makedirs(os.path.dirname(args.output), exist_ok=True)
 
-    # Generate meal plan
-    print("Generating optimized meal plan...")
-    meal_plan = scheduler.generate_meal_plan(
-        age=args.age,
-        gender=args.gender,
-        weight=args.weight,
-        height=args.height,
-        activity_level=args.activity_level,
-        meals_per_day=args.meals_per_day,
-        recipes_per_meal=args.recipes_per_meal,
-        goal=args.goal,
-        excluded_ingredients=args.exclude,
-        dietary_type=args.diet_type
-    )
+    # Setup MLflow
+    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_experiment("Meal Scheduler PSO")
+    
+    try:
+        with mlflow.start_run(run_name="PSO Meal Plan"):
+            # Log parameters
+            mlflow.log_params({
+                "age": args.age,
+                "gender": args.gender,
+                "weight": args.weight,
+                "height": args.height,
+                "activity_level": args.activity_level,
+                "meals_per_day": args.meals_per_day,
+                "recipes_per_meal": args.recipes_per_meal,
+                "goal": args.goal,
+                "diet_type": args.diet_type or "none",
+                "excluded_ingredients": ",".join(args.exclude) if args.exclude else "none"
+            })
 
-    # Fix: Recalculate the average nutrition from daily values
-    corrected_average = calculate_average_nutrition(meal_plan)
-    meal_plan['average_daily_nutrition'] = corrected_average
+            # Create meal scheduler
+            scheduler = MealScheduler()
 
-    # Save meal plan
-    scheduler.save_meal_plan(meal_plan, args.output)
+            # Generate meal plan
+            print("Generating optimized meal plan...")
+            meal_plan = scheduler.generate_meal_plan(
+                age=args.age,
+                gender=args.gender,
+                weight=args.weight,
+                height=args.height,
+                activity_level=args.activity_level,
+                meals_per_day=args.meals_per_day,
+                recipes_per_meal=args.recipes_per_meal,
+                goal=args.goal,
+                excluded_ingredients=args.exclude,
+                dietary_type=args.diet_type
+            )
 
-    # Print summary
-    print("\nMeal Plan Summary:")
-    print(f"Days: 7, Meals per day: {args.meals_per_day}, Recipes per meal: {args.recipes_per_meal}")
-    print(f"Average daily nutrition:")
-    nutrition = meal_plan['average_daily_nutrition']
-    print(f"  - Calories: {nutrition['calories']:.0f} kcal")
-    print(f"  - Protein: {nutrition['protein']:.1f} g")
-    print(f"  - Fat: {nutrition['fat']:.1f} g")
-    print(f"  - Carbohydrates: {nutrition['carbohydrates']:.1f} g")
-    print(f"  - Fiber: {nutrition['fiber']:.1f} g")
-    print(f"\nTarget nutrition:")
-    targets = meal_plan['target_nutrition']
-    print(f"  - Calories: {targets['calories']:.0f} kcal")
-    print(f"  - Protein: {targets['protein']:.1f} g")
-    print(f"  - Fat: {targets['fat']:.1f} g")
-    print(f"  - Carbohydrates: {targets['carbohydrates']:.1f} g")
-    print(f"  - Fiber: {targets['fiber']:.1f} g")
+            # Calculate average nutrition
+            corrected_average = calculate_average_nutrition(meal_plan)
+            meal_plan['average_daily_nutrition'] = corrected_average
 
-    print(f"\nComplete meal plan saved to {args.output}")
+            # Save meal plan
+            os.makedirs(os.path.dirname(args.output), exist_ok=True)  # Pastikan direktori output ada
+            scheduler.save_meal_plan(meal_plan, args.output)
 
+            # Log metrics dan artifacts
+            mlflow.log_metrics({
+                "calories": corrected_average['calories'],
+                "protein": corrected_average['protein'],
+                "fat": corrected_average['fat'],
+                "carbohydrates": corrected_average['carbohydrates'],
+                "fiber": corrected_average['fiber']
+            })
+            
+            mlflow.log_artifact(args.output)
+            mlflow.set_tag("status", "success")
+
+            # Print summary
+            print("\nMeal Plan Summary:")
+            print(f"Days: 7, Meals per day: {args.meals_per_day}, Recipes per meal: {args.recipes_per_meal}")
+            print(f"Average daily nutrition:")
+            nutrition = meal_plan['average_daily_nutrition']
+            print(f"  - Calories: {nutrition['calories']:.0f} kcal")
+            print(f"  - Protein: {nutrition['protein']:.1f} g")
+            print(f"  - Fat: {nutrition['fat']:.1f} g")
+            print(f"  - Carbohydrates: {nutrition['carbohydrates']:.1f} g")
+            print(f"  - Fiber: {nutrition['fiber']:.1f} g")
+            print(f"\nTarget nutrition:")
+            targets = meal_plan['target_nutrition']
+            print(f"  - Calories: {targets['calories']:.0f} kcal")
+            print(f"  - Protein: {targets['protein']:.1f} g")
+            print(f"  - Fat: {targets['fat']:.1f} g")
+            print(f"  - Carbohydrates: {targets['carbohydrates']:.1f} g")
+            print(f"  - Fiber: {targets['fiber']:.1f} g")
+
+            print(f"\nComplete meal plan saved to {args.output}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        mlflow.set_tag("status", "failed")
+        mlflow.log_param("error_message", str(e))
+        raise
 
 if __name__ == "__main__":
     main()

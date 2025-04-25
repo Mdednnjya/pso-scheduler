@@ -2,84 +2,126 @@ import sys
 from pathlib import Path
 import os
 import pandas as pd
+import mlflow
 
 sys.path.append(str(Path(__file__).parent.parent))
 from src.data.data_loader import load_data, drop_rename_fill_and_replace
 from src.data.nutrition_enricher import process_dataset
 from src.data.export_utils import export_to_json, export_summary_csv
 
+def calculate_coverage(enriched_df):
+    """Menghitung persentase bahan yang berhasil diperkaya dengan data nutrisi"""
+    total_ingredients = 0
+    matched_ingredients = 0
+    
+    for _, row in enriched_df.iterrows():
+        for ing in row['Ingredients_Enriched']:
+            total_ingredients += 1
+            if ing.get('calories', 0) > 0:  # Asumsi kalori > 0 berarti berhasil diperkaya
+                matched_ingredients += 1
+                
+    return (matched_ingredients / total_ingredients) * 100 if total_ingredients > 0 else 0
+
+def calculate_avg_ingredients(enriched_df):
+    """Menghitung rata-rata jumlah bahan per resep"""
+    total_recipes = len(enriched_df)
+    total_ingredients = sum(len(row['Ingredients_Enriched']) for _, row in enriched_df.iterrows())
+    return total_ingredients / total_recipes if total_recipes > 0 else 0
 
 def main():
     # Definisikan path
-    data_dir = "data"
-    output_dir = "output"
+    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_experiment("Data Preprocessing")
 
-    # Buat direktori output jika belum ada
-    os.makedirs(output_dir, exist_ok=True)
+    with mlflow.start_run(run_name="Data Enrichment"):
+        # Log parameters
+        mlflow.log_params({
+            "input_path": "data/scrap_tkpi.csv",
+            "nutrition_source": "TKPI 2023",
+            "target_serving": 2
+        })
 
-    recipe_path = os.path.join(data_dir, "combined_dataset.csv")
+        data_dir = "data"
+        output_dir = "output"
 
-    # Preprocessing data mentah TKPI hasil scrapping
-    input_path = "data/scrap_tkpi.csv"
-    output_path = "data/tkpi_data.csv"
-    columns_to_remove = [0, 1, 2, -1, -2]
-    rename_map = {
-        "nama bahan makanan": "ingredient",
-        "calori": "calories",
-        "protein": "protein",
-        "fat": "fat",
-        "carbohydrate": "carbohydrates",
-        "fiber": "fiber",
-        "calsium": "calcium"
-    }
+        # Buat direktori output jika belum ada
+        os.makedirs(output_dir, exist_ok=True)
 
-    # Periksa apakah fuzzywuzzy sudah terinstal
-    try:
-        import fuzzywuzzy
-    except ImportError:
-        print("Installing fuzzywuzzy package...")
-        import pip
-        pip.main(['install', 'fuzzywuzzy'])
-        pip.main(['install', 'python-Levenshtein'])  # Optional but improves performance
+        recipe_path = os.path.join(data_dir, "combined_dataset.csv")
 
-    drop_rename_fill_and_replace(input_path, output_path, columns_to_remove, rename_map)
+        # Preprocessing data mentah TKPI hasil scrapping
+        input_path = "data/scrap_tkpi.csv"
+        output_path = "data/tkpi_data.csv"
+        columns_to_remove = [0, 1, 2, -1, -2]
+        rename_map = {
+            "nama bahan makanan": "ingredient",
+            "calori": "calories",
+            "protein": "protein",
+            "fat": "fat",
+            "carbohydrate": "carbohydrates",
+            "fiber": "fiber",
+            "calsium": "calcium"
+        }
 
-    nutrition_path = os.path.join(data_dir, "tkpi_data.csv")
+        # Periksa apakah fuzzywuzzy sudah terinstal
+        try:
+            import fuzzywuzzy
+        except ImportError:
+            print("Installing fuzzywuzzy package...")
+            import pip
+            pip.main(['install', 'fuzzywuzzy'])
+            pip.main(['install', 'python-Levenshtein'])  # Optional but improves performance
 
-    # Load data
-    recipes_df, nutrition_df = load_data(recipe_path, nutrition_path)
+        drop_rename_fill_and_replace(input_path, output_path, columns_to_remove, rename_map)
 
-    # Pastikan semua nilai nutrisi dalam format yang konsisten
-    numeric_columns = ['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
-    for col in numeric_columns:
-        nutrition_df[col] = pd.to_numeric(nutrition_df[col], errors='coerce').fillna(0)
+        nutrition_path = os.path.join(data_dir, "tkpi_data.csv")
 
-    # Print sample dari data nutrisi untuk debugging
-    print("\nSampel 5 baris data nutrisi:")
-    print(nutrition_df.head(5))
+        # Load data
+        recipes_df, nutrition_df = load_data(recipe_path, nutrition_path)
+        mlflow.log_metric("initial_recipes", len(recipes_df))
 
-    # Proses data
-    enriched_df = process_dataset(recipes_df, nutrition_df)
+        # Pastikan semua nilai nutrisi dalam format yang konsisten
+        numeric_columns = ['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
+        for col in numeric_columns:
+            nutrition_df[col] = pd.to_numeric(nutrition_df[col], errors='coerce').fillna(0)
 
-    # Export hasil
-    json_output_path = os.path.join(output_dir, "enriched_recipes.json")
-    csv_output_path = os.path.join(output_dir, "enriched_recipes.csv")
+        # Print sample dari data nutrisi untuk debugging
+        print("\nSampel 5 baris data nutrisi:")
+        print(nutrition_df.head(5))
 
-    export_to_json(enriched_df, json_output_path)
-    export_summary_csv(enriched_df, csv_output_path)
+        # Proses data
+        enriched_df = process_dataset(recipes_df, nutrition_df)
 
-    # Tampilkan beberapa statistik
-    print("\nStatistik Hasil Enrichment:")
-    count_with_nutrition = 0
-    total_recipes = len(enriched_df)
+        # Log results
+        mlflow.log_metrics({
+            "final_recipes": len(enriched_df),
+            "ingredient_coverage": calculate_coverage(enriched_df),
+            "avg_ingredients": calculate_avg_ingredients(enriched_df)
+        })
 
-    for _, row in enriched_df.iterrows():
-        total_calories = sum(float(ing.get('calories', 0) or 0) for ing in row['Ingredients_Enriched'])
-        if total_calories > 0:
-            count_with_nutrition += 1
+        # Save and log sample data
+        enriched_df.sample(5).to_json("sample_recipes.json", orient="records")
+        mlflow.log_artifact("sample_recipes.json")
 
-    print(f"Total resep: {total_recipes}")
-    print(f"Resep dengan data nutrisi: {count_with_nutrition} ({count_with_nutrition / total_recipes * 100:.1f}%)")
+        # Export hasil
+        json_output_path = os.path.join(output_dir, "enriched_recipes.json")
+        csv_output_path = os.path.join(output_dir, "enriched_recipes.csv")
+
+        export_to_json(enriched_df, json_output_path)
+        export_summary_csv(enriched_df, csv_output_path)
+
+        # Tampilkan beberapa statistik
+        print("\nStatistik Hasil Enrichment:")
+        count_with_nutrition = 0
+        total_recipes = len(enriched_df)
+
+        for _, row in enriched_df.iterrows():
+            total_calories = sum(float(ing.get('calories', 0) or 0) for ing in row['Ingredients_Enriched'])
+            if total_calories > 0:
+                count_with_nutrition += 1
+
+        print(f"Total resep: {total_recipes}")
+        print(f"Resep dengan data nutrisi: {count_with_nutrition} ({count_with_nutrition / total_recipes * 100:.1f}%)")
 
 
 if __name__ == "__main__":

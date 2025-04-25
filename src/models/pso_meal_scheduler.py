@@ -3,6 +3,7 @@ import numpy as np
 import random
 import json
 import os
+import mlflow
 from src.models.user_preferences import UserPreferences
 from src.models.cbf_recommender import CBFRecommender
 
@@ -12,7 +13,7 @@ class ParticleSwarmOptimizer:
                  num_particles=30,
                  num_days=7,
                  meals_per_day=3,
-                 recipes_per_meal=3,  # New parameter: number of recipes per meal
+                 recipes_per_meal=3,
                  max_iterations=50,
                  w=0.7,
                  c1=1.5,
@@ -38,6 +39,7 @@ class ParticleSwarmOptimizer:
         self.w = w  # Inertia weight
         self.c1 = c1  # Cognitive coefficient
         self.c2 = c2  # Social coefficient
+        self.mlflow_experiment = "Meal Planning Optimization"
 
         # Load meal data
         self.cbf_recommender = CBFRecommender()
@@ -77,60 +79,71 @@ class ParticleSwarmOptimizer:
             goal: Weight goal ('lose', 'maintain', 'gain')
             user_preferences: UserPreferences object for filtering recipes
         """
-        # Set the user preferences for filtering recipes
-        self.user_preferences = user_preferences
+        with mlflow.start_run(nested=True, run_name="Nutrition Targets"):
+            mlflow.log_params(self.target_metrics)
+            mlflow.log_params({
+                "age": age,
+                "gender": gender,
+                "weight": weight,
+                "height": height,
+                "activity_level": activity_level,
+                "goal": goal
+            })
 
-        # Filter meals based on user preferences if provided
-        if self.user_preferences:
-            self.filtered_meal_data = self.user_preferences.filter_recipes(self.meal_data)
-            if self.filtered_meal_data.empty:
-                raise ValueError("No recipes match the user preferences.")
-            self.meal_ids = self.filtered_meal_data['ID'].unique().tolist()
-        else:
-            self.filtered_meal_data = self.meal_data
+            # Set the user preferences for filtering recipes
+            self.user_preferences = user_preferences
 
-        # Calculate TDEE (Total Daily Energy Expenditure)
-        # First calculate BMR using Mifflin-St Jeor equation
-        if gender.lower() == 'male':
-            bmr = 10 * weight + 6.25 * height - 5 * age + 5
-        else:  # female
-            bmr = 10 * weight + 6.25 * height - 5 * age - 161
+            # Filter meals based on user preferences if provided
+            if self.user_preferences:
+                self.filtered_meal_data = self.user_preferences.filter_recipes(self.meal_data)
+                if self.filtered_meal_data.empty:
+                    raise ValueError("No recipes match the user preferences.")
+                self.meal_ids = self.filtered_meal_data['ID'].unique().tolist()
+            else:
+                self.filtered_meal_data = self.meal_data
 
-        # Apply activity multiplier
-        activity_multipliers = {
-            'sedentary': 1.2,  # Little or no exercise
-            'lightly_active': 1.375,  # Light exercise 1-3 days/week
-            'moderately_active': 1.55,  # Moderate exercise 3-5 days/week
-            'very_active': 1.725,  # Hard exercise 6-7 days/week
-            'extra_active': 1.9  # Very hard exercise & physical job
-        }
+            # Calculate TDEE (Total Daily Energy Expenditure)
+            # First calculate BMR using Mifflin-St Jeor equation
+            if gender.lower() == 'male':
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5
+            else:  # female
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161
 
-        tdee = bmr * activity_multipliers.get(activity_level.lower(), 1.2)
+            # Apply activity multiplier
+            activity_multipliers = {
+                'sedentary': 1.2,  # Little or no exercise
+                'lightly_active': 1.375,  # Light exercise 1-3 days/week
+                'moderately_active': 1.55,  # Moderate exercise 3-5 days/week
+                'very_active': 1.725,  # Hard exercise 6-7 days/week
+                'extra_active': 1.9  # Very hard exercise & physical job
+            }
 
-        # Adjust based on goal
-        if goal.lower() == 'lose':
-            tdee = tdee * 0.85  # 15% calorie deficit
-        elif goal.lower() == 'gain':
-            tdee = tdee * 1.15  # 15% calorie surplus
+            tdee = bmr * activity_multipliers.get(activity_level.lower(), 1.2)
 
-        # Set macronutrient targets (protein, carbs, fats)
-        # For teens, protein needs are higher for growth and development
-        daily_protein = weight * 1.6  # 1.6g per kg for active teens
-        daily_fat = (tdee * 0.25) / 9  # 25% of calories from fat (9 cal/g)
-        daily_carbs = (tdee - (daily_protein * 4 + daily_fat * 9)) / 4  # Remaining calories from carbs (4 cal/g)
-        daily_fiber = 25  # General recommended daily fiber intake for teens
+            # Adjust based on goal
+            if goal.lower() == 'lose':
+                tdee = tdee * 0.85  # 15% calorie deficit
+            elif goal.lower() == 'gain':
+                tdee = tdee * 1.15  # 15% calorie surplus
 
-        # Set target metrics
-        self.target_metrics = {
-            'calories': tdee,
-            'protein': daily_protein,
-            'fat': daily_fat,
-            'carbohydrates': daily_carbs,
-            'fiber': daily_fiber
-        }
+            # Set macronutrient targets (protein, carbs, fats)
+            # For teens, protein needs are higher for growth and development
+            daily_protein = weight * 1.6  # 1.6g per kg for active teens
+            daily_fat = (tdee * 0.25) / 9  # 25% of calories from fat (9 cal/g)
+            daily_carbs = (tdee - (daily_protein * 4 + daily_fat * 9)) / 4  # Remaining calories from carbs (4 cal/g)
+            daily_fiber = 25  # General recommended daily fiber intake for teens
 
-        print(f"Daily targets set: Calories: {tdee:.0f}, Protein: {daily_protein:.1f}g, "
-              f"Fat: {daily_fat:.1f}g, Carbs: {daily_carbs:.1f}g, Fiber: {daily_fiber:.1f}g")
+            # Set target metrics
+            self.target_metrics = {
+                'calories': tdee,
+                'protein': daily_protein,
+                'fat': daily_fat,
+                'carbohydrates': daily_carbs,
+                'fiber': daily_fiber
+            }
+
+            print(f"Daily targets set: Calories: {tdee:.0f}, Protein: {daily_protein:.1f}g, "
+                f"Fat: {daily_fat:.1f}g, Carbs: {daily_carbs:.1f}g, Fiber: {daily_fiber:.1f}g")
 
     def calculate_nutritional_value(self, meal_schedule):
         """
@@ -362,43 +375,79 @@ class ParticleSwarmOptimizer:
         Returns:
             Tuple of (best meal schedule, nutritional value, fitness score)
         """
-        # Initialize swarm
-        positions, velocities, pbests, pbest_scores, gbest, gbest_score = self.initialize_swarm()
+        with mlflow.start_run(nested=True, run_name="PSO Optimization") as run:
+            # Log PSO parameters
+            mlflow.log_params({
+                "num_particles": self.num_particles,
+                "max_iterations": self.max_iterations,
+                "inertia": self.w,
+                "cognitive": self.c1,
+                "social": self.c2,
+                "meals_per_day": self.meals_per_day,
+                "recipes_per_meal": self.recipes_per_meal
+            })
+        
+            # Initialize swarm
+            positions, velocities, pbests, pbest_scores, gbest, gbest_score = self.initialize_swarm()
 
-        # Optimization loop
-        for iteration in range(self.max_iterations):
-            # Update each particle
-            for i in range(self.num_particles):
-                # Update velocity
-                velocities[i] = self.update_velocity(positions, velocities, pbests, gbest, i)
+            # Optimization loop
+            for iteration in range(self.max_iterations):
+                # Update each particle
+                for i in range(self.num_particles):
+                    # Update velocity
+                    velocities[i] = self.update_velocity(positions, velocities, pbests, gbest, i)
 
-                # Update position
-                positions[i] = self.update_position(positions[i], velocities[i])
+                    # Update position
+                    positions[i] = self.update_position(positions[i], velocities[i])
 
-                # Evaluate fitness
-                fitness = self.fitness_function(positions[i])
+                    # Evaluate fitness
+                    fitness = self.fitness_function(positions[i])
 
-                # Update personal best
-                if fitness < pbest_scores[i]:
-                    pbests[i] = positions[i].copy()
-                    pbest_scores[i] = fitness
+                    # Update personal best
+                    if fitness < pbest_scores[i]:
+                        pbests[i] = positions[i].copy()
+                        pbest_scores[i] = fitness
 
-                    # Update global best
-                    if fitness < gbest_score:
-                        gbest = positions[i].copy()
-                        gbest_score = fitness
+                        # Update global best
+                        if fitness < gbest_score:
+                            gbest = positions[i].copy()
+                            gbest_score = fitness
 
-            # Print progress every 10 iterations
-            if (iteration + 1) % 10 == 0 or iteration == 0:
-                avg_nutrition = self.calculate_nutritional_value(gbest)
-                print(f"Iteration {iteration + 1}: Best fitness = {gbest_score:.4f}, "
-                      f"Calories = {avg_nutrition['calories']:.0f}, "
-                      f"Protein = {avg_nutrition['protein']:.1f}g")
+                # Print progress every 10 iterations
+                if (iteration + 1) % 10 == 0 or iteration == 0:
+                    avg_nutrition = self.calculate_nutritional_value(gbest)
+                    print(f"Iteration {iteration + 1}: Best fitness = {gbest_score:.4f}, "
+                        f"Calories = {avg_nutrition['calories']:.0f}, "
+                        f"Protein = {avg_nutrition['protein']:.1f}g")
+                    
+                if iteration % 5 == 0:
+                    current_nutrition = self.calculate_nutritional_value(gbest)
+                    mlflow.log_metrics({
+                        "fitness": gbest_score,
+                        "calories": current_nutrition['calories'],
+                        "protein": current_nutrition['protein'],
+                        "variety": self.calculate_meal_variety(gbest)
+                    }, step=iteration)
 
-        # Calculate final nutritional value
-        nutrition = self.calculate_nutritional_value(gbest)
+            # Calculate final nutritional value
+            nutrition = self.calculate_nutritional_value(gbest)
+            mlflow.log_metrics({
+                "final_fitness": gbest_score,
+                "final_calories": nutrition['calories'],
+                "final_protein": nutrition['protein'],
+                "final_fat": nutrition['fat'],
+                "final_carbs": nutrition['carbohydrates'],
+                "final_fiber": nutrition['fiber'],
+                "unique_meals": self.calculate_meal_variety(gbest)
+            })
 
-        return gbest, nutrition, gbest_score
+            temp_plan_path = "temp_best_plan.json"
+            with open(temp_plan_path, 'w') as f:
+                json.dump(gbest, f)
+            mlflow.log_artifact(temp_plan_path, "meal_plans")
+            os.remove(temp_plan_path)
+
+            return gbest, nutrition, gbest_score
 
     def generate_meal_plan(self):
         """
@@ -496,6 +545,8 @@ class MealScheduler:
         """
         self.model_dir = model_dir
         self.cbf_recommender = CBFRecommender(model_dir)
+        mlflow.set_tracking_uri("http://localhost:5000")
+        mlflow.set_experiment("Meal Planning")
 
     def create_user_preferences(self, excluded_ingredients=None, dietary_type=None,
                                 min_nutrition=None, max_nutrition=None):
@@ -541,44 +592,138 @@ class MealScheduler:
         Returns:
             Dictionary containing the meal plan
         """
-        # Validate meals_per_day
-        meals_per_day = max(1, min(4, meals_per_day))
+        with mlflow.start_run(nested=True, run_name="PSO Optimization"):
+            try:
+                # Create user preferences
+                user_preferences = self.create_user_preferences(
+                    excluded_ingredients=excluded_ingredients,
+                    dietary_type=dietary_type,
+                    min_nutrition=min_nutrition,
+                    max_nutrition=max_nutrition
+                )
 
-        # Validate recipes_per_meal
-        recipes_per_meal = max(1, min(5, recipes_per_meal))
+                # Initialize PSO optimizer
+                self.pso_optimizer = ParticleSwarmOptimizer(
+                    num_particles=30,
+                    num_days=7,
+                    meals_per_day=meals_per_day,
+                    recipes_per_meal=recipes_per_meal,
+                    max_iterations=50
+                )
 
-        # Create user preferences
-        user_preferences = self.create_user_preferences(
-            excluded_ingredients=excluded_ingredients,
-            dietary_type=dietary_type,
-            min_nutrition=min_nutrition,
-            max_nutrition=max_nutrition
-        )
+                # Set user requirements for the optimizer
+                self.pso_optimizer.set_user_requirements(
+                    age=age,
+                    gender=gender,
+                    weight=weight,
+                    height=height,
+                    activity_level=activity_level,
+                    goal=goal,
+                    user_preferences=user_preferences
+                )
 
-        # Initialize PSO
-        pso = ParticleSwarmOptimizer(
-            num_particles=30,
-            num_days=7,
-            meals_per_day=meals_per_day,
-            recipes_per_meal=recipes_per_meal,
-            max_iterations=50
-        )
+                # Store the filtered meal data for later use
+                self.filtered_meal_data = self.pso_optimizer.filtered_meal_data
+                self.target_metrics = self.pso_optimizer.target_metrics
 
-        # Set user requirements
-        pso.set_user_requirements(
-            age=age,
-            gender=gender,
-            weight=weight,
-            height=height,
-            activity_level=activity_level,
-            goal=goal,
-            user_preferences=user_preferences
-        )
+                # Run optimization
+                best_schedule, nutrition, score = self.pso_optimizer.optimize()
 
-        # Generate meal plan
-        meal_plan = pso.generate_meal_plan()
+                # Log basic metrics
+                mlflow.log_metrics({
+                    "final_calories": nutrition['calories'],
+                    "final_protein": nutrition['protein'],
+                    "fitness_score": score
+                })
 
-        return meal_plan
+                # Format the meal plan
+                meal_plan = []
+
+                for day_idx, day_meals in enumerate(best_schedule):
+                    day_plan = {
+                        "day": day_idx + 1,
+                        "meals": []
+                    }
+
+                    daily_nutrition = {
+                        'calories': 0,
+                        'protein': 0,
+                        'fat': 0,
+                        'carbohydrates': 0,
+                        'fiber': 0
+                    }
+
+                    for meal_idx, meal_recipes in enumerate(day_meals):
+                        meal_info = {
+                            "meal_number": meal_idx + 1,
+                            "recipes": []
+                        }
+
+                        meal_nutrition = {
+                            'calories': 0,
+                            'protein': 0,
+                            'fat': 0,
+                            'carbohydrates': 0,
+                            'fiber': 0
+                        }
+
+                        for recipe_id in meal_recipes:
+                            meal_record = self.filtered_meal_data[self.filtered_meal_data['ID'] == str(recipe_id)]
+
+                            if not meal_record.empty:
+                                recipe_info = {
+                                    "meal_id": recipe_id,
+                                    "title": meal_record.iloc[0]['Title'],
+                                    "nutrition": meal_record.iloc[0]['nutrition']
+                                }
+
+                                # Add to meal nutrition totals
+                                nutrition = meal_record.iloc[0]['nutrition']
+                                meal_nutrition['calories'] += nutrition.get('calories', 0)
+                                meal_nutrition['protein'] += nutrition.get('protein', 0)
+                                meal_nutrition['fat'] += nutrition.get('fat', 0)
+                                meal_nutrition['carbohydrates'] += nutrition.get('carbohydrates', 0)
+                                meal_nutrition['fiber'] += nutrition.get('fiber', 0)
+
+                                meal_info["recipes"].append(recipe_info)
+
+                        # Add meal nutrition to the meal info
+                        meal_info["meal_nutrition"] = meal_nutrition
+
+                        # Add to daily nutrition totals
+                        daily_nutrition['calories'] += meal_nutrition['calories']
+                        daily_nutrition['protein'] += meal_nutrition['protein']
+                        daily_nutrition['fat'] += meal_nutrition['fat']
+                        daily_nutrition['carbohydrates'] += meal_nutrition['carbohydrates']
+                        daily_nutrition['fiber'] += meal_nutrition['fiber']
+
+                        day_plan["meals"].append(meal_info)
+
+                    day_plan["daily_nutrition"] = daily_nutrition
+                    meal_plan.append(day_plan)
+
+                result = {
+                    "meal_plan": meal_plan,
+                    "average_daily_nutrition": nutrition,
+                    "target_nutrition": self.target_metrics,
+                    "fitness_score": score
+                }
+
+                # Simpan sementara hasil untuk logging
+                temp_path = os.path.abspath("temp_meal_plan.json")
+                os.makedirs(os.path.dirname(temp_path), exist_ok=True)
+                
+                with open(temp_path, 'w') as f:
+                    json.dump(result, f, indent=2)
+                    
+                mlflow.log_artifact(temp_path, "optimization_results")
+                os.remove(temp_path)  # Bersihkan file temporary
+
+                return result
+
+            except Exception as e:
+                mlflow.log_param("error", str(e))
+                raise
 
     def save_meal_plan(self, meal_plan, output_file='output/meal_plan.json'):
         """
@@ -589,7 +734,12 @@ class MealScheduler:
             output_file: Path to output file
         """
         # Ensure output directory exists
+        output_file = os.path.abspath(output_file)
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        
+        if mlflow.active_run():
+            mlflow.log_artifact(output_file, "meal_plans")
+            mlflow.log_dict(meal_plan, "meal_plan_details.json")
 
         # Convert any numpy values to Python types for JSON serialization
         def convert_numpy_to_python(obj):

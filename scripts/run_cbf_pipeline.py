@@ -5,11 +5,13 @@ import pandas as pd
 import sys
 from pathlib import Path
 import numpy as np
+import mlflow
 
 # Add project root to path
 sys.path.append(str(Path(__file__).parent.parent))
 
 # Import CBF modules
+from src.models.cbf_trainer import CBFTrainer
 from src.models.feature import FeatureEngineer
 from src.models.user_preferences import UserPreferences
 import joblib
@@ -271,10 +273,45 @@ def main():
     parser.add_argument('--debug', action='store_true', help='Print debug information')
     parser.add_argument('--servings', type=int, default=4,
                         help='Number of servings to normalize nutrition values by (default: 4)')
+    parser.add_argument('--experiment-name', type=str, default='CBF Training',
+                       help='MLflow experiment name')
 
     args = parser.parse_args()
 
     if args.train:
+        # Setup MLflow
+        mlflow.set_tracking_uri("http://localhost:5000")
+        mlflow.set_experiment(args.experiment_name)
+        
+        with mlflow.start_run(run_name="CBF Training Run") as run:
+            # Log parameters
+            mlflow.log_params({
+                "input_data": args.input,
+                "serving_size": args.servings,
+                "vectorizer_type": "TF-IDF",
+                "max_features": 500
+            })
+            
+            # Initialize and train model
+            trainer = CBFTrainer(args.input)
+            feature_matrix, simplified_df = trainer.train()
+            
+            # Log metrics
+            num_recipes = len(simplified_df)
+            num_features = feature_matrix.shape[1]
+            mlflow.log_metrics({
+                "num_recipes": num_recipes,
+                "num_features": num_features,
+                "avg_calories": simplified_df['nutrition'].apply(lambda x: x['calories']).mean(),
+                "avg_protein": simplified_df['nutrition'].apply(lambda x: x['protein']).mean()
+            })
+            
+            # Log artifacts
+            mlflow.log_artifacts(trainer.model_dir, "model_artifacts")
+            mlflow.log_text(str(simplified_df.head().to_dict()), "data_sample.json")
+            
+            print(f"Training completed! Run ID: {run.info.run_id}")
+
         if not os.path.exists(args.input):
             print(f"Error: Input file {args.input} not found")
             return

@@ -1031,11 +1031,11 @@
     }
   ],
   "average_daily_nutrition": {
-    "calories": 3954.528571428571,
-    "protein": 179.8714285714286,
-    "fat": 114.34285714285714,
-    "carbohydrates": 535.4714285714286,
-    "fiber": 53.75714285714287
+    "calories": 389.8,
+    "protein": 14.9,
+    "fat": 9.4,
+    "carbohydrates": 66.2,
+    "fiber": 4.9
   },
   "target_nutrition": {
     "calories": 2664.0625,
