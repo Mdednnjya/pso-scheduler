@@ -1,0 +1,7 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = gdrive://1wwUB5sOOHOIpr9WGtuNRjNajlaexA5sc
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = ../dvc-credential-access.json
+    gdrive_service_account_user_email = dvc-capstone-credential-access@tidy-etching-457205-p9.iam.gserviceaccount.com

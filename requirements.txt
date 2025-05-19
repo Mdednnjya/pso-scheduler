@@ -4,3 +4,5 @@ scikit-learn
 python-Levenshtein
 fuzzywuzzy
 mlflow
+dvc
+dvc-gdrive
