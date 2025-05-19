@@ -1,0 +1,425 @@
+{
+  "meal_plan": [
+    {
+      "day": 1,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "79",
+              "title": "Nasi briyani kambing",
+              "nutrition": {
+                "calories": 1246.0,
+                "protein": 42.2,
+                "fat": 51.7,
+                "carbohydrates": 167.8,
+                "fiber": 21.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1246.0,
+            "protein": 42.2,
+            "fat": 51.7,
+            "carbohydrates": 167.8,
+            "fiber": 21.9
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "14",
+              "title": "Tempe orek",
+              "nutrition": {
+                "calories": 449.0,
+                "protein": 26.7,
+                "fat": 8.2,
+                "carbohydrates": 71.3,
+                "fiber": 8.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 449.0,
+            "protein": 26.7,
+            "fat": 8.2,
+            "carbohydrates": 71.3,
+            "fiber": 8.9
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1695.0,
+        "protein": 68.9,
+        "fat": 59.900000000000006,
+        "carbohydrates": 239.10000000000002,
+        "fiber": 30.799999999999997
+      }
+    },
+    {
+      "day": 2,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "4",
+              "title": "Udang Tumis Pedas Sederhana ",
+              "nutrition": {
+                "calories": 431.0,
+                "protein": 36.4,
+                "fat": 8.8,
+                "carbohydrates": 36.4,
+                "fiber": 6.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 431.0,
+            "protein": 36.4,
+            "fat": 8.8,
+            "carbohydrates": 36.4,
+            "fiber": 6.0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "79",
+              "title": "Nasi briyani kambing",
+              "nutrition": {
+                "calories": 1246.0,
+                "protein": 42.2,
+                "fat": 51.7,
+                "carbohydrates": 167.8,
+                "fiber": 21.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1246.0,
+            "protein": 42.2,
+            "fat": 51.7,
+            "carbohydrates": 167.8,
+            "fiber": 21.9
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1677.0,
+        "protein": 78.6,
+        "fat": 60.5,
+        "carbohydrates": 204.20000000000002,
+        "fiber": 27.9
+      }
+    },
+    {
+      "day": 3,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "62",
+              "title": "Gurame Bakar",
+              "nutrition": {
+                "calories": 809.8,
+                "protein": 26.4,
+                "fat": 41.9,
+                "carbohydrates": 85.7,
+                "fiber": 13.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 809.8,
+            "protein": 26.4,
+            "fat": 41.9,
+            "carbohydrates": 85.7,
+            "fiber": 13.2
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "6",
+              "title": "Tumis kacang panjang udang (No Msg)",
+              "nutrition": {
+                "calories": 325.5,
+                "protein": 20.2,
+                "fat": 6.8,
+                "carbohydrates": 47.3,
+                "fiber": 2.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 325.5,
+            "protein": 20.2,
+            "fat": 6.8,
+            "carbohydrates": 47.3,
+            "fiber": 2.2
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1135.3,
+        "protein": 46.599999999999994,
+        "fat": 48.699999999999996,
+        "carbohydrates": 133.0,
+        "fiber": 15.399999999999999
+      }
+    },
+    {
+      "day": 4,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "62",
+              "title": "Gurame Bakar",
+              "nutrition": {
+                "calories": 809.8,
+                "protein": 26.4,
+                "fat": 41.9,
+                "carbohydrates": 85.7,
+                "fiber": 13.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 809.8,
+            "protein": 26.4,
+            "fat": 41.9,
+            "carbohydrates": 85.7,
+            "fiber": 13.2
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "79",
+              "title": "Nasi briyani kambing",
+              "nutrition": {
+                "calories": 1246.0,
+                "protein": 42.2,
+                "fat": 51.7,
+                "carbohydrates": 167.8,
+                "fiber": 21.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1246.0,
+            "protein": 42.2,
+            "fat": 51.7,
+            "carbohydrates": 167.8,
+            "fiber": 21.9
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 2055.8,
+        "protein": 68.6,
+        "fat": 93.6,
+        "carbohydrates": 253.5,
+        "fiber": 35.099999999999994
+      }
+    },
+    {
+      "day": 5,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "63",
+              "title": "Pesmol Gurame",
+              "nutrition": {
+                "calories": 1032.0,
+                "protein": 35.0,
+                "fat": 35.1,
+                "carbohydrates": 151.8,
+                "fiber": 16.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1032.0,
+            "protein": 35.0,
+            "fat": 35.1,
+            "carbohydrates": 151.8,
+            "fiber": 16.9
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "9",
+              "title": "Sayur Tahu Labu Udang",
+              "nutrition": {
+                "calories": 653.2,
+                "protein": 35.8,
+                "fat": 19.8,
+                "carbohydrates": 88.2,
+                "fiber": 8.4
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 653.2,
+            "protein": 35.8,
+            "fat": 19.8,
+            "carbohydrates": 88.2,
+            "fiber": 8.4
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1685.2,
+        "protein": 70.8,
+        "fat": 54.900000000000006,
+        "carbohydrates": 240.0,
+        "fiber": 25.299999999999997
+      }
+    },
+    {
+      "day": 6,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "79",
+              "title": "Nasi briyani kambing",
+              "nutrition": {
+                "calories": 1246.0,
+                "protein": 42.2,
+                "fat": 51.7,
+                "carbohydrates": 167.8,
+                "fiber": 21.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1246.0,
+            "protein": 42.2,
+            "fat": 51.7,
+            "carbohydrates": 167.8,
+            "fiber": 21.9
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "8",
+              "title": "Udang Goreng tepung Sambal Matah",
+              "nutrition": {
+                "calories": 399.0,
+                "protein": 27.2,
+                "fat": 8.9,
+                "carbohydrates": 56.5,
+                "fiber": 9.4
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 399.0,
+            "protein": 27.2,
+            "fat": 8.9,
+            "carbohydrates": 56.5,
+            "fiber": 9.4
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1645.0,
+        "protein": 69.4,
+        "fat": 60.6,
+        "carbohydrates": 224.3,
+        "fiber": 31.299999999999997
+      }
+    },
+    {
+      "day": 7,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "4",
+              "title": "Udang Tumis Pedas Sederhana ",
+              "nutrition": {
+                "calories": 431.0,
+                "protein": 36.4,
+                "fat": 8.8,
+                "carbohydrates": 36.4,
+                "fiber": 6.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 431.0,
+            "protein": 36.4,
+            "fat": 8.8,
+            "carbohydrates": 36.4,
+            "fiber": 6.0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "79",
+              "title": "Nasi briyani kambing",
+              "nutrition": {
+                "calories": 1246.0,
+                "protein": 42.2,
+                "fat": 51.7,
+                "carbohydrates": 167.8,
+                "fiber": 21.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1246.0,
+            "protein": 42.2,
+            "fat": 51.7,
+            "carbohydrates": 167.8,
+            "fiber": 21.9
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1677.0,
+        "protein": 78.6,
+        "fat": 60.5,
+        "carbohydrates": 204.20000000000002,
+        "fiber": 27.9
+      }
+    }
+  ],
+  "average_daily_nutrition": {
+    "calories": 1246.0,
+    "protein": 42.2,
+    "fat": 51.7,
+    "carbohydrates": 167.8,
+    "fiber": 21.9
+  },
+  "target_nutrition": {
+    "calories": 2681.5,
+    "protein": 120.0,
+    "fat": 74.48611111111111,
+    "carbohydrates": 382.78125,
+    "fiber": 25
+  },
+  "fitness_score": 1.6832233424869363
+}

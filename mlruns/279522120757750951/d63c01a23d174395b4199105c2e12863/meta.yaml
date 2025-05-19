@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/279522120757750951/d63c01a23d174395b4199105c2e12863/artifacts
+end_time: 1745734864690
+entry_point_name: ''
+experiment_id: '279522120757750951'
+lifecycle_stage: active
+run_id: d63c01a23d174395b4199105c2e12863
+run_name: Nutrition Targets
+run_uuid: d63c01a23d174395b4199105c2e12863
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745734864565
+status: 3
+tags: []
+user_id: naray

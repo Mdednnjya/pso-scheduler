@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/548064069678678689/54cd36da568341a6873201efc8db4313/artifacts
+end_time: 1745739365814
+entry_point_name: ''
+experiment_id: '548064069678678689'
+lifecycle_stage: active
+run_id: 54cd36da568341a6873201efc8db4313
+run_name: CBF Training Run
+run_uuid: 54cd36da568341a6873201efc8db4313
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745739356160
+status: 3
+tags: []
+user_id: naray
