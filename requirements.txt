@@ -5,3 +5,5 @@ python-Levenshtein
 fuzzywuzzy
 mlflow
 kagglehub
+dvc
+dvc-gdrive
