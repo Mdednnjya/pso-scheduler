@@ -5,6 +5,7 @@ import os
 import json
 from sklearn.metrics.pairwise import cosine_similarity
 from src.models.user_preferences import UserPreferences
+from src.models.portion_adjuster import batch_adjust_recipes  # Tambahkan import ini
 
 
 class CBFRecommender:
@@ -38,7 +39,7 @@ class CBFRecommender:
         # Ensure IDs are strings for consistent matching
         self.meal_data['ID'] = self.meal_data['ID'].astype(str)
 
-    def recommend(self, recipe_ids, n=5, max_calories=None, user_preferences=None):
+    def recommend(self, recipe_ids, n=5, max_calories=None, user_preferences=None, user_params=None):
         """
         Recommend recipes based on similarity to input recipe IDs and user preferences
 
@@ -47,6 +48,14 @@ class CBFRecommender:
             n: Number of recommendations to return
             max_calories: Maximum calories per recommendation (optional filter)
             user_preferences: UserPreferences object for filtering recipes
+            user_params: Dict with user parameters for portion adjustment:
+                - 'age': User age in years
+                - 'gender': 'male' or 'female'
+                - 'weight': Weight in kg
+                - 'height': Height in cm
+                - 'activity_level': Activity level
+                - 'goal': One of ['lose', 'maintain', 'gain']
+                - 'meals_per_day': Number of meals per day
 
         Returns:
             DataFrame with recommended recipes
@@ -128,5 +137,19 @@ class CBFRecommender:
 
         # Sort by similarity
         result_df = result_df.sort_values(by='similarity', ascending=False)
+
+        # Adjust portions if user parameters are provided
+        if user_params is not None and not result_df.empty:
+            # Convert DataFrame to list of dicts for processing
+            recipes_list = result_df.to_dict(orient='records')
+
+            # Adjust portions based on user parameters
+            adjusted_recipes = batch_adjust_recipes(recipes_list, user_params)
+
+            # Convert back to DataFrame
+            result_df = pd.DataFrame(adjusted_recipes)
+
+            print(
+                f"Adjusted portions for user parameters: age={user_params.get('age')}, gender={user_params.get('gender')}")
 
         return result_df

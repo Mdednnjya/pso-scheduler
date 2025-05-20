@@ -23,6 +23,19 @@ def main():
     parser.add_argument('--max-calories', type=float, help='Maximum calories')
     parser.add_argument('--count', type=int, default=5, help='Number of recommendations to return')
 
+    # Add user parameters for portion adjustment
+    parser.add_argument('--age', type=int, help='User age in years')
+    parser.add_argument('--gender', type=str, choices=['male', 'female'], help='User gender')
+    parser.add_argument('--weight', type=float, help='User weight in kg')
+    parser.add_argument('--height', type=float, help='User height in cm')
+    parser.add_argument('--activity-level', type=str,
+                        choices=['sedentary', 'lightly_active', 'moderately_active', 'very_active', 'extra_active'],
+                        help='User activity level')
+    parser.add_argument('--goal', type=str, default='maintain',
+                        choices=['lose', 'maintain', 'gain'], help='Weight goal')
+    parser.add_argument('--meals-per-day', type=int, default=3, choices=[1, 2, 3, 4],
+                        help='Number of meals per day')
+
     args = parser.parse_args()
 
     # Check if models exist
@@ -48,6 +61,20 @@ def main():
         max_nutrition=max_nutrition
     )
 
+    # Create user params dict if user parameters are provided
+    user_params = None
+    if args.age and args.gender and args.weight and args.height and args.activity_level:
+        user_params = {
+            'age': args.age,
+            'gender': args.gender,
+            'weight': args.weight,
+            'height': args.height,
+            'activity_level': args.activity_level,
+            'goal': args.goal,
+            'meals_per_day': args.meals_per_day
+        }
+        print("User profile detected, portions will be adjusted accordingly.")
+
     # Initialize recommender
     recommender = CBFRecommender(model_dir)
 
@@ -63,6 +90,9 @@ def main():
         print(f"- Minimum protein: {args.min_protein}g")
     if args.max_calories:
         print(f"- Maximum calories: {args.max_calories}")
+    if user_params:
+        print(
+            f"- User profile: {args.age} years, {args.gender}, {args.weight}kg, {args.height}cm, {args.activity_level}")
 
     if base_ids:
         print(f"\nFinding recipes similar to: {base_ids}")
@@ -70,7 +100,8 @@ def main():
             base_ids,
             n=args.count,
             max_calories=args.max_calories,
-            user_preferences=user_preferences
+            user_preferences=user_preferences,
+            user_params=user_params  # Pass user params for portion adjustment
         )
 
         if not recommendations.empty:
@@ -78,10 +109,20 @@ def main():
             for _, row in recommendations.iterrows():
                 print(f"ID: {row['ID']}")
                 print(f"Title: {row['Title']}")
-                print(f"Nutrition: Calories={row['nutrition']['calories']:.1f}, " +
-                      f"Protein={row['nutrition']['protein']:.1f}g, " +
-                      f"Carbs={row['nutrition']['carbohydrates']:.1f}g, " +
-                      f"Fat={row['nutrition']['fat']:.1f}g")
+
+                # Print adjusted nutrition if available
+                if 'Adjusted_Total_Nutrition' in row:
+                    print(f"Nutrition (adjusted for {args.gender}, {args.age} years): " +
+                          f"Calories={row['Adjusted_Total_Nutrition']['calories']:.1f}, " +
+                          f"Protein={row['Adjusted_Total_Nutrition']['protein']:.1f}g, " +
+                          f"Carbs={row['Adjusted_Total_Nutrition']['carbohydrates']:.1f}g, " +
+                          f"Fat={row['Adjusted_Total_Nutrition']['fat']:.1f}g")
+                else:
+                    print(f"Nutrition: Calories={row['nutrition']['calories']:.1f}, " +
+                          f"Protein={row['nutrition']['protein']:.1f}g, " +
+                          f"Carbs={row['nutrition']['carbohydrates']:.1f}g, " +
+                          f"Fat={row['nutrition']['fat']:.1f}g")
+
                 print(f"Similarity: {row['similarity']:.4f}")
                 print("-" * 40)
 
@@ -95,9 +136,13 @@ def main():
                 rec = {
                     'ID': row['ID'],
                     'Title': row['Title'],
-                    'Nutrition': row['nutrition'],
+                    'Nutrition': row.get('Adjusted_Total_Nutrition', row['nutrition']),
                     'Similarity': float(row['similarity'])
                 }
+                # Add portion adjustment info if available
+                if 'Portion_Adjustment' in row:
+                    rec['Portion_Info'] = row['Portion_Adjustment']
+
                 recommendations_list.append(rec)
 
             with open(os.path.join(output_dir, "preference_recommendations.json"), 'w') as f:

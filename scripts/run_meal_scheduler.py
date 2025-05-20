@@ -74,7 +74,7 @@ def main():
     # Setup MLflow
     mlflow.set_tracking_uri("http://localhost:5000")
     mlflow.set_experiment("Meal Scheduler PSO")
-    
+
     try:
         with mlflow.start_run(run_name="PSO Meal Plan"):
             # Log parameters
@@ -93,6 +93,17 @@ def main():
 
             # Create meal scheduler
             scheduler = MealScheduler()
+
+            # Create user params dictionary
+            user_params = {
+                'age': args.age,
+                'gender': args.gender,
+                'weight': args.weight,
+                'height': args.height,
+                'activity_level': args.activity_level,
+                'goal': args.goal,
+                'meals_per_day': args.meals_per_day
+            }
 
             # Generate meal plan
             print("Generating optimized meal plan...")
@@ -114,10 +125,10 @@ def main():
             meal_plan['average_daily_nutrition'] = corrected_average
 
             # Save meal plan
-            os.makedirs(os.path.dirname(args.output), exist_ok=True)  # Pastikan direktori output ada
+            os.makedirs(os.path.dirname(args.output), exist_ok=True)
             scheduler.save_meal_plan(meal_plan, args.output)
 
-            # Log metrics dan artifacts
+            # Log metrics and artifacts
             mlflow.log_metrics({
                 "calories": corrected_average['calories'],
                 "protein": corrected_average['protein'],
@@ -125,7 +136,7 @@ def main():
                 "carbohydrates": corrected_average['carbohydrates'],
                 "fiber": corrected_average['fiber']
             })
-            
+
             mlflow.log_artifact(args.output)
             mlflow.set_tag("status", "success")
 
