@@ -36,22 +36,27 @@ def main():
     with mlflow.start_run(run_name="Data Enrichment"):
         # Log parameters
         mlflow.log_params({
-            "input_path": "data/scrap_tkpi.csv",
+            "input_path": "data/raw/raw_nutrition_tkpi_scraped.csv",
             "nutrition_source": "TKPI 2023",
             "target_serving": 2
         })
 
-        data_dir = "data"
+        # Definisikan direktori
+        raw_data_dir = "data/raw"
+        interim_data_dir = "data/interim"
         output_dir = "output"
 
-        # Buat direktori output jika belum ada
+        # Pastikan semua direktori ada
+        os.makedirs(raw_data_dir, exist_ok=True)
+        os.makedirs(interim_data_dir, exist_ok=True)
         os.makedirs(output_dir, exist_ok=True)
 
-        recipe_path = os.path.join(data_dir, "combined_dataset.csv")
+        # Path file
+        recipe_path = os.path.join(raw_data_dir, "raw_combined_dataset.csv")
+        input_nutrition_path = os.path.join(raw_data_dir, "raw_nutrition_tkpi_scraped.csv")
+        processed_nutrition_path = os.path.join(interim_data_dir, "processed_nutrition_tkpi.csv")
 
         # Preprocessing data mentah TKPI hasil scrapping
-        input_path = "data/scrap_tkpi.csv"
-        output_path = "data/tkpi_data.csv"
         columns_to_remove = [0, 1, 2, -1, -2]
         rename_map = {
             "nama bahan makanan": "ingredient",
@@ -72,12 +77,11 @@ def main():
             pip.main(['install', 'fuzzywuzzy'])
             pip.main(['install', 'python-Levenshtein'])  # Optional but improves performance
 
-        drop_rename_fill_and_replace(input_path, output_path, columns_to_remove, rename_map)
-
-        nutrition_path = os.path.join(data_dir, "tkpi_data.csv")
+        # Proses data nutrisi TKPI
+        drop_rename_fill_and_replace(input_nutrition_path, processed_nutrition_path, columns_to_remove, rename_map)
 
         # Load data
-        recipes_df, nutrition_df = load_data(recipe_path, nutrition_path)
+        recipes_df, nutrition_df = load_data(recipe_path, processed_nutrition_path)
         mlflow.log_metric("initial_recipes", len(recipes_df))
 
         # Pastikan semua nilai nutrisi dalam format yang konsisten
@@ -103,7 +107,7 @@ def main():
         enriched_df.sample(5).to_json("sample_recipes.json", orient="records")
         mlflow.log_artifact("sample_recipes.json")
 
-        # Export hasil
+        # Export hasil ke output (tetap di direktori output)
         json_output_path = os.path.join(output_dir, "enriched_recipes.json")
         csv_output_path = os.path.join(output_dir, "enriched_recipes.csv")
 
