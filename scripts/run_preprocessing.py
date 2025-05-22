@@ -99,15 +99,17 @@ def main():
         # Log parameters
         mlflow.log_params({
             "raw_nutrition_path": f"{raw_data_dir}/raw_nutrition_tkpi_scraped.csv",
+            "supplementary_nutrition_path": f"{raw_data_dir}/raw_nutrition_supplement.csv",
             "raw_recipes_path": f"{raw_data_dir}/raw_combined_dataset.csv",
-            "nutrition_source": "TKPI 2023",
-            "matching_algorithm": "Fuzzy with synonyms",
+            "nutrition_source": "TKPI 2023 + Supplements",
+            "matching_algorithm": "Enhanced Fuzzy with synonyms",
             "matching_threshold": 65
         })
 
         # Define paths
         recipe_path = os.path.join(raw_data_dir, "raw_combined_dataset.csv")
         input_nutrition_path = os.path.join(raw_data_dir, "raw_nutrition_tkpi_scraped.csv")
+        input_supplement_path = os.path.join(raw_data_dir, "raw_nutrition_supplement.csv")
         processed_nutrition_path = os.path.join(interim_data_dir, "processed_nutrition_tkpi.csv")
 
         # Process TKPI data
@@ -140,6 +142,16 @@ def main():
         # Load data
         logger.info(f"Loading recipe data from {recipe_path}")
         recipes_df, nutrition_df = load_data(recipe_path, processed_nutrition_path)
+
+        # Load supplementary nutrition data if available
+        supplement_df = None
+        if os.path.exists(input_supplement_path):
+            logger.info(f"Loading supplementary nutrition data from {input_supplement_path}")
+            supplement_df = pd.read_csv(input_supplement_path)
+            logger.info(f"Loaded {len(supplement_df)} supplementary ingredient entries")
+        else:
+            logger.warning(f"Supplementary nutrition file not found: {input_supplement_path}")
+
         mlflow.log_metric("initial_recipes", len(recipes_df))
 
         # Ensure numeric columns in nutrition data
@@ -147,10 +159,12 @@ def main():
         numeric_columns = ['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
         for col in numeric_columns:
             nutrition_df[col] = pd.to_numeric(nutrition_df[col], errors='coerce').fillna(0)
+            if supplement_df is not None and col in supplement_df.columns:
+                supplement_df[col] = pd.to_numeric(supplement_df[col], errors='coerce').fillna(0)
 
         # Process recipes
         logger.info("Processing recipes with enhanced nutrition enrichment")
-        enriched_df = process_dataset(recipes_df, nutrition_df)
+        enriched_df = process_dataset(recipes_df, nutrition_df, supplement_df)
 
         # Log metrics
         coverage = calculate_coverage(enriched_df)

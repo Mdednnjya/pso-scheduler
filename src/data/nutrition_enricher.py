@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from fuzzywuzzy import process, fuzz
 import logging
-from ingredient_parser import extract_ingredients, normalize_ingredient_name
-from ingredient_converter import process_ingredient_weights
+from src.data.ingredient_parser import extract_ingredients, normalize_ingredient_name
+from src.data.ingredient_converter import process_ingredient_weights
 
 # Setup logging
 logging.basicConfig(
@@ -14,31 +14,56 @@ logger = logging.getLogger('nutrition_enricher')
 
 # Sinonim untuk membantu matching
 INGREDIENT_SYNONYMS = {
-    'ayam': ['chicken', 'daging ayam'],
-    'bawang putih': ['garlic', 'bawang puteh'],
-    'bawang merah': ['shallot', 'bawang bawang'],
-    'bawang bombay': ['onion', 'bombay'],
-    'cabai': ['cabe', 'chili', 'chilli'],
-    'daging sapi': ['beef', 'daging', 'sapi'],
-    'daging kambing': ['lamb', 'kambing', 'domba'],
-    'udang': ['shrimp', 'prawn'],
-    'ikan': ['fish'],
-    'telur': ['egg', 'telor'],
-    'tahu': ['tofu'],
-    'tempe': ['tempeh'],
-    'jahe': ['ginger'],
-    'kunyit': ['turmeric'],
-    'kencur': ['galangal'],
-    'lengkuas': ['galangal'],
-    'minyak': ['oil'],
-    'gula': ['sugar'],
-    'garam': ['salt'],
-    'tepung': ['flour'],
-    'santan': ['coconut milk'],
-    'tomat': ['tomato'],
-    'wortel': ['carrot'],
-    'kentang': ['potato'],
-    'kacang': ['peanut', 'bean', 'nut']
+    'ayam': ['chicken', 'daging ayam', 'ayam potong', 'ayam kampung', 'ayam broiler', 'ayam negeri', 'ayam fillet'],
+    'bawang putih': ['garlic', 'bawang puteh', 'bwang putih', 'bawang putih kupas', 'baput', 'bawput'],
+    'bawang merah': ['shallot', 'bawang bawang', 'bamer', 'bawang merah kupas', 'bw merah', 'bawmer'],
+    'bawang bombay': ['onion', 'bombay', 'bawang bombai', 'bawang bombe', 'bombai', 'bawang onion'],
+    'cabai': ['cabe', 'chili', 'chilli', 'cabai', 'lombok', 'cabe', 'cabai merah', 'cabe merah', 'cabe rawit'],
+    'cabai rawit': ['cabe rawit', 'chili', 'rawit', 'cabe kecil', 'cabai kecil', 'lombok rawit', 'rica', 'rica-rica'],
+    'cabai merah': ['cabe merah', 'red chili', 'cabe besar', 'cabai besar', 'lombok merah', 'cabai keriting'],
+    'daging sapi': ['beef', 'daging', 'sapi', 'daging lembu', 'has dalam', 'has luar', 'tenderloin', 'sirloin', 'tetelan'],
+    'daging kambing': ['lamb', 'kambing', 'domba', 'daging domba', 'mutton', 'daging kambink'],
+    'udang': ['shrimp', 'prawn', 'udang windu', 'udang galah', 'udang vaname', 'udang pancet', 'udang besar', 'udang kecil'],
+    'ikan': ['fish', 'ikan laut', 'ikan air tawar', 'seafood', 'ikan kakap', 'ikan nila', 'ikan gurame', 'ikan tongkol'],
+    'telur': ['egg', 'telor', 'telur ayam', 'telur bebek', 'telur puyuh', 'telur itik', 'telor ayam', 'telur kampung', 'telur asin', 'telor asin'],
+    'tahu': ['tofu', 'bean curd', 'tahu putih', 'tahu kuning', 'tahu cina', 'tahu sutra', 'tahu susu', 'tahu jepang'],
+    'tempe': ['tempeh', 'fermented soybean', 'tempe kedelai', 'tempe gembus', 'tempe mendoan', 'tempe goreng'],
+    'jahe': ['ginger', 'jahey', 'halia', 'jahe merah', 'jahe emprit', 'jahe gajah'],
+    'kunyit': ['turmeric', 'kunir', 'kunyet', 'kunyit tuha', 'kunyit putih', 'kunyit bubuk'],
+    'kencur': ['galangal', 'lesser galangal', 'kaempferia galanga', 'kencor', 'cekur'],
+    'lengkuas': ['galangal', 'greater galangal', 'laos', 'langkuas', 'lengkueh'],
+    'minyak': ['oil', 'minyak goreng', 'minyak sayur', 'minyak zaitun', 'olive oil', 'minyak kelapa', 'minyak jagung', 'minyak canola'],
+    'gula': ['sugar', 'gula pasir', 'gula jawa', 'gula aren', 'gula merah', 'gula palem', 'gula batu', 'gula kelapa'],
+    'garam': ['salt', 'garam dapur', 'garam laut', 'himalayan salt', 'garam himalaya', 'garam meja'],
+    'tepung': ['flour', 'tepung terigu', 'tepung beras', 'tepung kanji', 'tepung maizena', 'tepung tapioka', 'tepung cakra', 'tepung segitiga', 'tepung gandum'],
+    'santan': ['coconut milk', 'santan kelapa', 'coconut cream', 'santan kental', 'santan encer', 'santan instan'],
+    'tomat': ['tomato', 'tomat merah', 'tomat hijau', 'tomat cherry', 'tomat sayur', 'tomato', 'buah tomat'],
+    'wortel': ['carrot', 'baby carrot', 'wortel import', 'wortel lokal', 'karrot'],
+    'kentang': ['potato', 'ubi kentang', 'kentang dieng', 'kentang granola', 'kentang putih', 'kentang merah'],
+    'daun salam': ['bay leaf', 'indonesian bay leaf', 'salam leaf', 'daun salam kering', 'salam'],
+    'daun jeruk': ['kaffir lime leaf', 'lime leaf', 'jeruk purut', 'daun jeruk purut', 'daun limau'],
+    'serai': ['lemongrass', 'sereh', 'sarai', 'sereh dapur', 'batang serai', 'batang sereh'],
+    'kacang': ['peanut', 'bean', 'nut', 'kacang tanah', 'kacang hijau', 'kacang merah', 'kacang polong', 'kacang almond', 'kacang mete'],
+    'terasi': ['shrimp paste', 'belacan', 'trassi', 'terasi udang', 'terasi ikan', 'petis'],
+    'kemiri': ['candlenut', 'candleberry', 'kukui nut', 'kemiri sangrai'],
+    'kemangi': ['lemon basil', 'thai basil', 'daun kemangi', 'basil', 'sweet basil'],
+    'pala': ['nutmeg', 'mace', 'buah pala', 'biji pala', 'pala bubuk'],
+    'cengkeh': ['clove', 'bunga cengkeh', 'cengkih', 'cengkeh kering'],
+    'ketumbar': ['coriander', 'coriander seed', 'cilantro seed', 'ketumbar bubuk', 'ketumbar utuh'],
+    'merica': ['pepper', 'black pepper', 'lada', 'lada hitam', 'lada putih', 'merica bubuk', 'lada bubuk'],
+    'pete': ['petai', 'stink bean', 'sataw', 'papan pete', 'pete kupas', 'petai segar'],
+    'baby corn': ['baby jagung', 'putren', 'jagung muda kecil', 'jagung putren', 'jagung baby', 'jagung mini'],
+    'sawi': ['mustard greens', 'sawi hijau', 'sawi putih', 'pakcoy', 'caisim', 'pokchoy', 'bok choy'],
+    'kaldu bubuk': ['penyedap', 'royko', 'masako', 'maggi', 'kaldu jamur', 'bumbu penyedap', 'kaldu sapi', 'kaldu ayam'],
+    'air': ['water', 'air putih', 'air bersih', 'air matang', 'air mineral', 'air hangat', 'air panas'],
+    'saus': ['sauce', 'saos', 'saus tomat', 'saus cabai', 'saus tiram', 'saus asam manis', 'saus sambal'],
+    'kecap': ['soy sauce', 'kecap manis', 'kecap asin', 'sweet soy sauce', 'black soy sauce', 'kecap ikan', 'kecap jamur'],
+    'bumbu': ['seasoning', 'bumbu dapur', 'bumbu rempah', 'bumbu halus', 'bumbu racik', 'bumbu instan', 'bumbu gule', 'bumbu rendang'],
+    'jeruk nipis': ['lime', 'limau', 'citrus', 'jeruk limau', 'jeruk nipis segar', 'lime juice'],
+    'kelapa': ['coconut', 'kelapa parut', 'kelapa muda', 'kelapa tua', 'coconut flesh', 'coconut grated'],
+    'daun bawang': ['scallion', 'green onion', 'spring onion', 'leek', 'daun bawang pre', 'bawang prey', 'prey', 'bawang daun'],
+    'terigu': ['wheat flour', 'tepung terigu', 'tepung gandum', 'tepung cakra', 'tepung segitiga', 'tepung serbaguna'],
+    'adonan': ['dough', 'batter', 'adonan kue', 'adonan basah', 'adonan kering', 'adonan isian', 'adonan tepung']
 }
 
 
@@ -50,27 +75,27 @@ def expand_synonyms(ingredient_name):
 
     # Add synonyms if available
     for key, synonyms in INGREDIENT_SYNONYMS.items():
-        if key in ingredient_name:
+        if key in ingredient_name.lower():
             expanded.extend(synonyms)
             break
 
     # Also check if ingredient is a synonym and add the main term
     for key, synonyms in INGREDIENT_SYNONYMS.items():
-        if any(synonym in ingredient_name for synonym in synonyms):
+        if any(synonym.lower() in ingredient_name.lower() for synonym in synonyms):
             expanded.append(key)
             break
 
     return expanded
 
 
-def find_best_match(ingredient, nutrition_df, threshold=65):
+def find_best_match(ingredient, nutrition_df, threshold=70):  # Naikkan threshold dari 65 menjadi 70
     """
     Find the best match for an ingredient in the nutrition database
 
     Args:
         ingredient: Dict with ingredient info
         nutrition_df: DataFrame with nutrition data
-        threshold: Minimum score to consider a match
+        threshold: Minimum score to consider a match (default: 70)
 
     Returns:
         dict: Match result with nutrition data and score
@@ -80,6 +105,42 @@ def find_best_match(ingredient, nutrition_df, threshold=65):
 
     # Normalize the ingredient name
     normalized_ingredient = ingredient['name']
+
+    # Skip instruksi bukan bahan
+    instruction_words = [
+        'iris', 'potong', 'cincang', 'bakar', 'rebus', 'kukus', 'goreng',
+        'tumis', 'belah', 'aduk', 'campur', 'ambil', 'buang', 'haluskan',
+        'bahan', 'cincang', 'tumbuk', 'geprek', 'sangrai', 'seduh', 'rendam'
+    ]
+
+    # Cek apakah nama bahan hanya berisi instruksi
+    if any(normalized_ingredient.lower() == word for word in instruction_words):
+        logger.warning(f"Ingredient appears to be instruction: {normalized_ingredient}")
+        return {
+            'ingredient': normalized_ingredient,
+            'original_ingredient': ingredient['raw'],
+            'match_score': 0,
+            'match_type': 'instruction',
+            'calories': 0,
+            'protein': 0,
+            'fat': 0,
+            'carbohydrates': 0,
+            'fiber': 0,
+            'calcium': 0
+        }
+
+    blacklist_matches = {
+        'merica': ['coklat', 'cokla', 'chocolate'],
+        'gula': ['gulai', 'gulei'],
+        'bakar': ['bakwan', 'bakmi', 'bakso'],
+        'jahe': ['geplak', 'kue'],
+        'bawang': ['tawang', 'kawang'],
+        'garam': ['daun', 'talas', 'salam'],
+        'ikan': ['bukan', 'makan', 'minum'],
+        'dadu': ['madu'],
+        'air': ['dair', 'hair', 'fair'],
+        'lada': ['soda', 'jada']
+    }
 
     # Get synonyms for expanded matching
     ingredient_variations = expand_synonyms(normalized_ingredient)
@@ -101,10 +162,28 @@ def find_best_match(ingredient, nutrition_df, threshold=65):
         except Exception as e:
             logger.error(f"Error in fuzzy matching: {str(e)}")
 
+    # Filter matches berdasarkan blacklist
+    for bad_word, avoid_words in blacklist_matches.items():
+        if bad_word in normalized_ingredient.lower():
+            # Hapus hasil match yang mengandung kata yang harus dihindari
+            filtered_matches = []
+            for match in best_matches:
+                match_name = match[0].lower()
+                if not any(avoid in match_name for avoid in avoid_words):
+                    filtered_matches.append(match)
+
+            # Gunakan filtered matches jika ada, jika tidak gunakan best_matches asli
+            if filtered_matches:
+                best_matches = filtered_matches
+                break
+
     # Find the best among all variations
     if best_matches:
         best_match = max(best_matches, key=lambda x: x[1])
         match_name, score = best_match
+
+        # log untuk debugging matching
+        logger.debug(f"Match for '{normalized_ingredient}': '{match_name}' with score {score}")
 
         if score >= threshold:
             # Get the nutrition data for the match
@@ -260,13 +339,82 @@ def calculate_recipe_nutrition(enriched_ingredients):
         'calcium': 0
     }
 
+    # Flag untuk mencatat jika ada masalah dengan perhitungan nutrisi
+    has_problematic_ingredients = False
+    problematic_ingredients = []
+
     for ing in enriched_ingredients:
+        # Skip instruksi yang bukan bahan
+        if ing.get('match_type') == 'instruction':
+            continue
+
+        # Cek apakah bahan ini memiliki nilai nutrisi yang tidak realistis
+        if ing.get('calories', 0) > 1000:  # Batas kalori per bahan yang masuk akal
+            has_problematic_ingredients = True
+            problematic_ingredients.append({
+                'name': ing.get('original_ingredient', ''),
+                'calories': ing.get('calories', 0),
+                'weight': ing.get('parsed_ingredient', {}).get('weight_g', 0)
+            })
+
+        # Sum nutrition values
         for nutrient in total_nutrition:
             try:
                 value = float(ing.get(nutrient, 0) or 0)
                 total_nutrition[nutrient] += value
             except (ValueError, TypeError):
                 pass
+
+    # Koreksi untuk bahan bermasalah (nilai kalori terlalu tinggi)
+    if has_problematic_ingredients:
+        logger.warning(f"Found problematic ingredients with unrealistic nutrition values: {problematic_ingredients}")
+
+        # Khusus untuk daun salam dan daun jeruk yang sering salah unit
+        for ing in enriched_ingredients:
+            ing_name = ing.get('parsed_ingredient', {}).get('name', '').lower()
+            ing_unit = ing.get('parsed_ingredient', {}).get('unit', '').lower()
+
+            # Deteksi kesalahan unit lembar menjadi liter
+            if ('daun salam' in ing_name or 'daun jeruk' in ing_name) and ing_unit == 'l':
+                original_weight = ing.get('parsed_ingredient', {}).get('weight_g', 0)
+
+                if original_weight > 10:  # Terlalu berat untuk daun
+                    # Koreksi: asumsi yang dimaksud adalah lembar, bukan liter
+                    corrected_weight = ing.get('parsed_ingredient', {}).get('quantity', 1) * 1.0  # 1g per lembar
+                    scaling_factor = corrected_weight / original_weight if original_weight > 0 else 0
+
+                    logger.info(
+                        f"Correcting weight for {ing.get('original_ingredient')}: {original_weight}g -> {corrected_weight}g")
+
+                    # Koreksi nilai nutrisi
+                    for nutrient in total_nutrition:
+                        if nutrient in ing:
+                            # Kurangi dari total
+                            total_nutrition[nutrient] -= ing[nutrient]
+                            # Skala ulang nilai nutrisi
+                            ing[nutrient] *= scaling_factor
+                            # Tambahkan yang sudah dikoreksi ke total
+                            total_nutrition[nutrient] += ing[nutrient]
+
+                    # Update berat dalam data ingredient
+                    ing['parsed_ingredient']['weight_g'] = corrected_weight
+                    ing['parsed_ingredient']['unit'] = 'lembar'  # Perbaiki unit
+
+    # Validasi total nutrisi
+    # Jika total kalori masih tidak masuk akal setelah koreksi
+    if total_nutrition['calories'] > 10000:  # Batas atas yang sangat konservatif
+        logger.warning(
+            f"Total calories still unrealistic after corrections: {total_nutrition['calories']}. Applying final correction.")
+
+        # Hitung faktor skala untuk normalisasi
+        scaling_factor = 3000 / total_nutrition['calories'] if total_nutrition[
+                                                                   'calories'] > 0 else 0  # Target ~3000 kalori
+
+        # Terapkan ke semua nilai nutrisi
+        for nutrient in total_nutrition:
+            total_nutrition[nutrient] *= scaling_factor
+
+        logger.info(f"Applied global scaling factor of {scaling_factor} to normalize nutrition values")
 
     # Round values for readability
     for nutrient in total_nutrition:
@@ -365,17 +513,27 @@ def process_recipe(recipe_row, nutrition_df):
         return None
 
 
-def process_dataset(recipe_df, nutrition_df):
+def process_dataset(recipe_df, nutrition_df, supplement_df=None):
     """
     Process the entire recipe dataset
 
     Args:
         recipe_df: DataFrame with recipe data
         nutrition_df: DataFrame with nutrition data
+        supplement_df: Optional DataFrame with supplementary nutrition data
 
     Returns:
         DataFrame: Processed recipes
     """
+    # Gabungkan database nutrisi jika ada supplement
+    if supplement_df is not None:
+        # Pastikan tidak ada duplikat
+        combined_nutrition = pd.concat([nutrition_df, supplement_df]).drop_duplicates(subset=['ingredient'])
+        logger.info(f"Combined nutrition database has {len(combined_nutrition)} ingredients (added {len(supplement_df)} supplements)")
+        nutrition_df = combined_nutrition
+    else:
+        logger.info(f"Using original nutrition database with {len(nutrition_df)} ingredients")
+
     # Ensure numeric values in nutrition data
     numeric_columns = ['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
     for col in numeric_columns:

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/988051196424424079/c010039e47124d52b6e60008eb68c646/artifacts
+end_time: 1747784311548
+entry_point_name: ''
+experiment_id: '988051196424424079'
+lifecycle_stage: active
+run_id: c010039e47124d52b6e60008eb68c646
+run_name: Advanced Enrichment
+run_uuid: c010039e47124d52b6e60008eb68c646
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747784230607
+status: 3
+tags: []
+user_id: naray

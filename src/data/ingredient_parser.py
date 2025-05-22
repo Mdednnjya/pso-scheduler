@@ -32,6 +32,37 @@ def clean_text(text):
 
     return text
 
+INSTRUCTION_WORDS = [
+    'iris', 'potong', 'potong2', 'cincang', 'bakar', 'rebus', 'kukus', 'goreng',
+    'tumis', 'belah', 'aduk', 'campur', 'ambil', 'buang', 'haluskan',
+    'tumbuk', 'geprek', 'sangrai', 'seduh', 'rendam', 'buat', 'ikat',
+    'rajang', 'diiris', 'dirajang', 'digiling', 'dihaluskan', 'dipotong',
+    'cuci', 'bersih', 'kupas', 'dikupas', 'sajikan', 'tambahkan', 'sesuaikan',
+    'masukkan', 'masak', 'tiriskan', 'angkat', 'sisihkan', 'dinginkan', 'simpan',
+    'buka', 'tutup', 'peras', 'geprek', 'siapkan', 'saring', 'tambah', 'tmbh',
+    'hidangkan', 'campurkan', 'adukkan', 'sisakan', 'gulingkan', 'guling',
+    'blender', 'mixer', 'ulek', 'diulek', 'diblender', 'dimixer', 'dimasak',
+    'panaskan', 'dinginkan', 'bekukan', 'bekukan', 'diamkan', 'siram', 'disiram',
+    'daunnya', 'saja', 'kira', 'jika', 'suka', 'bijinya', 'daging', 'isinya',
+    'boleh', 'ditambah', 'sesuai', 'selera', 'kecil', 'sedang', 'besar',
+    'kasar', 'halus', 'tipis', 'tebal', 'utuh', 'rendam', 'direndam', 'hancur',
+    'memarkan', 'diparut', 'parut', 'sedikit', 'secukupnya', 'banyak',
+    'pakai', 'gunakan', 'digunakan', 'dipakai', 'dibuat', 'buat',
+    'yang', 'dan', 'atau', 'untuk', 'dengan', 'dari', 'sampai', 'hingga',
+    'buang', 'dibuang', 'seruas', 'seruas', 'ruas', 'batang', 'buah',
+    'sisakan', 'disajikan', 'dihidangkan', 'saji', 'hidang', 'dimakan',
+    'dioles', 'oles', 'dilapisi', 'lapisi', 'direndam', 'dicampur',
+    'disimpan', 'disusun', 'susun', 'diatur', 'atur', 'ditekan', 'tekan',
+    'dibagi', 'bagi', 'dipotong', 'dibelah', 'belah', 'digeprek', 'dimarkan',
+    'dimemarkan', 'dikocok', 'kocok', 'dishake', 'shake', 'diblender', 'blender',
+    'bahan pelengkap', 'bahan lain', 'bahan', 'pelengkap','bumbu', 'atau',
+]
+
+COOKING_TOOLS = [
+    'wajan', 'panci', 'kompor', 'teflon', 'sendok', 'blender', 'mixer',
+    'rolling pin', 'spatula', 'pisau', 'talenan', 'meja', 'garpu'
+]
+
 
 def normalize_ingredient_name(name):
     """
@@ -46,16 +77,58 @@ def normalize_ingredient_name(name):
     # Kata-kata yang biasanya tidak relevan untuk identifikasi bahan
     words_to_remove = [
         'segar', 'rebus', 'mentah', 'goreng', 'kering', 'matang',
-        'iris', 'potong', 'cincang', 'halus', 'parut', 'geprek',
-        'secukupnya', 'sesuai selera', 'sedang', 'besar', 'kecil'
+        'iris', 'potong', 'potong2', 'cincang', 'halus', 'parut', 'geprek',
+        'secukupnya', 'sesuai selera', 'sedang', 'besar', 'kecil',
+        'diiris', 'dikupas', 'dipotong', 'dihaluskan', 'dirajang', 'digiling',
+        'cuci', 'bersih', 'kupas', 'utuh', 'sesuai', 'selera', 'yang', 'sudah',
+        'dan', 'atau', 'dengan', 'untuk', 'di', 'dari', 'ke', 'pada', 'jadi',
+        'saya', 'pakai', 'pake', 'aku', 'ku', 'kamu', 'tambah', 'tmbh',
+        'suka', 'yg', 'dg', 'lg', 'jg', 'nya', 'nya:', 'kotak2', 'kecil', 'cukup',
+        'sampai',
     ]
 
+    # Cek apakah ini instruksi, bukan bahan
+    for word in INSTRUCTION_WORDS:
+        if normalized == word or normalized.startswith(word + ' '):
+            return "instruction:" + normalized
+
+    # Hapus kata-kata tidak relevan
     for word in words_to_remove:
         normalized = re.sub(r'\b' + word + r'\b', '', normalized)
 
     # Hapus karakter non-alfabet dan whitespace berlebih
     normalized = re.sub(r'[^\w\s]', '', normalized)
     normalized = re.sub(r'\s+', ' ', normalized).strip()
+
+    # Standardisasi beberapa nama khusus
+    name_mappings = {
+        'cabe': 'cabai',
+        'bj cabai': 'cabai',
+        'bj cabe': 'cabai',
+        'cabai rawit': 'cabai rawit',
+        'cabe rawit': 'cabai rawit',
+        'cabai merah': 'cabai merah',
+        'cabe merah': 'cabai merah',
+        'bw merah': 'bawang merah',
+        'bw putih': 'bawang putih',
+        'bamer': 'bawang merah',
+        'baput': 'bawang putih',
+        'saos': 'saus',
+        'sauce': 'saus',
+        'baby jagung': 'baby corn',
+        'baby corn': 'baby corn',
+        'royko': 'kaldu bubuk',
+        'masako': 'kaldu bubuk',
+        'maggi': 'kaldu bubuk',
+        'penyedap': 'kaldu bubuk',
+        'micin': 'penyedap rasa'
+    }
+
+    # Terapkan pemetaan nama
+    for old, new in name_mappings.items():
+        if normalized == old or normalized.startswith(old + ' '):
+            normalized = normalized.replace(old, new, 1)
+            break
 
     return normalized
 
@@ -73,14 +146,20 @@ def extract_quantity_and_unit(ingredient_text):
     # Clean text
     cleaned_text = clean_text(ingredient_text)
 
+    # Hapus teks dalam kurung
+    cleaned_text_no_parentheses = re.sub(r'\([^)]*\)', '', cleaned_text).strip()
+
+    # Gunakan teks tanpa kurung untuk ekstraksi quantity dan unit
+    working_text = cleaned_text_no_parentheses if cleaned_text_no_parentheses else cleaned_text
+
     # Pattern untuk berbagai format jumlah
     # 1/2 kg, 0.5 kg, 2, 3-4, dll.
     quantity_pattern = r'^((\d+[\s-]*\d*[.,]?\d*)|(\d+\s*/\s*\d+))'
-    match_qty = re.search(quantity_pattern, cleaned_text)
+    match_qty = re.search(quantity_pattern, working_text)
 
     quantity = 0.0
     unit = ""
-    remaining_text = cleaned_text
+    remaining_text = working_text
 
     if match_qty:
         qty_str = match_qty.group(1)
@@ -108,13 +187,14 @@ def extract_quantity_and_unit(ingredient_text):
                     quantity = 1.0
 
         # Remove quantity from text for further processing
-        remaining_text = cleaned_text[match_qty.end():].strip()
+        remaining_text = working_text[match_qty.end():].strip()
 
     # Extract unit if present
     common_units = [
         'kg', 'gram', 'g', 'gr', 'ons', 'liter', 'l', 'ml', 'cc', 'sdm', 'sdt',
         'butir', 'buah', 'bh', 'siung', 'bonggol', 'batang', 'lembar', 'lbr',
-        'btg', 'bks', 'sachet', 'potong', 'ptg', 'iris', 'mangkok', 'gelas', 'cup'
+        'btg', 'bks', 'sachet', 'potong', 'ptg', 'iris', 'mangkok', 'gelas', 'cup',
+        'bj', 'biji', 'ikat', 'papan', 'ruas', 'keping', 'keping', 'sendok', 'sloki'
     ]
 
     unit_pattern = r'^([a-zA-Z]+)'
@@ -123,13 +203,22 @@ def extract_quantity_and_unit(ingredient_text):
     if unit_match:
         potential_unit = unit_match.group(1).lower()
 
-        # Check if the potential unit is in our list of common units
-        for common_unit in common_units:
-            if potential_unit == common_unit or potential_unit.startswith(common_unit):
-                unit = common_unit
-                # Remove unit from text
-                remaining_text = remaining_text[unit_match.end():].strip()
-                break
+        if 'lembar' in potential_unit or 'lbr' in potential_unit:
+            unit = 'lembar'
+            remaining_text = remaining_text[unit_match.end():].strip()
+        elif potential_unit == 'bj' or potential_unit == 'biji':
+            unit = 'bj'
+            remaining_text = remaining_text[unit_match.end():].strip()
+        elif potential_unit == 'papan':
+            unit = 'papan'
+            remaining_text = remaining_text[unit_match.end():].strip()
+        else:
+            for common_unit in common_units:
+                if potential_unit == common_unit or potential_unit.startswith(common_unit):
+                    unit = common_unit
+                    # Remove unit from text
+                    remaining_text = remaining_text[unit_match.end():].strip()
+                    break
 
     # Handle special case for "secukupnya"
     if 'secukupnya' in cleaned_text.lower() or 'sesuai selera' in cleaned_text.lower():
@@ -139,6 +228,14 @@ def extract_quantity_and_unit(ingredient_text):
 
     # Clean the remaining text as the ingredient name
     cleaned_name = normalize_ingredient_name(remaining_text)
+
+    if '(' in cleaned_text and ')' in cleaned_text and not any(x in cleaned_name for x in INSTRUCTION_WORDS):
+        parentheses_content = re.findall(r'\(([^)]*)\)', cleaned_text)
+        if parentheses_content:
+            clean_content = ' '.join([content for content in parentheses_content
+                                      if not any(iword in content.lower() for iword in INSTRUCTION_WORDS)])
+            if clean_content and clean_content not in cleaned_name:
+                cleaned_name = f"{cleaned_name} {clean_content}".strip()
 
     return quantity, unit, cleaned_name
 
