@@ -32,6 +32,7 @@ def clean_text(text):
 
     return text
 
+
 INSTRUCTION_WORDS = [
     'iris', 'potong', 'potong2', 'cincang', 'bakar', 'rebus', 'kukus', 'goreng',
     'tumis', 'belah', 'aduk', 'campur', 'ambil', 'buang', 'haluskan',
@@ -55,13 +56,66 @@ INSTRUCTION_WORDS = [
     'disimpan', 'disusun', 'susun', 'diatur', 'atur', 'ditekan', 'tekan',
     'dibagi', 'bagi', 'dipotong', 'dibelah', 'belah', 'digeprek', 'dimarkan',
     'dimemarkan', 'dikocok', 'kocok', 'dishake', 'shake', 'diblender', 'blender',
-    'bahan pelengkap', 'bahan lain', 'bahan', 'pelengkap','bumbu', 'atau',
+    'bahan pelengkap', 'bahan lain', 'bahan', 'pelengkap', 'bumbu', 'atau',
+    # Tambahan dari analisis
+    'skip', 'terserah', 'boleh', 'bisa', 'pakai', 'mau', 'aja', 'juga',
+    'diamkan', 'biarkan', 'suhu', 'ruang', 'min', 'max', 'jam', 'menit',
+    'kocok', 'lepas', 'rata', 'olesan', 'taburan', 'pelapis', 'isian',
+    'pelengkap', 'teknik', 'membentuk', 'menggoreng', 'remas'
 ]
 
 COOKING_TOOLS = [
     'wajan', 'panci', 'kompor', 'teflon', 'sendok', 'blender', 'mixer',
-    'rolling pin', 'spatula', 'pisau', 'talenan', 'meja', 'garpu'
+    'rolling pin', 'spatula', 'pisau', 'talenan', 'meja', 'garpu',
+    # Tambahan dari analisis
+    'stik', 'bambu', 'stik bambu', 'daun pisang', 'kulit risoles',
+    'kulit pangsit', 'pack', 'bungkus', 'piring', 'mangkuk', 'gelas'
 ]
+
+# Blacklist untuk ingredients yang bukan makanan
+NON_FOOD_BLACKLIST = [
+    'marmer', 'tekel', 'meja', 'ruang', 'suhu', 'teknik', 'cara',
+    'metode', 'langkah', 'tahap', 'proses', 'bagian', 'porsi'
+]
+
+# Kata-kata yang menandakan ini bukan ingredient utama
+SKIP_INDICATORS = [
+    'skip', 'nggak punya', 'tidak ada', 'kosong', 'habis', 'terserah',
+    'boleh', 'bisa', 'optional', 'pilihan', 'sesuai selera'
+]
+
+
+def is_non_food_item(name):
+    """
+    Check if the parsed name is a non-food item (cooking tool, instruction, etc.)
+    """
+    name_lower = name.lower()
+
+    # Check for cooking tools
+    for tool in COOKING_TOOLS:
+        if tool in name_lower:
+            return True
+
+    # Check for non-food blacklist
+    for item in NON_FOOD_BLACKLIST:
+        if item in name_lower:
+            return True
+
+    # Check for skip indicators
+    for indicator in SKIP_INDICATORS:
+        if indicator in name_lower:
+            return True
+
+    # Check if it's just numbers
+    if re.match(r'^\d+(\s+\d+)*$', name_lower.strip()):
+        return True
+
+    # Check if it's measurement without ingredient
+    measurement_only = re.match(r'^(\d+\s*)?(cm|mm|jari|korek|api|setengah|bagian)\s*$', name_lower.strip())
+    if measurement_only:
+        return True
+
+    return False
 
 
 def normalize_ingredient_name(name):
@@ -74,6 +128,10 @@ def normalize_ingredient_name(name):
     # Lowercase
     normalized = name.lower()
 
+    # Check if this is a non-food item first
+    if is_non_food_item(normalized):
+        return "instruction:" + normalized
+
     # Kata-kata yang biasanya tidak relevan untuk identifikasi bahan
     words_to_remove = [
         'segar', 'rebus', 'mentah', 'goreng', 'kering', 'matang',
@@ -84,7 +142,8 @@ def normalize_ingredient_name(name):
         'dan', 'atau', 'dengan', 'untuk', 'di', 'dari', 'ke', 'pada', 'jadi',
         'saya', 'pakai', 'pake', 'aku', 'ku', 'kamu', 'tambah', 'tmbh',
         'suka', 'yg', 'dg', 'lg', 'jg', 'nya', 'nya:', 'kotak2', 'kecil', 'cukup',
-        'sampai',
+        'sampai', 'skip', 'nggak', 'punya', 'terserah', 'aja', 'sj', 'mau',
+        'boleh', 'bisa', 'juga'
     ]
 
     # Cek apakah ini instruksi, bukan bahan
@@ -99,6 +158,10 @@ def normalize_ingredient_name(name):
     # Hapus karakter non-alfabet dan whitespace berlebih
     normalized = re.sub(r'[^\w\s]', '', normalized)
     normalized = re.sub(r'\s+', ' ', normalized).strip()
+
+    # Filter hasil yang terlalu pendek atau tidak bermakna
+    if len(normalized) < 2 or normalized.isdigit():
+        return "instruction:" + name.lower()
 
     # Standardisasi beberapa nama khusus
     name_mappings = {
@@ -121,7 +184,19 @@ def normalize_ingredient_name(name):
         'masako': 'kaldu bubuk',
         'maggi': 'kaldu bubuk',
         'penyedap': 'kaldu bubuk',
-        'micin': 'penyedap rasa'
+        'micin': 'penyedap rasa',
+        # Tambahan dari analisis
+        'maizena': 'tepung maizena',
+        'meizena': 'tepung maizena',
+        'beras basmathi': 'beras basmati',
+        'lada hitam': 'merica hitam',
+        'jintan': 'biji jintan',
+        'telor': 'telur',
+        'timun': 'ketimun',
+        'klapa': 'kelapa',
+        'me yes': 'mayonaise',
+        'mayonaise': 'mayonaise',
+        'sckp': 'secukupnya'
     }
 
     # Terapkan pemetaan nama
@@ -194,7 +269,9 @@ def extract_quantity_and_unit(ingredient_text):
         'kg', 'gram', 'g', 'gr', 'ons', 'liter', 'l', 'ml', 'cc', 'sdm', 'sdt',
         'butir', 'buah', 'bh', 'siung', 'bonggol', 'batang', 'lembar', 'lbr',
         'btg', 'bks', 'sachet', 'potong', 'ptg', 'iris', 'mangkok', 'gelas', 'cup',
-        'bj', 'biji', 'ikat', 'papan', 'ruas', 'keping', 'keping', 'sendok', 'sloki'
+        'bj', 'biji', 'ikat', 'papan', 'ruas', 'keping', 'keping', 'sendok', 'sloki',
+        # Tambahan unit non-standar yang sering muncul
+        'ekor', 'pack', 'bungkus', 'kotak', 'kuntum', 'piring'
     ]
 
     unit_pattern = r'^([a-zA-Z]+)'
@@ -225,6 +302,14 @@ def extract_quantity_and_unit(ingredient_text):
         if quantity == 0.0:
             quantity = 1.0
         unit = 'secukupnya'
+
+    # Handle non-standard units like "cm", "jari"
+    non_standard_units = ['cm', 'jari', 'ruas', 'korek', 'api']
+    for ns_unit in non_standard_units:
+        if ns_unit in remaining_text.lower():
+            unit = ns_unit
+            remaining_text = remaining_text.replace(ns_unit, '').strip()
+            break
 
     # Clean the remaining text as the ingredient name
     cleaned_name = normalize_ingredient_name(remaining_text)
@@ -275,7 +360,10 @@ def extract_ingredients(ingredient_text):
     for line in lines:
         if line and not line.isspace():
             parsed_ingredient = parse_ingredient_line(line.strip())
-            if parsed_ingredient['name']:  # Only add if we have a name
+            # Only add if we have a meaningful name (not just instruction or empty)
+            if (parsed_ingredient['name'] and
+                    not parsed_ingredient['name'].startswith('instruction:') and
+                    len(parsed_ingredient['name'].strip()) > 1):
                 parsed.append(parsed_ingredient)
 
     # Log parsing results

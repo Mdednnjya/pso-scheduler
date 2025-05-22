@@ -1,0 +1,6065 @@
+{
+  "summary": {
+    "total_recipes": 80,
+    "recipes_with_unmatched": 67,
+    "total_unmatched_ingredients": 209,
+    "unique_unmatched_ingredients": [
+      "kotak",
+      "instruction:kecil kencur",
+      "bandeng isi 3 ekor",
+      "lada hitam",
+      "mayonaise saos",
+      "instruction:secukupnya blubend",
+      "biarkan suhu ruang",
+      "korek api kayu manis",
+      "rolling pin",
+      "pelapis",
+      "bumbui lada garam",
+      "adas sy skip karena nggak punya",
+      "instruction:secukupnya buncis",
+      "instruction:cincang kasar",
+      "instruction:bahan saos",
+      "paprika hijau terserah aja mau pake paprika warna apa sj",
+      "instruction:secukupnya rayco",
+      "instruction:pelengkap",
+      "instruction:kira satu setengah senti)",
+      "btr kapulaga hijau",
+      "instruction:bahan lain",
+      "instruction:bahan lainnya",
+      "ekor gurame 500 gr",
+      "sejumput garam",
+      "instruction:bahan dihaluskan",
+      "timun",
+      "stik bambu",
+      "instruction:bahan utama",
+      "cm kencur",
+      "me yes",
+      "labu",
+      "instruction:rajang",
+      "instruction:secukupnya kulit pangsit rebus",
+      "instruction:haluskan dengan menggunakan garpu",
+      "instruction:cincang halus",
+      "instruction:dipotong menjadi 4",
+      "instruction:secukupnya lada bubuk",
+      "telor",
+      "kol",
+      "meja marmer lebih baik tekel semacamnya",
+      "teh oregano skip",
+      "instruction:kocok rata untuk olesan",
+      "mangkuk toge",
+      "kuntum brokoli",
+      "chili flakes",
+      "2",
+      "labu siam korek api 400 gr",
+      "instruction:tipis",
+      "instruction:kecil",
+      "instruction:secukupnya asam jawa",
+      "remas",
+      "instruction:secukupnya tuna kalengan",
+      "piring nasi",
+      "instruction:secukupnya taoge",
+      "instruction:secukupnya royco",
+      "isian",
+      "maizena",
+      "sambal bawang",
+      "pack udon beku",
+      "taburan",
+      "kol kotak",
+      "instruction:diamkan min.1 jam",
+      "instruction:haluskan",
+      "instruction:sedikit garam",
+      "instruction:halus",
+      "sckp",
+      "8",
+      "klapa sangrai dulu",
+      "nanas",
+      "instruction:secukupnya oregano",
+      "bungkus mie kuning 2 telor",
+      "instruction:bahan taburan",
+      "instruction:rebus kukus kemudian haluskan",
+      "instruction:bahan kulit",
+      "keju masing2",
+      "instruction:belah dua",
+      "instruction:secukupnya bawang goreng",
+      "jari kencur",
+      "instruction:kupas",
+      "keju cheddar aku mix mozarella",
+      "instruction:sesuai selera",
+      "instruction:bahan ragout",
+      "instruction:tumbuk kasar",
+      "4 bagian",
+      "susu full cream aq susu ultra full cream",
+      "instruction:ambil daunnya",
+      "instruction:diiris",
+      "jintan",
+      "instruction:kukus dan haluskan",
+      "instruction:rebus",
+      "setengah",
+      "instruction:kira dua senti)",
+      "dada fillet",
+      "instruction:secukupnya garam",
+      "instruction:cuci bersih)",
+      "instruction:sangrai",
+      "instruction:bumbu (garam",
+      "jamur lain juga boleh",
+      "beras basmathi",
+      "setipis mungkin",
+      "instruction:rebus hingga empuk",
+      "instruction:untuk pelengkap",
+      "wajan bulan",
+      "instruction:secukupnya seledri",
+      "instruction:secukupnya jagung manis",
+      "penuh blueband",
+      "instruction:kocok lepas dan beri sedikit garam",
+      "instruction:cincang",
+      "instruction:secukupnya keju cheddar",
+      "semangkuk toge",
+      "instruction:bahan olesan",
+      "instruction:sesuai selera cabe",
+      "wajan bulat",
+      "instruction:bahan kulit lasagna",
+      "instruction:tebal",
+      "instruction:kocok lepas",
+      "instruction:kecil kayu manis",
+      "basil skip",
+      "instruction:jika suka pedas boleh ditambah sesuai selera",
+      "instruction:bahan pelengkap",
+      "instruction:rajang halus",
+      "kulit risoles",
+      "buncis",
+      "meizena",
+      "keras kemiri 3 biji",
+      "instruction:bahan panir",
+      "12 16",
+      "dadu korek",
+      "cacah",
+      "paprika merah rajang",
+      "instruction:bahan pelapis",
+      "2 sdt lada hitam",
+      "2 sdt garam",
+      "daun pisang membungkus",
+      "instruction:ambil daunnya saja",
+      "instruction:bakar",
+      "utk teknik membentuk menggoreng",
+      "instruction:secukupnya keju mozarella",
+      "instruction:secukupnya cabe rawit",
+      "bawah putih",
+      "instruction:tambahkan lada",
+      "pare"
+    ],
+    "unique_unmatched_count": 142
+  },
+  "unmatched_by_recipe": [
+    {
+      "recipe_id": 1,
+      "recipe_title": "Udang saos tiram",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 1,
+          "recipe_title": "Udang saos tiram"
+        }
+      ]
+    },
+    {
+      "recipe_id": 2,
+      "recipe_title": "Tumis Sawi Hijau with Shrimp Simple",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "cuci bersih)",
+          "parsed_name": "instruction:cuci bersih)",
+          "parsed_data": {
+            "raw": "cuci bersih)",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cuci bersih)",
+            "weight_g": 30.0
+          },
+          "recipe_id": 2,
+          "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+        },
+        {
+          "original_ingredient": "cincang",
+          "parsed_name": "instruction:cincang",
+          "parsed_data": {
+            "raw": "cincang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 2,
+          "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+        },
+        {
+          "original_ingredient": "cincang",
+          "parsed_name": "instruction:cincang",
+          "parsed_data": {
+            "raw": "cincang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 2,
+          "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+        },
+        {
+          "original_ingredient": "potong2 / sesuai selera",
+          "parsed_name": "2",
+          "parsed_data": {
+            "raw": "potong2 / sesuai selera",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "2",
+            "weight_g": 10.0
+          },
+          "recipe_id": 2,
+          "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+        }
+      ]
+    },
+    {
+      "recipe_id": 6,
+      "recipe_title": "Tumis kacang panjang udang (No Msg)",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong2)",
+          "parsed_name": "2",
+          "parsed_data": {
+            "raw": "potong2)",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "2",
+            "weight_g": 100.0
+          },
+          "recipe_id": 6,
+          "recipe_title": "Tumis kacang panjang udang (No Msg)"
+        }
+      ]
+    },
+    {
+      "recipe_id": 7,
+      "recipe_title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1/2 bungkus mie kuning 2 telor",
+          "parsed_name": "bungkus mie kuning 2 telor",
+          "parsed_data": {
+            "raw": "1/2 bungkus mie kuning 2 telor",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "bungkus mie kuning 2 telor",
+            "weight_g": 30.0
+          },
+          "recipe_id": 7,
+          "recipe_title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+        },
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 7,
+          "recipe_title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+        }
+      ]
+    },
+    {
+      "recipe_id": 8,
+      "recipe_title": "Udang Goreng tepung Sambal Matah",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Secukupnya Cabe Rawit",
+          "parsed_name": "instruction:secukupnya cabe rawit",
+          "parsed_data": {
+            "raw": "Secukupnya Cabe Rawit",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya cabe rawit",
+            "weight_g": 10.0
+          },
+          "recipe_id": 8,
+          "recipe_title": "Udang Goreng tepung Sambal Matah"
+        }
+      ]
+    },
+    {
+      "recipe_id": 9,
+      "recipe_title": "Sayur Tahu Labu Udang",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 buah labu",
+          "parsed_name": "labu",
+          "parsed_data": {
+            "raw": "1 buah labu",
+            "quantity": 1.0,
+            "unit": "buah",
+            "name": "labu",
+            "weight_g": 50.0
+          },
+          "recipe_id": 9,
+          "recipe_title": "Sayur Tahu Labu Udang"
+        }
+      ]
+    },
+    {
+      "recipe_id": 10,
+      "recipe_title": "Labu Siam Udang ",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 buah labu siam (400 gr)》potong korek api",
+          "parsed_name": "labu siam korek api 400 gr",
+          "parsed_data": {
+            "raw": "1 buah labu siam (400 gr)》potong korek api",
+            "quantity": 1.0,
+            "unit": "buah",
+            "name": "labu siam korek api 400 gr",
+            "weight_g": 50.0
+          },
+          "recipe_id": 10,
+          "recipe_title": "Labu Siam Udang "
+        }
+      ]
+    },
+    {
+      "recipe_id": 11,
+      "recipe_title": "Bola-Bola Tempe",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "rebus/kukus kemudian haluskan",
+          "parsed_name": "instruction:rebus kukus kemudian haluskan",
+          "parsed_data": {
+            "raw": "rebus/kukus kemudian haluskan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:rebus kukus kemudian haluskan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 11,
+          "recipe_title": "Bola-Bola Tempe"
+        },
+        {
+          "original_ingredient": "4 siung bawah putih",
+          "parsed_name": "bawah putih",
+          "parsed_data": {
+            "raw": "4 siung bawah putih",
+            "quantity": 4.0,
+            "unit": "siung",
+            "name": "bawah putih",
+            "weight_g": 20.0
+          },
+          "recipe_id": 11,
+          "recipe_title": "Bola-Bola Tempe"
+        },
+        {
+          "original_ingredient": "Secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 11,
+          "recipe_title": "Bola-Bola Tempe"
+        }
+      ]
+    },
+    {
+      "recipe_id": 12,
+      "recipe_title": "Tumis Kacang Panjang Tempe",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 12,
+          "recipe_title": "Tumis Kacang Panjang Tempe"
+        }
+      ]
+    },
+    {
+      "recipe_id": 14,
+      "recipe_title": "Tempe orek",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 14,
+          "recipe_title": "Tempe orek"
+        }
+      ]
+    },
+    {
+      "recipe_id": 16,
+      "recipe_title": "Bakwan Tempe",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Secukupnya Taoge",
+          "parsed_name": "instruction:secukupnya taoge",
+          "parsed_data": {
+            "raw": "Secukupnya Taoge",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya taoge",
+            "weight_g": 10.0
+          },
+          "recipe_id": 16,
+          "recipe_title": "Bakwan Tempe"
+        },
+        {
+          "original_ingredient": "potong dadu/korek",
+          "parsed_name": "dadu korek",
+          "parsed_data": {
+            "raw": "potong dadu/korek",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "dadu korek",
+            "weight_g": 100.0
+          },
+          "recipe_id": 16,
+          "recipe_title": "Bakwan Tempe"
+        },
+        {
+          "original_ingredient": "5 buah Buncis",
+          "parsed_name": "buncis",
+          "parsed_data": {
+            "raw": "5 buah Buncis",
+            "quantity": 5.0,
+            "unit": "buah",
+            "name": "buncis",
+            "weight_g": 250.0
+          },
+          "recipe_id": 16,
+          "recipe_title": "Bakwan Tempe"
+        },
+        {
+          "original_ingredient": "iris tebal",
+          "parsed_name": "instruction:tebal",
+          "parsed_data": {
+            "raw": "iris tebal",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:tebal",
+            "weight_g": 10.0
+          },
+          "recipe_id": 16,
+          "recipe_title": "Bakwan Tempe"
+        }
+      ]
+    },
+    {
+      "recipe_id": 18,
+      "recipe_title": "Tumis Bawang Merah, Teri Tempe, Jengkol",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 18,
+          "recipe_title": "Tumis Bawang Merah, Teri Tempe, Jengkol"
+        }
+      ]
+    },
+    {
+      "recipe_id": 19,
+      "recipe_title": "Tempe pete kemangi orek",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong kotak",
+          "parsed_name": "kotak",
+          "parsed_data": {
+            "raw": "potong kotak",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "kotak",
+            "weight_g": 100.0
+          },
+          "recipe_id": 19,
+          "recipe_title": "Tempe pete kemangi orek"
+        },
+        {
+          "original_ingredient": "Secukupnya cabe rawit",
+          "parsed_name": "instruction:secukupnya cabe rawit",
+          "parsed_data": {
+            "raw": "Secukupnya cabe rawit",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya cabe rawit",
+            "weight_g": 10.0
+          },
+          "recipe_id": 19,
+          "recipe_title": "Tempe pete kemangi orek"
+        },
+        {
+          "original_ingredient": "Secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 19,
+          "recipe_title": "Tempe pete kemangi orek"
+        }
+      ]
+    },
+    {
+      "recipe_id": 20,
+      "recipe_title": "Keripik tempe renyah",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 20,
+          "recipe_title": "Keripik tempe renyah"
+        }
+      ]
+    },
+    {
+      "recipe_id": 21,
+      "recipe_title": "Ayam Betutu",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 ruas jari Kencur",
+          "parsed_name": "jari kencur",
+          "parsed_data": {
+            "raw": "1 ruas jari Kencur",
+            "quantity": 1.0,
+            "unit": "ruas",
+            "name": "jari kencur",
+            "weight_g": 15.0
+          },
+          "recipe_id": 21,
+          "recipe_title": "Ayam Betutu"
+        }
+      ]
+    },
+    {
+      "recipe_id": 22,
+      "recipe_title": "Nugget ayam homemade",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1/4 kg dada fillet",
+          "parsed_name": "dada fillet",
+          "parsed_data": {
+            "raw": "1/4 kg dada fillet",
+            "quantity": 1.0,
+            "unit": "kg",
+            "name": "dada fillet",
+            "weight_g": 1000.0
+          },
+          "recipe_id": 22,
+          "recipe_title": "Nugget ayam homemade"
+        },
+        {
+          "original_ingredient": "2 sdm meizena",
+          "parsed_name": "meizena",
+          "parsed_data": {
+            "raw": "2 sdm meizena",
+            "quantity": 2.0,
+            "unit": "sdm",
+            "name": "meizena",
+            "weight_g": 30.0
+          },
+          "recipe_id": 22,
+          "recipe_title": "Nugget ayam homemade"
+        }
+      ]
+    },
+    {
+      "recipe_id": 23,
+      "recipe_title": "Ayam geprek",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 23,
+          "recipe_title": "Ayam geprek"
+        }
+      ]
+    },
+    {
+      "recipe_id": 24,
+      "recipe_title": "Tulang ayam rica wangi",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong kecil (sesuai selera)",
+          "parsed_name": "instruction:kecil",
+          "parsed_data": {
+            "raw": "potong kecil (sesuai selera)",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:kecil",
+            "weight_g": 10.0
+          },
+          "recipe_id": 24,
+          "recipe_title": "Tulang ayam rica wangi"
+        }
+      ]
+    },
+    {
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "🍗 Bahan kulit :",
+          "parsed_name": "instruction:bahan kulit",
+          "parsed_data": {
+            "raw": "🍗 Bahan kulit :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan kulit",
+            "weight_g": 0.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "🍗 Bahan ragout :",
+          "parsed_name": "instruction:bahan ragout",
+          "parsed_data": {
+            "raw": "🍗 Bahan ragout :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan ragout",
+            "weight_g": 0.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "cincang halus",
+          "parsed_name": "instruction:cincang halus",
+          "parsed_data": {
+            "raw": "cincang halus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang halus",
+            "weight_g": 30.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "cincang",
+          "parsed_name": "instruction:cincang",
+          "parsed_data": {
+            "raw": "cincang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "Pelapis :",
+          "parsed_name": "pelapis",
+          "parsed_data": {
+            "raw": "Pelapis :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "pelapis",
+            "weight_g": 30.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "kocok lepas",
+          "parsed_name": "instruction:kocok lepas",
+          "parsed_data": {
+            "raw": "kocok lepas",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kocok lepas",
+            "weight_g": 30.0
+          },
+          "recipe_id": 25,
+          "recipe_title": "Risoles ragout ayam"
+        }
+      ]
+    },
+    {
+      "recipe_id": 26,
+      "recipe_title": "Ayam sambal balado",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Buah keras/ kemiri 3 biji",
+          "parsed_name": "keras kemiri 3 biji",
+          "parsed_data": {
+            "raw": "Buah keras/ kemiri 3 biji",
+            "quantity": 0.0,
+            "unit": "buah",
+            "name": "keras kemiri 3 biji",
+            "weight_g": 50.0
+          },
+          "recipe_id": 26,
+          "recipe_title": "Ayam sambal balado"
+        }
+      ]
+    },
+    {
+      "recipe_id": 27,
+      "recipe_title": "Ayam Woku Manado",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Bahan Lain",
+          "parsed_name": "instruction:bahan lain",
+          "parsed_data": {
+            "raw": "Bahan Lain",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan lain",
+            "weight_g": 0.0
+          },
+          "recipe_id": 27,
+          "recipe_title": "Ayam Woku Manado"
+        },
+        {
+          "original_ingredient": "potong 12/16",
+          "parsed_name": "12 16",
+          "parsed_data": {
+            "raw": "potong 12/16",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "12 16",
+            "weight_g": 100.0
+          },
+          "recipe_id": 27,
+          "recipe_title": "Ayam Woku Manado"
+        }
+      ]
+    },
+    {
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan",
+      "unmatched_count": 10,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong2",
+          "parsed_name": "2",
+          "parsed_data": {
+            "raw": "potong2",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "2",
+            "weight_g": 100.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "bumbui lada dan garam",
+          "parsed_name": "bumbui lada garam",
+          "parsed_data": {
+            "raw": "bumbui lada dan garam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "bumbui lada garam",
+            "weight_g": 1.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "diamkan min.1 jam",
+          "parsed_name": "instruction:diamkan min.1 jam",
+          "parsed_data": {
+            "raw": "diamkan min.1 jam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:diamkan min.1 jam",
+            "weight_g": 30.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Bahan pelapis:",
+          "parsed_name": "instruction:bahan pelapis",
+          "parsed_data": {
+            "raw": "Bahan pelapis:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan pelapis",
+            "weight_g": 0.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "tambahkan lada",
+          "parsed_name": "instruction:tambahkan lada",
+          "parsed_data": {
+            "raw": "tambahkan lada",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:tambahkan lada",
+            "weight_g": 1.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Bahan saos:",
+          "parsed_name": "instruction:bahan saos",
+          "parsed_data": {
+            "raw": "Bahan saos:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan saos",
+            "weight_g": 0.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Larutan maizena",
+          "parsed_name": "maizena",
+          "parsed_data": {
+            "raw": "Larutan maizena",
+            "quantity": 0.0,
+            "unit": "l",
+            "name": "maizena",
+            "weight_g": 1000.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Bahan pelengkap:",
+          "parsed_name": "instruction:bahan pelengkap",
+          "parsed_data": {
+            "raw": "Bahan pelengkap:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Irisan kol",
+          "parsed_name": "kol",
+          "parsed_data": {
+            "raw": "Irisan kol",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "kol",
+            "weight_g": 10.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        },
+        {
+          "original_ingredient": "Mayonaise/saos",
+          "parsed_name": "mayonaise saos",
+          "parsed_data": {
+            "raw": "Mayonaise/saos",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "mayonaise saos",
+            "weight_g": 30.0
+          },
+          "recipe_id": 28,
+          "recipe_title": "Chicken katsu rumahan"
+        }
+      ]
+    },
+    {
+      "recipe_id": 29,
+      "recipe_title": "Risoles ragout ayam",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "kulit risoles:",
+          "parsed_name": "kulit risoles",
+          "parsed_data": {
+            "raw": "kulit risoles:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "kulit risoles",
+            "weight_g": 30.0
+          },
+          "recipe_id": 29,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "secukupnya royco",
+          "parsed_name": "instruction:secukupnya royco",
+          "parsed_data": {
+            "raw": "secukupnya royco",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya royco",
+            "weight_g": 10.0
+          },
+          "recipe_id": 29,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "75 gr keju parut / sesuai selera masing2",
+          "parsed_name": "keju masing2",
+          "parsed_data": {
+            "raw": "75 gr keju parut / sesuai selera masing2",
+            "quantity": 75.0,
+            "unit": "secukupnya",
+            "name": "keju masing2",
+            "weight_g": 750.0
+          },
+          "recipe_id": 29,
+          "recipe_title": "Risoles ragout ayam"
+        },
+        {
+          "original_ingredient": "bahan panir :",
+          "parsed_name": "instruction:bahan panir",
+          "parsed_data": {
+            "raw": "bahan panir :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan panir",
+            "weight_g": 0.0
+          },
+          "recipe_id": 29,
+          "recipe_title": "Risoles ragout ayam"
+        }
+      ]
+    },
+    {
+      "recipe_id": 30,
+      "recipe_title": "Rica - Rica Ayam",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 30,
+          "recipe_title": "Rica - Rica Ayam"
+        }
+      ]
+    },
+    {
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies ",
+      "unmatched_count": 5,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "biarkan suhu ruang",
+          "parsed_name": "biarkan suhu ruang",
+          "parsed_data": {
+            "raw": "biarkan suhu ruang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "biarkan suhu ruang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 31,
+          "recipe_title": "Easy Beef Hand Pies "
+        },
+        {
+          "original_ingredient": "# isian",
+          "parsed_name": "isian",
+          "parsed_data": {
+            "raw": "# isian",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "isian",
+            "weight_g": 30.0
+          },
+          "recipe_id": 31,
+          "recipe_title": "Easy Beef Hand Pies "
+        },
+        {
+          "original_ingredient": "1/2 sdt Lada hitam",
+          "parsed_name": "lada hitam",
+          "parsed_data": {
+            "raw": "1/2 sdt Lada hitam",
+            "quantity": 1.0,
+            "unit": "sdt",
+            "name": "lada hitam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 31,
+          "recipe_title": "Easy Beef Hand Pies "
+        },
+        {
+          "original_ingredient": "Secukupnya Garam (hanya jika diperlukan)",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya Garam (hanya jika diperlukan)",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 31,
+          "recipe_title": "Easy Beef Hand Pies "
+        },
+        {
+          "original_ingredient": "kocok rata untuk olesan",
+          "parsed_name": "instruction:kocok rata untuk olesan",
+          "parsed_data": {
+            "raw": "kocok rata untuk olesan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kocok rata untuk olesan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 31,
+          "recipe_title": "Easy Beef Hand Pies "
+        }
+      ]
+    },
+    {
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade ",
+      "unmatched_count": 8,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Bahan Kulit Lasagna (aku buat 1/2 resep):",
+          "parsed_name": "instruction:bahan kulit lasagna",
+          "parsed_data": {
+            "raw": "Bahan Kulit Lasagna (aku buat 1/2 resep):",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan kulit lasagna",
+            "weight_g": 0.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "2 kuntum brokoli (tambahan)",
+          "parsed_name": "kuntum brokoli",
+          "parsed_data": {
+            "raw": "2 kuntum brokoli (tambahan)",
+            "quantity": 2.0,
+            "unit": "",
+            "name": "kuntum brokoli",
+            "weight_g": 60.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "1 sendok teh Oregano (skip)",
+          "parsed_name": "teh oregano skip",
+          "parsed_data": {
+            "raw": "1 sendok teh Oregano (skip)",
+            "quantity": 1.0,
+            "unit": "sendok",
+            "name": "teh oregano skip",
+            "weight_g": 30.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "1/2 Sdt Basil (skip)",
+          "parsed_name": "basil skip",
+          "parsed_data": {
+            "raw": "1/2 Sdt Basil (skip)",
+            "quantity": 1.0,
+            "unit": "sdt",
+            "name": "basil skip",
+            "weight_g": 5.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "secukupnya Garam (1/2 sdt)",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam (1/2 sdt)",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "100 gram Keju Cheddar (aku mix mozarella)",
+          "parsed_name": "keju cheddar aku mix mozarella",
+          "parsed_data": {
+            "raw": "100 gram Keju Cheddar (aku mix mozarella)",
+            "quantity": 100.0,
+            "unit": "gram",
+            "name": "keju cheddar aku mix mozarella",
+            "weight_g": 100.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "bahan taburan",
+          "parsed_name": "instruction:bahan taburan",
+          "parsed_data": {
+            "raw": "bahan taburan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan taburan",
+            "weight_g": 0.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        },
+        {
+          "original_ingredient": "secukupnya Keju Cheddar (aku mozzarella)",
+          "parsed_name": "instruction:secukupnya keju cheddar",
+          "parsed_data": {
+            "raw": "secukupnya Keju Cheddar (aku mozzarella)",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya keju cheddar",
+            "weight_g": 10.0
+          },
+          "recipe_id": 33,
+          "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+        }
+      ]
+    },
+    {
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 pack udon beku",
+          "parsed_name": "pack udon beku",
+          "parsed_data": {
+            "raw": "1 pack udon beku",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "pack udon beku",
+            "weight_g": 30.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        },
+        {
+          "original_ingredient": "iris tipis",
+          "parsed_name": "instruction:tipis",
+          "parsed_data": {
+            "raw": "iris tipis",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:tipis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        },
+        {
+          "original_ingredient": "rebus hingga empuk",
+          "parsed_name": "instruction:rebus hingga empuk",
+          "parsed_data": {
+            "raw": "rebus hingga empuk",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:rebus hingga empuk",
+            "weight_g": 30.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        },
+        {
+          "original_ingredient": "Pelengkap:",
+          "parsed_name": "instruction:pelengkap",
+          "parsed_data": {
+            "raw": "Pelengkap:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        },
+        {
+          "original_ingredient": "Taburan:",
+          "parsed_name": "taburan",
+          "parsed_data": {
+            "raw": "Taburan:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "taburan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        },
+        {
+          "original_ingredient": "Chili flakes",
+          "parsed_name": "chili flakes",
+          "parsed_data": {
+            "raw": "Chili flakes",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "chili flakes",
+            "weight_g": 30.0
+          },
+          "recipe_id": 34,
+          "recipe_title": "Beef Udon"
+        }
+      ]
+    },
+    {
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam",
+      "unmatched_count": 7,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1/2 paprika merah rajang",
+          "parsed_name": "paprika merah rajang",
+          "parsed_data": {
+            "raw": "1/2 paprika merah rajang",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "paprika merah rajang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "1/2 paprika hijau (terserah aja mau pake paprika warna apa sj)",
+          "parsed_name": "paprika hijau terserah aja mau pake paprika warna apa sj",
+          "parsed_data": {
+            "raw": "1/2 paprika hijau (terserah aja mau pake paprika warna apa sj)",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "paprika hijau terserah aja mau pake paprika warna apa sj",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "rajang",
+          "parsed_name": "instruction:rajang",
+          "parsed_data": {
+            "raw": "rajang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:rajang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "cacah halus",
+          "parsed_name": "cacah",
+          "parsed_data": {
+            "raw": "cacah halus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "cacah",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "1 1/2 sdt lada hitam (atau sesuai selera)",
+          "parsed_name": "2 sdt lada hitam",
+          "parsed_data": {
+            "raw": "1 1/2 sdt lada hitam (atau sesuai selera)",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "2 sdt lada hitam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "tumbuk kasar",
+          "parsed_name": "instruction:tumbuk kasar",
+          "parsed_data": {
+            "raw": "tumbuk kasar",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:tumbuk kasar",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        },
+        {
+          "original_ingredient": "me : yes)",
+          "parsed_name": "me yes",
+          "parsed_data": {
+            "raw": "me : yes)",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "me yes",
+            "weight_g": 30.0
+          },
+          "recipe_id": 35,
+          "recipe_title": "Daging sapi lada hitam"
+        }
+      ]
+    },
+    {
+      "recipe_id": 36,
+      "recipe_title": "Asem asem buncis daging sapi",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "10 btg buncis iris sesuai selera",
+          "parsed_name": "buncis",
+          "parsed_data": {
+            "raw": "10 btg buncis iris sesuai selera",
+            "quantity": 10.0,
+            "unit": "secukupnya",
+            "name": "buncis",
+            "weight_g": 100.0
+          },
+          "recipe_id": 36,
+          "recipe_title": "Asem asem buncis daging sapi"
+        },
+        {
+          "original_ingredient": "secukupnya asam jawa",
+          "parsed_name": "instruction:secukupnya asam jawa",
+          "parsed_data": {
+            "raw": "secukupnya asam jawa",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya asam jawa",
+            "weight_g": 10.0
+          },
+          "recipe_id": 36,
+          "recipe_title": "Asem asem buncis daging sapi"
+        },
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 36,
+          "recipe_title": "Asem asem buncis daging sapi"
+        }
+      ]
+    },
+    {
+      "recipe_id": 37,
+      "recipe_title": "Sate Sapi Goreng",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya asam jawa",
+          "parsed_name": "instruction:secukupnya asam jawa",
+          "parsed_data": {
+            "raw": "secukupnya asam jawa",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya asam jawa",
+            "weight_g": 10.0
+          },
+          "recipe_id": 37,
+          "recipe_title": "Sate Sapi Goreng"
+        },
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 37,
+          "recipe_title": "Sate Sapi Goreng"
+        },
+        {
+          "original_ingredient": "Bahan taburan",
+          "parsed_name": "instruction:bahan taburan",
+          "parsed_data": {
+            "raw": "Bahan taburan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan taburan",
+            "weight_g": 0.0
+          },
+          "recipe_id": 37,
+          "recipe_title": "Sate Sapi Goreng"
+        }
+      ]
+    },
+    {
+      "recipe_id": 38,
+      "recipe_title": "Rawon Sapi Resep Emak ",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 38,
+          "recipe_title": "Rawon Sapi Resep Emak "
+        },
+        {
+          "original_ingredient": "1/2 sdt jintan",
+          "parsed_name": "jintan",
+          "parsed_data": {
+            "raw": "1/2 sdt jintan",
+            "quantity": 1.0,
+            "unit": "sdt",
+            "name": "jintan",
+            "weight_g": 5.0
+          },
+          "recipe_id": 38,
+          "recipe_title": "Rawon Sapi Resep Emak "
+        },
+        {
+          "original_ingredient": "1 ruas kecil kencur",
+          "parsed_name": "instruction:kecil kencur",
+          "parsed_data": {
+            "raw": "1 ruas kecil kencur",
+            "quantity": 1.0,
+            "unit": "ruas",
+            "name": "instruction:kecil kencur",
+            "weight_g": 15.0
+          },
+          "recipe_id": 38,
+          "recipe_title": "Rawon Sapi Resep Emak "
+        }
+      ]
+    },
+    {
+      "recipe_id": 39,
+      "recipe_title": "Tongseng sapi",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1/2 btg korek api kayu manis",
+          "parsed_name": "korek api kayu manis",
+          "parsed_data": {
+            "raw": "1/2 btg korek api kayu manis",
+            "quantity": 1.0,
+            "unit": "btg",
+            "name": "korek api kayu manis",
+            "weight_g": 15.0
+          },
+          "recipe_id": 39,
+          "recipe_title": "Tongseng sapi"
+        },
+        {
+          "original_ingredient": "Kol secukupnya potong kotak\"",
+          "parsed_name": "kol kotak",
+          "parsed_data": {
+            "raw": "Kol secukupnya potong kotak\"",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "kol kotak",
+            "weight_g": 10.0
+          },
+          "recipe_id": 39,
+          "recipe_title": "Tongseng sapi"
+        }
+      ]
+    },
+    {
+      "recipe_id": 40,
+      "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "iris setipis mungkin",
+          "parsed_name": "setipis mungkin",
+          "parsed_data": {
+            "raw": "iris setipis mungkin",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "setipis mungkin",
+            "weight_g": 10.0
+          },
+          "recipe_id": 40,
+          "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+        },
+        {
+          "original_ingredient": "cincang halus",
+          "parsed_name": "instruction:cincang halus",
+          "parsed_data": {
+            "raw": "cincang halus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang halus",
+            "weight_g": 30.0
+          },
+          "recipe_id": 40,
+          "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+        },
+        {
+          "original_ingredient": "sangrai",
+          "parsed_name": "instruction:sangrai",
+          "parsed_data": {
+            "raw": "sangrai",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:sangrai",
+            "weight_g": 30.0
+          },
+          "recipe_id": 40,
+          "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+        },
+        {
+          "original_ingredient": "rajang halus",
+          "parsed_name": "instruction:rajang halus",
+          "parsed_data": {
+            "raw": "rajang halus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:rajang halus",
+            "weight_g": 30.0
+          },
+          "recipe_id": 40,
+          "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+        }
+      ]
+    },
+    {
+      "recipe_id": 41,
+      "recipe_title": "Dadar Telor Cah Toge",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 mangkuk toge",
+          "parsed_name": "mangkuk toge",
+          "parsed_data": {
+            "raw": "1 mangkuk toge",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "mangkuk toge",
+            "weight_g": 30.0
+          },
+          "recipe_id": 41,
+          "recipe_title": "Dadar Telor Cah Toge"
+        }
+      ]
+    },
+    {
+      "recipe_id": 42,
+      "recipe_title": "Telor dadar ala RM Padang",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "4 telor",
+          "parsed_name": "telor",
+          "parsed_data": {
+            "raw": "4 telor",
+            "quantity": 4.0,
+            "unit": "",
+            "name": "telor",
+            "weight_g": 120.0
+          },
+          "recipe_id": 42,
+          "recipe_title": "Telor dadar ala RM Padang"
+        },
+        {
+          "original_ingredient": "4 sdm klapa parut sangrai dulu",
+          "parsed_name": "klapa sangrai dulu",
+          "parsed_data": {
+            "raw": "4 sdm klapa parut sangrai dulu",
+            "quantity": 4.0,
+            "unit": "sdm",
+            "name": "klapa sangrai dulu",
+            "weight_g": 60.0
+          },
+          "recipe_id": 42,
+          "recipe_title": "Telor dadar ala RM Padang"
+        }
+      ]
+    },
+    {
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "giling halus",
+          "parsed_name": "instruction:halus",
+          "parsed_data": {
+            "raw": "giling halus",
+            "quantity": 0.0,
+            "unit": "g",
+            "name": "instruction:halus",
+            "weight_g": 1.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        },
+        {
+          "original_ingredient": "haluskan",
+          "parsed_name": "instruction:haluskan",
+          "parsed_data": {
+            "raw": "haluskan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:haluskan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        },
+        {
+          "original_ingredient": "iris halus",
+          "parsed_name": "instruction:halus",
+          "parsed_data": {
+            "raw": "iris halus",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:halus",
+            "weight_g": 10.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        },
+        {
+          "original_ingredient": "Stik bambu secukupnya",
+          "parsed_name": "stik bambu",
+          "parsed_data": {
+            "raw": "Stik bambu secukupnya",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "stik bambu",
+            "weight_g": 10.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        },
+        {
+          "original_ingredient": "kocok lepas dan beri sedikit garam",
+          "parsed_name": "instruction:kocok lepas dan beri sedikit garam",
+          "parsed_data": {
+            "raw": "kocok lepas dan beri sedikit garam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kocok lepas dan beri sedikit garam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        },
+        {
+          "original_ingredient": "untuk pelengkap",
+          "parsed_name": "instruction:untuk pelengkap",
+          "parsed_data": {
+            "raw": "untuk pelengkap",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:untuk pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 43,
+          "recipe_title": "Sempol Ayam Telur Gulung"
+        }
+      ]
+    },
+    {
+      "recipe_id": 44,
+      "recipe_title": "Dadar telor cah toge",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "semangkuk toge",
+          "parsed_name": "semangkuk toge",
+          "parsed_data": {
+            "raw": "semangkuk toge",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "semangkuk toge",
+            "weight_g": 30.0
+          },
+          "recipe_id": 44,
+          "recipe_title": "Dadar telor cah toge"
+        }
+      ]
+    },
+    {
+      "recipe_id": 45,
+      "recipe_title": "Tumis buncis orak arik telor",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya buncis",
+          "parsed_name": "instruction:secukupnya buncis",
+          "parsed_data": {
+            "raw": "secukupnya buncis",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya buncis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 45,
+          "recipe_title": "Tumis buncis orak arik telor"
+        },
+        {
+          "original_ingredient": "secukupnya Rayco",
+          "parsed_name": "instruction:secukupnya rayco",
+          "parsed_data": {
+            "raw": "secukupnya Rayco",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya rayco",
+            "weight_g": 10.0
+          },
+          "recipe_id": 45,
+          "recipe_title": "Tumis buncis orak arik telor"
+        }
+      ]
+    },
+    {
+      "recipe_id": 46,
+      "recipe_title": "Kornet tumis telur",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "bumbu (garam",
+          "parsed_name": "instruction:bumbu (garam",
+          "parsed_data": {
+            "raw": "bumbu (garam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bumbu (garam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 46,
+          "recipe_title": "Kornet tumis telur"
+        }
+      ]
+    },
+    {
+      "recipe_id": 49,
+      "recipe_title": "Tumis buncis telur",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "15 batang buncis",
+          "parsed_name": "buncis",
+          "parsed_data": {
+            "raw": "15 batang buncis",
+            "quantity": 15.0,
+            "unit": "batang",
+            "name": "buncis",
+            "weight_g": 225.0
+          },
+          "recipe_id": 49,
+          "recipe_title": "Tumis buncis telur"
+        }
+      ]
+    },
+    {
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "rebus",
+          "parsed_name": "instruction:rebus",
+          "parsed_data": {
+            "raw": "rebus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:rebus",
+            "weight_g": 30.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        },
+        {
+          "original_ingredient": "kupas",
+          "parsed_name": "instruction:kupas",
+          "parsed_data": {
+            "raw": "kupas",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kupas",
+            "weight_g": 30.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        },
+        {
+          "original_ingredient": "potong sesuai selera",
+          "parsed_name": "instruction:sesuai selera",
+          "parsed_data": {
+            "raw": "potong sesuai selera",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:sesuai selera",
+            "weight_g": 10.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        },
+        {
+          "original_ingredient": "potong jadi 4 bagian",
+          "parsed_name": "4 bagian",
+          "parsed_data": {
+            "raw": "potong jadi 4 bagian",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "4 bagian",
+            "weight_g": 100.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        },
+        {
+          "original_ingredient": "secukupnya Lada bubuk",
+          "parsed_name": "instruction:secukupnya lada bubuk",
+          "parsed_data": {
+            "raw": "secukupnya Lada bubuk",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya lada bubuk",
+            "weight_g": 10.0
+          },
+          "recipe_id": 50,
+          "recipe_title": "Semur Telur & Kentang"
+        }
+      ]
+    },
+    {
+      "recipe_id": 51,
+      "recipe_title": "Kentang tahu kuah kecap",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 51,
+          "recipe_title": "Kentang tahu kuah kecap"
+        }
+      ]
+    },
+    {
+      "recipe_id": 52,
+      "recipe_title": "Opor Ayam + Tahu",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya Bawang goreng",
+          "parsed_name": "instruction:secukupnya bawang goreng",
+          "parsed_data": {
+            "raw": "secukupnya Bawang goreng",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya bawang goreng",
+            "weight_g": 10.0
+          },
+          "recipe_id": 52,
+          "recipe_title": "Opor Ayam + Tahu"
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 52,
+          "recipe_title": "Opor Ayam + Tahu"
+        }
+      ]
+    },
+    {
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong2",
+          "parsed_name": "2",
+          "parsed_data": {
+            "raw": "potong2",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "2",
+            "weight_g": 100.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        },
+        {
+          "original_ingredient": "goreng setengah matang",
+          "parsed_name": "setengah",
+          "parsed_data": {
+            "raw": "goreng setengah matang",
+            "quantity": 0.0,
+            "unit": "g",
+            "name": "setengah",
+            "weight_g": 1.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        },
+        {
+          "original_ingredient": "remas",
+          "parsed_name": "remas",
+          "parsed_data": {
+            "raw": "remas",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "remas",
+            "weight_g": 30.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        },
+        {
+          "original_ingredient": "secukupnya Asam jawa",
+          "parsed_name": "instruction:secukupnya asam jawa",
+          "parsed_data": {
+            "raw": "secukupnya Asam jawa",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya asam jawa",
+            "weight_g": 10.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        },
+        {
+          "original_ingredient": "Haluskan:",
+          "parsed_name": "instruction:haluskan",
+          "parsed_data": {
+            "raw": "Haluskan:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:haluskan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 53,
+          "recipe_title": "Patin tahu asam pedas"
+        }
+      ]
+    },
+    {
+      "recipe_id": 54,
+      "recipe_title": "Perkedel Tahu Kari Tanpa Telur",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "iris halus",
+          "parsed_name": "instruction:halus",
+          "parsed_data": {
+            "raw": "iris halus",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:halus",
+            "weight_g": 10.0
+          },
+          "recipe_id": 54,
+          "recipe_title": "Perkedel Tahu Kari Tanpa Telur"
+        },
+        {
+          "original_ingredient": "Sedikit garam",
+          "parsed_name": "instruction:sedikit garam",
+          "parsed_data": {
+            "raw": "Sedikit garam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:sedikit garam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 54,
+          "recipe_title": "Perkedel Tahu Kari Tanpa Telur"
+        }
+      ]
+    },
+    {
+      "recipe_id": 56,
+      "recipe_title": "Tahu Aci Pedas Manis ",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Haluskan dengan menggunakan garpu",
+          "parsed_name": "instruction:haluskan dengan menggunakan garpu",
+          "parsed_data": {
+            "raw": "Haluskan dengan menggunakan garpu",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:haluskan dengan menggunakan garpu",
+            "weight_g": 30.0
+          },
+          "recipe_id": 56,
+          "recipe_title": "Tahu Aci Pedas Manis "
+        },
+        {
+          "original_ingredient": "kocok lepas",
+          "parsed_name": "instruction:kocok lepas",
+          "parsed_data": {
+            "raw": "kocok lepas",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kocok lepas",
+            "weight_g": 30.0
+          },
+          "recipe_id": 56,
+          "recipe_title": "Tahu Aci Pedas Manis "
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 56,
+          "recipe_title": "Tahu Aci Pedas Manis "
+        },
+        {
+          "original_ingredient": "sesuai selera",
+          "parsed_name": "instruction:sesuai selera",
+          "parsed_data": {
+            "raw": "sesuai selera",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:sesuai selera",
+            "weight_g": 10.0
+          },
+          "recipe_id": 56,
+          "recipe_title": "Tahu Aci Pedas Manis "
+        }
+      ]
+    },
+    {
+      "recipe_id": 57,
+      "recipe_title": "Perkedel tahu",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "iris tipis",
+          "parsed_name": "instruction:tipis",
+          "parsed_data": {
+            "raw": "iris tipis",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:tipis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 57,
+          "recipe_title": "Perkedel tahu"
+        },
+        {
+          "original_ingredient": "kocok lepas",
+          "parsed_name": "instruction:kocok lepas",
+          "parsed_data": {
+            "raw": "kocok lepas",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kocok lepas",
+            "weight_g": 30.0
+          },
+          "recipe_id": 57,
+          "recipe_title": "Perkedel tahu"
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 57,
+          "recipe_title": "Perkedel tahu"
+        }
+      ]
+    },
+    {
+      "recipe_id": 60,
+      "recipe_title": "Tahu Kecap Kental Pedas",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Sejumput garam",
+          "parsed_name": "sejumput garam",
+          "parsed_data": {
+            "raw": "Sejumput garam",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "sejumput garam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 60,
+          "recipe_title": "Tahu Kecap Kental Pedas"
+        }
+      ]
+    },
+    {
+      "recipe_id": 61,
+      "recipe_title": "Ikan patin kuah asam pedas",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "sesuai selera Cabe",
+          "parsed_name": "instruction:sesuai selera cabe",
+          "parsed_data": {
+            "raw": "sesuai selera Cabe",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:sesuai selera cabe",
+            "weight_g": 10.0
+          },
+          "recipe_id": 61,
+          "recipe_title": "Ikan patin kuah asam pedas"
+        }
+      ]
+    },
+    {
+      "recipe_id": 62,
+      "recipe_title": "Gurame Bakar",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 ekor gurame ±500 gr",
+          "parsed_name": "ekor gurame 500 gr",
+          "parsed_data": {
+            "raw": "1 ekor gurame ±500 gr",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "ekor gurame 500 gr",
+            "weight_g": 30.0
+          },
+          "recipe_id": 62,
+          "recipe_title": "Gurame Bakar"
+        },
+        {
+          "original_ingredient": "2 1/2 sdt garam",
+          "parsed_name": "2 sdt garam",
+          "parsed_data": {
+            "raw": "2 1/2 sdt garam",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "2 sdt garam",
+            "weight_g": 5.0
+          },
+          "recipe_id": 62,
+          "recipe_title": "Gurame Bakar"
+        },
+        {
+          "original_ingredient": "secukupnya Lada bubuk",
+          "parsed_name": "instruction:secukupnya lada bubuk",
+          "parsed_data": {
+            "raw": "secukupnya Lada bubuk",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya lada bubuk",
+            "weight_g": 10.0
+          },
+          "recipe_id": 62,
+          "recipe_title": "Gurame Bakar"
+        }
+      ]
+    },
+    {
+      "recipe_id": 63,
+      "recipe_title": "Pesmol Gurame",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 gurame dipotong menjadi 4",
+          "parsed_name": "instruction:dipotong menjadi 4",
+          "parsed_data": {
+            "raw": "1 gurame dipotong menjadi 4",
+            "quantity": 1.0,
+            "unit": "g",
+            "name": "instruction:dipotong menjadi 4",
+            "weight_g": 1.0
+          },
+          "recipe_id": 63,
+          "recipe_title": "Pesmol Gurame"
+        },
+        {
+          "original_ingredient": "bahan lainnya",
+          "parsed_name": "instruction:bahan lainnya",
+          "parsed_data": {
+            "raw": "bahan lainnya",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan lainnya",
+            "weight_g": 0.0
+          },
+          "recipe_id": 63,
+          "recipe_title": "Pesmol Gurame"
+        },
+        {
+          "original_ingredient": "1 timun",
+          "parsed_name": "timun",
+          "parsed_data": {
+            "raw": "1 timun",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "timun",
+            "weight_g": 30.0
+          },
+          "recipe_id": 63,
+          "recipe_title": "Pesmol Gurame"
+        },
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 63,
+          "recipe_title": "Pesmol Gurame"
+        }
+      ]
+    },
+    {
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin",
+      "unmatched_count": 5,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Bahan utama:",
+          "parsed_name": "instruction:bahan utama",
+          "parsed_data": {
+            "raw": "Bahan utama:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan utama",
+            "weight_g": 0.0
+          },
+          "recipe_id": 64,
+          "recipe_title": "Pindang Patin"
+        },
+        {
+          "original_ingredient": "potong 4 bagian",
+          "parsed_name": "4 bagian",
+          "parsed_data": {
+            "raw": "potong 4 bagian",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "4 bagian",
+            "weight_g": 100.0
+          },
+          "recipe_id": 64,
+          "recipe_title": "Pindang Patin"
+        },
+        {
+          "original_ingredient": "potong 4 bagian",
+          "parsed_name": "4 bagian",
+          "parsed_data": {
+            "raw": "potong 4 bagian",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "4 bagian",
+            "weight_g": 100.0
+          },
+          "recipe_id": 64,
+          "recipe_title": "Pindang Patin"
+        },
+        {
+          "original_ingredient": "Bahan pelengkap:",
+          "parsed_name": "instruction:bahan pelengkap",
+          "parsed_data": {
+            "raw": "Bahan pelengkap:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 64,
+          "recipe_title": "Pindang Patin"
+        },
+        {
+          "original_ingredient": "1/2 buah nanas",
+          "parsed_name": "nanas",
+          "parsed_data": {
+            "raw": "1/2 buah nanas",
+            "quantity": 1.0,
+            "unit": "buah",
+            "name": "nanas",
+            "weight_g": 50.0
+          },
+          "recipe_id": 64,
+          "recipe_title": "Pindang Patin"
+        }
+      ]
+    },
+    {
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "kukus dan haluskan",
+          "parsed_name": "instruction:kukus dan haluskan",
+          "parsed_data": {
+            "raw": "kukus dan haluskan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kukus dan haluskan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        },
+        {
+          "original_ingredient": "haluskan",
+          "parsed_name": "instruction:haluskan",
+          "parsed_data": {
+            "raw": "haluskan",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:haluskan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        },
+        {
+          "original_ingredient": "Secukupnya kulit pangsit rebus",
+          "parsed_name": "instruction:secukupnya kulit pangsit rebus",
+          "parsed_data": {
+            "raw": "Secukupnya kulit pangsit rebus",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya kulit pangsit rebus",
+            "weight_g": 10.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        },
+        {
+          "original_ingredient": "Pelengkap :",
+          "parsed_name": "instruction:pelengkap",
+          "parsed_data": {
+            "raw": "Pelengkap :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        },
+        {
+          "original_ingredient": "Pare",
+          "parsed_name": "pare",
+          "parsed_data": {
+            "raw": "Pare",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "pare",
+            "weight_g": 30.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        },
+        {
+          "original_ingredient": "Kol",
+          "parsed_name": "kol",
+          "parsed_data": {
+            "raw": "Kol",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "kol",
+            "weight_g": 30.0
+          },
+          "recipe_id": 65,
+          "recipe_title": "Siomay Bandung Ikan Tenggiri"
+        }
+      ]
+    },
+    {
+      "recipe_id": 66,
+      "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning ",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 kg bandeng segar (isi 3 ekor)",
+          "parsed_name": "bandeng isi 3 ekor",
+          "parsed_data": {
+            "raw": "1 kg bandeng segar (isi 3 ekor)",
+            "quantity": 1.0,
+            "unit": "kg",
+            "name": "bandeng isi 3 ekor",
+            "weight_g": 1000.0
+          },
+          "recipe_id": 66,
+          "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+        },
+        {
+          "original_ingredient": "kira dua senti)",
+          "parsed_name": "instruction:kira dua senti)",
+          "parsed_data": {
+            "raw": "kira dua senti)",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kira dua senti)",
+            "weight_g": 5.0
+          },
+          "recipe_id": 66,
+          "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+        },
+        {
+          "original_ingredient": "kira satu setengah senti)",
+          "parsed_name": "instruction:kira satu setengah senti)",
+          "parsed_data": {
+            "raw": "kira satu setengah senti)",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:kira satu setengah senti)",
+            "weight_g": 5.0
+          },
+          "recipe_id": 66,
+          "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+        }
+      ]
+    },
+    {
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam",
+      "unmatched_count": 8,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "diiris",
+          "parsed_name": "instruction:diiris",
+          "parsed_data": {
+            "raw": "diiris",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:diiris",
+            "weight_g": 30.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "diiris",
+          "parsed_name": "instruction:diiris",
+          "parsed_data": {
+            "raw": "diiris",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:diiris",
+            "weight_g": 30.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "potong 8",
+          "parsed_name": "8",
+          "parsed_data": {
+            "raw": "potong 8",
+            "quantity": 0.0,
+            "unit": "potong",
+            "name": "8",
+            "weight_g": 100.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "diiris",
+          "parsed_name": "instruction:diiris",
+          "parsed_data": {
+            "raw": "diiris",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:diiris",
+            "weight_g": 30.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "ambil daunnya saja",
+          "parsed_name": "instruction:ambil daunnya saja",
+          "parsed_data": {
+            "raw": "ambil daunnya saja",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:ambil daunnya saja",
+            "weight_g": 1.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "jika suka pedas boleh ditambah sesuai selera",
+          "parsed_name": "instruction:jika suka pedas boleh ditambah sesuai selera",
+          "parsed_data": {
+            "raw": "jika suka pedas boleh ditambah sesuai selera",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:jika suka pedas boleh ditambah sesuai selera",
+            "weight_g": 10.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "secukupnya. Jamur lain juga boleh",
+          "parsed_name": "jamur lain juga boleh",
+          "parsed_data": {
+            "raw": "secukupnya. Jamur lain juga boleh",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "jamur lain juga boleh",
+            "weight_g": 10.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        },
+        {
+          "original_ingredient": "secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 67,
+          "recipe_title": "Gurami Kuah Asam"
+        }
+      ]
+    },
+    {
+      "recipe_id": 68,
+      "recipe_title": "Pepes Ikan Tuna Bumbu Orange",
+      "unmatched_count": 3,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 cm kencur",
+          "parsed_name": "cm kencur",
+          "parsed_data": {
+            "raw": "1 cm kencur",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "cm kencur",
+            "weight_g": 10.0
+          },
+          "recipe_id": 68,
+          "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+        },
+        {
+          "original_ingredient": "Garam sckp",
+          "parsed_name": "sckp",
+          "parsed_data": {
+            "raw": "Garam sckp",
+            "quantity": 0.0,
+            "unit": "g",
+            "name": "sckp",
+            "weight_g": 1.0
+          },
+          "recipe_id": 68,
+          "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+        },
+        {
+          "original_ingredient": "Daun pisang untuk membungkus",
+          "parsed_name": "daun pisang membungkus",
+          "parsed_data": {
+            "raw": "Daun pisang untuk membungkus",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "daun pisang membungkus",
+            "weight_g": 1.0
+          },
+          "recipe_id": 68,
+          "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+        }
+      ]
+    },
+    {
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin",
+      "unmatched_count": 7,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "ambil daunnya",
+          "parsed_name": "instruction:ambil daunnya",
+          "parsed_data": {
+            "raw": "ambil daunnya",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:ambil daunnya",
+            "weight_g": 1.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "belah dua",
+          "parsed_name": "instruction:belah dua",
+          "parsed_data": {
+            "raw": "belah dua",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:belah dua",
+            "weight_g": 30.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "iris tipis",
+          "parsed_name": "instruction:tipis",
+          "parsed_data": {
+            "raw": "iris tipis",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:tipis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "iris tipis",
+          "parsed_name": "instruction:tipis",
+          "parsed_data": {
+            "raw": "iris tipis",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "instruction:tipis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "bakar",
+          "parsed_name": "instruction:bakar",
+          "parsed_data": {
+            "raw": "bakar",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bakar",
+            "weight_g": 30.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "bakar",
+          "parsed_name": "instruction:bakar",
+          "parsed_data": {
+            "raw": "bakar",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bakar",
+            "weight_g": 30.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        },
+        {
+          "original_ingredient": "bakar",
+          "parsed_name": "instruction:bakar",
+          "parsed_data": {
+            "raw": "bakar",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bakar",
+            "weight_g": 30.0
+          },
+          "recipe_id": 69,
+          "recipe_title": "Pindang Serani Ikan Patin"
+        }
+      ]
+    },
+    {
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung",
+      "unmatched_count": 7,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya tuna kalengan",
+          "parsed_name": "instruction:secukupnya tuna kalengan",
+          "parsed_data": {
+            "raw": "secukupnya tuna kalengan",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya tuna kalengan",
+            "weight_g": 10.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "iris kotak",
+          "parsed_name": "kotak",
+          "parsed_data": {
+            "raw": "iris kotak",
+            "quantity": 0.0,
+            "unit": "iris",
+            "name": "kotak",
+            "weight_g": 10.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "secukupnya jagung manis",
+          "parsed_name": "instruction:secukupnya jagung manis",
+          "parsed_data": {
+            "raw": "secukupnya jagung manis",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya jagung manis",
+            "weight_g": 10.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "Taburan :",
+          "parsed_name": "taburan",
+          "parsed_data": {
+            "raw": "Taburan :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "taburan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "secukupnya oregano",
+          "parsed_name": "instruction:secukupnya oregano",
+          "parsed_data": {
+            "raw": "secukupnya oregano",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya oregano",
+            "weight_g": 10.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "secukupnya keju mozarella",
+          "parsed_name": "instruction:secukupnya keju mozarella",
+          "parsed_data": {
+            "raw": "secukupnya keju mozarella",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya keju mozarella",
+            "weight_g": 10.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        },
+        {
+          "original_ingredient": "Bahan Olesan :",
+          "parsed_name": "instruction:bahan olesan",
+          "parsed_data": {
+            "raw": "Bahan Olesan :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan olesan",
+            "weight_g": 0.0
+          },
+          "recipe_id": 70,
+          "recipe_title": "Pizza Tuna Jagung"
+        }
+      ]
+    },
+    {
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing",
+      "unmatched_count": 5,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "3 piring nasi",
+          "parsed_name": "piring nasi",
+          "parsed_data": {
+            "raw": "3 piring nasi",
+            "quantity": 3.0,
+            "unit": "",
+            "name": "piring nasi",
+            "weight_g": 300.0
+          },
+          "recipe_id": 71,
+          "recipe_title": "Nasi Goreng Kambing"
+        },
+        {
+          "original_ingredient": "1 batang kecil kayu manis",
+          "parsed_name": "instruction:kecil kayu manis",
+          "parsed_data": {
+            "raw": "1 batang kecil kayu manis",
+            "quantity": 1.0,
+            "unit": "batang",
+            "name": "instruction:kecil kayu manis",
+            "weight_g": 15.0
+          },
+          "recipe_id": 71,
+          "recipe_title": "Nasi Goreng Kambing"
+        },
+        {
+          "original_ingredient": "1/2 sdt jintan",
+          "parsed_name": "jintan",
+          "parsed_data": {
+            "raw": "1/2 sdt jintan",
+            "quantity": 1.0,
+            "unit": "sdt",
+            "name": "jintan",
+            "weight_g": 5.0
+          },
+          "recipe_id": 71,
+          "recipe_title": "Nasi Goreng Kambing"
+        },
+        {
+          "original_ingredient": "1/2 sdt adas (sy skip karena nggak punya)",
+          "parsed_name": "adas sy skip karena nggak punya",
+          "parsed_data": {
+            "raw": "1/2 sdt adas (sy skip karena nggak punya)",
+            "quantity": 1.0,
+            "unit": "sdt",
+            "name": "adas sy skip karena nggak punya",
+            "weight_g": 5.0
+          },
+          "recipe_id": 71,
+          "recipe_title": "Nasi Goreng Kambing"
+        },
+        {
+          "original_ingredient": "Secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 71,
+          "recipe_title": "Nasi Goreng Kambing"
+        }
+      ]
+    },
+    {
+      "recipe_id": 73,
+      "recipe_title": "Nasi Kebuli",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "cincang kasar",
+          "parsed_name": "instruction:cincang kasar",
+          "parsed_data": {
+            "raw": "cincang kasar",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:cincang kasar",
+            "weight_g": 30.0
+          },
+          "recipe_id": 73,
+          "recipe_title": "Nasi Kebuli"
+        },
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 73,
+          "recipe_title": "Nasi Kebuli"
+        }
+      ]
+    },
+    {
+      "recipe_id": 74,
+      "recipe_title": "Ungkep daging kambing ",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "potong² sesuai selera",
+          "parsed_name": "2",
+          "parsed_data": {
+            "raw": "potong² sesuai selera",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "2",
+            "weight_g": 10.0
+          },
+          "recipe_id": 74,
+          "recipe_title": "Ungkep daging kambing "
+        }
+      ]
+    },
+    {
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging",
+      "unmatched_count": 6,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Bahan kulit :",
+          "parsed_name": "instruction:bahan kulit",
+          "parsed_data": {
+            "raw": "Bahan kulit :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan kulit",
+            "weight_g": 0.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        },
+        {
+          "original_ingredient": "Utk teknik membentuk dan menggoreng :",
+          "parsed_name": "utk teknik membentuk menggoreng",
+          "parsed_data": {
+            "raw": "Utk teknik membentuk dan menggoreng :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "utk teknik membentuk menggoreng",
+            "weight_g": 30.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        },
+        {
+          "original_ingredient": "1 wajan bulan besar",
+          "parsed_name": "wajan bulan",
+          "parsed_data": {
+            "raw": "1 wajan bulan besar",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "wajan bulan",
+            "weight_g": 30.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        },
+        {
+          "original_ingredient": "1 wajan bulat sedang",
+          "parsed_name": "wajan bulat",
+          "parsed_data": {
+            "raw": "1 wajan bulat sedang",
+            "quantity": 1.0,
+            "unit": "",
+            "name": "wajan bulat",
+            "weight_g": 30.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        },
+        {
+          "original_ingredient": "Rolling pin",
+          "parsed_name": "rolling pin",
+          "parsed_data": {
+            "raw": "Rolling pin",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "rolling pin",
+            "weight_g": 30.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        },
+        {
+          "original_ingredient": "Meja yg bersih. Dari marmer lebih baik. Atau tekel & semacamnya",
+          "parsed_name": "meja marmer lebih baik tekel semacamnya",
+          "parsed_data": {
+            "raw": "Meja yg bersih. Dari marmer lebih baik. Atau tekel & semacamnya",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "meja marmer lebih baik tekel semacamnya",
+            "weight_g": 30.0
+          },
+          "recipe_id": 75,
+          "recipe_title": "Martabak Gule Daging"
+        }
+      ]
+    },
+    {
+      "recipe_id": 76,
+      "recipe_title": "Tumis sayur sate kambing",
+      "unmatched_count": 1,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1/2 buah kol iris",
+          "parsed_name": "kol",
+          "parsed_data": {
+            "raw": "1/2 buah kol iris",
+            "quantity": 1.0,
+            "unit": "buah",
+            "name": "kol",
+            "weight_g": 50.0
+          },
+          "recipe_id": 76,
+          "recipe_title": "Tumis sayur sate kambing"
+        }
+      ]
+    },
+    {
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING ",
+      "unmatched_count": 5,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "600 ml Susu full cream (aq susu ultra full cream)",
+          "parsed_name": "susu full cream aq susu ultra full cream",
+          "parsed_data": {
+            "raw": "600 ml Susu full cream (aq susu ultra full cream)",
+            "quantity": 600.0,
+            "unit": "ml",
+            "name": "susu full cream aq susu ultra full cream",
+            "weight_g": 600.0
+          },
+          "recipe_id": 77,
+          "recipe_title": "SOP KAKI KAMBING "
+        },
+        {
+          "original_ingredient": "Bahan Dihaluskan:",
+          "parsed_name": "instruction:bahan dihaluskan",
+          "parsed_data": {
+            "raw": "Bahan Dihaluskan:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan dihaluskan",
+            "weight_g": 0.0
+          },
+          "recipe_id": 77,
+          "recipe_title": "SOP KAKI KAMBING "
+        },
+        {
+          "original_ingredient": "Bahan Lain:",
+          "parsed_name": "instruction:bahan lain",
+          "parsed_data": {
+            "raw": "Bahan Lain:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan lain",
+            "weight_g": 0.0
+          },
+          "recipe_id": 77,
+          "recipe_title": "SOP KAKI KAMBING "
+        },
+        {
+          "original_ingredient": "Bahan Pelengkap:",
+          "parsed_name": "instruction:bahan pelengkap",
+          "parsed_data": {
+            "raw": "Bahan Pelengkap:",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:bahan pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 77,
+          "recipe_title": "SOP KAKI KAMBING "
+        },
+        {
+          "original_ingredient": "Sambal bawang",
+          "parsed_name": "sambal bawang",
+          "parsed_data": {
+            "raw": "Sambal bawang",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "sambal bawang",
+            "weight_g": 30.0
+          },
+          "recipe_id": 77,
+          "recipe_title": "SOP KAKI KAMBING "
+        }
+      ]
+    },
+    {
+      "recipe_id": 78,
+      "recipe_title": "Sop Kepala Kambing",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "Secukupnya Seledri",
+          "parsed_name": "instruction:secukupnya seledri",
+          "parsed_data": {
+            "raw": "Secukupnya Seledri",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya seledri",
+            "weight_g": 10.0
+          },
+          "recipe_id": 78,
+          "recipe_title": "Sop Kepala Kambing"
+        },
+        {
+          "original_ingredient": "Secukupnya Garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "Secukupnya Garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 78,
+          "recipe_title": "Sop Kepala Kambing"
+        }
+      ]
+    },
+    {
+      "recipe_id": 79,
+      "recipe_title": "Nasi briyani kambing",
+      "unmatched_count": 4,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "secukupnya garam",
+          "parsed_name": "instruction:secukupnya garam",
+          "parsed_data": {
+            "raw": "secukupnya garam",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya garam",
+            "weight_g": 10.0
+          },
+          "recipe_id": 79,
+          "recipe_title": "Nasi briyani kambing"
+        },
+        {
+          "original_ingredient": "2 cup beras basmathi",
+          "parsed_name": "beras basmathi",
+          "parsed_data": {
+            "raw": "2 cup beras basmathi",
+            "quantity": 2.0,
+            "unit": "cup",
+            "name": "beras basmathi",
+            "weight_g": 480.0
+          },
+          "recipe_id": 79,
+          "recipe_title": "Nasi briyani kambing"
+        },
+        {
+          "original_ingredient": "6 btr kapulaga hijau",
+          "parsed_name": "btr kapulaga hijau",
+          "parsed_data": {
+            "raw": "6 btr kapulaga hijau",
+            "quantity": 6.0,
+            "unit": "",
+            "name": "btr kapulaga hijau",
+            "weight_g": 6.0
+          },
+          "recipe_id": 79,
+          "recipe_title": "Nasi briyani kambing"
+        },
+        {
+          "original_ingredient": "secukupnya blubend",
+          "parsed_name": "instruction:secukupnya blubend",
+          "parsed_data": {
+            "raw": "secukupnya blubend",
+            "quantity": 1.0,
+            "unit": "secukupnya",
+            "name": "instruction:secukupnya blubend",
+            "weight_g": 10.0
+          },
+          "recipe_id": 79,
+          "recipe_title": "Nasi briyani kambing"
+        }
+      ]
+    },
+    {
+      "recipe_id": 80,
+      "recipe_title": "Sate Kambing",
+      "unmatched_count": 2,
+      "unmatched_ingredients": [
+        {
+          "original_ingredient": "1 sdm penuh blueband",
+          "parsed_name": "penuh blueband",
+          "parsed_data": {
+            "raw": "1 sdm penuh blueband",
+            "quantity": 1.0,
+            "unit": "sdm",
+            "name": "penuh blueband",
+            "weight_g": 15.0
+          },
+          "recipe_id": 80,
+          "recipe_title": "Sate Kambing"
+        },
+        {
+          "original_ingredient": "pelengkap :",
+          "parsed_name": "instruction:pelengkap",
+          "parsed_data": {
+            "raw": "pelengkap :",
+            "quantity": 0.0,
+            "unit": "",
+            "name": "instruction:pelengkap",
+            "weight_g": 0.0
+          },
+          "recipe_id": 80,
+          "recipe_title": "Sate Kambing"
+        }
+      ]
+    }
+  ],
+  "unmatched_ingredients_list": [
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 1,
+      "recipe_title": "Udang saos tiram"
+    },
+    {
+      "original_ingredient": "cuci bersih)",
+      "parsed_name": "instruction:cuci bersih)",
+      "parsed_data": {
+        "raw": "cuci bersih)",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cuci bersih)",
+        "weight_g": 30.0
+      },
+      "recipe_id": 2,
+      "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+    },
+    {
+      "original_ingredient": "cincang",
+      "parsed_name": "instruction:cincang",
+      "parsed_data": {
+        "raw": "cincang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 2,
+      "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+    },
+    {
+      "original_ingredient": "cincang",
+      "parsed_name": "instruction:cincang",
+      "parsed_data": {
+        "raw": "cincang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 2,
+      "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+    },
+    {
+      "original_ingredient": "potong2 / sesuai selera",
+      "parsed_name": "2",
+      "parsed_data": {
+        "raw": "potong2 / sesuai selera",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "2",
+        "weight_g": 10.0
+      },
+      "recipe_id": 2,
+      "recipe_title": "Tumis Sawi Hijau with Shrimp Simple"
+    },
+    {
+      "original_ingredient": "potong2)",
+      "parsed_name": "2",
+      "parsed_data": {
+        "raw": "potong2)",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "2",
+        "weight_g": 100.0
+      },
+      "recipe_id": 6,
+      "recipe_title": "Tumis kacang panjang udang (No Msg)"
+    },
+    {
+      "original_ingredient": "1/2 bungkus mie kuning 2 telor",
+      "parsed_name": "bungkus mie kuning 2 telor",
+      "parsed_data": {
+        "raw": "1/2 bungkus mie kuning 2 telor",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "bungkus mie kuning 2 telor",
+        "weight_g": 30.0
+      },
+      "recipe_id": 7,
+      "recipe_title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 7,
+      "recipe_title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+    },
+    {
+      "original_ingredient": "Secukupnya Cabe Rawit",
+      "parsed_name": "instruction:secukupnya cabe rawit",
+      "parsed_data": {
+        "raw": "Secukupnya Cabe Rawit",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya cabe rawit",
+        "weight_g": 10.0
+      },
+      "recipe_id": 8,
+      "recipe_title": "Udang Goreng tepung Sambal Matah"
+    },
+    {
+      "original_ingredient": "1 buah labu",
+      "parsed_name": "labu",
+      "parsed_data": {
+        "raw": "1 buah labu",
+        "quantity": 1.0,
+        "unit": "buah",
+        "name": "labu",
+        "weight_g": 50.0
+      },
+      "recipe_id": 9,
+      "recipe_title": "Sayur Tahu Labu Udang"
+    },
+    {
+      "original_ingredient": "1 buah labu siam (400 gr)》potong korek api",
+      "parsed_name": "labu siam korek api 400 gr",
+      "parsed_data": {
+        "raw": "1 buah labu siam (400 gr)》potong korek api",
+        "quantity": 1.0,
+        "unit": "buah",
+        "name": "labu siam korek api 400 gr",
+        "weight_g": 50.0
+      },
+      "recipe_id": 10,
+      "recipe_title": "Labu Siam Udang "
+    },
+    {
+      "original_ingredient": "rebus/kukus kemudian haluskan",
+      "parsed_name": "instruction:rebus kukus kemudian haluskan",
+      "parsed_data": {
+        "raw": "rebus/kukus kemudian haluskan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:rebus kukus kemudian haluskan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 11,
+      "recipe_title": "Bola-Bola Tempe"
+    },
+    {
+      "original_ingredient": "4 siung bawah putih",
+      "parsed_name": "bawah putih",
+      "parsed_data": {
+        "raw": "4 siung bawah putih",
+        "quantity": 4.0,
+        "unit": "siung",
+        "name": "bawah putih",
+        "weight_g": 20.0
+      },
+      "recipe_id": 11,
+      "recipe_title": "Bola-Bola Tempe"
+    },
+    {
+      "original_ingredient": "Secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 11,
+      "recipe_title": "Bola-Bola Tempe"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 12,
+      "recipe_title": "Tumis Kacang Panjang Tempe"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 14,
+      "recipe_title": "Tempe orek"
+    },
+    {
+      "original_ingredient": "Secukupnya Taoge",
+      "parsed_name": "instruction:secukupnya taoge",
+      "parsed_data": {
+        "raw": "Secukupnya Taoge",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya taoge",
+        "weight_g": 10.0
+      },
+      "recipe_id": 16,
+      "recipe_title": "Bakwan Tempe"
+    },
+    {
+      "original_ingredient": "potong dadu/korek",
+      "parsed_name": "dadu korek",
+      "parsed_data": {
+        "raw": "potong dadu/korek",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "dadu korek",
+        "weight_g": 100.0
+      },
+      "recipe_id": 16,
+      "recipe_title": "Bakwan Tempe"
+    },
+    {
+      "original_ingredient": "5 buah Buncis",
+      "parsed_name": "buncis",
+      "parsed_data": {
+        "raw": "5 buah Buncis",
+        "quantity": 5.0,
+        "unit": "buah",
+        "name": "buncis",
+        "weight_g": 250.0
+      },
+      "recipe_id": 16,
+      "recipe_title": "Bakwan Tempe"
+    },
+    {
+      "original_ingredient": "iris tebal",
+      "parsed_name": "instruction:tebal",
+      "parsed_data": {
+        "raw": "iris tebal",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:tebal",
+        "weight_g": 10.0
+      },
+      "recipe_id": 16,
+      "recipe_title": "Bakwan Tempe"
+    },
+    {
+      "original_ingredient": "Secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 18,
+      "recipe_title": "Tumis Bawang Merah, Teri Tempe, Jengkol"
+    },
+    {
+      "original_ingredient": "potong kotak",
+      "parsed_name": "kotak",
+      "parsed_data": {
+        "raw": "potong kotak",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "kotak",
+        "weight_g": 100.0
+      },
+      "recipe_id": 19,
+      "recipe_title": "Tempe pete kemangi orek"
+    },
+    {
+      "original_ingredient": "Secukupnya cabe rawit",
+      "parsed_name": "instruction:secukupnya cabe rawit",
+      "parsed_data": {
+        "raw": "Secukupnya cabe rawit",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya cabe rawit",
+        "weight_g": 10.0
+      },
+      "recipe_id": 19,
+      "recipe_title": "Tempe pete kemangi orek"
+    },
+    {
+      "original_ingredient": "Secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 19,
+      "recipe_title": "Tempe pete kemangi orek"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 20,
+      "recipe_title": "Keripik tempe renyah"
+    },
+    {
+      "original_ingredient": "1 ruas jari Kencur",
+      "parsed_name": "jari kencur",
+      "parsed_data": {
+        "raw": "1 ruas jari Kencur",
+        "quantity": 1.0,
+        "unit": "ruas",
+        "name": "jari kencur",
+        "weight_g": 15.0
+      },
+      "recipe_id": 21,
+      "recipe_title": "Ayam Betutu"
+    },
+    {
+      "original_ingredient": "1/4 kg dada fillet",
+      "parsed_name": "dada fillet",
+      "parsed_data": {
+        "raw": "1/4 kg dada fillet",
+        "quantity": 1.0,
+        "unit": "kg",
+        "name": "dada fillet",
+        "weight_g": 1000.0
+      },
+      "recipe_id": 22,
+      "recipe_title": "Nugget ayam homemade"
+    },
+    {
+      "original_ingredient": "2 sdm meizena",
+      "parsed_name": "meizena",
+      "parsed_data": {
+        "raw": "2 sdm meizena",
+        "quantity": 2.0,
+        "unit": "sdm",
+        "name": "meizena",
+        "weight_g": 30.0
+      },
+      "recipe_id": 22,
+      "recipe_title": "Nugget ayam homemade"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 23,
+      "recipe_title": "Ayam geprek"
+    },
+    {
+      "original_ingredient": "potong kecil (sesuai selera)",
+      "parsed_name": "instruction:kecil",
+      "parsed_data": {
+        "raw": "potong kecil (sesuai selera)",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:kecil",
+        "weight_g": 10.0
+      },
+      "recipe_id": 24,
+      "recipe_title": "Tulang ayam rica wangi"
+    },
+    {
+      "original_ingredient": "🍗 Bahan kulit :",
+      "parsed_name": "instruction:bahan kulit",
+      "parsed_data": {
+        "raw": "🍗 Bahan kulit :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan kulit",
+        "weight_g": 0.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "🍗 Bahan ragout :",
+      "parsed_name": "instruction:bahan ragout",
+      "parsed_data": {
+        "raw": "🍗 Bahan ragout :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan ragout",
+        "weight_g": 0.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "cincang halus",
+      "parsed_name": "instruction:cincang halus",
+      "parsed_data": {
+        "raw": "cincang halus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang halus",
+        "weight_g": 30.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "cincang",
+      "parsed_name": "instruction:cincang",
+      "parsed_data": {
+        "raw": "cincang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "Pelapis :",
+      "parsed_name": "pelapis",
+      "parsed_data": {
+        "raw": "Pelapis :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "pelapis",
+        "weight_g": 30.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "kocok lepas",
+      "parsed_name": "instruction:kocok lepas",
+      "parsed_data": {
+        "raw": "kocok lepas",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kocok lepas",
+        "weight_g": 30.0
+      },
+      "recipe_id": 25,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "Buah keras/ kemiri 3 biji",
+      "parsed_name": "keras kemiri 3 biji",
+      "parsed_data": {
+        "raw": "Buah keras/ kemiri 3 biji",
+        "quantity": 0.0,
+        "unit": "buah",
+        "name": "keras kemiri 3 biji",
+        "weight_g": 50.0
+      },
+      "recipe_id": 26,
+      "recipe_title": "Ayam sambal balado"
+    },
+    {
+      "original_ingredient": "Bahan Lain",
+      "parsed_name": "instruction:bahan lain",
+      "parsed_data": {
+        "raw": "Bahan Lain",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan lain",
+        "weight_g": 0.0
+      },
+      "recipe_id": 27,
+      "recipe_title": "Ayam Woku Manado"
+    },
+    {
+      "original_ingredient": "potong 12/16",
+      "parsed_name": "12 16",
+      "parsed_data": {
+        "raw": "potong 12/16",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "12 16",
+        "weight_g": 100.0
+      },
+      "recipe_id": 27,
+      "recipe_title": "Ayam Woku Manado"
+    },
+    {
+      "original_ingredient": "potong2",
+      "parsed_name": "2",
+      "parsed_data": {
+        "raw": "potong2",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "2",
+        "weight_g": 100.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "bumbui lada dan garam",
+      "parsed_name": "bumbui lada garam",
+      "parsed_data": {
+        "raw": "bumbui lada dan garam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "bumbui lada garam",
+        "weight_g": 1.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "diamkan min.1 jam",
+      "parsed_name": "instruction:diamkan min.1 jam",
+      "parsed_data": {
+        "raw": "diamkan min.1 jam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:diamkan min.1 jam",
+        "weight_g": 30.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Bahan pelapis:",
+      "parsed_name": "instruction:bahan pelapis",
+      "parsed_data": {
+        "raw": "Bahan pelapis:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan pelapis",
+        "weight_g": 0.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "tambahkan lada",
+      "parsed_name": "instruction:tambahkan lada",
+      "parsed_data": {
+        "raw": "tambahkan lada",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:tambahkan lada",
+        "weight_g": 1.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Bahan saos:",
+      "parsed_name": "instruction:bahan saos",
+      "parsed_data": {
+        "raw": "Bahan saos:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan saos",
+        "weight_g": 0.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Larutan maizena",
+      "parsed_name": "maizena",
+      "parsed_data": {
+        "raw": "Larutan maizena",
+        "quantity": 0.0,
+        "unit": "l",
+        "name": "maizena",
+        "weight_g": 1000.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Bahan pelengkap:",
+      "parsed_name": "instruction:bahan pelengkap",
+      "parsed_data": {
+        "raw": "Bahan pelengkap:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Irisan kol",
+      "parsed_name": "kol",
+      "parsed_data": {
+        "raw": "Irisan kol",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "kol",
+        "weight_g": 10.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "Mayonaise/saos",
+      "parsed_name": "mayonaise saos",
+      "parsed_data": {
+        "raw": "Mayonaise/saos",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "mayonaise saos",
+        "weight_g": 30.0
+      },
+      "recipe_id": 28,
+      "recipe_title": "Chicken katsu rumahan"
+    },
+    {
+      "original_ingredient": "kulit risoles:",
+      "parsed_name": "kulit risoles",
+      "parsed_data": {
+        "raw": "kulit risoles:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "kulit risoles",
+        "weight_g": 30.0
+      },
+      "recipe_id": 29,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "secukupnya royco",
+      "parsed_name": "instruction:secukupnya royco",
+      "parsed_data": {
+        "raw": "secukupnya royco",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya royco",
+        "weight_g": 10.0
+      },
+      "recipe_id": 29,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "75 gr keju parut / sesuai selera masing2",
+      "parsed_name": "keju masing2",
+      "parsed_data": {
+        "raw": "75 gr keju parut / sesuai selera masing2",
+        "quantity": 75.0,
+        "unit": "secukupnya",
+        "name": "keju masing2",
+        "weight_g": 750.0
+      },
+      "recipe_id": 29,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "bahan panir :",
+      "parsed_name": "instruction:bahan panir",
+      "parsed_data": {
+        "raw": "bahan panir :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan panir",
+        "weight_g": 0.0
+      },
+      "recipe_id": 29,
+      "recipe_title": "Risoles ragout ayam"
+    },
+    {
+      "original_ingredient": "Secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 30,
+      "recipe_title": "Rica - Rica Ayam"
+    },
+    {
+      "original_ingredient": "biarkan suhu ruang",
+      "parsed_name": "biarkan suhu ruang",
+      "parsed_data": {
+        "raw": "biarkan suhu ruang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "biarkan suhu ruang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies "
+    },
+    {
+      "original_ingredient": "# isian",
+      "parsed_name": "isian",
+      "parsed_data": {
+        "raw": "# isian",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "isian",
+        "weight_g": 30.0
+      },
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies "
+    },
+    {
+      "original_ingredient": "1/2 sdt Lada hitam",
+      "parsed_name": "lada hitam",
+      "parsed_data": {
+        "raw": "1/2 sdt Lada hitam",
+        "quantity": 1.0,
+        "unit": "sdt",
+        "name": "lada hitam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies "
+    },
+    {
+      "original_ingredient": "Secukupnya Garam (hanya jika diperlukan)",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya Garam (hanya jika diperlukan)",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies "
+    },
+    {
+      "original_ingredient": "kocok rata untuk olesan",
+      "parsed_name": "instruction:kocok rata untuk olesan",
+      "parsed_data": {
+        "raw": "kocok rata untuk olesan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kocok rata untuk olesan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 31,
+      "recipe_title": "Easy Beef Hand Pies "
+    },
+    {
+      "original_ingredient": "Bahan Kulit Lasagna (aku buat 1/2 resep):",
+      "parsed_name": "instruction:bahan kulit lasagna",
+      "parsed_data": {
+        "raw": "Bahan Kulit Lasagna (aku buat 1/2 resep):",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan kulit lasagna",
+        "weight_g": 0.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "2 kuntum brokoli (tambahan)",
+      "parsed_name": "kuntum brokoli",
+      "parsed_data": {
+        "raw": "2 kuntum brokoli (tambahan)",
+        "quantity": 2.0,
+        "unit": "",
+        "name": "kuntum brokoli",
+        "weight_g": 60.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "1 sendok teh Oregano (skip)",
+      "parsed_name": "teh oregano skip",
+      "parsed_data": {
+        "raw": "1 sendok teh Oregano (skip)",
+        "quantity": 1.0,
+        "unit": "sendok",
+        "name": "teh oregano skip",
+        "weight_g": 30.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "1/2 Sdt Basil (skip)",
+      "parsed_name": "basil skip",
+      "parsed_data": {
+        "raw": "1/2 Sdt Basil (skip)",
+        "quantity": 1.0,
+        "unit": "sdt",
+        "name": "basil skip",
+        "weight_g": 5.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "secukupnya Garam (1/2 sdt)",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam (1/2 sdt)",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "100 gram Keju Cheddar (aku mix mozarella)",
+      "parsed_name": "keju cheddar aku mix mozarella",
+      "parsed_data": {
+        "raw": "100 gram Keju Cheddar (aku mix mozarella)",
+        "quantity": 100.0,
+        "unit": "gram",
+        "name": "keju cheddar aku mix mozarella",
+        "weight_g": 100.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "bahan taburan",
+      "parsed_name": "instruction:bahan taburan",
+      "parsed_data": {
+        "raw": "bahan taburan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan taburan",
+        "weight_g": 0.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "secukupnya Keju Cheddar (aku mozzarella)",
+      "parsed_name": "instruction:secukupnya keju cheddar",
+      "parsed_data": {
+        "raw": "secukupnya Keju Cheddar (aku mozzarella)",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya keju cheddar",
+        "weight_g": 10.0
+      },
+      "recipe_id": 33,
+      "recipe_title": "Beef Lasagna dgn Saus & Kulit Homemade "
+    },
+    {
+      "original_ingredient": "1 pack udon beku",
+      "parsed_name": "pack udon beku",
+      "parsed_data": {
+        "raw": "1 pack udon beku",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "pack udon beku",
+        "weight_g": 30.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "iris tipis",
+      "parsed_name": "instruction:tipis",
+      "parsed_data": {
+        "raw": "iris tipis",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:tipis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "rebus hingga empuk",
+      "parsed_name": "instruction:rebus hingga empuk",
+      "parsed_data": {
+        "raw": "rebus hingga empuk",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:rebus hingga empuk",
+        "weight_g": 30.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "Pelengkap:",
+      "parsed_name": "instruction:pelengkap",
+      "parsed_data": {
+        "raw": "Pelengkap:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "Taburan:",
+      "parsed_name": "taburan",
+      "parsed_data": {
+        "raw": "Taburan:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "taburan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "Chili flakes",
+      "parsed_name": "chili flakes",
+      "parsed_data": {
+        "raw": "Chili flakes",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "chili flakes",
+        "weight_g": 30.0
+      },
+      "recipe_id": 34,
+      "recipe_title": "Beef Udon"
+    },
+    {
+      "original_ingredient": "1/2 paprika merah rajang",
+      "parsed_name": "paprika merah rajang",
+      "parsed_data": {
+        "raw": "1/2 paprika merah rajang",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "paprika merah rajang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "1/2 paprika hijau (terserah aja mau pake paprika warna apa sj)",
+      "parsed_name": "paprika hijau terserah aja mau pake paprika warna apa sj",
+      "parsed_data": {
+        "raw": "1/2 paprika hijau (terserah aja mau pake paprika warna apa sj)",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "paprika hijau terserah aja mau pake paprika warna apa sj",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "rajang",
+      "parsed_name": "instruction:rajang",
+      "parsed_data": {
+        "raw": "rajang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:rajang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "cacah halus",
+      "parsed_name": "cacah",
+      "parsed_data": {
+        "raw": "cacah halus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "cacah",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "1 1/2 sdt lada hitam (atau sesuai selera)",
+      "parsed_name": "2 sdt lada hitam",
+      "parsed_data": {
+        "raw": "1 1/2 sdt lada hitam (atau sesuai selera)",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "2 sdt lada hitam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "tumbuk kasar",
+      "parsed_name": "instruction:tumbuk kasar",
+      "parsed_data": {
+        "raw": "tumbuk kasar",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:tumbuk kasar",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "me : yes)",
+      "parsed_name": "me yes",
+      "parsed_data": {
+        "raw": "me : yes)",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "me yes",
+        "weight_g": 30.0
+      },
+      "recipe_id": 35,
+      "recipe_title": "Daging sapi lada hitam"
+    },
+    {
+      "original_ingredient": "10 btg buncis iris sesuai selera",
+      "parsed_name": "buncis",
+      "parsed_data": {
+        "raw": "10 btg buncis iris sesuai selera",
+        "quantity": 10.0,
+        "unit": "secukupnya",
+        "name": "buncis",
+        "weight_g": 100.0
+      },
+      "recipe_id": 36,
+      "recipe_title": "Asem asem buncis daging sapi"
+    },
+    {
+      "original_ingredient": "secukupnya asam jawa",
+      "parsed_name": "instruction:secukupnya asam jawa",
+      "parsed_data": {
+        "raw": "secukupnya asam jawa",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya asam jawa",
+        "weight_g": 10.0
+      },
+      "recipe_id": 36,
+      "recipe_title": "Asem asem buncis daging sapi"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 36,
+      "recipe_title": "Asem asem buncis daging sapi"
+    },
+    {
+      "original_ingredient": "secukupnya asam jawa",
+      "parsed_name": "instruction:secukupnya asam jawa",
+      "parsed_data": {
+        "raw": "secukupnya asam jawa",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya asam jawa",
+        "weight_g": 10.0
+      },
+      "recipe_id": 37,
+      "recipe_title": "Sate Sapi Goreng"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 37,
+      "recipe_title": "Sate Sapi Goreng"
+    },
+    {
+      "original_ingredient": "Bahan taburan",
+      "parsed_name": "instruction:bahan taburan",
+      "parsed_data": {
+        "raw": "Bahan taburan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan taburan",
+        "weight_g": 0.0
+      },
+      "recipe_id": 37,
+      "recipe_title": "Sate Sapi Goreng"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 38,
+      "recipe_title": "Rawon Sapi Resep Emak "
+    },
+    {
+      "original_ingredient": "1/2 sdt jintan",
+      "parsed_name": "jintan",
+      "parsed_data": {
+        "raw": "1/2 sdt jintan",
+        "quantity": 1.0,
+        "unit": "sdt",
+        "name": "jintan",
+        "weight_g": 5.0
+      },
+      "recipe_id": 38,
+      "recipe_title": "Rawon Sapi Resep Emak "
+    },
+    {
+      "original_ingredient": "1 ruas kecil kencur",
+      "parsed_name": "instruction:kecil kencur",
+      "parsed_data": {
+        "raw": "1 ruas kecil kencur",
+        "quantity": 1.0,
+        "unit": "ruas",
+        "name": "instruction:kecil kencur",
+        "weight_g": 15.0
+      },
+      "recipe_id": 38,
+      "recipe_title": "Rawon Sapi Resep Emak "
+    },
+    {
+      "original_ingredient": "1/2 btg korek api kayu manis",
+      "parsed_name": "korek api kayu manis",
+      "parsed_data": {
+        "raw": "1/2 btg korek api kayu manis",
+        "quantity": 1.0,
+        "unit": "btg",
+        "name": "korek api kayu manis",
+        "weight_g": 15.0
+      },
+      "recipe_id": 39,
+      "recipe_title": "Tongseng sapi"
+    },
+    {
+      "original_ingredient": "Kol secukupnya potong kotak\"",
+      "parsed_name": "kol kotak",
+      "parsed_data": {
+        "raw": "Kol secukupnya potong kotak\"",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "kol kotak",
+        "weight_g": 10.0
+      },
+      "recipe_id": 39,
+      "recipe_title": "Tongseng sapi"
+    },
+    {
+      "original_ingredient": "iris setipis mungkin",
+      "parsed_name": "setipis mungkin",
+      "parsed_data": {
+        "raw": "iris setipis mungkin",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "setipis mungkin",
+        "weight_g": 10.0
+      },
+      "recipe_id": 40,
+      "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+    },
+    {
+      "original_ingredient": "cincang halus",
+      "parsed_name": "instruction:cincang halus",
+      "parsed_data": {
+        "raw": "cincang halus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang halus",
+        "weight_g": 30.0
+      },
+      "recipe_id": 40,
+      "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+    },
+    {
+      "original_ingredient": "sangrai",
+      "parsed_name": "instruction:sangrai",
+      "parsed_data": {
+        "raw": "sangrai",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:sangrai",
+        "weight_g": 30.0
+      },
+      "recipe_id": 40,
+      "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+    },
+    {
+      "original_ingredient": "rajang halus",
+      "parsed_name": "instruction:rajang halus",
+      "parsed_data": {
+        "raw": "rajang halus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:rajang halus",
+        "weight_g": 30.0
+      },
+      "recipe_id": 40,
+      "recipe_title": "Bulgogi (Semur Daging Sapi ala Korea)"
+    },
+    {
+      "original_ingredient": "1 mangkuk toge",
+      "parsed_name": "mangkuk toge",
+      "parsed_data": {
+        "raw": "1 mangkuk toge",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "mangkuk toge",
+        "weight_g": 30.0
+      },
+      "recipe_id": 41,
+      "recipe_title": "Dadar Telor Cah Toge"
+    },
+    {
+      "original_ingredient": "4 telor",
+      "parsed_name": "telor",
+      "parsed_data": {
+        "raw": "4 telor",
+        "quantity": 4.0,
+        "unit": "",
+        "name": "telor",
+        "weight_g": 120.0
+      },
+      "recipe_id": 42,
+      "recipe_title": "Telor dadar ala RM Padang"
+    },
+    {
+      "original_ingredient": "4 sdm klapa parut sangrai dulu",
+      "parsed_name": "klapa sangrai dulu",
+      "parsed_data": {
+        "raw": "4 sdm klapa parut sangrai dulu",
+        "quantity": 4.0,
+        "unit": "sdm",
+        "name": "klapa sangrai dulu",
+        "weight_g": 60.0
+      },
+      "recipe_id": 42,
+      "recipe_title": "Telor dadar ala RM Padang"
+    },
+    {
+      "original_ingredient": "giling halus",
+      "parsed_name": "instruction:halus",
+      "parsed_data": {
+        "raw": "giling halus",
+        "quantity": 0.0,
+        "unit": "g",
+        "name": "instruction:halus",
+        "weight_g": 1.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "haluskan",
+      "parsed_name": "instruction:haluskan",
+      "parsed_data": {
+        "raw": "haluskan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:haluskan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "iris halus",
+      "parsed_name": "instruction:halus",
+      "parsed_data": {
+        "raw": "iris halus",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:halus",
+        "weight_g": 10.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "Stik bambu secukupnya",
+      "parsed_name": "stik bambu",
+      "parsed_data": {
+        "raw": "Stik bambu secukupnya",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "stik bambu",
+        "weight_g": 10.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "kocok lepas dan beri sedikit garam",
+      "parsed_name": "instruction:kocok lepas dan beri sedikit garam",
+      "parsed_data": {
+        "raw": "kocok lepas dan beri sedikit garam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kocok lepas dan beri sedikit garam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "untuk pelengkap",
+      "parsed_name": "instruction:untuk pelengkap",
+      "parsed_data": {
+        "raw": "untuk pelengkap",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:untuk pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 43,
+      "recipe_title": "Sempol Ayam Telur Gulung"
+    },
+    {
+      "original_ingredient": "semangkuk toge",
+      "parsed_name": "semangkuk toge",
+      "parsed_data": {
+        "raw": "semangkuk toge",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "semangkuk toge",
+        "weight_g": 30.0
+      },
+      "recipe_id": 44,
+      "recipe_title": "Dadar telor cah toge"
+    },
+    {
+      "original_ingredient": "secukupnya buncis",
+      "parsed_name": "instruction:secukupnya buncis",
+      "parsed_data": {
+        "raw": "secukupnya buncis",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya buncis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 45,
+      "recipe_title": "Tumis buncis orak arik telor"
+    },
+    {
+      "original_ingredient": "secukupnya Rayco",
+      "parsed_name": "instruction:secukupnya rayco",
+      "parsed_data": {
+        "raw": "secukupnya Rayco",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya rayco",
+        "weight_g": 10.0
+      },
+      "recipe_id": 45,
+      "recipe_title": "Tumis buncis orak arik telor"
+    },
+    {
+      "original_ingredient": "bumbu (garam",
+      "parsed_name": "instruction:bumbu (garam",
+      "parsed_data": {
+        "raw": "bumbu (garam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bumbu (garam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 46,
+      "recipe_title": "Kornet tumis telur"
+    },
+    {
+      "original_ingredient": "15 batang buncis",
+      "parsed_name": "buncis",
+      "parsed_data": {
+        "raw": "15 batang buncis",
+        "quantity": 15.0,
+        "unit": "batang",
+        "name": "buncis",
+        "weight_g": 225.0
+      },
+      "recipe_id": 49,
+      "recipe_title": "Tumis buncis telur"
+    },
+    {
+      "original_ingredient": "rebus",
+      "parsed_name": "instruction:rebus",
+      "parsed_data": {
+        "raw": "rebus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:rebus",
+        "weight_g": 30.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "kupas",
+      "parsed_name": "instruction:kupas",
+      "parsed_data": {
+        "raw": "kupas",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kupas",
+        "weight_g": 30.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "potong sesuai selera",
+      "parsed_name": "instruction:sesuai selera",
+      "parsed_data": {
+        "raw": "potong sesuai selera",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:sesuai selera",
+        "weight_g": 10.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "potong jadi 4 bagian",
+      "parsed_name": "4 bagian",
+      "parsed_data": {
+        "raw": "potong jadi 4 bagian",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "4 bagian",
+        "weight_g": 100.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "secukupnya Lada bubuk",
+      "parsed_name": "instruction:secukupnya lada bubuk",
+      "parsed_data": {
+        "raw": "secukupnya Lada bubuk",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya lada bubuk",
+        "weight_g": 10.0
+      },
+      "recipe_id": 50,
+      "recipe_title": "Semur Telur & Kentang"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 51,
+      "recipe_title": "Kentang tahu kuah kecap"
+    },
+    {
+      "original_ingredient": "secukupnya Bawang goreng",
+      "parsed_name": "instruction:secukupnya bawang goreng",
+      "parsed_data": {
+        "raw": "secukupnya Bawang goreng",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya bawang goreng",
+        "weight_g": 10.0
+      },
+      "recipe_id": 52,
+      "recipe_title": "Opor Ayam + Tahu"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 52,
+      "recipe_title": "Opor Ayam + Tahu"
+    },
+    {
+      "original_ingredient": "potong2",
+      "parsed_name": "2",
+      "parsed_data": {
+        "raw": "potong2",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "2",
+        "weight_g": 100.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "goreng setengah matang",
+      "parsed_name": "setengah",
+      "parsed_data": {
+        "raw": "goreng setengah matang",
+        "quantity": 0.0,
+        "unit": "g",
+        "name": "setengah",
+        "weight_g": 1.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "remas",
+      "parsed_name": "remas",
+      "parsed_data": {
+        "raw": "remas",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "remas",
+        "weight_g": 30.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "secukupnya Asam jawa",
+      "parsed_name": "instruction:secukupnya asam jawa",
+      "parsed_data": {
+        "raw": "secukupnya Asam jawa",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya asam jawa",
+        "weight_g": 10.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "Haluskan:",
+      "parsed_name": "instruction:haluskan",
+      "parsed_data": {
+        "raw": "Haluskan:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:haluskan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 53,
+      "recipe_title": "Patin tahu asam pedas"
+    },
+    {
+      "original_ingredient": "iris halus",
+      "parsed_name": "instruction:halus",
+      "parsed_data": {
+        "raw": "iris halus",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:halus",
+        "weight_g": 10.0
+      },
+      "recipe_id": 54,
+      "recipe_title": "Perkedel Tahu Kari Tanpa Telur"
+    },
+    {
+      "original_ingredient": "Sedikit garam",
+      "parsed_name": "instruction:sedikit garam",
+      "parsed_data": {
+        "raw": "Sedikit garam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:sedikit garam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 54,
+      "recipe_title": "Perkedel Tahu Kari Tanpa Telur"
+    },
+    {
+      "original_ingredient": "Haluskan dengan menggunakan garpu",
+      "parsed_name": "instruction:haluskan dengan menggunakan garpu",
+      "parsed_data": {
+        "raw": "Haluskan dengan menggunakan garpu",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:haluskan dengan menggunakan garpu",
+        "weight_g": 30.0
+      },
+      "recipe_id": 56,
+      "recipe_title": "Tahu Aci Pedas Manis "
+    },
+    {
+      "original_ingredient": "kocok lepas",
+      "parsed_name": "instruction:kocok lepas",
+      "parsed_data": {
+        "raw": "kocok lepas",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kocok lepas",
+        "weight_g": 30.0
+      },
+      "recipe_id": 56,
+      "recipe_title": "Tahu Aci Pedas Manis "
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 56,
+      "recipe_title": "Tahu Aci Pedas Manis "
+    },
+    {
+      "original_ingredient": "sesuai selera",
+      "parsed_name": "instruction:sesuai selera",
+      "parsed_data": {
+        "raw": "sesuai selera",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:sesuai selera",
+        "weight_g": 10.0
+      },
+      "recipe_id": 56,
+      "recipe_title": "Tahu Aci Pedas Manis "
+    },
+    {
+      "original_ingredient": "iris tipis",
+      "parsed_name": "instruction:tipis",
+      "parsed_data": {
+        "raw": "iris tipis",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:tipis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 57,
+      "recipe_title": "Perkedel tahu"
+    },
+    {
+      "original_ingredient": "kocok lepas",
+      "parsed_name": "instruction:kocok lepas",
+      "parsed_data": {
+        "raw": "kocok lepas",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kocok lepas",
+        "weight_g": 30.0
+      },
+      "recipe_id": 57,
+      "recipe_title": "Perkedel tahu"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 57,
+      "recipe_title": "Perkedel tahu"
+    },
+    {
+      "original_ingredient": "Sejumput garam",
+      "parsed_name": "sejumput garam",
+      "parsed_data": {
+        "raw": "Sejumput garam",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "sejumput garam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 60,
+      "recipe_title": "Tahu Kecap Kental Pedas"
+    },
+    {
+      "original_ingredient": "sesuai selera Cabe",
+      "parsed_name": "instruction:sesuai selera cabe",
+      "parsed_data": {
+        "raw": "sesuai selera Cabe",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:sesuai selera cabe",
+        "weight_g": 10.0
+      },
+      "recipe_id": 61,
+      "recipe_title": "Ikan patin kuah asam pedas"
+    },
+    {
+      "original_ingredient": "1 ekor gurame ±500 gr",
+      "parsed_name": "ekor gurame 500 gr",
+      "parsed_data": {
+        "raw": "1 ekor gurame ±500 gr",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "ekor gurame 500 gr",
+        "weight_g": 30.0
+      },
+      "recipe_id": 62,
+      "recipe_title": "Gurame Bakar"
+    },
+    {
+      "original_ingredient": "2 1/2 sdt garam",
+      "parsed_name": "2 sdt garam",
+      "parsed_data": {
+        "raw": "2 1/2 sdt garam",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "2 sdt garam",
+        "weight_g": 5.0
+      },
+      "recipe_id": 62,
+      "recipe_title": "Gurame Bakar"
+    },
+    {
+      "original_ingredient": "secukupnya Lada bubuk",
+      "parsed_name": "instruction:secukupnya lada bubuk",
+      "parsed_data": {
+        "raw": "secukupnya Lada bubuk",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya lada bubuk",
+        "weight_g": 10.0
+      },
+      "recipe_id": 62,
+      "recipe_title": "Gurame Bakar"
+    },
+    {
+      "original_ingredient": "1 gurame dipotong menjadi 4",
+      "parsed_name": "instruction:dipotong menjadi 4",
+      "parsed_data": {
+        "raw": "1 gurame dipotong menjadi 4",
+        "quantity": 1.0,
+        "unit": "g",
+        "name": "instruction:dipotong menjadi 4",
+        "weight_g": 1.0
+      },
+      "recipe_id": 63,
+      "recipe_title": "Pesmol Gurame"
+    },
+    {
+      "original_ingredient": "bahan lainnya",
+      "parsed_name": "instruction:bahan lainnya",
+      "parsed_data": {
+        "raw": "bahan lainnya",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan lainnya",
+        "weight_g": 0.0
+      },
+      "recipe_id": 63,
+      "recipe_title": "Pesmol Gurame"
+    },
+    {
+      "original_ingredient": "1 timun",
+      "parsed_name": "timun",
+      "parsed_data": {
+        "raw": "1 timun",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "timun",
+        "weight_g": 30.0
+      },
+      "recipe_id": 63,
+      "recipe_title": "Pesmol Gurame"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 63,
+      "recipe_title": "Pesmol Gurame"
+    },
+    {
+      "original_ingredient": "Bahan utama:",
+      "parsed_name": "instruction:bahan utama",
+      "parsed_data": {
+        "raw": "Bahan utama:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan utama",
+        "weight_g": 0.0
+      },
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin"
+    },
+    {
+      "original_ingredient": "potong 4 bagian",
+      "parsed_name": "4 bagian",
+      "parsed_data": {
+        "raw": "potong 4 bagian",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "4 bagian",
+        "weight_g": 100.0
+      },
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin"
+    },
+    {
+      "original_ingredient": "potong 4 bagian",
+      "parsed_name": "4 bagian",
+      "parsed_data": {
+        "raw": "potong 4 bagian",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "4 bagian",
+        "weight_g": 100.0
+      },
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin"
+    },
+    {
+      "original_ingredient": "Bahan pelengkap:",
+      "parsed_name": "instruction:bahan pelengkap",
+      "parsed_data": {
+        "raw": "Bahan pelengkap:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin"
+    },
+    {
+      "original_ingredient": "1/2 buah nanas",
+      "parsed_name": "nanas",
+      "parsed_data": {
+        "raw": "1/2 buah nanas",
+        "quantity": 1.0,
+        "unit": "buah",
+        "name": "nanas",
+        "weight_g": 50.0
+      },
+      "recipe_id": 64,
+      "recipe_title": "Pindang Patin"
+    },
+    {
+      "original_ingredient": "kukus dan haluskan",
+      "parsed_name": "instruction:kukus dan haluskan",
+      "parsed_data": {
+        "raw": "kukus dan haluskan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kukus dan haluskan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "haluskan",
+      "parsed_name": "instruction:haluskan",
+      "parsed_data": {
+        "raw": "haluskan",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:haluskan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "Secukupnya kulit pangsit rebus",
+      "parsed_name": "instruction:secukupnya kulit pangsit rebus",
+      "parsed_data": {
+        "raw": "Secukupnya kulit pangsit rebus",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya kulit pangsit rebus",
+        "weight_g": 10.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "Pelengkap :",
+      "parsed_name": "instruction:pelengkap",
+      "parsed_data": {
+        "raw": "Pelengkap :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "Pare",
+      "parsed_name": "pare",
+      "parsed_data": {
+        "raw": "Pare",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "pare",
+        "weight_g": 30.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "Kol",
+      "parsed_name": "kol",
+      "parsed_data": {
+        "raw": "Kol",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "kol",
+        "weight_g": 30.0
+      },
+      "recipe_id": 65,
+      "recipe_title": "Siomay Bandung Ikan Tenggiri"
+    },
+    {
+      "original_ingredient": "1 kg bandeng segar (isi 3 ekor)",
+      "parsed_name": "bandeng isi 3 ekor",
+      "parsed_data": {
+        "raw": "1 kg bandeng segar (isi 3 ekor)",
+        "quantity": 1.0,
+        "unit": "kg",
+        "name": "bandeng isi 3 ekor",
+        "weight_g": 1000.0
+      },
+      "recipe_id": 66,
+      "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+    },
+    {
+      "original_ingredient": "kira dua senti)",
+      "parsed_name": "instruction:kira dua senti)",
+      "parsed_data": {
+        "raw": "kira dua senti)",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kira dua senti)",
+        "weight_g": 5.0
+      },
+      "recipe_id": 66,
+      "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+    },
+    {
+      "original_ingredient": "kira satu setengah senti)",
+      "parsed_name": "instruction:kira satu setengah senti)",
+      "parsed_data": {
+        "raw": "kira satu setengah senti)",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:kira satu setengah senti)",
+        "weight_g": 5.0
+      },
+      "recipe_id": 66,
+      "recipe_title": "Bandeng Asem Pedas Seger Kuah Kuning "
+    },
+    {
+      "original_ingredient": "diiris",
+      "parsed_name": "instruction:diiris",
+      "parsed_data": {
+        "raw": "diiris",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:diiris",
+        "weight_g": 30.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "diiris",
+      "parsed_name": "instruction:diiris",
+      "parsed_data": {
+        "raw": "diiris",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:diiris",
+        "weight_g": 30.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "potong 8",
+      "parsed_name": "8",
+      "parsed_data": {
+        "raw": "potong 8",
+        "quantity": 0.0,
+        "unit": "potong",
+        "name": "8",
+        "weight_g": 100.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "diiris",
+      "parsed_name": "instruction:diiris",
+      "parsed_data": {
+        "raw": "diiris",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:diiris",
+        "weight_g": 30.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "ambil daunnya saja",
+      "parsed_name": "instruction:ambil daunnya saja",
+      "parsed_data": {
+        "raw": "ambil daunnya saja",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:ambil daunnya saja",
+        "weight_g": 1.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "jika suka pedas boleh ditambah sesuai selera",
+      "parsed_name": "instruction:jika suka pedas boleh ditambah sesuai selera",
+      "parsed_data": {
+        "raw": "jika suka pedas boleh ditambah sesuai selera",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:jika suka pedas boleh ditambah sesuai selera",
+        "weight_g": 10.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "secukupnya. Jamur lain juga boleh",
+      "parsed_name": "jamur lain juga boleh",
+      "parsed_data": {
+        "raw": "secukupnya. Jamur lain juga boleh",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "jamur lain juga boleh",
+        "weight_g": 10.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 67,
+      "recipe_title": "Gurami Kuah Asam"
+    },
+    {
+      "original_ingredient": "1 cm kencur",
+      "parsed_name": "cm kencur",
+      "parsed_data": {
+        "raw": "1 cm kencur",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "cm kencur",
+        "weight_g": 10.0
+      },
+      "recipe_id": 68,
+      "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+    },
+    {
+      "original_ingredient": "Garam sckp",
+      "parsed_name": "sckp",
+      "parsed_data": {
+        "raw": "Garam sckp",
+        "quantity": 0.0,
+        "unit": "g",
+        "name": "sckp",
+        "weight_g": 1.0
+      },
+      "recipe_id": 68,
+      "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+    },
+    {
+      "original_ingredient": "Daun pisang untuk membungkus",
+      "parsed_name": "daun pisang membungkus",
+      "parsed_data": {
+        "raw": "Daun pisang untuk membungkus",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "daun pisang membungkus",
+        "weight_g": 1.0
+      },
+      "recipe_id": 68,
+      "recipe_title": "Pepes Ikan Tuna Bumbu Orange"
+    },
+    {
+      "original_ingredient": "ambil daunnya",
+      "parsed_name": "instruction:ambil daunnya",
+      "parsed_data": {
+        "raw": "ambil daunnya",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:ambil daunnya",
+        "weight_g": 1.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "belah dua",
+      "parsed_name": "instruction:belah dua",
+      "parsed_data": {
+        "raw": "belah dua",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:belah dua",
+        "weight_g": 30.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "iris tipis",
+      "parsed_name": "instruction:tipis",
+      "parsed_data": {
+        "raw": "iris tipis",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:tipis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "iris tipis",
+      "parsed_name": "instruction:tipis",
+      "parsed_data": {
+        "raw": "iris tipis",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "instruction:tipis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "bakar",
+      "parsed_name": "instruction:bakar",
+      "parsed_data": {
+        "raw": "bakar",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bakar",
+        "weight_g": 30.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "bakar",
+      "parsed_name": "instruction:bakar",
+      "parsed_data": {
+        "raw": "bakar",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bakar",
+        "weight_g": 30.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "bakar",
+      "parsed_name": "instruction:bakar",
+      "parsed_data": {
+        "raw": "bakar",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bakar",
+        "weight_g": 30.0
+      },
+      "recipe_id": 69,
+      "recipe_title": "Pindang Serani Ikan Patin"
+    },
+    {
+      "original_ingredient": "secukupnya tuna kalengan",
+      "parsed_name": "instruction:secukupnya tuna kalengan",
+      "parsed_data": {
+        "raw": "secukupnya tuna kalengan",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya tuna kalengan",
+        "weight_g": 10.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "iris kotak",
+      "parsed_name": "kotak",
+      "parsed_data": {
+        "raw": "iris kotak",
+        "quantity": 0.0,
+        "unit": "iris",
+        "name": "kotak",
+        "weight_g": 10.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "secukupnya jagung manis",
+      "parsed_name": "instruction:secukupnya jagung manis",
+      "parsed_data": {
+        "raw": "secukupnya jagung manis",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya jagung manis",
+        "weight_g": 10.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "Taburan :",
+      "parsed_name": "taburan",
+      "parsed_data": {
+        "raw": "Taburan :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "taburan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "secukupnya oregano",
+      "parsed_name": "instruction:secukupnya oregano",
+      "parsed_data": {
+        "raw": "secukupnya oregano",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya oregano",
+        "weight_g": 10.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "secukupnya keju mozarella",
+      "parsed_name": "instruction:secukupnya keju mozarella",
+      "parsed_data": {
+        "raw": "secukupnya keju mozarella",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya keju mozarella",
+        "weight_g": 10.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "Bahan Olesan :",
+      "parsed_name": "instruction:bahan olesan",
+      "parsed_data": {
+        "raw": "Bahan Olesan :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan olesan",
+        "weight_g": 0.0
+      },
+      "recipe_id": 70,
+      "recipe_title": "Pizza Tuna Jagung"
+    },
+    {
+      "original_ingredient": "3 piring nasi",
+      "parsed_name": "piring nasi",
+      "parsed_data": {
+        "raw": "3 piring nasi",
+        "quantity": 3.0,
+        "unit": "",
+        "name": "piring nasi",
+        "weight_g": 300.0
+      },
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing"
+    },
+    {
+      "original_ingredient": "1 batang kecil kayu manis",
+      "parsed_name": "instruction:kecil kayu manis",
+      "parsed_data": {
+        "raw": "1 batang kecil kayu manis",
+        "quantity": 1.0,
+        "unit": "batang",
+        "name": "instruction:kecil kayu manis",
+        "weight_g": 15.0
+      },
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing"
+    },
+    {
+      "original_ingredient": "1/2 sdt jintan",
+      "parsed_name": "jintan",
+      "parsed_data": {
+        "raw": "1/2 sdt jintan",
+        "quantity": 1.0,
+        "unit": "sdt",
+        "name": "jintan",
+        "weight_g": 5.0
+      },
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing"
+    },
+    {
+      "original_ingredient": "1/2 sdt adas (sy skip karena nggak punya)",
+      "parsed_name": "adas sy skip karena nggak punya",
+      "parsed_data": {
+        "raw": "1/2 sdt adas (sy skip karena nggak punya)",
+        "quantity": 1.0,
+        "unit": "sdt",
+        "name": "adas sy skip karena nggak punya",
+        "weight_g": 5.0
+      },
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing"
+    },
+    {
+      "original_ingredient": "Secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 71,
+      "recipe_title": "Nasi Goreng Kambing"
+    },
+    {
+      "original_ingredient": "cincang kasar",
+      "parsed_name": "instruction:cincang kasar",
+      "parsed_data": {
+        "raw": "cincang kasar",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:cincang kasar",
+        "weight_g": 30.0
+      },
+      "recipe_id": 73,
+      "recipe_title": "Nasi Kebuli"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 73,
+      "recipe_title": "Nasi Kebuli"
+    },
+    {
+      "original_ingredient": "potong² sesuai selera",
+      "parsed_name": "2",
+      "parsed_data": {
+        "raw": "potong² sesuai selera",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "2",
+        "weight_g": 10.0
+      },
+      "recipe_id": 74,
+      "recipe_title": "Ungkep daging kambing "
+    },
+    {
+      "original_ingredient": "Bahan kulit :",
+      "parsed_name": "instruction:bahan kulit",
+      "parsed_data": {
+        "raw": "Bahan kulit :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan kulit",
+        "weight_g": 0.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "Utk teknik membentuk dan menggoreng :",
+      "parsed_name": "utk teknik membentuk menggoreng",
+      "parsed_data": {
+        "raw": "Utk teknik membentuk dan menggoreng :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "utk teknik membentuk menggoreng",
+        "weight_g": 30.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "1 wajan bulan besar",
+      "parsed_name": "wajan bulan",
+      "parsed_data": {
+        "raw": "1 wajan bulan besar",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "wajan bulan",
+        "weight_g": 30.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "1 wajan bulat sedang",
+      "parsed_name": "wajan bulat",
+      "parsed_data": {
+        "raw": "1 wajan bulat sedang",
+        "quantity": 1.0,
+        "unit": "",
+        "name": "wajan bulat",
+        "weight_g": 30.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "Rolling pin",
+      "parsed_name": "rolling pin",
+      "parsed_data": {
+        "raw": "Rolling pin",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "rolling pin",
+        "weight_g": 30.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "Meja yg bersih. Dari marmer lebih baik. Atau tekel & semacamnya",
+      "parsed_name": "meja marmer lebih baik tekel semacamnya",
+      "parsed_data": {
+        "raw": "Meja yg bersih. Dari marmer lebih baik. Atau tekel & semacamnya",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "meja marmer lebih baik tekel semacamnya",
+        "weight_g": 30.0
+      },
+      "recipe_id": 75,
+      "recipe_title": "Martabak Gule Daging"
+    },
+    {
+      "original_ingredient": "1/2 buah kol iris",
+      "parsed_name": "kol",
+      "parsed_data": {
+        "raw": "1/2 buah kol iris",
+        "quantity": 1.0,
+        "unit": "buah",
+        "name": "kol",
+        "weight_g": 50.0
+      },
+      "recipe_id": 76,
+      "recipe_title": "Tumis sayur sate kambing"
+    },
+    {
+      "original_ingredient": "600 ml Susu full cream (aq susu ultra full cream)",
+      "parsed_name": "susu full cream aq susu ultra full cream",
+      "parsed_data": {
+        "raw": "600 ml Susu full cream (aq susu ultra full cream)",
+        "quantity": 600.0,
+        "unit": "ml",
+        "name": "susu full cream aq susu ultra full cream",
+        "weight_g": 600.0
+      },
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING "
+    },
+    {
+      "original_ingredient": "Bahan Dihaluskan:",
+      "parsed_name": "instruction:bahan dihaluskan",
+      "parsed_data": {
+        "raw": "Bahan Dihaluskan:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan dihaluskan",
+        "weight_g": 0.0
+      },
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING "
+    },
+    {
+      "original_ingredient": "Bahan Lain:",
+      "parsed_name": "instruction:bahan lain",
+      "parsed_data": {
+        "raw": "Bahan Lain:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan lain",
+        "weight_g": 0.0
+      },
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING "
+    },
+    {
+      "original_ingredient": "Bahan Pelengkap:",
+      "parsed_name": "instruction:bahan pelengkap",
+      "parsed_data": {
+        "raw": "Bahan Pelengkap:",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:bahan pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING "
+    },
+    {
+      "original_ingredient": "Sambal bawang",
+      "parsed_name": "sambal bawang",
+      "parsed_data": {
+        "raw": "Sambal bawang",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "sambal bawang",
+        "weight_g": 30.0
+      },
+      "recipe_id": 77,
+      "recipe_title": "SOP KAKI KAMBING "
+    },
+    {
+      "original_ingredient": "Secukupnya Seledri",
+      "parsed_name": "instruction:secukupnya seledri",
+      "parsed_data": {
+        "raw": "Secukupnya Seledri",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya seledri",
+        "weight_g": 10.0
+      },
+      "recipe_id": 78,
+      "recipe_title": "Sop Kepala Kambing"
+    },
+    {
+      "original_ingredient": "Secukupnya Garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "Secukupnya Garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 78,
+      "recipe_title": "Sop Kepala Kambing"
+    },
+    {
+      "original_ingredient": "secukupnya garam",
+      "parsed_name": "instruction:secukupnya garam",
+      "parsed_data": {
+        "raw": "secukupnya garam",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya garam",
+        "weight_g": 10.0
+      },
+      "recipe_id": 79,
+      "recipe_title": "Nasi briyani kambing"
+    },
+    {
+      "original_ingredient": "2 cup beras basmathi",
+      "parsed_name": "beras basmathi",
+      "parsed_data": {
+        "raw": "2 cup beras basmathi",
+        "quantity": 2.0,
+        "unit": "cup",
+        "name": "beras basmathi",
+        "weight_g": 480.0
+      },
+      "recipe_id": 79,
+      "recipe_title": "Nasi briyani kambing"
+    },
+    {
+      "original_ingredient": "6 btr kapulaga hijau",
+      "parsed_name": "btr kapulaga hijau",
+      "parsed_data": {
+        "raw": "6 btr kapulaga hijau",
+        "quantity": 6.0,
+        "unit": "",
+        "name": "btr kapulaga hijau",
+        "weight_g": 6.0
+      },
+      "recipe_id": 79,
+      "recipe_title": "Nasi briyani kambing"
+    },
+    {
+      "original_ingredient": "secukupnya blubend",
+      "parsed_name": "instruction:secukupnya blubend",
+      "parsed_data": {
+        "raw": "secukupnya blubend",
+        "quantity": 1.0,
+        "unit": "secukupnya",
+        "name": "instruction:secukupnya blubend",
+        "weight_g": 10.0
+      },
+      "recipe_id": 79,
+      "recipe_title": "Nasi briyani kambing"
+    },
+    {
+      "original_ingredient": "1 sdm penuh blueband",
+      "parsed_name": "penuh blueband",
+      "parsed_data": {
+        "raw": "1 sdm penuh blueband",
+        "quantity": 1.0,
+        "unit": "sdm",
+        "name": "penuh blueband",
+        "weight_g": 15.0
+      },
+      "recipe_id": 80,
+      "recipe_title": "Sate Kambing"
+    },
+    {
+      "original_ingredient": "pelengkap :",
+      "parsed_name": "instruction:pelengkap",
+      "parsed_data": {
+        "raw": "pelengkap :",
+        "quantity": 0.0,
+        "unit": "",
+        "name": "instruction:pelengkap",
+        "weight_g": 0.0
+      },
+      "recipe_id": 80,
+      "recipe_title": "Sate Kambing"
+    }
+  ],
+  "common_patterns": {
+    "instructions": 125,
+    "genuine_ingredients": 81,
+    "generic_terms": 1,
+    "cooking_tools": 2
+  }
+}

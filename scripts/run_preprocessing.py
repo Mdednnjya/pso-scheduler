@@ -4,6 +4,8 @@ import os
 import pandas as pd
 import mlflow
 import logging
+import json
+import argparse
 
 # Add project root to path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -22,6 +24,189 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger('preprocessing')
+
+
+def extract_unmatched_ingredients(enriched_df):
+    """
+    Extract and analyze ingredients with match_score = 0 for troubleshooting
+
+    Args:
+        enriched_df: DataFrame with enriched recipe data
+
+    Returns:
+        dict: Analysis of unmatched ingredients
+    """
+    unmatched_analysis = {
+        'summary': {
+            'total_recipes': len(enriched_df),
+            'recipes_with_unmatched': 0,
+            'total_unmatched_ingredients': 0,
+            'unique_unmatched_ingredients': set()
+        },
+        'unmatched_by_recipe': [],
+        'unmatched_ingredients_list': [],
+        'common_patterns': {}
+    }
+
+    for _, row in enriched_df.iterrows():
+        recipe_unmatched = []
+
+        # Check each enriched ingredient
+        for ingredient in row.get('Ingredients_Enriched', []):
+            if ingredient.get('match_score', 100) == 0:
+                unmatched_ingredient = {
+                    'original_ingredient': ingredient.get('original_ingredient', ''),
+                    'parsed_name': ingredient.get('ingredient', ''),
+                    'parsed_data': ingredient.get('parsed_ingredient', {}),
+                    'recipe_id': row['ID'],
+                    'recipe_title': row['Title']
+                }
+
+                recipe_unmatched.append(unmatched_ingredient)
+                unmatched_analysis['unmatched_ingredients_list'].append(unmatched_ingredient)
+                unmatched_analysis['summary']['unique_unmatched_ingredients'].add(
+                    ingredient.get('ingredient', '')
+                )
+
+        if recipe_unmatched:
+            unmatched_analysis['summary']['recipes_with_unmatched'] += 1
+            unmatched_analysis['unmatched_by_recipe'].append({
+                'recipe_id': row['ID'],
+                'recipe_title': row['Title'],
+                'unmatched_count': len(recipe_unmatched),
+                'unmatched_ingredients': recipe_unmatched
+            })
+
+    # Update summary stats
+    unmatched_analysis['summary']['total_unmatched_ingredients'] = len(
+        unmatched_analysis['unmatched_ingredients_list']
+    )
+    unmatched_analysis['summary']['unique_unmatched_count'] = len(
+        unmatched_analysis['summary']['unique_unmatched_ingredients']
+    )
+
+    # Convert set to list for JSON serialization
+    unmatched_analysis['summary']['unique_unmatched_ingredients'] = list(
+        unmatched_analysis['summary']['unique_unmatched_ingredients']
+    )
+
+    # Analyze common patterns in unmatched ingredients
+    pattern_analysis = {}
+
+    for ingredient in unmatched_analysis['unmatched_ingredients_list']:
+        parsed_name = ingredient['parsed_name'].lower()
+
+        # Check for common patterns
+        if 'instruction:' in parsed_name:
+            pattern_analysis['instructions'] = pattern_analysis.get('instructions', 0) + 1
+        elif any(word in parsed_name for word in ['wajan', 'panci', 'kompor', 'alat']):
+            pattern_analysis['cooking_tools'] = pattern_analysis.get('cooking_tools', 0) + 1
+        elif any(word in parsed_name for word in ['bahan', 'adonan', 'isian']):
+            pattern_analysis['generic_terms'] = pattern_analysis.get('generic_terms', 0) + 1
+        elif parsed_name == '' or parsed_name.isspace():
+            pattern_analysis['empty_names'] = pattern_analysis.get('empty_names', 0) + 1
+        else:
+            pattern_analysis['genuine_ingredients'] = pattern_analysis.get('genuine_ingredients', 0) + 1
+
+    unmatched_analysis['common_patterns'] = pattern_analysis
+
+    return unmatched_analysis
+
+
+def save_unmatched_analysis(unmatched_analysis, output_dir):
+    """
+    Save unmatched ingredients analysis to files for easy troubleshooting
+
+    Args:
+        unmatched_analysis: Dict with unmatched ingredients analysis
+        output_dir: Directory to save analysis files
+    """
+    # Save full analysis
+    analysis_file = os.path.join(output_dir, "unmatched_ingredients_analysis.json")
+    with open(analysis_file, 'w', encoding='utf-8') as f:
+        json.dump(unmatched_analysis, f, indent=2, ensure_ascii=False)
+
+    # Save simple list for easy copy-paste
+    simple_list = []
+    for ingredient in unmatched_analysis['unmatched_ingredients_list']:
+        simple_list.append({
+            'original': ingredient['original_ingredient'],
+            'parsed': ingredient['parsed_name'],
+            'recipe': f"ID {ingredient['recipe_id']}: {ingredient['recipe_title']}"
+        })
+
+    simple_file = os.path.join(output_dir, "unmatched_ingredients_simple.json")
+    with open(simple_file, 'w', encoding='utf-8') as f:
+        json.dump(simple_list, f, indent=2, ensure_ascii=False)
+
+    # Save unique ingredients only (for synonym development)
+    unique_file = os.path.join(output_dir, "unique_unmatched_ingredients.json")
+    with open(unique_file, 'w', encoding='utf-8') as f:
+        json.dump({
+            'count': len(unmatched_analysis['summary']['unique_unmatched_ingredients']),
+            'ingredients': sorted(unmatched_analysis['summary']['unique_unmatched_ingredients'])
+        }, f, indent=2, ensure_ascii=False)
+
+    # Save pattern analysis
+    pattern_file = os.path.join(output_dir, "unmatched_patterns_analysis.json")
+    with open(pattern_file, 'w', encoding='utf-8') as f:
+        json.dump({
+            'summary': unmatched_analysis['summary'],
+            'patterns': unmatched_analysis['common_patterns'],
+            'recommendations': {
+                'instructions': 'These should be filtered out during parsing',
+                'cooking_tools': 'These should be filtered out during parsing',
+                'generic_terms': 'These need better normalization',
+                'genuine_ingredients': 'These need new synonyms or nutrition entries'
+            }
+        }, f, indent=2, ensure_ascii=False)
+
+    logger.info(f"Unmatched ingredients analysis saved to:")
+    logger.info(f"  - Full analysis: {analysis_file}")
+    logger.info(f"  - Simple list: {simple_file}")
+    logger.info(f"  - Unique ingredients: {unique_file}")
+    logger.info(f"  - Pattern analysis: {pattern_file}")
+
+
+def print_unmatched_summary(unmatched_analysis):
+    """Print summary of unmatched ingredients for immediate feedback"""
+    summary = unmatched_analysis['summary']
+    patterns = unmatched_analysis['common_patterns']
+
+    logger.info("\n" + "=" * 60)
+    logger.info("UNMATCHED INGREDIENTS ANALYSIS")
+    logger.info("=" * 60)
+
+    logger.info(f"Total recipes analyzed: {summary['total_recipes']}")
+    logger.info(f"Recipes with unmatched ingredients: {summary['recipes_with_unmatched']}")
+    logger.info(f"Total unmatched ingredient instances: {summary['total_unmatched_ingredients']}")
+    logger.info(f"Unique unmatched ingredients: {summary['unique_unmatched_count']}")
+
+    if patterns:
+        logger.info("\nBreakdown by pattern:")
+        for pattern, count in patterns.items():
+            percentage = (count / summary['total_unmatched_ingredients']) * 100
+            logger.info(f"  - {pattern.replace('_', ' ').title()}: {count} ({percentage:.1f}%)")
+
+    # Show some examples of genuine ingredients that need attention
+    genuine_ingredients = []
+    for ingredient in unmatched_analysis['unmatched_ingredients_list']:
+        parsed_name = ingredient['parsed_name'].lower()
+        if (not parsed_name.startswith('instruction:') and
+                not any(word in parsed_name for word in ['wajan', 'panci', 'kompor', 'alat', 'bahan', 'adonan']) and
+                parsed_name.strip() != ''):
+            genuine_ingredients.append(ingredient['parsed_name'])
+
+    if genuine_ingredients:
+        unique_genuine = list(set(genuine_ingredients))[:10]  # Show first 10 unique
+        logger.info(f"\nSample genuine ingredients needing attention:")
+        for ing in unique_genuine:
+            logger.info(f"  - '{ing}'")
+
+        if len(unique_genuine) == 10:
+            logger.info(f"  ... and {len(set(genuine_ingredients)) - 10} more")
+
+    logger.info("=" * 60)
 
 
 def calculate_coverage(enriched_df):
@@ -80,13 +265,20 @@ def print_summary(enriched_df):
 
 
 def main():
+    # Setup argument parser
+    parser = argparse.ArgumentParser(description='Recipe preprocessing with nutrition enrichment')
+    parser.add_argument('--debug-unmatched', action='store_true',
+                        help='Generate unmatched ingredients analysis files for troubleshooting')
+
+    args = parser.parse_args()
+
     # Define paths
     logger.info("Starting preprocessing pipeline")
 
     mlflow.set_tracking_uri("http://localhost:5000")
     mlflow.set_experiment("Data Preprocessing")
 
-    with mlflow.start_run(run_name="Advanced Enrichment"):
+    with mlflow.start_run(run_name="Advanced Enrichment with Conditional Analysis"):
         # Define directories
         raw_data_dir = "data/raw"
         interim_data_dir = "data/interim"
@@ -103,7 +295,8 @@ def main():
             "raw_recipes_path": f"{raw_data_dir}/raw_combined_dataset.csv",
             "nutrition_source": "TKPI 2023 + Supplements",
             "matching_algorithm": "Enhanced Fuzzy with synonyms",
-            "matching_threshold": 65
+            "matching_threshold": 70,
+            "debug_unmatched": args.debug_unmatched
         })
 
         # Define paths
@@ -166,6 +359,35 @@ def main():
         logger.info("Processing recipes with enhanced nutrition enrichment")
         enriched_df = process_dataset(recipes_df, nutrition_df, supplement_df)
 
+        # **ARGPARSE-CONTROLLED: Analyze unmatched ingredients only if requested**
+        if args.debug_unmatched:
+            logger.info("🔍 Debug flag detected: Analyzing unmatched ingredients for troubleshooting...")
+            unmatched_analysis = extract_unmatched_ingredients(enriched_df)
+
+            # Save unmatched analysis files
+            save_unmatched_analysis(unmatched_analysis, output_dir)
+
+            # Print unmatched summary
+            print_unmatched_summary(unmatched_analysis)
+
+            # Log additional metrics for unmatched analysis
+            mlflow.log_metrics({
+                "unmatched_ingredients": unmatched_analysis['summary']['total_unmatched_ingredients'],
+                "unmatched_recipes": unmatched_analysis['summary']['recipes_with_unmatched'],
+                "unique_unmatched": unmatched_analysis['summary']['unique_unmatched_count']
+            })
+
+            # Log unmatched analysis to MLflow
+            unmatched_analysis_path = os.path.join(output_dir, "unmatched_ingredients_analysis.json")
+            mlflow.log_artifact(unmatched_analysis_path, "troubleshooting")
+
+            logger.info(f"\n📁 Unmatched analysis files generated:")
+            logger.info(f"  - output/unmatched_ingredients_simple.json (for copy-paste)")
+            logger.info(f"  - output/unique_unmatched_ingredients.json (for synonym development)")
+            logger.info(f"  - output/unmatched_patterns_analysis.json (for pattern analysis)")
+        else:
+            logger.info("Skipping unmatched ingredients analysis (use --debug-unmatched to enable)")
+
         # Log metrics
         coverage = calculate_coverage(enriched_df)
         avg_ingredients = calculate_avg_ingredients(enriched_df)
@@ -196,6 +418,10 @@ def main():
         print_summary(enriched_df)
 
         logger.info("Preprocessing pipeline completed successfully!")
+
+        if not args.debug_unmatched:
+            logger.info(f"\n💡 To troubleshoot unmatched ingredients, run:")
+            logger.info(f"   python scripts/run_preprocessing.py --debug-unmatched")
 
 
 if __name__ == "__main__":

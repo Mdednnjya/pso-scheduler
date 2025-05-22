@@ -1,0 +1,212 @@
+[
+  {
+    "original": "1/2 bungkus mie kuning 2 telor",
+    "parsed": "mie kuning 2 telor",
+    "recipe": "ID 7: Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+  },
+  {
+    "original": "1 buah labu",
+    "parsed": "labu",
+    "recipe": "ID 9: Sayur Tahu Labu Udang"
+  },
+  {
+    "original": "1 buah labu siam (400 gr)》potong korek api",
+    "parsed": "labu siam api 400 gr",
+    "recipe": "ID 10: Labu Siam Udang "
+  },
+  {
+    "original": "4 siung bawah putih",
+    "parsed": "bawah putih",
+    "recipe": "ID 11: Bola-Bola Tempe"
+  },
+  {
+    "original": "5 buah Buncis",
+    "parsed": "buncis",
+    "recipe": "ID 16: Bakwan Tempe"
+  },
+  {
+    "original": "potong kotak",
+    "parsed": "kotak",
+    "recipe": "ID 19: Tempe pete kemangi orek"
+  },
+  {
+    "original": "1 ruas jari Kencur",
+    "parsed": "kencur",
+    "recipe": "ID 21: Ayam Betutu"
+  },
+  {
+    "original": "1/4 kg dada fillet",
+    "parsed": "dada fillet",
+    "recipe": "ID 22: Nugget ayam homemade"
+  },
+  {
+    "original": "Pelapis :",
+    "parsed": "pels",
+    "recipe": "ID 25: Risoles ragout ayam"
+  },
+  {
+    "original": "Buah keras/ kemiri 3 biji",
+    "parsed": "keras kemiri 3 biji",
+    "recipe": "ID 26: Ayam sambal balado"
+  },
+  {
+    "original": "bumbui lada dan garam",
+    "parsed": "bumbui lada garam",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "Irisan kol",
+    "parsed": "kol",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "Mayonaise/saos",
+    "parsed": "mayonaise saos",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "2 kuntum brokoli (tambahan)",
+    "parsed": "brokoli",
+    "recipe": "ID 33: Beef Lasagna dgn Saus & Kulit Homemade "
+  },
+  {
+    "original": "100 gram Keju Cheddar (aku mix mozarella)",
+    "parsed": "keju cheddar aku mix mozarella",
+    "recipe": "ID 33: Beef Lasagna dgn Saus & Kulit Homemade "
+  },
+  {
+    "original": "1 pack udon beku",
+    "parsed": "udon beku",
+    "recipe": "ID 34: Beef Udon"
+  },
+  {
+    "original": "Chili flakes",
+    "parsed": "chili flakes",
+    "recipe": "ID 34: Beef Udon"
+  },
+  {
+    "original": "1/2 paprika merah rajang",
+    "parsed": "paprika merah rajang",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "cacah halus",
+    "parsed": "cacah",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "1 1/2 sdt lada hitam (atau sesuai selera)",
+    "parsed": "2 sdt lada hitam",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "me : yes)",
+    "parsed": "mayonaise",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "1 sachet kaldu sapi",
+    "parsed": "kaldu s",
+    "recipe": "ID 38: Rawon Sapi Resep Emak "
+  },
+  {
+    "original": "Kol secukupnya potong kotak\"",
+    "parsed": "kol kotak",
+    "recipe": "ID 39: Tongseng sapi"
+  },
+  {
+    "original": "iris setipis mungkin",
+    "parsed": "setipis mungkin",
+    "recipe": "ID 40: Bulgogi (Semur Daging Sapi ala Korea)"
+  },
+  {
+    "original": "15 batang buncis",
+    "parsed": "buncis",
+    "recipe": "ID 49: Tumis buncis telur"
+  },
+  {
+    "original": "goreng setengah matang",
+    "parsed": "setengah",
+    "recipe": "ID 53: Patin tahu asam pedas"
+  },
+  {
+    "original": "Sejumput garam",
+    "parsed": "sejumput garam",
+    "recipe": "ID 60: Tahu Kecap Kental Pedas"
+  },
+  {
+    "original": "1 ekor gurame ±500 gr",
+    "parsed": "gurame 500 gr",
+    "recipe": "ID 62: Gurame Bakar"
+  },
+  {
+    "original": "2 1/2 sdt garam",
+    "parsed": "2 sdt garam",
+    "recipe": "ID 62: Gurame Bakar"
+  },
+  {
+    "original": "1/2 buah nanas",
+    "parsed": "nanas",
+    "recipe": "ID 64: Pindang Patin"
+  },
+  {
+    "original": "Pare",
+    "parsed": "pare",
+    "recipe": "ID 65: Siomay Bandung Ikan Tenggiri"
+  },
+  {
+    "original": "Kol",
+    "parsed": "kol",
+    "recipe": "ID 65: Siomay Bandung Ikan Tenggiri"
+  },
+  {
+    "original": "1 kg bandeng segar (isi 3 ekor)",
+    "parsed": "bandeng isi 3 ekor",
+    "recipe": "ID 66: Bandeng Asem Pedas Seger Kuah Kuning "
+  },
+  {
+    "original": "1 cm kencur",
+    "parsed": "kencur",
+    "recipe": "ID 68: Pepes Ikan Tuna Bumbu Orange"
+  },
+  {
+    "original": "Garam sckp",
+    "parsed": "secukupnya",
+    "recipe": "ID 68: Pepes Ikan Tuna Bumbu Orange"
+  },
+  {
+    "original": "iris kotak",
+    "parsed": "kotak",
+    "recipe": "ID 70: Pizza Tuna Jagung"
+  },
+  {
+    "original": "1/2 buah kol iris",
+    "parsed": "kol",
+    "recipe": "ID 76: Tumis sayur sate kambing"
+  },
+  {
+    "original": "600 ml Susu full cream (aq susu ultra full cream)",
+    "parsed": "susu full cream aq susu ultra full cream",
+    "recipe": "ID 77: SOP KAKI KAMBING "
+  },
+  {
+    "original": "Sambal bawang",
+    "parsed": "sambal bawang",
+    "recipe": "ID 77: SOP KAKI KAMBING "
+  },
+  {
+    "original": "2 cup beras basmathi",
+    "parsed": "beras basmati",
+    "recipe": "ID 79: Nasi briyani kambing"
+  },
+  {
+    "original": "6 btr kapulaga hijau",
+    "parsed": "btr kapulaga hijau",
+    "recipe": "ID 79: Nasi briyani kambing"
+  },
+  {
+    "original": "1 sdm penuh blueband",
+    "parsed": "penuh blueband",
+    "recipe": "ID 80: Sate Kambing"
+  }
+]

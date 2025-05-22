@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "total_recipes": 80,
+    "recipes_with_unmatched": 30,
+    "total_unmatched_ingredients": 42,
+    "unique_unmatched_ingredients": [
+      "sejumput garam",
+      "keju cheddar aku mix mozarella",
+      "bumbui lada garam",
+      "mie kuning 2 telor",
+      "cacah",
+      "labu siam api 400 gr",
+      "keras kemiri 3 biji",
+      "beras basmati",
+      "mayonaise",
+      "btr kapulaga hijau",
+      "bandeng isi 3 ekor",
+      "nanas",
+      "kotak",
+      "penuh blueband",
+      "kol",
+      "dada fillet",
+      "setengah",
+      "susu full cream aq susu ultra full cream",
+      "pels",
+      "pare",
+      "bawah putih",
+      "kencur",
+      "udon beku",
+      "gurame 500 gr",
+      "buncis",
+      "2 sdt lada hitam",
+      "kol kotak",
+      "sambal bawang",
+      "paprika merah rajang",
+      "brokoli",
+      "secukupnya",
+      "setipis mungkin",
+      "labu",
+      "2 sdt garam",
+      "kaldu s",
+      "chili flakes",
+      "mayonaise saos"
+    ],
+    "unique_unmatched_count": 37
+  },
+  "patterns": {
+    "genuine_ingredients": 42
+  },
+  "recommendations": {
+    "instructions": "These should be filtered out during parsing",
+    "cooking_tools": "These should be filtered out during parsing",
+    "generic_terms": "These need better normalization",
+    "genuine_ingredients": "These need new synonyms or nutrition entries"
+  }
+}
