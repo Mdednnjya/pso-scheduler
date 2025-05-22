@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/988051196424424079/937e95a2f689409a8deada8a15ed8a0a/artifacts
+end_time: 1747913203266
+entry_point_name: ''
+experiment_id: '988051196424424079'
+lifecycle_stage: active
+run_id: 937e95a2f689409a8deada8a15ed8a0a
+run_name: Advanced Enrichment with Unmatched Analysis
+run_uuid: 937e95a2f689409a8deada8a15ed8a0a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747913145673
+status: 3
+tags: []
+user_id: naray

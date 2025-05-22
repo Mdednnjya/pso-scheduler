@@ -1,0 +1,287 @@
+[
+  {
+    "original": "1/2 bungkus mie kuning 2 telor",
+    "parsed": "2 mie kuning 2 telor",
+    "recipe": "ID 7: Mie Kuah Udang Telur Sedap Malam (Non MSG)"
+  },
+  {
+    "original": "1 buah labu",
+    "parsed": "labu",
+    "recipe": "ID 9: Sayur Tahu Labu Udang"
+  },
+  {
+    "original": "1 buah labu siam (400 gr)》potong korek api",
+    "parsed": "labu siam korek api",
+    "recipe": "ID 10: Labu Siam Udang "
+  },
+  {
+    "original": "1/2 sdt lada",
+    "parsed": "2 lada",
+    "recipe": "ID 10: Labu Siam Udang "
+  },
+  {
+    "original": "1 papan tempe, rebus/kukus kemudian haluskan",
+    "parsed": "tempe kukus kemudian haluskan",
+    "recipe": "ID 11: Bola-Bola Tempe"
+  },
+  {
+    "original": "4 siung bawah putih",
+    "parsed": "bawah putih",
+    "recipe": "ID 11: Bola-Bola Tempe"
+  },
+  {
+    "original": "150 gram tempe",
+    "parsed": "tempe",
+    "recipe": "ID 12: Tumis Kacang Panjang Tempe"
+  },
+  {
+    "original": "tempe setengh saja",
+    "parsed": "tempe setengh saja",
+    "recipe": "ID 13: Sambel teri nasi tahu tempe"
+  },
+  {
+    "original": "1/2 papan tempe potong dadu",
+    "parsed": "2 papan tempe dadu",
+    "recipe": "ID 14: Tempe orek"
+  },
+  {
+    "original": "1 papan Tempe",
+    "parsed": "tempe",
+    "recipe": "ID 15: Tempe bacem"
+  },
+  {
+    "original": "potong dadu Tempe rebus,",
+    "parsed": "dadu tempe",
+    "recipe": "ID 16: Bakwan Tempe"
+  },
+  {
+    "original": "Secukupnya Taoge",
+    "parsed": "taoge",
+    "recipe": "ID 16: Bakwan Tempe"
+  },
+  {
+    "original": "potong dadu Tempe",
+    "parsed": "dadu tempe",
+    "recipe": "ID 17: Oseng Tempe Bawang Bombay (Eat Clean)"
+  },
+  {
+    "original": "1/4 potong tempe potong kecil2",
+    "parsed": "4 tempe kecil2",
+    "recipe": "ID 18: Tumis Bawang Merah, Teri Tempe, Jengkol"
+  },
+  {
+    "original": "1/4 papan tempe, potong kotak",
+    "parsed": "4 papan tempe kotak",
+    "recipe": "ID 19: Tempe pete kemangi orek"
+  },
+  {
+    "original": "200 gr kedelai calon tempe",
+    "parsed": "kedelai calon tempe",
+    "recipe": "ID 20: Keripik tempe renyah"
+  },
+  {
+    "original": "1 ruas jari Kencur",
+    "parsed": "jari kencur",
+    "recipe": "ID 21: Ayam Betutu"
+  },
+  {
+    "original": "1/4 kg dada fillet",
+    "parsed": "4 dada fillet",
+    "recipe": "ID 22: Nugget ayam homemade"
+  },
+  {
+    "original": "Buah keras/ kemiri 3 biji",
+    "parsed": "keras kemiri 3 biji",
+    "recipe": "ID 26: Ayam sambal balado"
+  },
+  {
+    "original": "Gula,lada,garam",
+    "parsed": "gulaladagaram",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "Larutan maizena",
+    "parsed": "larutan maizena",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "Irisan kol",
+    "parsed": "irisan kol",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "Mayonaise/saos",
+    "parsed": "mayonaise saos",
+    "recipe": "ID 28: Chicken katsu rumahan"
+  },
+  {
+    "original": "secukupnya royco, garmer",
+    "parsed": "royco garmer",
+    "recipe": "ID 29: Risoles ragout ayam"
+  },
+  {
+    "original": "1/2 cup Sayuran beku (keluarkan sampai gak beku lagi)",
+    "parsed": "2 sayuran beku",
+    "recipe": "ID 31: Easy Beef Hand Pies "
+  },
+  {
+    "original": "1/2 sdt Lada hitam",
+    "parsed": "2 lada hitam",
+    "recipe": "ID 31: Easy Beef Hand Pies "
+  },
+  {
+    "original": "2 kuntum brokoli (tambahan)",
+    "parsed": "kuntum brokoli",
+    "recipe": "ID 33: Beef Lasagna dgn Saus & Kulit Homemade "
+  },
+  {
+    "original": "100 gram Keju Cheddar (aku mix mozarella)",
+    "parsed": "keju cheddar",
+    "recipe": "ID 33: Beef Lasagna dgn Saus & Kulit Homemade "
+  },
+  {
+    "original": "secukupnya Keju Cheddar (aku mozzarella)",
+    "parsed": "keju cheddar",
+    "recipe": "ID 33: Beef Lasagna dgn Saus & Kulit Homemade "
+  },
+  {
+    "original": "Chili flakes",
+    "parsed": "chili flakes",
+    "recipe": "ID 34: Beef Udon"
+  },
+  {
+    "original": "1/2 paprika merah rajang",
+    "parsed": "2 paprika merah rajang",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "1/2 paprika hijau (terserah aja mau pake paprika warna apa sj)",
+    "parsed": "2 paprika hijau",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "1 1/2 sdt lada hitam (atau sesuai selera), tumbuk kasar",
+    "parsed": "1 2 lada hitam tumbuk kasar",
+    "recipe": "ID 35: Daging sapi lada hitam"
+  },
+  {
+    "original": "1/2 btg korek api kayu manis",
+    "parsed": "2 korek api kayu manis",
+    "recipe": "ID 39: Tongseng sapi"
+  },
+  {
+    "original": "Kol secukupnya potong kotak\"",
+    "parsed": "kol kotak",
+    "recipe": "ID 39: Tongseng sapi"
+  },
+  {
+    "original": "1 sdm wijen putih, sangrai",
+    "parsed": "wijen putih sangrai",
+    "recipe": "ID 40: Bulgogi (Semur Daging Sapi ala Korea)"
+  },
+  {
+    "original": "secukupnya buncis",
+    "parsed": "buncis",
+    "recipe": "ID 45: Tumis buncis orak arik telor"
+  },
+  {
+    "original": "secukupnya Rayco",
+    "parsed": "rayco",
+    "recipe": "ID 45: Tumis buncis orak arik telor"
+  },
+  {
+    "original": "1 papan tempe",
+    "parsed": "tempe",
+    "recipe": "ID 47: Tempe Goreng Telur"
+  },
+  {
+    "original": "15 batang buncis",
+    "parsed": "buncis",
+    "recipe": "ID 49: Tumis buncis telur"
+  },
+  {
+    "original": "Sejumput garam",
+    "parsed": "sejumput garam",
+    "recipe": "ID 60: Tahu Kecap Kental Pedas"
+  },
+  {
+    "original": "1 ekor gurame ±500 gr",
+    "parsed": "ekor gurame 500",
+    "recipe": "ID 62: Gurame Bakar"
+  },
+  {
+    "original": "1 gurame dipotong menjadi 4",
+    "parsed": "gurame menjadi 4",
+    "recipe": "ID 63: Pesmol Gurame"
+  },
+  {
+    "original": "1/2 buah nanas",
+    "parsed": "2 nanas",
+    "recipe": "ID 64: Pindang Patin"
+  },
+  {
+    "original": "150 gram labu siam, kukus dan haluskan",
+    "parsed": "labu siam kukus haluskan",
+    "recipe": "ID 65: Siomay Bandung Ikan Tenggiri"
+  },
+  {
+    "original": "Pare",
+    "parsed": "pare",
+    "recipe": "ID 65: Siomay Bandung Ikan Tenggiri"
+  },
+  {
+    "original": "Kol",
+    "parsed": "kol",
+    "recipe": "ID 65: Siomay Bandung Ikan Tenggiri"
+  },
+  {
+    "original": "1 cm kencur",
+    "parsed": "cm kencur",
+    "recipe": "ID 68: Pepes Ikan Tuna Bumbu Orange"
+  },
+  {
+    "original": "Garam sckp",
+    "parsed": "garam sckp",
+    "recipe": "ID 68: Pepes Ikan Tuna Bumbu Orange"
+  },
+  {
+    "original": "1/2 buah kol iris",
+    "parsed": "2 kol",
+    "recipe": "ID 76: Tumis sayur sate kambing"
+  },
+  {
+    "original": "600 ml Susu full cream (aq susu ultra full cream)",
+    "parsed": "susu full cream",
+    "recipe": "ID 77: SOP KAKI KAMBING "
+  },
+  {
+    "original": "Loncang (iris jgn terlalu halus)",
+    "parsed": "loncang",
+    "recipe": "ID 77: SOP KAKI KAMBING "
+  },
+  {
+    "original": "Sambal bawang",
+    "parsed": "sambal bawang",
+    "recipe": "ID 77: SOP KAKI KAMBING "
+  },
+  {
+    "original": "2 cup beras basmathi",
+    "parsed": "beras basmati",
+    "recipe": "ID 79: Nasi briyani kambing"
+  },
+  {
+    "original": "6 btr kapulaga hijau",
+    "parsed": "kapulaga hijau",
+    "recipe": "ID 79: Nasi briyani kambing"
+  },
+  {
+    "original": "secukupnya blubend",
+    "parsed": "blubend",
+    "recipe": "ID 79: Nasi briyani kambing"
+  },
+  {
+    "original": "1 sdm penuh blueband",
+    "parsed": "penuh blueband",
+    "recipe": "ID 80: Sate Kambing"
+  }
+]
