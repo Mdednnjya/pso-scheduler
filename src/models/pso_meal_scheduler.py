@@ -4,6 +4,8 @@ import random
 import json
 import os
 import mlflow
+
+from src.models.portion_adjuster import get_user_nutrition_targets
 from src.models.user_preferences import UserPreferences
 from src.models.cbf_recommender import CBFRecommender
 
@@ -80,7 +82,7 @@ class ParticleSwarmOptimizer:
             user_preferences: UserPreferences object for filtering recipes
         """
         with mlflow.start_run(nested=True, run_name="Nutrition Targets"):
-            mlflow.log_params(self.target_metrics)
+            # Log user parameters
             mlflow.log_params({
                 "age": age,
                 "gender": gender,
@@ -102,48 +104,26 @@ class ParticleSwarmOptimizer:
             else:
                 self.filtered_meal_data = self.meal_data
 
-            # Calculate TDEE (Total Daily Energy Expenditure)
-            # First calculate BMR using Mifflin-St Jeor equation
-            if gender.lower() == 'male':
-                bmr = 10 * weight + 6.25 * height - 5 * age + 5
-            else:  # female
-                bmr = 10 * weight + 6.25 * height - 5 * age - 161
-
-            # Apply activity multiplier
-            activity_multipliers = {
-                'sedentary': 1.2,  # Little or no exercise
-                'lightly_active': 1.375,  # Light exercise 1-3 days/week
-                'moderately_active': 1.55,  # Moderate exercise 3-5 days/week
-                'very_active': 1.725,  # Hard exercise 6-7 days/week
-                'extra_active': 1.9  # Very hard exercise & physical job
+            # Use portion_adjuster to calculate target metrics based on user parameters
+            user_params = {
+                'age': age,
+                'gender': gender,
+                'weight': weight,
+                'height': height,
+                'activity_level': activity_level,
+                'goal': goal,
+                'meals_per_day': self.meals_per_day
             }
+            self.target_metrics = get_user_nutrition_targets(user_params)
 
-            tdee = bmr * activity_multipliers.get(activity_level.lower(), 1.2)
+            # Log the target metrics
+            mlflow.log_params(self.target_metrics)
 
-            # Adjust based on goal
-            if goal.lower() == 'lose':
-                tdee = tdee * 0.85  # 15% calorie deficit
-            elif goal.lower() == 'gain':
-                tdee = tdee * 1.15  # 15% calorie surplus
-
-            # Set macronutrient targets (protein, carbs, fats)
-            # For teens, protein needs are higher for growth and development
-            daily_protein = weight * 1.6  # 1.6g per kg for active teens
-            daily_fat = (tdee * 0.25) / 9  # 25% of calories from fat (9 cal/g)
-            daily_carbs = (tdee - (daily_protein * 4 + daily_fat * 9)) / 4  # Remaining calories from carbs (4 cal/g)
-            daily_fiber = 25  # General recommended daily fiber intake for teens
-
-            # Set target metrics
-            self.target_metrics = {
-                'calories': tdee,
-                'protein': daily_protein,
-                'fat': daily_fat,
-                'carbohydrates': daily_carbs,
-                'fiber': daily_fiber
-            }
-
-            print(f"Daily targets set: Calories: {tdee:.0f}, Protein: {daily_protein:.1f}g, "
-                f"Fat: {daily_fat:.1f}g, Carbs: {daily_carbs:.1f}g, Fiber: {daily_fiber:.1f}g")
+            print(f"Daily targets set: Calories: {self.target_metrics['calories']:.0f}, "
+                  f"Protein: {self.target_metrics['protein']:.1f}g, "
+                  f"Fat: {self.target_metrics['fat']:.1f}g, "
+                  f"Carbs: {self.target_metrics['carbohydrates']:.1f}g, "
+                  f"Fiber: {self.target_metrics['fiber']:.1f}g")
 
     def calculate_nutritional_value(self, meal_schedule):
         """
@@ -168,7 +148,12 @@ class ParticleSwarmOptimizer:
                 for meal_id in meal:
                     meal_record = self.filtered_meal_data[self.filtered_meal_data['ID'] == str(meal_id)]
                     if not meal_record.empty:
-                        nutrition = meal_record.iloc[0]['nutrition']
+                        # Check if we have adjusted nutrition data first
+                        if 'Adjusted_Total_Nutrition' in meal_record.iloc[0]:
+                            nutrition = meal_record.iloc[0]['Adjusted_Total_Nutrition']
+                        else:
+                            nutrition = meal_record.iloc[0]['nutrition']
+
                         total_nutrition['calories'] += nutrition.get('calories', 0)
                         total_nutrition['protein'] += nutrition.get('protein', 0)
                         total_nutrition['fat'] += nutrition.get('fat', 0)
@@ -494,19 +479,27 @@ class ParticleSwarmOptimizer:
                     meal_record = self.filtered_meal_data[self.filtered_meal_data['ID'] == str(recipe_id)]
 
                     if not meal_record.empty:
+                        # Get the first matching record
+                        record = meal_record.iloc[0]
+
+                        # Determine which nutrition data to use
+                        if 'Adjusted_Total_Nutrition' in record:
+                            recipe_nutrition = record['Adjusted_Total_Nutrition']
+                        else:
+                            recipe_nutrition = record['nutrition']
+
                         recipe_info = {
                             "meal_id": recipe_id,
-                            "title": meal_record.iloc[0]['Title'],
-                            "nutrition": meal_record.iloc[0]['nutrition']
+                            "title": record['Title'],
+                            "nutrition": recipe_nutrition
                         }
 
                         # Add to meal nutrition totals
-                        nutrition = meal_record.iloc[0]['nutrition']
-                        meal_nutrition['calories'] += nutrition.get('calories', 0)
-                        meal_nutrition['protein'] += nutrition.get('protein', 0)
-                        meal_nutrition['fat'] += nutrition.get('fat', 0)
-                        meal_nutrition['carbohydrates'] += nutrition.get('carbohydrates', 0)
-                        meal_nutrition['fiber'] += nutrition.get('fiber', 0)
+                        meal_nutrition['calories'] += recipe_nutrition.get('calories', 0)
+                        meal_nutrition['protein'] += recipe_nutrition.get('protein', 0)
+                        meal_nutrition['fat'] += recipe_nutrition.get('fat', 0)
+                        meal_nutrition['carbohydrates'] += recipe_nutrition.get('carbohydrates', 0)
+                        meal_nutrition['fiber'] += recipe_nutrition.get('fiber', 0)
 
                         meal_info["recipes"].append(recipe_info)
 
