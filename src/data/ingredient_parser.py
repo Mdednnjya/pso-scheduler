@@ -210,7 +210,7 @@ def normalize_ingredient_name(name):
 
 def extract_quantity_and_unit(ingredient_text):
     """
-    Ekstrak jumlah dan satuan dari teks bahan
+    Enhanced extraction with better unit parsing and validation
 
     Returns:
         tuple: (quantity, unit, cleaned_name)
@@ -227,9 +227,9 @@ def extract_quantity_and_unit(ingredient_text):
     # Gunakan teks tanpa kurung untuk ekstraksi quantity dan unit
     working_text = cleaned_text_no_parentheses if cleaned_text_no_parentheses else cleaned_text
 
-    # Pattern untuk berbagai format jumlah
-    # 1/2 kg, 0.5 kg, 2, 3-4, dll.
-    quantity_pattern = r'^((\d+[\s-]*\d*[.,]?\d*)|(\d+\s*/\s*\d+))'
+    # Enhanced pattern untuk berbagai format jumlah
+    # Handle: "250 gr", "2 gram", "10 butir", "1/2 kg", "3-4 siung"
+    quantity_pattern = r'^(\d+(?:[.,]\d+)?(?:\s*/\s*\d+(?:[.,]\d+)?)?(?:\s*-\s*\d+(?:[.,]\d+)?)?)'
     match_qty = re.search(quantity_pattern, working_text)
 
     quantity = 0.0
@@ -237,7 +237,7 @@ def extract_quantity_and_unit(ingredient_text):
     remaining_text = working_text
 
     if match_qty:
-        qty_str = match_qty.group(1)
+        qty_str = match_qty.group(1).strip()
 
         # Handle fractions (e.g. "1/2")
         if '/' in qty_str:
@@ -246,83 +246,196 @@ def extract_quantity_and_unit(ingredient_text):
                 quantity = float(num.strip()) / float(denom.strip())
             except (ValueError, ZeroDivisionError):
                 quantity = 1.0
+        # Handle ranges (e.g. "3-4")
+        elif '-' in qty_str:
+            try:
+                low, high = qty_str.split('-')
+                quantity = (float(low.strip()) + float(high.strip())) / 2
+            except ValueError:
+                quantity = 1.0
         else:
-            # Handle ranges (e.g. "3-4")
-            if '-' in qty_str:
-                try:
-                    low, high = qty_str.split('-')
-                    quantity = (float(low.strip()) + float(high.strip())) / 2
-                except ValueError:
-                    quantity = 1.0
-            else:
-                # Handle simple numbers
-                try:
-                    quantity = float(qty_str.replace(',', '.').strip())
-                except ValueError:
-                    quantity = 1.0
+            # Handle simple numbers
+            try:
+                quantity = float(qty_str.replace(',', '.').strip())
+            except ValueError:
+                quantity = 1.0
 
         # Remove quantity from text for further processing
         remaining_text = working_text[match_qty.end():].strip()
 
-    # Extract unit if present
-    common_units = [
-        'kg', 'gram', 'g', 'gr', 'ons', 'liter', 'l', 'ml', 'cc', 'sdm', 'sdt',
-        'butir', 'buah', 'bh', 'siung', 'bonggol', 'batang', 'lembar', 'lbr',
-        'btg', 'bks', 'sachet', 'potong', 'ptg', 'iris', 'mangkok', 'gelas', 'cup',
-        'bj', 'biji', 'ikat', 'papan', 'ruas', 'keping', 'keping', 'sendok', 'sloki',
-        # Tambahan unit non-standar yang sering muncul
-        'ekor', 'pack', 'bungkus', 'kotak', 'kuntum', 'piring'
-    ]
+    # Enhanced unit extraction with validation
+    # Priority order: exact match > partial match > default
+    unit_patterns = {
+        # Weight units (high priority)
+        r'\b(kg|kilogram)\b': 'kg',
+        r'\b(gr?|gram)\b': 'g',  # Fix: "gr" should be "g", not "api"
+        r'\b(ons)\b': 'ons',
 
-    unit_pattern = r'^([a-zA-Z]+)'
-    unit_match = re.search(unit_pattern, remaining_text)
+        # Volume units
+        r'\b(liter|l)\b': 'liter',
+        r'\b(ml|mililiter)\b': 'ml',
+        r'\b(cc)\b': 'cc',
 
-    if unit_match:
-        potential_unit = unit_match.group(1).lower()
+        # Cooking units
+        r'\b(sdm|sendok\s+makan)\b': 'sdm',
+        r'\b(sdt|sendok\s+teh)\b': 'sdt',
+        r'\b(gelas)\b': 'gelas',
+        r'\b(mangkok)\b': 'mangkok',
+        r'\b(cup)\b': 'cup',
 
-        if 'lembar' in potential_unit or 'lbr' in potential_unit:
-            unit = 'lembar'
-            remaining_text = remaining_text[unit_match.end():].strip()
-        elif potential_unit == 'bj' or potential_unit == 'biji':
-            unit = 'bj'
-            remaining_text = remaining_text[unit_match.end():].strip()
-        elif potential_unit == 'papan':
-            unit = 'papan'
-            remaining_text = remaining_text[unit_match.end():].strip()
-        else:
-            for common_unit in common_units:
-                if potential_unit == common_unit or potential_unit.startswith(common_unit):
-                    unit = common_unit
-                    # Remove unit from text
-                    remaining_text = remaining_text[unit_match.end():].strip()
-                    break
+        # Count units (validate with ingredient type)
+        r'\b(butir|btr)\b': 'butir',
+        r'\b(buah|bh)\b': 'buah',
+        r'\b(siung)\b': 'siung',
+        r'\b(lembar|lbr)\b': 'lembar',
+        r'\b(batang|btg)\b': 'batang',
+        r'\b(ruas)\b': 'ruas',
+        r'\b(biji|bj)\b': 'biji',
+        r'\b(ekor)\b': 'ekor',
+        r'\b(potong|ptg)\b': 'potong',
+        r'\b(iris)\b': 'iris',
+        r'\b(keping)\b': 'keping',
+        r'\b(papan)\b': 'papan',
+        r'\b(ikat|ikt)\b': 'ikat',
+        r'\b(pack|bungkus|bks)\b': 'pack',
+        r'\b(sachet)\b': 'sachet',
 
-    # Handle special case for "secukupnya"
-    if 'secukupnya' in cleaned_text.lower() or 'sesuai selera' in cleaned_text.lower():
-        if quantity == 0.0:
-            quantity = 1.0
-        unit = 'secukupnya'
+        # Special cases
+        r'\b(secukupnya)\b': 'secukupnya'
+    }
 
-    # Handle non-standard units like "cm", "jari"
-    non_standard_units = ['cm', 'jari', 'ruas', 'korek', 'api']
-    for ns_unit in non_standard_units:
-        if ns_unit in remaining_text.lower():
-            unit = ns_unit
-            remaining_text = remaining_text.replace(ns_unit, '').strip()
+    # Try to match unit patterns
+    for pattern, standard_unit in unit_patterns.items():
+        match = re.search(pattern, remaining_text, re.IGNORECASE)
+        if match:
+            unit = standard_unit
+            # Remove matched unit from remaining text
+            remaining_text = re.sub(pattern, '', remaining_text, flags=re.IGNORECASE).strip()
             break
+
+    # Validate unit-ingredient compatibility
+    unit, quantity = validate_unit_ingredient_compatibility(unit, quantity, remaining_text)
 
     # Clean the remaining text as the ingredient name
     cleaned_name = normalize_ingredient_name(remaining_text)
 
-    if '(' in cleaned_text and ')' in cleaned_text and not any(x in cleaned_name for x in INSTRUCTION_WORDS):
-        parentheses_content = re.findall(r'\(([^)]*)\)', cleaned_text)
-        if parentheses_content:
-            clean_content = ' '.join([content for content in parentheses_content
-                                      if not any(iword in content.lower() for iword in INSTRUCTION_WORDS)])
-            if clean_content and clean_content not in cleaned_name:
-                cleaned_name = f"{cleaned_name} {clean_content}".strip()
-
     return quantity, unit, cleaned_name
+
+
+def validate_unit_ingredient_compatibility(unit, quantity, ingredient_name):
+    """
+    Validate and correct unit-ingredient combinations
+
+    Args:
+        unit: Detected unit
+        quantity: Detected quantity
+        ingredient_name: Ingredient name
+
+    Returns:
+        tuple: (corrected_unit, corrected_quantity)
+    """
+    name_lower = ingredient_name.lower()
+
+    # Specific validation rules
+    validations = {
+        # Telur validation
+        'telur': {
+            'valid_units': ['butir', 'biji', 'buah', ''],
+            'invalid_units': ['kg', 'g', 'gr'],
+            'default_unit': 'butir',
+            'realistic_range': (1, 20)
+        },
+        'telor': {
+            'valid_units': ['butir', 'biji', 'buah', ''],
+            'invalid_units': ['kg', 'g', 'gr'],
+            'default_unit': 'butir',
+            'realistic_range': (1, 20)
+        },
+
+        # Merica/Lada validation
+        'merica': {
+            'valid_units': ['sdt', 'butir', 'biji', 'g', 'gr'],
+            'invalid_units': ['kg', 'buah', 'ekor'],
+            'default_unit': 'sdt',
+            'realistic_range': (0.25, 10)  # 1/4 sdt to 2 sdt max
+        },
+        'lada': {
+            'valid_units': ['sdt', 'butir', 'biji', 'g', 'gr'],
+            'invalid_units': ['kg', 'buah', 'ekor'],
+            'default_unit': 'sdt',
+            'realistic_range': (0.25, 10)
+        },
+
+        # Bawang validation
+        'bawang': {
+            'valid_units': ['siung', 'buah', 'g', 'gr', 'kg'],
+            'invalid_units': ['butir', 'lembar'],
+            'default_unit': 'siung',
+            'realistic_range': (1, 20)
+        },
+
+        # Daging validation
+        'daging': {
+            'valid_units': ['g', 'gr', 'kg', 'potong'],
+            'invalid_units': ['butir', 'siung', 'lembar'],
+            'default_unit': 'g',
+            'realistic_range': (50, 2000)  # 50g to 2kg
+        },
+        'sapi': {
+            'valid_units': ['g', 'gr', 'kg', 'potong'],
+            'invalid_units': ['butir', 'siung', 'lembar'],
+            'default_unit': 'g',
+            'realistic_range': (100, 2000)
+        },
+
+        # Udang validation
+        'udang': {
+            'valid_units': ['g', 'gr', 'kg', 'ekor'],
+            'invalid_units': ['butir', 'siung', 'lembar'],
+            'default_unit': 'g',
+            'realistic_range': (50, 1000)  # 50g to 1kg
+        },
+
+        # Daun validation
+        'daun': {
+            'valid_units': ['lembar', 'lbr', 'ikat'],
+            'invalid_units': ['kg', 'g', 'butir'],
+            'default_unit': 'lembar',
+            'realistic_range': (1, 50)
+        }
+    }
+
+    # Check if ingredient matches any validation rules
+    for ingredient_key, rules in validations.items():
+        if ingredient_key in name_lower:
+            # Check if current unit is invalid
+            if unit in rules['invalid_units']:
+                logger.warning(
+                    f"Invalid unit '{unit}' for '{ingredient_name}', using default '{rules['default_unit']}'")
+                unit = rules['default_unit']
+
+            # Check quantity range
+            min_qty, max_qty = rules['realistic_range']
+            if quantity < min_qty or quantity > max_qty:
+                # Special case: if quantity is way too high, might be weight issue
+                if quantity > max_qty * 10 and unit in ['g', 'gr']:
+                    # Possible gram/kilogram confusion
+                    corrected_qty = quantity / 1000
+                    if min_qty <= corrected_qty <= max_qty:
+                        logger.warning(
+                            f"Quantity {quantity}g seems too high for '{ingredient_name}', correcting to {corrected_qty}kg")
+                        quantity = corrected_qty
+                        unit = 'kg'
+                elif quantity < min_qty and unit in ['g', 'gr'] and ingredient_key in ['daging', 'udang']:
+                    # Likely missing digits (2g udang -> 200g udang)
+                    corrected_qty = quantity * 100
+                    if min_qty <= corrected_qty <= max_qty:
+                        logger.warning(
+                            f"Quantity {quantity}g too low for '{ingredient_name}', correcting to {corrected_qty}g")
+                        quantity = corrected_qty
+            break
+
+    return unit, quantity
 
 
 def parse_ingredient_line(line):
@@ -352,21 +465,42 @@ def extract_ingredients(ingredient_text):
     if not ingredient_text or isinstance(ingredient_text, float):
         return []
 
-    # Split by common separators
-    lines = re.split(r'--|\n|-|•|\*|,', ingredient_text)
+    # Enhanced separators - handle "--" specifically for Kaggle dataset
+    # Priority: "--" > "\n" > "-" > "•" > "*" > ","
+    lines = []
+
+    # First, split by "--" (Kaggle dataset format)
+    if '--' in ingredient_text:
+        parts = ingredient_text.split('--')
+        lines.extend([part.strip() for part in parts if part.strip()])
+    else:
+        # Fall back to other separators
+        parts = re.split(r'\n|-|•|\*|,', ingredient_text)
+        lines.extend([part.strip() for part in parts if part.strip()])
 
     # Parse each line
     parsed = []
     for line in lines:
         if line and not line.isspace():
+            # Skip obvious non-ingredient lines
+            skip_patterns = [
+                r'^(bahan|bumbu|pelengkap|utama|lain|lainnya)\s*:?\s*$',
+                r'^(untuk|sebagai|cara|langkah)\s',
+                r'^\s*-+\s*$'
+            ]
+
+            if any(re.match(pattern, line.lower()) for pattern in skip_patterns):
+                continue
+
             parsed_ingredient = parse_ingredient_line(line.strip())
-            # Only add if we have a meaningful name (not just instruction or empty)
+
+            # Only add if we have a meaningful name and it's not an instruction
             if (parsed_ingredient['name'] and
                     not parsed_ingredient['name'].startswith('instruction:') and
                     len(parsed_ingredient['name'].strip()) > 1):
                 parsed.append(parsed_ingredient)
 
     # Log parsing results
-    logger.info(f"Extracted {len(parsed)} ingredients from text")
+    logger.info(f"Extracted {len(parsed)} ingredients from text: {[p['name'] for p in parsed]}")
 
     return parsed

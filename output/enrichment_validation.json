@@ -1,35 +1,35 @@
 {
   "overall_stats": {
     "total_recipes": 80,
-    "total_ingredients": 852,
-    "matched_ingredients": 810,
-    "low_confidence_matches": 121,
-    "zero_nutrition": 96,
-    "overall_match_rate": 95.07042253521126
+    "total_ingredients": 936,
+    "matched_ingredients": 879,
+    "low_confidence_matches": 138,
+    "zero_nutrition": 164,
+    "overall_match_rate": 93.91025641025641
   },
   "recipes": [
     {
       "ID": 1,
       "Title": "Udang saos tiram",
       "match_rate": 100.0,
-      "total_ingredients": 8,
-      "matched_ingredients": 8,
+      "total_ingredients": 10,
+      "matched_ingredients": 10,
       "low_confidence_matches": 0
     },
     {
       "ID": 2,
       "Title": "Tumis Sawi Hijau with Shrimp Simple",
       "match_rate": 100.0,
-      "total_ingredients": 6,
-      "matched_ingredients": 6,
+      "total_ingredients": 7,
+      "matched_ingredients": 7,
       "low_confidence_matches": 0
     },
     {
       "ID": 3,
       "Title": "Tauco udang Pete baby corn",
       "match_rate": 100.0,
-      "total_ingredients": 13,
-      "matched_ingredients": 13,
+      "total_ingredients": 14,
+      "matched_ingredients": 14,
       "low_confidence_matches": 0
     },
     {
@@ -59,121 +59,121 @@
     {
       "ID": 7,
       "Title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)",
-      "match_rate": 88.88888888888889,
-      "total_ingredients": 9,
-      "matched_ingredients": 8,
+      "match_rate": 90.0,
+      "total_ingredients": 10,
+      "matched_ingredients": 9,
       "low_confidence_matches": 1
     },
     {
       "ID": 8,
       "Title": "Udang Goreng tepung Sambal Matah",
       "match_rate": 100.0,
-      "total_ingredients": 11,
-      "matched_ingredients": 11,
+      "total_ingredients": 12,
+      "matched_ingredients": 12,
       "low_confidence_matches": 1
     },
     {
       "ID": 9,
       "Title": "Sayur Tahu Labu Udang",
-      "match_rate": 87.5,
-      "total_ingredients": 8,
-      "matched_ingredients": 7,
-      "low_confidence_matches": 2
+      "match_rate": 91.66666666666666,
+      "total_ingredients": 12,
+      "matched_ingredients": 11,
+      "low_confidence_matches": 3
     },
     {
       "ID": 10,
       "Title": "Labu Siam Udang ",
-      "match_rate": 91.66666666666666,
+      "match_rate": 83.33333333333334,
       "total_ingredients": 12,
-      "matched_ingredients": 11,
-      "low_confidence_matches": 1
+      "matched_ingredients": 10,
+      "low_confidence_matches": 2
     },
     {
       "ID": 11,
       "Title": "Bola-Bola Tempe",
-      "match_rate": 83.33333333333334,
-      "total_ingredients": 6,
-      "matched_ingredients": 5,
-      "low_confidence_matches": 1
-    },
-    {
-      "ID": 12,
-      "Title": "Tumis Kacang Panjang Tempe",
-      "match_rate": 100.0,
-      "total_ingredients": 5,
-      "matched_ingredients": 5,
-      "low_confidence_matches": 0
-    },
-    {
-      "ID": 13,
-      "Title": "Sambel teri nasi tahu tempe",
-      "match_rate": 100.0,
+      "match_rate": 77.77777777777779,
       "total_ingredients": 9,
-      "matched_ingredients": 9,
-      "low_confidence_matches": 1
-    },
-    {
-      "ID": 14,
-      "Title": "Tempe orek",
-      "match_rate": 100.0,
-      "total_ingredients": 9,
-      "matched_ingredients": 9,
-      "low_confidence_matches": 1
-    },
-    {
-      "ID": 15,
-      "Title": "Tempe bacem",
-      "match_rate": 100.0,
-      "total_ingredients": 13,
-      "matched_ingredients": 13,
-      "low_confidence_matches": 0
-    },
-    {
-      "ID": 16,
-      "Title": "Bakwan Tempe",
-      "match_rate": 80.0,
-      "total_ingredients": 5,
-      "matched_ingredients": 4,
-      "low_confidence_matches": 2
-    },
-    {
-      "ID": 17,
-      "Title": "Oseng Tempe Bawang Bombay (Eat Clean)",
-      "match_rate": 100.0,
-      "total_ingredients": 6,
-      "matched_ingredients": 6,
-      "low_confidence_matches": 0
-    },
-    {
-      "ID": 18,
-      "Title": "Tumis Bawang Merah, Teri Tempe, Jengkol",
-      "match_rate": 100.0,
-      "total_ingredients": 8,
-      "matched_ingredients": 8,
-      "low_confidence_matches": 0
-    },
-    {
-      "ID": 19,
-      "Title": "Tempe pete kemangi orek",
-      "match_rate": 87.5,
-      "total_ingredients": 8,
       "matched_ingredients": 7,
       "low_confidence_matches": 2
     },
     {
+      "ID": 12,
+      "Title": "Tumis Kacang Panjang Tempe",
+      "match_rate": 85.71428571428571,
+      "total_ingredients": 7,
+      "matched_ingredients": 6,
+      "low_confidence_matches": 1
+    },
+    {
+      "ID": 13,
+      "Title": "Sambel teri nasi tahu tempe",
+      "match_rate": 90.0,
+      "total_ingredients": 10,
+      "matched_ingredients": 9,
+      "low_confidence_matches": 2
+    },
+    {
+      "ID": 14,
+      "Title": "Tempe orek",
+      "match_rate": 88.88888888888889,
+      "total_ingredients": 9,
+      "matched_ingredients": 8,
+      "low_confidence_matches": 2
+    },
+    {
+      "ID": 15,
+      "Title": "Tempe bacem",
+      "match_rate": 92.3076923076923,
+      "total_ingredients": 13,
+      "matched_ingredients": 12,
+      "low_confidence_matches": 1
+    },
+    {
+      "ID": 16,
+      "Title": "Bakwan Tempe",
+      "match_rate": 66.66666666666666,
+      "total_ingredients": 6,
+      "matched_ingredients": 4,
+      "low_confidence_matches": 3
+    },
+    {
+      "ID": 17,
+      "Title": "Oseng Tempe Bawang Bombay (Eat Clean)",
+      "match_rate": 83.33333333333334,
+      "total_ingredients": 6,
+      "matched_ingredients": 5,
+      "low_confidence_matches": 2
+    },
+    {
+      "ID": 18,
+      "Title": "Tumis Bawang Merah, Teri Tempe, Jengkol",
+      "match_rate": 88.88888888888889,
+      "total_ingredients": 9,
+      "matched_ingredients": 8,
+      "low_confidence_matches": 1
+    },
+    {
+      "ID": 19,
+      "Title": "Tempe pete kemangi orek",
+      "match_rate": 88.88888888888889,
+      "total_ingredients": 9,
+      "matched_ingredients": 8,
+      "low_confidence_matches": 1
+    },
+    {
       "ID": 20,
       "Title": "Keripik tempe renyah",
-      "match_rate": 100.0,
-      "total_ingredients": 4,
-      "matched_ingredients": 4,
-      "low_confidence_matches": 0
+      "match_rate": 85.71428571428571,
+      "total_ingredients": 7,
+      "matched_ingredients": 6,
+      "low_confidence_matches": 1
     },
     {
       "ID": 21,
       "Title": "Ayam Betutu",
-      "match_rate": 94.11764705882352,
-      "total_ingredients": 17,
-      "matched_ingredients": 16,
+      "match_rate": 94.44444444444444,
+      "total_ingredients": 18,
+      "matched_ingredients": 17,
       "low_confidence_matches": 2
     },
     {
@@ -188,32 +188,32 @@
       "ID": 23,
       "Title": "Ayam geprek",
       "match_rate": 100.0,
-      "total_ingredients": 5,
-      "matched_ingredients": 5,
+      "total_ingredients": 6,
+      "matched_ingredients": 6,
       "low_confidence_matches": 1
     },
     {
       "ID": 24,
       "Title": "Tulang ayam rica wangi",
       "match_rate": 100.0,
-      "total_ingredients": 12,
-      "matched_ingredients": 12,
-      "low_confidence_matches": 2
+      "total_ingredients": 11,
+      "matched_ingredients": 11,
+      "low_confidence_matches": 1
     },
     {
       "ID": 25,
       "Title": "Risoles ragout ayam",
-      "match_rate": 94.11764705882352,
-      "total_ingredients": 17,
+      "match_rate": 100.0,
+      "total_ingredients": 16,
       "matched_ingredients": 16,
-      "low_confidence_matches": 3
+      "low_confidence_matches": 2
     },
     {
       "ID": 26,
       "Title": "Ayam sambal balado",
-      "match_rate": 87.5,
-      "total_ingredients": 8,
-      "matched_ingredients": 7,
+      "match_rate": 90.0,
+      "total_ingredients": 10,
+      "matched_ingredients": 9,
       "low_confidence_matches": 2
     },
     {
@@ -227,34 +227,34 @@
     {
       "ID": 28,
       "Title": "Chicken katsu rumahan",
-      "match_rate": 80.0,
-      "total_ingredients": 15,
-      "matched_ingredients": 12,
-      "low_confidence_matches": 5
+      "match_rate": 71.42857142857143,
+      "total_ingredients": 14,
+      "matched_ingredients": 10,
+      "low_confidence_matches": 7
     },
     {
       "ID": 29,
       "Title": "Risoles ragout ayam",
-      "match_rate": 100.0,
-      "total_ingredients": 14,
-      "matched_ingredients": 14,
-      "low_confidence_matches": 1
+      "match_rate": 93.75,
+      "total_ingredients": 16,
+      "matched_ingredients": 15,
+      "low_confidence_matches": 2
     },
     {
       "ID": 30,
       "Title": "Rica - Rica Ayam",
       "match_rate": 100.0,
-      "total_ingredients": 15,
-      "matched_ingredients": 15,
+      "total_ingredients": 17,
+      "matched_ingredients": 17,
       "low_confidence_matches": 2
     },
     {
       "ID": 31,
       "Title": "Easy Beef Hand Pies ",
-      "match_rate": 100.0,
+      "match_rate": 83.33333333333334,
       "total_ingredients": 12,
-      "matched_ingredients": 12,
-      "low_confidence_matches": 3
+      "matched_ingredients": 10,
+      "low_confidence_matches": 4
     },
     {
       "ID": 32,
@@ -267,82 +267,82 @@
     {
       "ID": 33,
       "Title": "Beef Lasagna dgn Saus & Kulit Homemade ",
-      "match_rate": 91.30434782608695,
-      "total_ingredients": 23,
-      "matched_ingredients": 21,
+      "match_rate": 88.46153846153845,
+      "total_ingredients": 26,
+      "matched_ingredients": 23,
       "low_confidence_matches": 3
     },
     {
       "ID": 34,
       "Title": "Beef Udon",
-      "match_rate": 71.42857142857143,
-      "total_ingredients": 7,
+      "match_rate": 83.33333333333334,
+      "total_ingredients": 6,
       "matched_ingredients": 5,
-      "low_confidence_matches": 2
+      "low_confidence_matches": 1
     },
     {
       "ID": 35,
       "Title": "Daging sapi lada hitam",
-      "match_rate": 63.63636363636363,
+      "match_rate": 72.72727272727273,
       "total_ingredients": 11,
-      "matched_ingredients": 7,
-      "low_confidence_matches": 4
+      "matched_ingredients": 8,
+      "low_confidence_matches": 3
     },
     {
       "ID": 36,
       "Title": "Asem asem buncis daging sapi",
       "match_rate": 100.0,
-      "total_ingredients": 8,
-      "matched_ingredients": 8,
+      "total_ingredients": 13,
+      "matched_ingredients": 13,
       "low_confidence_matches": 2
     },
     {
       "ID": 37,
       "Title": "Sate Sapi Goreng",
       "match_rate": 100.0,
-      "total_ingredients": 8,
-      "matched_ingredients": 8,
+      "total_ingredients": 13,
+      "matched_ingredients": 13,
       "low_confidence_matches": 0
     },
     {
       "ID": 38,
       "Title": "Rawon Sapi Resep Emak ",
-      "match_rate": 93.75,
-      "total_ingredients": 16,
-      "matched_ingredients": 15,
-      "low_confidence_matches": 4
+      "match_rate": 100.0,
+      "total_ingredients": 19,
+      "matched_ingredients": 19,
+      "low_confidence_matches": 3
     },
     {
       "ID": 39,
       "Title": "Tongseng sapi",
-      "match_rate": 93.75,
-      "total_ingredients": 16,
-      "matched_ingredients": 15,
-      "low_confidence_matches": 3
+      "match_rate": 88.88888888888889,
+      "total_ingredients": 18,
+      "matched_ingredients": 16,
+      "low_confidence_matches": 4
     },
     {
       "ID": 40,
       "Title": "Bulgogi (Semur Daging Sapi ala Korea)",
-      "match_rate": 90.9090909090909,
-      "total_ingredients": 11,
-      "matched_ingredients": 10,
-      "low_confidence_matches": 2
+      "match_rate": 90.0,
+      "total_ingredients": 10,
+      "matched_ingredients": 9,
+      "low_confidence_matches": 1
     },
     {
       "ID": 41,
       "Title": "Dadar Telor Cah Toge",
       "match_rate": 100.0,
-      "total_ingredients": 7,
-      "matched_ingredients": 7,
+      "total_ingredients": 10,
+      "matched_ingredients": 10,
       "low_confidence_matches": 0
     },
     {
       "ID": 42,
       "Title": "Telor dadar ala RM Padang",
       "match_rate": 100.0,
-      "total_ingredients": 13,
-      "matched_ingredients": 13,
-      "low_confidence_matches": 2
+      "total_ingredients": 14,
+      "matched_ingredients": 14,
+      "low_confidence_matches": 3
     },
     {
       "ID": 43,
@@ -356,40 +356,40 @@
       "ID": 44,
       "Title": "Dadar telor cah toge",
       "match_rate": 100.0,
-      "total_ingredients": 7,
-      "matched_ingredients": 7,
+      "total_ingredients": 8,
+      "matched_ingredients": 8,
       "low_confidence_matches": 0
     },
     {
       "ID": 45,
       "Title": "Tumis buncis orak arik telor",
-      "match_rate": 100.0,
-      "total_ingredients": 6,
+      "match_rate": 75.0,
+      "total_ingredients": 8,
       "matched_ingredients": 6,
-      "low_confidence_matches": 2
+      "low_confidence_matches": 4
     },
     {
       "ID": 46,
       "Title": "Kornet tumis telur",
       "match_rate": 100.0,
-      "total_ingredients": 8,
-      "matched_ingredients": 8,
-      "low_confidence_matches": 1
+      "total_ingredients": 6,
+      "matched_ingredients": 6,
+      "low_confidence_matches": 0
     },
     {
       "ID": 47,
       "Title": "Tempe Goreng Telur",
-      "match_rate": 100.0,
-      "total_ingredients": 4,
+      "match_rate": 80.0,
+      "total_ingredients": 5,
       "matched_ingredients": 4,
-      "low_confidence_matches": 0
+      "low_confidence_matches": 1
     },
     {
       "ID": 48,
       "Title": "Cilok isi Telur",
       "match_rate": 100.0,
-      "total_ingredients": 6,
-      "matched_ingredients": 6,
+      "total_ingredients": 7,
+      "matched_ingredients": 7,
       "low_confidence_matches": 0
     },
     {
@@ -404,33 +404,33 @@
       "ID": 50,
       "Title": "Semur Telur & Kentang",
       "match_rate": 100.0,
-      "total_ingredients": 6,
-      "matched_ingredients": 6,
+      "total_ingredients": 8,
+      "matched_ingredients": 8,
       "low_confidence_matches": 0
     },
     {
       "ID": 51,
       "Title": "Kentang tahu kuah kecap",
       "match_rate": 100.0,
-      "total_ingredients": 6,
-      "matched_ingredients": 6,
+      "total_ingredients": 10,
+      "matched_ingredients": 10,
       "low_confidence_matches": 0
     },
     {
       "ID": 52,
       "Title": "Opor Ayam + Tahu",
       "match_rate": 100.0,
-      "total_ingredients": 17,
-      "matched_ingredients": 17,
-      "low_confidence_matches": 3
+      "total_ingredients": 19,
+      "matched_ingredients": 19,
+      "low_confidence_matches": 5
     },
     {
       "ID": 53,
       "Title": "Patin tahu asam pedas",
-      "match_rate": 93.33333333333333,
-      "total_ingredients": 15,
-      "matched_ingredients": 14,
-      "low_confidence_matches": 3
+      "match_rate": 100.0,
+      "total_ingredients": 17,
+      "matched_ingredients": 17,
+      "low_confidence_matches": 2
     },
     {
       "ID": 54,
@@ -452,32 +452,32 @@
       "ID": 56,
       "Title": "Tahu Aci Pedas Manis ",
       "match_rate": 100.0,
-      "total_ingredients": 11,
-      "matched_ingredients": 11,
+      "total_ingredients": 10,
+      "matched_ingredients": 10,
       "low_confidence_matches": 0
     },
     {
       "ID": 57,
       "Title": "Perkedel tahu",
       "match_rate": 100.0,
-      "total_ingredients": 7,
-      "matched_ingredients": 7,
+      "total_ingredients": 10,
+      "matched_ingredients": 10,
       "low_confidence_matches": 1
     },
     {
       "ID": 58,
       "Title": "Tahu Kribo",
       "match_rate": 100.0,
-      "total_ingredients": 3,
-      "matched_ingredients": 3,
+      "total_ingredients": 4,
+      "matched_ingredients": 4,
       "low_confidence_matches": 0
     },
     {
       "ID": 59,
       "Title": "Tahu aci",
       "match_rate": 100.0,
-      "total_ingredients": 7,
-      "matched_ingredients": 7,
+      "total_ingredients": 9,
+      "matched_ingredients": 9,
       "low_confidence_matches": 0
     },
     {
@@ -492,56 +492,56 @@
       "ID": 61,
       "Title": "Ikan patin kuah asam pedas",
       "match_rate": 100.0,
-      "total_ingredients": 13,
-      "matched_ingredients": 13,
+      "total_ingredients": 14,
+      "matched_ingredients": 14,
       "low_confidence_matches": 1
     },
     {
       "ID": 62,
       "Title": "Gurame Bakar",
-      "match_rate": 84.61538461538461,
-      "total_ingredients": 13,
-      "matched_ingredients": 11,
+      "match_rate": 93.33333333333333,
+      "total_ingredients": 15,
+      "matched_ingredients": 14,
       "low_confidence_matches": 4
     },
     {
       "ID": 63,
       "Title": "Pesmol Gurame",
-      "match_rate": 100.0,
-      "total_ingredients": 16,
-      "matched_ingredients": 16,
+      "match_rate": 95.0,
+      "total_ingredients": 20,
+      "matched_ingredients": 19,
       "low_confidence_matches": 4
     },
     {
       "ID": 64,
       "Title": "Pindang Patin",
-      "match_rate": 95.45454545454545,
-      "total_ingredients": 22,
-      "matched_ingredients": 21,
+      "match_rate": 94.73684210526315,
+      "total_ingredients": 19,
+      "matched_ingredients": 18,
       "low_confidence_matches": 3
     },
     {
       "ID": 65,
       "Title": "Siomay Bandung Ikan Tenggiri",
-      "match_rate": 80.0,
+      "match_rate": 70.0,
       "total_ingredients": 10,
-      "matched_ingredients": 8,
-      "low_confidence_matches": 2
+      "matched_ingredients": 7,
+      "low_confidence_matches": 3
     },
     {
       "ID": 66,
       "Title": "Bandeng Asem Pedas Seger Kuah Kuning ",
-      "match_rate": 90.9090909090909,
-      "total_ingredients": 11,
-      "matched_ingredients": 10,
-      "low_confidence_matches": 3
+      "match_rate": 100.0,
+      "total_ingredients": 9,
+      "matched_ingredients": 9,
+      "low_confidence_matches": 2
     },
     {
       "ID": 67,
       "Title": "Gurami Kuah Asam",
       "match_rate": 100.0,
-      "total_ingredients": 13,
-      "matched_ingredients": 13,
+      "total_ingredients": 12,
+      "matched_ingredients": 12,
       "low_confidence_matches": 1
     },
     {
@@ -556,96 +556,96 @@
       "ID": 69,
       "Title": "Pindang Serani Ikan Patin",
       "match_rate": 100.0,
-      "total_ingredients": 16,
-      "matched_ingredients": 16,
+      "total_ingredients": 14,
+      "matched_ingredients": 14,
       "low_confidence_matches": 2
     },
     {
       "ID": 70,
       "Title": "Pizza Tuna Jagung",
-      "match_rate": 90.9090909090909,
-      "total_ingredients": 11,
-      "matched_ingredients": 10,
-      "low_confidence_matches": 2
+      "match_rate": 100.0,
+      "total_ingredients": 14,
+      "matched_ingredients": 14,
+      "low_confidence_matches": 1
     },
     {
       "ID": 71,
       "Title": "Nasi Goreng Kambing",
       "match_rate": 100.0,
-      "total_ingredients": 12,
-      "matched_ingredients": 12,
+      "total_ingredients": 13,
+      "matched_ingredients": 13,
       "low_confidence_matches": 2
     },
     {
       "ID": 72,
       "Title": "Soto Kambing simpel",
       "match_rate": 100.0,
-      "total_ingredients": 15,
-      "matched_ingredients": 15,
+      "total_ingredients": 17,
+      "matched_ingredients": 17,
       "low_confidence_matches": 2
     },
     {
       "ID": 73,
       "Title": "Nasi Kebuli",
       "match_rate": 100.0,
-      "total_ingredients": 15,
-      "matched_ingredients": 15,
+      "total_ingredients": 18,
+      "matched_ingredients": 18,
       "low_confidence_matches": 2
     },
     {
       "ID": 74,
       "Title": "Ungkep daging kambing ",
       "match_rate": 100.0,
-      "total_ingredients": 10,
-      "matched_ingredients": 10,
+      "total_ingredients": 11,
+      "matched_ingredients": 11,
       "low_confidence_matches": 1
     },
     {
       "ID": 75,
       "Title": "Martabak Gule Daging",
       "match_rate": 100.0,
-      "total_ingredients": 11,
-      "matched_ingredients": 11,
+      "total_ingredients": 12,
+      "matched_ingredients": 12,
       "low_confidence_matches": 0
     },
     {
       "ID": 76,
       "Title": "Tumis sayur sate kambing",
-      "match_rate": 91.66666666666666,
-      "total_ingredients": 12,
-      "matched_ingredients": 11,
+      "match_rate": 92.3076923076923,
+      "total_ingredients": 13,
+      "matched_ingredients": 12,
       "low_confidence_matches": 3
     },
     {
       "ID": 77,
       "Title": "SOP KAKI KAMBING ",
-      "match_rate": 90.47619047619048,
-      "total_ingredients": 21,
-      "matched_ingredients": 19,
+      "match_rate": 87.5,
+      "total_ingredients": 24,
+      "matched_ingredients": 21,
       "low_confidence_matches": 4
     },
     {
       "ID": 78,
       "Title": "Sop Kepala Kambing",
       "match_rate": 100.0,
-      "total_ingredients": 4,
-      "matched_ingredients": 4,
-      "low_confidence_matches": 0
+      "total_ingredients": 8,
+      "matched_ingredients": 8,
+      "low_confidence_matches": 1
     },
     {
       "ID": 79,
       "Title": "Nasi briyani kambing",
-      "match_rate": 89.47368421052632,
-      "total_ingredients": 19,
-      "matched_ingredients": 17,
-      "low_confidence_matches": 2
+      "match_rate": 86.36363636363636,
+      "total_ingredients": 22,
+      "matched_ingredients": 19,
+      "low_confidence_matches": 5
     },
     {
       "ID": 80,
       "Title": "Sate Kambing",
-      "match_rate": 90.9090909090909,
-      "total_ingredients": 11,
-      "matched_ingredients": 10,
+      "match_rate": 88.88888888888889,
+      "total_ingredients": 9,
+      "matched_ingredients": 8,
       "low_confidence_matches": 4
     }
   ]

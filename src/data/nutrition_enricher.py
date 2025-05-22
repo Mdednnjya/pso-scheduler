@@ -88,7 +88,7 @@ def expand_synonyms(ingredient_name):
     return expanded
 
 
-def find_best_match(ingredient, nutrition_df, threshold=70):  # Naikkan threshold dari 65 menjadi 70
+def find_best_match(ingredient, nutrition_df, threshold=70):
     """
     Find the best match for an ingredient in the nutrition database
 
@@ -106,46 +106,54 @@ def find_best_match(ingredient, nutrition_df, threshold=70):  # Naikkan threshol
     # Normalize the ingredient name
     normalized_ingredient = ingredient['name']
 
-    # Skip instruksi bukan bahan
-    instruction_words = [
-        'iris', 'potong', 'cincang', 'bakar', 'rebus', 'kukus', 'goreng',
-        'tumis', 'belah', 'aduk', 'campur', 'ambil', 'buang', 'haluskan',
-        'bahan', 'cincang', 'tumbuk', 'geprek', 'sangrai', 'seduh', 'rendam'
-    ]
-
-    # Cek apakah nama bahan hanya berisi instruksi
-    if any(normalized_ingredient.lower() == word for word in instruction_words):
-        logger.warning(f"Ingredient appears to be instruction: {normalized_ingredient}")
+    # Skip instructions
+    if normalized_ingredient.startswith('instruction:'):
         return {
             'ingredient': normalized_ingredient,
             'original_ingredient': ingredient['raw'],
             'match_score': 0,
             'match_type': 'instruction',
-            'calories': 0,
-            'protein': 0,
-            'fat': 0,
-            'carbohydrates': 0,
-            'fiber': 0,
-            'calcium': 0
+            'calories': 0, 'protein': 0, 'fat': 0, 'carbohydrates': 0, 'fiber': 0, 'calcium': 0
         }
 
+    # Enhanced blacklist for wrong matches
     blacklist_matches = {
-        'merica': ['coklat', 'cokla', 'chocolate'],
-        'gula': ['gulai', 'gulei'],
-        'bakar': ['bakwan', 'bakmi', 'bakso'],
-        'jahe': ['geplak', 'kue'],
-        'bawang': ['tawang', 'kawang'],
-        'garam': ['daun', 'talas', 'salam'],
-        'ikan': ['bukan', 'makan', 'minum'],
-        'dadu': ['madu'],
-        'air': ['dair', 'hair', 'fair'],
-        'lada': ['soda', 'jada']
+        'merica': ['gula', 'coklat', 'chocolate', 'manis', 'putih', 'aren'],
+        'lada': ['gula', 'coklat', 'chocolate', 'manis'],
+        'gula': ['merica', 'lada', 'pepper', 'hitam'],
+        'bawang': ['tawang', 'kawang', 'buah', 'pisang'],
+        'garam': ['daun', 'talas', 'salam', 'hijau'],
+        'ikan': ['bukan', 'makan', 'minum', 'roti'],
+        'daging': ['daun', 'sayur', 'buah'],
+        'udang': ['bawang', 'daun', 'buah'],
+        'ayam': ['bayam', 'daun', 'sayur'],
+        'kepala': ['pala', 'bubuk', 'rempah'],  # Kepala kambing ≠ Pala
+        'telur': ['belur', 'gelur', 'daun'],
+        'tempe': ['empe', 'lempe'],
+        'tahu': ['sahu', 'rahu', 'daun']
+    }
+
+    # Expanded synonyms for better matching
+    ENHANCED_SYNONYMS = {
+        'daging sapi': ['beef', 'sapi', 'daging lembu', 'has dalam', 'has luar', 'tenderloin'],
+        'kepala kambing': ['goat head', 'kambing head', 'sheep head', 'domba head'],
+        'udang sedang': ['shrimp medium', 'udang medium', 'prawns', 'udang windu'],
+        'tepung tapioka': ['tapioka', 'tepung kanji', 'starch', 'aci'],
+        'merica hitam': ['black pepper', 'lada hitam', 'pepper', 'merica'],
+        'telur ayam': ['chicken egg', 'telur', 'telor ayam', 'egg'],
+        'bawang putih': ['garlic', 'baput', 'bawput'],
+        'bawang merah': ['shallot', 'bamer', 'bawmer']
     }
 
     # Get synonyms for expanded matching
     ingredient_variations = expand_synonyms(normalized_ingredient)
 
-    # Normalize all choices in the nutrition database
+    # Add enhanced synonyms
+    for key, synonyms in ENHANCED_SYNONYMS.items():
+        if any(word in normalized_ingredient.lower() for word in key.split()):
+            ingredient_variations.extend(synonyms)
+
+    # Get choices from nutrition database
     choices = nutrition_df['ingredient'].tolist()
 
     # Try matching with each variation
@@ -162,28 +170,33 @@ def find_best_match(ingredient, nutrition_df, threshold=70):  # Naikkan threshol
         except Exception as e:
             logger.error(f"Error in fuzzy matching: {str(e)}")
 
-    # Filter matches berdasarkan blacklist
-    for bad_word, avoid_words in blacklist_matches.items():
-        if bad_word in normalized_ingredient.lower():
-            # Hapus hasil match yang mengandung kata yang harus dihindari
-            filtered_matches = []
-            for match in best_matches:
-                match_name = match[0].lower()
-                if not any(avoid in match_name for avoid in avoid_words):
-                    filtered_matches.append(match)
+    # Enhanced blacklist filtering
+    filtered_matches = []
+    for match_name, score in best_matches:
+        is_valid = True
 
-            # Gunakan filtered matches jika ada, jika tidak gunakan best_matches asli
-            if filtered_matches:
-                best_matches = filtered_matches
-                break
+        # Check against blacklist
+        for ingredient_key, forbidden_words in blacklist_matches.items():
+            if ingredient_key in normalized_ingredient.lower():
+                match_lower = match_name.lower()
+                if any(forbidden in match_lower for forbidden in forbidden_words):
+                    logger.warning(f"Blacklisted match: '{normalized_ingredient}' -> '{match_name}' (contains forbidden word)")
+                    is_valid = False
+                    break
 
-    # Find the best among all variations
-    if best_matches:
-        best_match = max(best_matches, key=lambda x: x[1])
+        # Additional context validation
+        if is_valid:
+            is_valid = validate_match_context(normalized_ingredient, match_name)
+
+        if is_valid:
+            filtered_matches.append((match_name, score))
+
+    # Find the best valid match
+    if filtered_matches:
+        best_match = max(filtered_matches, key=lambda x: x[1])
         match_name, score = best_match
 
-        # log untuk debugging matching
-        logger.debug(f"Match for '{normalized_ingredient}': '{match_name}' with score {score}")
+        logger.debug(f"Valid match for '{normalized_ingredient}': '{match_name}' with score {score}")
 
         if score >= threshold:
             # Get the nutrition data for the match
@@ -203,20 +216,66 @@ def find_best_match(ingredient, nutrition_df, threshold=70):  # Naikkan threshol
 
             return result
 
-    # If no good match found or score is below threshold
-    logger.warning(f"No good match found for {normalized_ingredient}")
+    # If no good match found
+    logger.warning(f"No valid match found for '{normalized_ingredient}' after filtering")
     return {
         'ingredient': normalized_ingredient,
         'original_ingredient': ingredient['raw'],
         'match_score': 0,
         'match_type': 'none',
-        'calories': 0,
-        'protein': 0,
-        'fat': 0,
-        'carbohydrates': 0,
-        'fiber': 0,
-        'calcium': 0
+        'calories': 0, 'protein': 0, 'fat': 0, 'carbohydrates': 0, 'fiber': 0, 'calcium': 0
     }
+
+
+def validate_match_context(ingredient_name, matched_name):
+    """
+    Validate if a match makes sense in context
+
+    Args:
+        ingredient_name: Original ingredient name
+        matched_name: Matched ingredient from database
+
+    Returns:
+        bool: True if match is contextually valid
+    """
+    # Context validation rules
+    context_rules = [
+        # Protein ingredients should match protein ingredients
+        {
+            'ingredient_patterns': ['daging', 'sapi', 'ayam', 'ikan', 'udang', 'telur', 'kepala'],
+            'valid_match_patterns': ['daging', 'sapi', 'ayam', 'ikan', 'udang', 'telur', 'meat', 'chicken', 'fish',
+                                     'shrimp', 'egg'],
+            'invalid_match_patterns': ['daun', 'sayur', 'buah', 'tepung', 'gula', 'bubuk', 'rempah']
+        },
+        # Spices should match spices
+        {
+            'ingredient_patterns': ['merica', 'lada', 'ketumbar', 'jintan'],
+            'valid_match_patterns': ['merica', 'lada', 'ketumbar', 'jintan', 'pepper', 'spice', 'bubuk'],
+            'invalid_match_patterns': ['gula', 'manis', 'daging', 'sayur']
+        },
+        # Vegetables should match vegetables
+        {
+            'ingredient_patterns': ['labu', 'kentang', 'wortel', 'kol', 'pare'],
+            'valid_match_patterns': ['labu', 'kentang', 'wortel', 'kol', 'pare', 'sayur', 'vegetable'],
+            'invalid_match_patterns': ['daging', 'ikan', 'ayam', 'gula']
+        }
+    ]
+
+    ingredient_lower = ingredient_name.lower()
+    matched_lower = matched_name.lower()
+
+    for rule in context_rules:
+        # Check if ingredient matches any pattern in this rule
+        if any(pattern in ingredient_lower for pattern in rule['ingredient_patterns']):
+            # Check if match is valid
+            has_valid_pattern = any(pattern in matched_lower for pattern in rule['valid_match_patterns'])
+            has_invalid_pattern = any(pattern in matched_lower for pattern in rule['invalid_match_patterns'])
+
+            if has_invalid_pattern and not has_valid_pattern:
+                logger.warning(f"Context validation failed: '{ingredient_name}' -> '{matched_name}' (invalid context)")
+                return False
+
+    return True
 
 
 def calculate_nutrition_for_weight(ingredient_with_match, weight_g):
