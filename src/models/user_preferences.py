@@ -23,7 +23,8 @@ class UserPreferences:
 
         # Define ingredient exclusions based on dietary types
         self.dietary_exclusions = {
-            "vegetarian": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi", "ikan", "fish"],
+            "vegetarian": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi",
+                           "ikan", "fish", "udang","kambing", "ikan"],
             "vegan": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi", "egg",
                       "telur", "milk", "susu", "cheese", "keju", "yogurt", "yoghurt", "ikan", "fish"],
             "pescatarian": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi"]

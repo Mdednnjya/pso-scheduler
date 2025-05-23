@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/279522120757750951/09e81780657a44d28f00d80696309a2f/artifacts
+end_time: 1748031727854
+entry_point_name: ''
+experiment_id: '279522120757750951'
+lifecycle_stage: active
+run_id: 09e81780657a44d28f00d80696309a2f
+run_name: honorable-hound-315
+run_uuid: 09e81780657a44d28f00d80696309a2f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748031727778
+status: 3
+tags: []
+user_id: naray

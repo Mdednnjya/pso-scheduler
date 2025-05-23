@@ -28,7 +28,8 @@ def calculate_average_nutrition(meal_plan):
         'protein': sum(day['protein'] for day in daily_values) / len(daily_values),
         'fat': sum(day['fat'] for day in daily_values) / len(daily_values),
         'carbohydrates': sum(day['carbohydrates'] for day in daily_values) / len(daily_values),
-        'fiber': sum(day['fiber'] for day in daily_values) / len(daily_values)
+        'fiber': sum(day['fiber'] for day in daily_values) / len(daily_values),
+        # 'calcium': sum(day.get('calcium', 0) for day in daily_values) / len(daily_values)
     }
 
     return average
@@ -150,6 +151,8 @@ def main():
             print(f"  - Fat: {nutrition['fat']:.1f} g")
             print(f"  - Carbohydrates: {nutrition['carbohydrates']:.1f} g")
             print(f"  - Fiber: {nutrition['fiber']:.1f} g")
+            # print(f"  - Calcium: {nutrition.get('calcium', 0):.1f} mg")
+
             print(f"\nTarget nutrition:")
             targets = meal_plan['target_nutrition']
             print(f"  - Calories: {targets['calories']:.0f} kcal")
@@ -157,6 +160,7 @@ def main():
             print(f"  - Fat: {targets['fat']:.1f} g")
             print(f"  - Carbohydrates: {targets['carbohydrates']:.1f} g")
             print(f"  - Fiber: {targets['fiber']:.1f} g")
+            # print(f"  - Calcium: {targets.get('calcium', 0):.1f} mg")
 
             print(f"\nComplete meal plan saved to {args.output}")
 

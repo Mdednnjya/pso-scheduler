@@ -53,7 +53,8 @@ class CBFTrainer:
                         'protein': row['Total_Nutrition'].get('protein', 0),
                         'fat': row['Total_Nutrition'].get('fat', 0),
                         'carbohydrates': row['Total_Nutrition'].get('carbohydrates', 0),
-                        'fiber': row['Total_Nutrition'].get('dietary_fiber', 0)
+                        'fiber': row['Total_Nutrition'].get('dietary_fiber', 0),
+                        'calcium': row['Total_Nutrition'].get('calcium', 0),
                     }
                 else:
                     # Calculate from ingredients
@@ -62,7 +63,8 @@ class CBFTrainer:
                         'protein': 0,
                         'fat': 0,
                         'carbohydrates': 0,
-                        'fiber': 0
+                        'fiber': 0,
+                        'calcium': 0,
                     }
                     
                     for ing in row[ingredients_field]:
@@ -84,13 +86,14 @@ class CBFTrainer:
                     total_nutrition['protein'],
                     total_nutrition['fat'],
                     total_nutrition['carbohydrates'],
-                    total_nutrition['fiber']
+                    total_nutrition['fiber'],
+                    total_nutrition['calcium'],
                 ])
             
             # Create nutrition DataFrame
             nutrition_df = pd.DataFrame(
                 nutrition_features,
-                columns=['calories', 'protein', 'fat', 'carbohydrates', 'fiber']
+                columns=['calories', 'protein', 'fat', 'carbohydrates', 'fiber', 'calcium']
             )
             
             # TF-IDF on ingredients
