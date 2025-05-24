@@ -12,7 +12,7 @@ on:
 
 jobs:
   deploy:
-    name: 🎯 Deploy to Campus VM
+    name: 🎯 Deploy to GCP VM
     runs-on: ubuntu-latest
 
     steps:
@@ -25,18 +25,20 @@ jobs:
           docker build -t dietify-api:test .
           echo "✅ Docker build successful"
 
-      - name: 🚀 Deploy to VM
-        uses: appleboy/ssh-action@v0.1.8
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          password: ${{ secrets.VM_PASSWORD }}
-          port: 22
-          script: |
+      - name: 🔑 Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VM_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VM_HOST }} >> ~/.ssh/known_hosts
+
+      - name: 🚀 Deploy to GCP VM
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             echo "🔄 Starting deployment..."
             
-            # Navigate or create project directory
-            cd /home/group2
+            # Navigate to home directory
+            cd /home/${{ secrets.VM_USER }}
             
             # Clone/update repository
             if [ -d "dietify-api" ]; then
@@ -78,6 +80,7 @@ jobs:
               docker-compose logs
               exit 1
             fi
+          '
 
       - name: 💬 Discord Success Notification
         if: success()
@@ -86,7 +89,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "✅ Dietify API Deployed Successfully!",
-                   "description": "🚀 Latest changes deployed to Campus VM",
+                   "description": "🚀 Latest changes deployed to GCP VM",
                    "color": 65280,
                    "fields": [
                      {"name": "🌐 API URL", "value": "http://${{ secrets.VM_HOST }}:8000", "inline": true},
@@ -106,7 +109,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "❌ Dietify API Deployment Failed!",
-                   "description": "🚨 Deployment to Campus VM encountered errors",
+                   "description": "🚨 Deployment to GCP VM encountered errors",
                    "color": 16711680,
                    "fields": [
                      {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": true},
