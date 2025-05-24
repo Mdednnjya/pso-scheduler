@@ -125,7 +125,7 @@ def calculate_nutrient_targets(calories, is_teen=False, is_male=True):
         'fat': fat_grams,
         'carbohydrates': carb_grams,
         'fiber': fiber_grams,
-        'calcium': calcium_mg
+        # 'calcium': calcium_mg
     }
 
 

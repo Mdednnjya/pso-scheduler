@@ -359,6 +359,32 @@ def validate_and_correct_weight(name, unit, quantity, calculated_weight):
                             calculated_weight = corrected_weight
             break
 
+    if calculated_weight > 5000:  # > 5kg per ingredient
+        logger.warning(f"Extreme weight detected: {calculated_weight}g for '{name}'")
+
+        # Special handling for flour/tepung
+        if any(flour_word in name_lower for flour_word in ['tepung', 'flour', 'terigu']):
+            # Tepung: max reasonable = 1kg per recipe
+            if calculated_weight > 1000:
+                corrected_weight = min(calculated_weight, 1000)
+                corrections.append(f"Capped flour weight from {calculated_weight}g to {corrected_weight}g")
+                calculated_weight = corrected_weight
+
+        # Special handling for meat/daging
+        elif any(meat_word in name_lower for meat_word in ['daging', 'sapi', 'ayam', 'kambing']):
+            # Daging: max reasonable = 2kg per recipe
+            if calculated_weight > 2000:
+                corrected_weight = min(calculated_weight, 2000)
+                corrections.append(f"Capped meat weight from {calculated_weight}g to {corrected_weight}g")
+                calculated_weight = corrected_weight
+
+        # Generic extreme case
+        else:
+            corrected_weight = calculated_weight / 10  # Likely unit error
+            if corrected_weight > 50:  # Still reasonable
+                corrections.append(f"Extreme value correction: {calculated_weight}g → {corrected_weight}g")
+                calculated_weight = corrected_weight
+
     if corrections:
         logger.info(f"Weight corrections for '{name}': {corrections}")
 

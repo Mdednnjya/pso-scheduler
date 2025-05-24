@@ -23,10 +23,42 @@ class UserPreferences:
 
         # Define ingredient exclusions based on dietary types
         self.dietary_exclusions = {
-            "vegetarian": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi", "ikan", "fish"],
-            "vegan": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi", "egg",
-                      "telur", "milk", "susu", "cheese", "keju", "yogurt", "yoghurt", "ikan", "fish"],
-            "pescatarian": ["chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi"]
+            # Vegetarian: No meat, poultry, or seafood (plants, dairy, eggs OK)
+            "vegetarian": [
+                # Daging & Unggas
+                "chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi",
+                "tulang ayam", "nugget", "geprek", "rica", "betutu", "katsu",
+
+                # Seafood (ikan & udang)
+                "ikan", "fish", "udang", "shrimp", "patin", "gurame", "teri", "tuna",
+                "bandeng", "tenggiri", "siomay",
+
+                # Processed meat
+                "kornet", "abon", "sate", "rawon", "tongseng", "bulgogi"
+            ],
+
+            # Vegan: No animal products at all (only plants)
+            "vegan": [
+                # All from vegetarian PLUS dairy & eggs
+                "chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi",
+                "tulang ayam", "nugget", "geprek", "rica", "betutu", "katsu",
+                "ikan", "fish", "udang", "shrimp", "patin", "gurame", "teri", "tuna",
+                "bandeng", "tenggiri", "siomay", "kornet", "abon", "sate", "rawon",
+                "tongseng", "bulgogi",
+
+                # Dairy & Eggs
+                "egg", "telur", "telor", "dadar", "milk", "susu", "cheese", "keju",
+                "yogurt", "yoghurt", "opor"
+            ],
+
+            # Pescatarian: No meat or poultry, but seafood OK (fish, dairy, eggs OK)
+            "pescatarian": [
+                # Only land animals (keep seafood)
+                "chicken", "beef", "pork", "daging", "lamb", "kambing", "ayam", "sapi",
+                "tulang ayam", "nugget", "geprek", "rica", "betutu", "katsu",
+                "kornet", "abon", "sate", "rawon", "tongseng", "bulgogi"
+                # NO ikan/udang - pescatarian can eat seafood
+            ]
         }
 
         # Add dietary-type based exclusions

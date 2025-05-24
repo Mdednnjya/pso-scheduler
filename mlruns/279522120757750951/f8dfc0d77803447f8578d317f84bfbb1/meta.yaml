@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/279522120757750951/f8dfc0d77803447f8578d317f84bfbb1/artifacts
+end_time: 1748035704782
+entry_point_name: ''
+experiment_id: '279522120757750951'
+lifecycle_stage: active
+run_id: f8dfc0d77803447f8578d317f84bfbb1
+run_name: gaudy-kite-197
+run_uuid: f8dfc0d77803447f8578d317f84bfbb1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748035704709
+status: 3
+tags: []
+user_id: naray

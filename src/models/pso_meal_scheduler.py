@@ -16,7 +16,7 @@ class ParticleSwarmOptimizer:
                  num_days=7,
                  meals_per_day=3,
                  recipes_per_meal=3,
-                 max_iterations=50,
+                 max_iterations=100,
                  w=0.7,
                  c1=1.5,
                  c2=1.5):
@@ -54,16 +54,17 @@ class ParticleSwarmOptimizer:
             'protein': 0,
             'fat': 0,
             'carbohydrates': 0,
-            'fiber': 0
+            'fiber': 0,
+            # 'calcium': 0
         }
 
         # Weights for different nutrients in fitness calculation
         self.nutrient_weights = {
-            'calories': 1.0,
-            'protein': 2.0,  # Higher weight for protein
-            'fat': 1.0,
-            'carbohydrates': 1.0,
-            'fiber': 1.5  # Higher weight for fiber
+            'calories': 15.0,
+            'protein': 2.0,
+            'fat': 8.0,
+            'carbohydrates': 3.0,
+            'fiber': 1.5
         }
 
     def set_user_requirements(self, age, gender, weight, height, activity_level,
@@ -104,6 +105,9 @@ class ParticleSwarmOptimizer:
             else:
                 self.filtered_meal_data = self.meal_data
 
+            # NEW: Apply calorie-based filtering
+            self.filter_recipes_by_calorie_target()
+
             # Use portion_adjuster to calculate target metrics based on user parameters
             user_params = {
                 'age': age,
@@ -115,6 +119,34 @@ class ParticleSwarmOptimizer:
                 'meals_per_day': self.meals_per_day
             }
             self.target_metrics = get_user_nutrition_targets(user_params)
+
+            # Adaptive weights based on target calories (PSO best practice)
+            target_calories = self.target_metrics['calories']
+
+            if target_calories < 2000:  # Low calorie targets need more aggressive control
+                self.nutrient_weights = {
+                    'calories': 25.0,  # Very aggressive for low targets
+                    'protein': 3.0,
+                    'fat': 15.0,
+                    'carbohydrates': 5.0,
+                    'fiber': 2.0
+                }
+            elif target_calories > 3000:  # High calorie targets more flexible
+                self.nutrient_weights = {
+                    'calories': 8.0,  # Less aggressive for high targets
+                    'protein': 2.0,
+                    'fat': 6.0,
+                    'carbohydrates': 2.0,
+                    'fiber': 1.5
+                }
+            else:  # Medium targets (your current good config)
+                self.nutrient_weights = {
+                    'calories': 15.0,
+                    'protein': 2.0,
+                    'fat': 8.0,
+                    'carbohydrates': 3.0,
+                    'fiber': 1.5
+                }
 
             # Log the target metrics
             mlflow.log_params(self.target_metrics)
@@ -128,19 +160,14 @@ class ParticleSwarmOptimizer:
     def calculate_nutritional_value(self, meal_schedule):
         """
         Calculate total nutritional value for a meal schedule
-
-        Args:
-            meal_schedule: A 3D array representing meal IDs for each day, meal, and recipe
-
-        Returns:
-            A dictionary with total nutrition values for the entire schedule
         """
         total_nutrition = {
             'calories': 0,
             'protein': 0,
             'fat': 0,
             'carbohydrates': 0,
-            'fiber': 0
+            'fiber': 0,
+            # 'calcium': 0
         }
 
         for day in meal_schedule:
@@ -148,11 +175,13 @@ class ParticleSwarmOptimizer:
                 for meal_id in meal:
                     meal_record = self.filtered_meal_data[self.filtered_meal_data['ID'] == str(meal_id)]
                     if not meal_record.empty:
-                        # Check if we have adjusted nutrition data first
-                        if 'Adjusted_Total_Nutrition' in meal_record.iloc[0]:
-                            nutrition = meal_record.iloc[0]['Adjusted_Total_Nutrition']
+                        record = meal_record.iloc[0]
+
+                        # Get basic nutrition
+                        if 'Adjusted_Total_Nutrition' in record:
+                            nutrition = record['Adjusted_Total_Nutrition']
                         else:
-                            nutrition = meal_record.iloc[0]['nutrition']
+                            nutrition = record['nutrition']
 
                         total_nutrition['calories'] += nutrition.get('calories', 0)
                         total_nutrition['protein'] += nutrition.get('protein', 0)
@@ -160,7 +189,13 @@ class ParticleSwarmOptimizer:
                         total_nutrition['carbohydrates'] += nutrition.get('carbohydrates', 0)
                         total_nutrition['fiber'] += nutrition.get('fiber', 0)
 
-        # Return average per day
+                        # ADD: Calculate calcium from Ingredients_Enriched
+                        if 'Ingredients_Enriched' in record:
+                            ingredients = record['Ingredients_Enriched']
+                            recipe_calcium = sum(float(ing.get('calcium', 0)) for ing in ingredients)
+                            # total_nutrition['calcium'] += recipe_calcium
+
+            # Return average per day
         days = len(meal_schedule)
         return {k: v / days for k, v in total_nutrition.items()}
 
@@ -186,26 +221,29 @@ class ParticleSwarmOptimizer:
 
     def fitness_function(self, meal_schedule):
         """
-        Calculate fitness score for a meal schedule
-        Lower score is better (it's a cost/penalty function)
-
-        Args:
-            meal_schedule: A 3D array representing meal IDs for each day, meal, and recipe
-
-        Returns:
-            Fitness score (lower is better)
+        Calculate fitness score with exponential penalty (PSO best practice)
+        Lower score is better
         """
         # Calculate average daily nutrition for the schedule
         daily_nutrition = self.calculate_nutritional_value(meal_schedule)
 
-        # Calculate penalty for deviation from target
+        # Calculate penalty for deviation from target with exponential scaling
         penalty = 0
         for nutrient, target in self.target_metrics.items():
-            if target > 0:  # Only consider nutrients with targets
+            if target > 0 and nutrient in daily_nutrition:
                 # Calculate relative error as percentage
                 relative_error = abs(daily_nutrition[nutrient] - target) / target
-                # Apply weight to the error
-                weighted_error = relative_error * self.nutrient_weights.get(nutrient, 1.0)
+
+                # Exponential penalty for large errors (PSO best practice)
+                if relative_error > 0.5:  # > 50% error gets exponential penalty
+                    exponential_penalty = relative_error ** 2.5  # Aggressive for large errors
+                elif relative_error > 0.2:  # 20-50% error gets quadratic penalty
+                    exponential_penalty = relative_error ** 2
+                else:  # < 20% error gets linear penalty
+                    exponential_penalty = relative_error
+
+                # Apply weight to the penalty
+                weighted_error = exponential_penalty * self.nutrient_weights.get(nutrient, 1.0)
                 penalty += weighted_error
 
         # Calculate meal variety (higher is better)
@@ -214,8 +252,8 @@ class ParticleSwarmOptimizer:
         variety_penalty = 1 - variety_score
 
         # Combine nutrition and variety penalties
-        # 80% weight to nutrition, 20% to variety
-        total_penalty = (0.8 * penalty) + (0.2 * variety_penalty)
+        # 85% weight to nutrition (higher than before), 15% to variety
+        total_penalty = (0.85 * penalty) + (0.15 * variety_penalty)
 
         return total_penalty
 
@@ -434,6 +472,39 @@ class ParticleSwarmOptimizer:
 
             return gbest, nutrition, gbest_score
 
+    def filter_recipes_by_calorie_target(self):
+        """
+        Filter recipe pool based on calorie target (PSO best practice)
+        """
+        target_calories = self.target_metrics['calories']
+
+        if target_calories < 2000:  # Low calorie targets
+            # Filter recipes under 250 kcal only
+            low_cal_mask = self.meal_data['nutrition'].apply(lambda x: x.get('calories', 0) < 250)
+            filtered_data = self.meal_data[low_cal_mask]
+
+            if len(filtered_data) < 10:  # Fallback if too few recipes
+                # Use recipes under 300 kcal
+                fallback_mask = self.meal_data['nutrition'].apply(lambda x: x.get('calories', 0) < 300)
+                filtered_data = self.meal_data[fallback_mask]
+
+        elif target_calories > 3200:  # High calorie targets
+            # Allow all recipes, prioritize high-calorie ones
+            filtered_data = self.meal_data
+
+        else:  # Medium targets
+            # Use recipes 150-400 kcal range
+            med_cal_mask = self.meal_data['nutrition'].apply(
+                lambda x: 150 <= x.get('calories', 0) <= 400
+            )
+            filtered_data = self.meal_data[med_cal_mask]
+
+        # Update filtered meal data and IDs
+        self.filtered_meal_data = filtered_data
+        self.meal_ids = filtered_data['ID'].unique().tolist()
+
+        print(f"Filtered to {len(filtered_data)} recipes for target {target_calories} kcal")
+
     def generate_meal_plan(self):
         """
         Generate an optimized meal plan
@@ -458,7 +529,8 @@ class ParticleSwarmOptimizer:
                 'protein': 0,
                 'fat': 0,
                 'carbohydrates': 0,
-                'fiber': 0
+                'fiber': 0,
+                'calcium': 0
             }
 
             for meal_idx, meal_recipes in enumerate(day_meals):
@@ -472,7 +544,8 @@ class ParticleSwarmOptimizer:
                     'protein': 0,
                     'fat': 0,
                     'carbohydrates': 0,
-                    'fiber': 0
+                    'fiber': 0,
+                    # 'calcium': 0
                 }
 
                 for recipe_id in meal_recipes:
@@ -482,24 +555,45 @@ class ParticleSwarmOptimizer:
                         # Get the first matching record
                         record = meal_record.iloc[0]
 
+                        print(f"Recipe ID: {recipe_id}")
+                        print(f"Has Ingredients_Enriched: {'Ingredients_Enriched' in record}")
+                        if 'Ingredients_Enriched' in record:
+                            ingredients = record['Ingredients_Enriched']
+                            total_calcium = sum(float(ing.get('calcium', 0)) for ing in ingredients)
+                            print(f"Calculated calcium: {total_calcium}")
+                        print("---")
+
                         # Determine which nutrition data to use
                         if 'Adjusted_Total_Nutrition' in record:
                             recipe_nutrition = record['Adjusted_Total_Nutrition']
                         else:
                             recipe_nutrition = record['nutrition']
 
+                        # Calculate calcium from Ingredients_Enriched
+                        recipe_calcium = 0
+                        if 'Ingredients_Enriched' in record:
+                            ingredients = record['Ingredients_Enriched']
+                            recipe_calcium = sum(float(ing.get('calcium', 0)) for ing in ingredients)
+
                         recipe_info = {
                             "meal_id": recipe_id,
                             "title": record['Title'],
-                            "nutrition": recipe_nutrition
+                            "nutrition": {
+                                "calories": recipe_nutrition.get('calories', 0),
+                                "protein": recipe_nutrition.get('protein', 0),
+                                "fat": recipe_nutrition.get('fat', 0),
+                                "carbohydrates": recipe_nutrition.get('carbohydrates', 0),
+                                "fiber": recipe_nutrition.get('fiber', 0),
+                                # "calcium": recipe_calcium  # Use calculated calcium
+                            }
                         }
 
-                        # Add to meal nutrition totals
                         meal_nutrition['calories'] += recipe_nutrition.get('calories', 0)
                         meal_nutrition['protein'] += recipe_nutrition.get('protein', 0)
                         meal_nutrition['fat'] += recipe_nutrition.get('fat', 0)
                         meal_nutrition['carbohydrates'] += recipe_nutrition.get('carbohydrates', 0)
                         meal_nutrition['fiber'] += recipe_nutrition.get('fiber', 0)
+                        # meal_nutrition['calcium'] += recipe_calcium
 
                         meal_info["recipes"].append(recipe_info)
 
@@ -512,6 +606,7 @@ class ParticleSwarmOptimizer:
                 daily_nutrition['fat'] += meal_nutrition['fat']
                 daily_nutrition['carbohydrates'] += meal_nutrition['carbohydrates']
                 daily_nutrition['fiber'] += meal_nutrition['fiber']
+                # daily_nutrition['calcium'] += meal_nutrition['calcium']
 
                 day_plan["meals"].append(meal_info)
 
@@ -643,7 +738,8 @@ class MealScheduler:
                         'protein': 0,
                         'fat': 0,
                         'carbohydrates': 0,
-                        'fiber': 0
+                        'fiber': 0,
+                        # 'calcium': 0
                     }
 
                     for meal_idx, meal_recipes in enumerate(day_meals):
@@ -657,7 +753,8 @@ class MealScheduler:
                             'protein': 0,
                             'fat': 0,
                             'carbohydrates': 0,
-                            'fiber': 0
+                            'fiber': 0,
+                            # 'calcium': 0
                         }
 
                         for recipe_id in meal_recipes:
@@ -677,6 +774,7 @@ class MealScheduler:
                                 meal_nutrition['fat'] += nutrition.get('fat', 0)
                                 meal_nutrition['carbohydrates'] += nutrition.get('carbohydrates', 0)
                                 meal_nutrition['fiber'] += nutrition.get('fiber', 0)
+                                # meal_nutrition['calcium'] += nutrition.get('calcium', 0)
 
                                 meal_info["recipes"].append(recipe_info)
 
@@ -689,6 +787,7 @@ class MealScheduler:
                         daily_nutrition['fat'] += meal_nutrition['fat']
                         daily_nutrition['carbohydrates'] += meal_nutrition['carbohydrates']
                         daily_nutrition['fiber'] += meal_nutrition['fiber']
+                        # daily_nutrition['calcium'] += meal_nutrition['calcium']
 
                         day_plan["meals"].append(meal_info)
 

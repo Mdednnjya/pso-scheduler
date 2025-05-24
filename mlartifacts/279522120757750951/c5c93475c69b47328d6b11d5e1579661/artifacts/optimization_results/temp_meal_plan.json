@@ -1,0 +1,845 @@
+{
+  "meal_plan": [
+    {
+      "day": 1,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "57",
+              "title": "Perkedel tahu",
+              "nutrition": {
+                "calories": 716.0,
+                "protein": 26.9,
+                "fat": 28.0,
+                "carbohydrates": 91.5,
+                "fiber": 7.9
+              }
+            },
+            {
+              "meal_id": "27",
+              "title": "Ayam Woku Manado",
+              "nutrition": {
+                "calories": 1119.2,
+                "protein": 31.8,
+                "fat": 62.1,
+                "carbohydrates": 116.4,
+                "fiber": 15.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1835.2,
+            "protein": 58.7,
+            "fat": 90.1,
+            "carbohydrates": 207.9,
+            "fiber": 23.8,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "12",
+              "title": "Tumis Kacang Panjang Tempe",
+              "nutrition": {
+                "calories": 298.0,
+                "protein": 20.3,
+                "fat": 12.5,
+                "carbohydrates": 28.1,
+                "fiber": 5.5
+              }
+            },
+            {
+              "meal_id": "40",
+              "title": "Bulgogi (Semur Daging Sapi ala Korea)",
+              "nutrition": {
+                "calories": 813.8,
+                "protein": 21.8,
+                "fat": 46.4,
+                "carbohydrates": 87.2,
+                "fiber": 3.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1111.8,
+            "protein": 42.1,
+            "fat": 58.9,
+            "carbohydrates": 115.30000000000001,
+            "fiber": 8.5,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "67",
+              "title": "Gurami Kuah Asam",
+              "nutrition": {
+                "calories": 607.0,
+                "protein": 20.9,
+                "fat": 11.2,
+                "carbohydrates": 94.8,
+                "fiber": 12.7
+              }
+            },
+            {
+              "meal_id": "44",
+              "title": "Dadar telor cah toge",
+              "nutrition": {
+                "calories": 295.2,
+                "protein": 15.5,
+                "fat": 9.1,
+                "carbohydrates": 38.7,
+                "fiber": 5.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 902.2,
+            "protein": 36.4,
+            "fat": 20.299999999999997,
+            "carbohydrates": 133.5,
+            "fiber": 18.4,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 3849.2,
+        "protein": 137.20000000000002,
+        "fat": 169.3,
+        "carbohydrates": 456.70000000000005,
+        "fiber": 50.699999999999996,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 2,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "78",
+              "title": "Sop Kepala Kambing",
+              "nutrition": {
+                "calories": 482.2,
+                "protein": 14.0,
+                "fat": 19.8,
+                "carbohydrates": 61.9,
+                "fiber": 6.0
+              }
+            },
+            {
+              "meal_id": "76",
+              "title": "Tumis sayur sate kambing",
+              "nutrition": {
+                "calories": 395.5,
+                "protein": 12.0,
+                "fat": 8.1,
+                "carbohydrates": 65.8,
+                "fiber": 17.1
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 877.7,
+            "protein": 26.0,
+            "fat": 27.9,
+            "carbohydrates": 127.69999999999999,
+            "fiber": 23.1,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "74",
+              "title": "Ungkep daging kambing ",
+              "nutrition": {
+                "calories": 523.0,
+                "protein": 25.1,
+                "fat": 11.3,
+                "carbohydrates": 64.4,
+                "fiber": 5.0
+              }
+            },
+            {
+              "meal_id": "59",
+              "title": "Tahu aci",
+              "nutrition": {
+                "calories": 456.8,
+                "protein": 18.0,
+                "fat": 16.3,
+                "carbohydrates": 62.6,
+                "fiber": 5.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 979.8,
+            "protein": 43.1,
+            "fat": 27.6,
+            "carbohydrates": 127.0,
+            "fiber": 10.7,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "62",
+              "title": "Gurame Bakar",
+              "nutrition": {
+                "calories": 809.8,
+                "protein": 26.4,
+                "fat": 41.9,
+                "carbohydrates": 85.7,
+                "fiber": 13.2
+              }
+            },
+            {
+              "meal_id": "68",
+              "title": "Pepes Ikan Tuna Bumbu Orange",
+              "nutrition": {
+                "calories": 665.5,
+                "protein": 26.1,
+                "fat": 20.2,
+                "carbohydrates": 82.0,
+                "fiber": 14.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1475.3,
+            "protein": 52.5,
+            "fat": 62.099999999999994,
+            "carbohydrates": 167.7,
+            "fiber": 27.4,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 3332.8,
+        "protein": 121.6,
+        "fat": 117.6,
+        "carbohydrates": 422.4,
+        "fiber": 61.199999999999996,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 3,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "55",
+              "title": "Tahu Telur Asin",
+              "nutrition": {
+                "calories": 266.0,
+                "protein": 23.4,
+                "fat": 11.9,
+                "carbohydrates": 21.2,
+                "fiber": 0.2
+              }
+            },
+            {
+              "meal_id": "74",
+              "title": "Ungkep daging kambing ",
+              "nutrition": {
+                "calories": 523.0,
+                "protein": 25.1,
+                "fat": 11.3,
+                "carbohydrates": 64.4,
+                "fiber": 5.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 789.0,
+            "protein": 48.5,
+            "fat": 23.200000000000003,
+            "carbohydrates": 85.60000000000001,
+            "fiber": 5.2,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "60",
+              "title": "Tahu Kecap Kental Pedas",
+              "nutrition": {
+                "calories": 332.0,
+                "protein": 19.6,
+                "fat": 11.4,
+                "carbohydrates": 38.4,
+                "fiber": 3.2
+              }
+            },
+            {
+              "meal_id": "67",
+              "title": "Gurami Kuah Asam",
+              "nutrition": {
+                "calories": 607.0,
+                "protein": 20.9,
+                "fat": 11.2,
+                "carbohydrates": 94.8,
+                "fiber": 12.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 939.0,
+            "protein": 40.5,
+            "fat": 22.6,
+            "carbohydrates": 133.2,
+            "fiber": 15.899999999999999,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "36",
+              "title": "Asem asem buncis daging sapi",
+              "nutrition": {
+                "calories": 774.2,
+                "protein": 21.4,
+                "fat": 40.7,
+                "carbohydrates": 84.3,
+                "fiber": 7.8
+              }
+            },
+            {
+              "meal_id": "5",
+              "title": "Udang Balado",
+              "nutrition": {
+                "calories": 293.8,
+                "protein": 25.4,
+                "fat": 6.4,
+                "carbohydrates": 37.6,
+                "fiber": 6.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1068.0,
+            "protein": 46.8,
+            "fat": 47.1,
+            "carbohydrates": 121.9,
+            "fiber": 14.5,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 2796.0,
+        "protein": 135.8,
+        "fat": 92.9,
+        "carbohydrates": 340.70000000000005,
+        "fiber": 35.599999999999994,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 4,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "64",
+              "title": "Pindang Patin",
+              "nutrition": {
+                "calories": 719.5,
+                "protein": 25.1,
+                "fat": 20.0,
+                "carbohydrates": 114.5,
+                "fiber": 14.8
+              }
+            },
+            {
+              "meal_id": "14",
+              "title": "Tempe orek",
+              "nutrition": {
+                "calories": 449.0,
+                "protein": 26.7,
+                "fat": 8.2,
+                "carbohydrates": 71.3,
+                "fiber": 8.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1168.5,
+            "protein": 51.8,
+            "fat": 28.2,
+            "carbohydrates": 185.8,
+            "fiber": 23.700000000000003,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "10",
+              "title": "Labu Siam Udang ",
+              "nutrition": {
+                "calories": 493.8,
+                "protein": 30.0,
+                "fat": 10.3,
+                "carbohydrates": 72.5,
+                "fiber": 9.9
+              }
+            },
+            {
+              "meal_id": "78",
+              "title": "Sop Kepala Kambing",
+              "nutrition": {
+                "calories": 482.2,
+                "protein": 14.0,
+                "fat": 19.8,
+                "carbohydrates": 61.9,
+                "fiber": 6.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 976.0,
+            "protein": 44.0,
+            "fat": 30.1,
+            "carbohydrates": 134.4,
+            "fiber": 15.9,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "47",
+              "title": "Tempe Goreng Telur",
+              "nutrition": {
+                "calories": 334.8,
+                "protein": 15.8,
+                "fat": 12.0,
+                "carbohydrates": 44.9,
+                "fiber": 1.5
+              }
+            },
+            {
+              "meal_id": "18",
+              "title": "Tumis Bawang Merah, Teri Tempe, Jengkol",
+              "nutrition": {
+                "calories": 528.0,
+                "protein": 34.1,
+                "fat": 12.4,
+                "carbohydrates": 68.7,
+                "fiber": 4.8
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 862.8,
+            "protein": 49.900000000000006,
+            "fat": 24.4,
+            "carbohydrates": 113.6,
+            "fiber": 6.3,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 3007.3,
+        "protein": 145.7,
+        "fat": 82.69999999999999,
+        "carbohydrates": 433.80000000000007,
+        "fiber": 45.9,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 5,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "21",
+              "title": "Ayam Betutu",
+              "nutrition": {
+                "calories": 819.2,
+                "protein": 33.3,
+                "fat": 23.6,
+                "carbohydrates": 106.7,
+                "fiber": 19.0
+              }
+            },
+            {
+              "meal_id": "23",
+              "title": "Ayam geprek",
+              "nutrition": {
+                "calories": 318.8,
+                "protein": 11.3,
+                "fat": 9.8,
+                "carbohydrates": 46.2,
+                "fiber": 4.8
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1138.0,
+            "protein": 44.599999999999994,
+            "fat": 33.400000000000006,
+            "carbohydrates": 152.9,
+            "fiber": 23.8,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            },
+            {
+              "meal_id": "46",
+              "title": "Kornet tumis telur",
+              "nutrition": {
+                "calories": 243.0,
+                "protein": 8.5,
+                "fat": 4.8,
+                "carbohydrates": 41.8,
+                "fiber": 3.4
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 632.8,
+            "protein": 23.4,
+            "fat": 14.2,
+            "carbohydrates": 108.0,
+            "fiber": 8.3,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            },
+            {
+              "meal_id": "44",
+              "title": "Dadar telor cah toge",
+              "nutrition": {
+                "calories": 295.2,
+                "protein": 15.5,
+                "fat": 9.1,
+                "carbohydrates": 38.7,
+                "fiber": 5.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 685.0,
+            "protein": 30.4,
+            "fat": 18.5,
+            "carbohydrates": 104.9,
+            "fiber": 10.600000000000001,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 2455.8,
+        "protein": 98.4,
+        "fat": 66.10000000000001,
+        "carbohydrates": 365.79999999999995,
+        "fiber": 42.7,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 6,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "50",
+              "title": "Semur Telur & Kentang",
+              "nutrition": {
+                "calories": 843.8,
+                "protein": 32.0,
+                "fat": 42.5,
+                "carbohydrates": 89.2,
+                "fiber": 7.8
+              }
+            },
+            {
+              "meal_id": "6",
+              "title": "Tumis kacang panjang udang (No Msg)",
+              "nutrition": {
+                "calories": 325.5,
+                "protein": 20.2,
+                "fat": 6.8,
+                "carbohydrates": 47.3,
+                "fiber": 2.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1169.3,
+            "protein": 52.2,
+            "fat": 49.3,
+            "carbohydrates": 136.5,
+            "fiber": 10.0,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "46",
+              "title": "Kornet tumis telur",
+              "nutrition": {
+                "calories": 243.0,
+                "protein": 8.5,
+                "fat": 4.8,
+                "carbohydrates": 41.8,
+                "fiber": 3.4
+              }
+            },
+            {
+              "meal_id": "7",
+              "title": "Mie Kuah Udang Telur Sedap Malam (Non MSG)",
+              "nutrition": {
+                "calories": 504.0,
+                "protein": 31.9,
+                "fat": 11.5,
+                "carbohydrates": 53.2,
+                "fiber": 8.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 747.0,
+            "protein": 40.4,
+            "fat": 16.3,
+            "carbohydrates": 95.0,
+            "fiber": 11.6,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "33",
+              "title": "Beef Lasagna dgn Saus & Kulit Homemade ",
+              "nutrition": {
+                "calories": 1712.0,
+                "protein": 63.7,
+                "fat": 74.1,
+                "carbohydrates": 169.3,
+                "fiber": 7.1
+              }
+            },
+            {
+              "meal_id": "60",
+              "title": "Tahu Kecap Kental Pedas",
+              "nutrition": {
+                "calories": 332.0,
+                "protein": 19.6,
+                "fat": 11.4,
+                "carbohydrates": 38.4,
+                "fiber": 3.2
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 2044.0,
+            "protein": 83.30000000000001,
+            "fat": 85.5,
+            "carbohydrates": 207.70000000000002,
+            "fiber": 10.3,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 3960.3,
+        "protein": 175.9,
+        "fat": 151.1,
+        "carbohydrates": 439.20000000000005,
+        "fiber": 31.900000000000002,
+        "calcium": 0
+      }
+    },
+    {
+      "day": 7,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "8",
+              "title": "Udang Goreng tepung Sambal Matah",
+              "nutrition": {
+                "calories": 399.0,
+                "protein": 27.2,
+                "fat": 8.9,
+                "carbohydrates": 56.5,
+                "fiber": 9.4
+              }
+            },
+            {
+              "meal_id": "37",
+              "title": "Sate Sapi Goreng",
+              "nutrition": {
+                "calories": 703.5,
+                "protein": 26.6,
+                "fat": 18.9,
+                "carbohydrates": 91.2,
+                "fiber": 12.1
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 1102.5,
+            "protein": 53.8,
+            "fat": 27.799999999999997,
+            "carbohydrates": 147.7,
+            "fiber": 21.5,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "16",
+              "title": "Bakwan Tempe",
+              "nutrition": {
+                "calories": 381.5,
+                "protein": 12.3,
+                "fat": 14.0,
+                "carbohydrates": 56.3,
+                "fiber": 2.7
+              }
+            },
+            {
+              "meal_id": "49",
+              "title": "Tumis buncis telur",
+              "nutrition": {
+                "calories": 457.2,
+                "protein": 18.1,
+                "fat": 17.1,
+                "carbohydrates": 42.9,
+                "fiber": 4.3
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 838.7,
+            "protein": 30.400000000000002,
+            "fat": 31.1,
+            "carbohydrates": 99.19999999999999,
+            "fiber": 7.0,
+            "calcium": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "26",
+              "title": "Ayam sambal balado",
+              "nutrition": {
+                "calories": 687.8,
+                "protein": 19.8,
+                "fat": 25.8,
+                "carbohydrates": 61.5,
+                "fiber": 4.7
+              }
+            },
+            {
+              "meal_id": "45",
+              "title": "Tumis buncis orak arik telor",
+              "nutrition": {
+                "calories": 272.0,
+                "protein": 8.2,
+                "fat": 4.1,
+                "carbohydrates": 35.8,
+                "fiber": 2.0
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 959.8,
+            "protein": 28.0,
+            "fat": 29.9,
+            "carbohydrates": 97.3,
+            "fiber": 6.7,
+            "calcium": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 2901.0,
+        "protein": 112.2,
+        "fat": 88.8,
+        "carbohydrates": 344.2,
+        "fiber": 35.2,
+        "calcium": 0
+      }
+    }
+  ],
+  "average_daily_nutrition": {
+    "calories": 272.0,
+    "protein": 8.2,
+    "fat": 4.1,
+    "carbohydrates": 35.8,
+    "fiber": 2.0
+  },
+  "target_nutrition": {
+    "calories": 2672.2806000000005,
+    "protein": 133.61403000000004,
+    "fat": 74.23001666666669,
+    "carbohydrates": 367.4385825000001,
+    "fiber": 38
+  },
+  "fitness_score": 6.878653824228301
+}

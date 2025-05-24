@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/988051196424424079/c53a07a9c1d84347b1734f793cd388aa/artifacts
+end_time: 1748030593556
+entry_point_name: ''
+experiment_id: '988051196424424079'
+lifecycle_stage: active
+run_id: c53a07a9c1d84347b1734f793cd388aa
+run_name: Advanced Enrichment with Conditional Analysis
+run_uuid: c53a07a9c1d84347b1734f793cd388aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748030529163
+status: 3
+tags: []
+user_id: naray

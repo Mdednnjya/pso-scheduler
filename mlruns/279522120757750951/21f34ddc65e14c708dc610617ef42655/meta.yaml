@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/279522120757750951/21f34ddc65e14c708dc610617ef42655/artifacts
+end_time: 1748032702015
+entry_point_name: ''
+experiment_id: '279522120757750951'
+lifecycle_stage: active
+run_id: 21f34ddc65e14c708dc610617ef42655
+run_name: unequaled-trout-578
+run_uuid: 21f34ddc65e14c708dc610617ef42655
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748032701942
+status: 3
+tags: []
+user_id: naray
