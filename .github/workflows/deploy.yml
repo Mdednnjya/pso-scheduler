@@ -12,7 +12,7 @@ on:
 
 jobs:
   deploy:
-    name: 🎯 Deploy to Campus VM
+    name: 🎯 Deploy to GCP VM
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           docker build -t dietify-api:test .
           echo "✅ Docker build successful"
 
-      - name: 🚀 Deploy to VM
+      - name: 🚀 Deploy to GCP VM
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.VM_HOST }}
@@ -36,7 +36,7 @@ jobs:
             echo "🔄 Starting deployment..."
             
             # Navigate or create project directory
-            cd /home/group2
+            cd /home/narayanmade578
             
             # Clone/update repository
             if [ -d "dietify-api" ]; then
@@ -86,7 +86,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "✅ Dietify API Deployed Successfully!",
-                   "description": "🚀 Latest changes deployed to Campus VM",
+                   "description": "🚀 Latest changes deployed to GCP VM",
                    "color": 65280,
                    "fields": [
                      {"name": "🌐 API URL", "value": "http://${{ secrets.VM_HOST }}:8000", "inline": true},
@@ -106,7 +106,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "❌ Dietify API Deployment Failed!",
-                   "description": "🚨 Deployment to Campus VM encountered errors",
+                   "description": "🚨 Deployment to GCP VM encountered errors",
                    "color": 16711680,
                    "fields": [
                      {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": true},
