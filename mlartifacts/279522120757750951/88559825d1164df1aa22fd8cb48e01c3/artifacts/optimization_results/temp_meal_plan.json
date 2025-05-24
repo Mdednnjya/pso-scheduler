@@ -1,0 +1,513 @@
+{
+  "meal_plan": [
+    {
+      "day": 1,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "16",
+              "title": "Bakwan Tempe",
+              "nutrition": {
+                "calories": 381.5,
+                "protein": 12.3,
+                "fat": 14.0,
+                "carbohydrates": 56.3,
+                "fiber": 2.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 381.5,
+            "protein": 12.3,
+            "fat": 14.0,
+            "carbohydrates": 56.3,
+            "fiber": 2.7
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 381.5,
+        "protein": 12.3,
+        "fat": 14.0,
+        "carbohydrates": 56.3,
+        "fiber": 2.7
+      }
+    },
+    {
+      "day": 2,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "16",
+              "title": "Bakwan Tempe",
+              "nutrition": {
+                "calories": 381.5,
+                "protein": 12.3,
+                "fat": 14.0,
+                "carbohydrates": 56.3,
+                "fiber": 2.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 381.5,
+            "protein": 12.3,
+            "fat": 14.0,
+            "carbohydrates": 56.3,
+            "fiber": 2.7
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 389.8,
+            "protein": 14.9,
+            "fat": 9.4,
+            "carbohydrates": 66.2,
+            "fiber": 4.9
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 771.3,
+        "protein": 27.200000000000003,
+        "fat": 23.4,
+        "carbohydrates": 122.5,
+        "fiber": 7.6000000000000005
+      }
+    },
+    {
+      "day": 3,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "58",
+              "title": "Tahu Kribo",
+              "nutrition": {
+                "calories": 290.0,
+                "protein": 8.4,
+                "fat": 2.8,
+                "carbohydrates": 42.2,
+                "fiber": 1.3
+              }
+            },
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 679.8,
+            "protein": 23.3,
+            "fat": 12.2,
+            "carbohydrates": 108.4,
+            "fiber": 6.2
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "12",
+              "title": "Tumis Kacang Panjang Tempe",
+              "nutrition": {
+                "calories": 298.0,
+                "protein": 20.3,
+                "fat": 12.5,
+                "carbohydrates": 28.1,
+                "fiber": 5.5
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 298.0,
+            "protein": 20.3,
+            "fat": 12.5,
+            "carbohydrates": 28.1,
+            "fiber": 5.5
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 977.8,
+        "protein": 43.6,
+        "fat": 24.7,
+        "carbohydrates": 136.5,
+        "fiber": 11.7
+      }
+    },
+    {
+      "day": 4,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "17",
+              "title": "Oseng Tempe Bawang Bombay (Eat Clean)",
+              "nutrition": {
+                "calories": 385.8,
+                "protein": 17.6,
+                "fat": 14.7,
+                "carbohydrates": 35.0,
+                "fiber": 7.8
+              }
+            },
+            {
+              "meal_id": "19",
+              "title": "Tempe pete kemangi orek",
+              "nutrition": {
+                "calories": 364.2,
+                "protein": 18.6,
+                "fat": 12.9,
+                "carbohydrates": 46.2,
+                "fiber": 13.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 750.0,
+            "protein": 36.2,
+            "fat": 27.6,
+            "carbohydrates": 81.2,
+            "fiber": 21.7
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 389.8,
+            "protein": 14.9,
+            "fat": 9.4,
+            "carbohydrates": 66.2,
+            "fiber": 4.9
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [
+            {
+              "meal_id": "58",
+              "title": "Tahu Kribo",
+              "nutrition": {
+                "calories": 290.0,
+                "protein": 8.4,
+                "fat": 2.8,
+                "carbohydrates": 42.2,
+                "fiber": 1.3
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 290.0,
+            "protein": 8.4,
+            "fat": 2.8,
+            "carbohydrates": 42.2,
+            "fiber": 1.3
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 1429.8,
+        "protein": 59.5,
+        "fat": 39.8,
+        "carbohydrates": 189.60000000000002,
+        "fiber": 27.900000000000002
+      }
+    },
+    {
+      "day": 5,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 389.8,
+            "protein": 14.9,
+            "fat": 9.4,
+            "carbohydrates": 66.2,
+            "fiber": 4.9
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 389.8,
+        "protein": 14.9,
+        "fat": 9.4,
+        "carbohydrates": 66.2,
+        "fiber": 4.9
+      }
+    },
+    {
+      "day": 6,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "58",
+              "title": "Tahu Kribo",
+              "nutrition": {
+                "calories": 290.0,
+                "protein": 8.4,
+                "fat": 2.8,
+                "carbohydrates": 42.2,
+                "fiber": 1.3
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 290.0,
+            "protein": 8.4,
+            "fat": 2.8,
+            "carbohydrates": 42.2,
+            "fiber": 1.3
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "16",
+              "title": "Bakwan Tempe",
+              "nutrition": {
+                "calories": 381.5,
+                "protein": 12.3,
+                "fat": 14.0,
+                "carbohydrates": 56.3,
+                "fiber": 2.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 381.5,
+            "protein": 12.3,
+            "fat": 14.0,
+            "carbohydrates": 56.3,
+            "fiber": 2.7
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 671.5,
+        "protein": 20.700000000000003,
+        "fat": 16.8,
+        "carbohydrates": 98.5,
+        "fiber": 4.0
+      }
+    },
+    {
+      "day": 7,
+      "meals": [
+        {
+          "meal_number": 1,
+          "recipes": [
+            {
+              "meal_id": "16",
+              "title": "Bakwan Tempe",
+              "nutrition": {
+                "calories": 381.5,
+                "protein": 12.3,
+                "fat": 14.0,
+                "carbohydrates": 56.3,
+                "fiber": 2.7
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 381.5,
+            "protein": 12.3,
+            "fat": 14.0,
+            "carbohydrates": 56.3,
+            "fiber": 2.7
+          }
+        },
+        {
+          "meal_number": 2,
+          "recipes": [
+            {
+              "meal_id": "54",
+              "title": "Perkedel Tahu Kari Tanpa Telur",
+              "nutrition": {
+                "calories": 389.8,
+                "protein": 14.9,
+                "fat": 9.4,
+                "carbohydrates": 66.2,
+                "fiber": 4.9
+              }
+            }
+          ],
+          "meal_nutrition": {
+            "calories": 389.8,
+            "protein": 14.9,
+            "fat": 9.4,
+            "carbohydrates": 66.2,
+            "fiber": 4.9
+          }
+        },
+        {
+          "meal_number": 3,
+          "recipes": [],
+          "meal_nutrition": {
+            "calories": 0,
+            "protein": 0,
+            "fat": 0,
+            "carbohydrates": 0,
+            "fiber": 0
+          }
+        }
+      ],
+      "daily_nutrition": {
+        "calories": 771.3,
+        "protein": 27.200000000000003,
+        "fat": 23.4,
+        "carbohydrates": 122.5,
+        "fiber": 7.6000000000000005
+      }
+    }
+  ],
+  "average_daily_nutrition": {
+    "calories": 389.8,
+    "protein": 14.9,
+    "fat": 9.4,
+    "carbohydrates": 66.2,
+    "fiber": 4.9
+  },
+  "target_nutrition": {
+    "calories": 2144.70865,
+    "protein": 96.51188925,
+    "fat": 59.57524027777778,
+    "carbohydrates": 305.620982625,
+    "fiber": 25
+  },
+  "fitness_score": 0.7783886844117077,
+  "portion_scaling": 1.0
+}
