@@ -4,15 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Deployment reason'
-        required: false
-        default: 'Manual deployment'
 
 jobs:
   deploy:
-    name: 🎯 Deploy to Campus VM
+    name: 🎯 Deploy to GCP VM
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +30,20 @@ jobs:
           script: |
             echo "🔄 Starting deployment..."
             
-            # Navigate or create project directory
-            cd /home/group2
+            # Install Docker if not exists
+            if ! command -v docker &> /dev/null; then
+              curl -fsSL https://get.docker.com -o get-docker.sh
+              sh get-docker.sh
+              sudo usermod -aG docker $USER
+              sudo systemctl enable docker
+              sudo systemctl start docker
+            fi
+            
+            # Install Docker Compose if not exists
+            if ! command -v docker-compose &> /dev/null; then
+              sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+              sudo chmod +x /usr/local/bin/docker-compose
+            fi
             
             # Clone/update repository
             if [ -d "dietify-api" ]; then
@@ -49,22 +56,15 @@ jobs:
               cd dietify-api
             fi
             
-            # Ensure Docker is running
-            sudo systemctl start docker
-            
-            # Stop existing containers (if any)
+            # Stop existing containers
             echo "🛑 Stopping existing containers..."
             docker-compose down --remove-orphans || true
-            
-            # Remove old images to save space
-            echo "🧹 Cleaning up old images..."
-            docker system prune -f || true
             
             # Build and start new containers
             echo "🏗️ Building and starting containers..."
             docker-compose up --build -d
             
-            # Wait for services to start
+            # Wait for services
             echo "⏳ Waiting for services to start..."
             sleep 30
             
@@ -79,40 +79,12 @@ jobs:
               exit 1
             fi
 
-      - name: 💬 Discord Success Notification
+      - name: 💬 Success Notification
         if: success()
         run: |
-          curl -H "Content-Type: application/json" \
-               -d '{
-                 "embeds": [{
-                   "title": "✅ Dietify API Deployed Successfully!",
-                   "description": "🚀 Latest changes deployed to Campus VM",
-                   "color": 65280,
-                   "fields": [
-                     {"name": "🌐 API URL", "value": "http://${{ secrets.VM_HOST }}:8000", "inline": true},
-                     {"name": "📊 Health Check", "value": "http://${{ secrets.VM_HOST }}:8000/api/v1/health", "inline": true},
-                     {"name": "📖 Docs", "value": "http://${{ secrets.VM_HOST }}:8000/docs", "inline": true},
-                     {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": false}
-                   ],
-                   "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'"
-                 }]
-               }' \
-               ${{ secrets.DISCORD_WEBHOOK }}
+          echo "✅ Deployment successful to http://${{ secrets.VM_HOST }}:8000"
 
-      - name: 💬 Discord Failure Notification
+      - name: 💬 Failure Notification
         if: failure()
         run: |
-          curl -H "Content-Type: application/json" \
-               -d '{
-                 "embeds": [{
-                   "title": "❌ Dietify API Deployment Failed!",
-                   "description": "🚨 Deployment to Campus VM encountered errors",
-                   "color": 16711680,
-                   "fields": [
-                     {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": true},
-                     {"name": "🌐 Check Logs", "value": "https://github.com/${{ github.repository }}/actions", "inline": true}
-                   ],
-                   "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'"
-                 }]
-               }' \
-               ${{ secrets.DISCORD_WEBHOOK }}
+          echo "❌ Deployment failed - check logs"
