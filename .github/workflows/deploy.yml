@@ -1,0 +1,112 @@
+name: 🚀 Dietify API GCP Deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: 🎯 Deploy to GCP VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔐 Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: 🛠️ Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: 🐳 Test Docker Build
+        run: |
+          echo "Testing Docker build locally..."
+          docker build -t dietify-api:test .
+          echo "✅ Docker build successful"
+
+      - name: 🚀 Deploy via gcloud SSH
+        run: |
+          echo "🔄 Starting deployment to GCP VM..."
+          
+          gcloud compute ssh ${{ secrets.GCP_INSTANCE }} \
+            --zone=${{ secrets.GCP_ZONE }} \
+            --project=${{ secrets.GCP_PROJECT_ID }} \
+            --command="
+              echo '🔄 Starting deployment...'
+              
+              # Install Docker if not exists
+              if ! command -v docker &> /dev/null; then
+                echo '📦 Installing Docker...'
+                curl -fsSL https://get.docker.com -o get-docker.sh
+                sh get-docker.sh
+                sudo usermod -aG docker \$USER
+                sudo systemctl enable docker
+                sudo systemctl start docker
+                newgrp docker
+              fi
+              
+              # Install Docker Compose if not exists
+              if ! command -v docker-compose &> /dev/null; then
+                echo '📦 Installing Docker Compose...'
+                sudo curl -L \"https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-\$(uname -s)-\$(uname -m)\" -o /usr/local/bin/docker-compose
+                sudo chmod +x /usr/local/bin/docker-compose
+              fi
+              
+              # Clone/update repository
+              if [ -d \"dietify-api\" ]; then
+                echo '📁 Updating existing repository...'
+                cd dietify-api
+                git pull origin main
+              else
+                echo '📥 Cloning repository...'
+                git clone https://github.com/${{ github.repository }}.git dietify-api
+                cd dietify-api
+              fi
+              
+              # Stop existing containers
+              echo '🛑 Stopping existing containers...'
+              docker-compose down --remove-orphans || true
+              
+              # Build and start new containers
+              echo '🏗️ Building and starting containers...'
+              docker-compose up --build -d
+              
+              # Wait for services
+              echo '⏳ Waiting for services to start...'
+              sleep 30
+              
+              # Health check
+              echo '🔍 Performing health check...'
+              if curl -f http://localhost:8000/api/v1/health; then
+                echo '✅ Deployment successful!'
+              else
+                echo '❌ Health check failed!'
+                docker-compose logs
+                exit 1
+              fi
+            "
+
+      - name: 🌐 Get VM External IP
+        run: |
+          EXTERNAL_IP=$(gcloud compute instances describe ${{ secrets.GCP_INSTANCE }} \
+            --zone=${{ secrets.GCP_ZONE }} \
+            --project=${{ secrets.GCP_PROJECT_ID }} \
+            --format="value(networkInterfaces[0].accessConfigs[0].natIP)")
+          echo "✅ API deployed successfully!"
+          echo "🌐 API URL: http://$EXTERNAL_IP:8000"
+          echo "📊 Health Check: http://$EXTERNAL_IP:8000/api/v1/health"
+          echo "📖 API Docs: http://$EXTERNAL_IP:8000/docs"
+
+      - name: 💬 Success Notification
+        if: success()
+        run: |
+          echo "✅ Deployment completed successfully!"
+
+      - name: 💬 Failure Notification
+        if: failure()
+        run: |
+          echo "❌ Deployment failed - check logs above"
