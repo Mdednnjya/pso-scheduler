@@ -1,0 +1,118 @@
+name: 🚀 Dietify API Deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Deployment reason'
+        required: false
+        default: 'Manual deployment'
+
+jobs:
+  deploy:
+    name: 🎯 Deploy to Campus VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🐳 Test Docker Build
+        run: |
+          echo "Testing Docker build locally..."
+          docker build -t dietify-api:test .
+          echo "✅ Docker build successful"
+
+      - name: 🚀 Deploy to VM
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          password: ${{ secrets.VM_PASSWORD }}
+          port: 22
+          script: |
+            echo "🔄 Starting deployment..."
+            
+            # Navigate or create project directory
+            cd /home/group2
+            
+            # Clone/update repository
+            if [ -d "dietify-api" ]; then
+              echo "📁 Updating existing repository..."
+              cd dietify-api
+              git pull origin main
+            else
+              echo "📥 Cloning repository..."
+              git clone https://github.com/${{ github.repository }}.git dietify-api
+              cd dietify-api
+            fi
+            
+            # Ensure Docker is running
+            sudo systemctl start docker
+            
+            # Stop existing containers (if any)
+            echo "🛑 Stopping existing containers..."
+            docker-compose down --remove-orphans || true
+            
+            # Remove old images to save space
+            echo "🧹 Cleaning up old images..."
+            docker system prune -f || true
+            
+            # Build and start new containers
+            echo "🏗️ Building and starting containers..."
+            docker-compose up --build -d
+            
+            # Wait for services to start
+            echo "⏳ Waiting for services to start..."
+            sleep 30
+            
+            # Health check
+            echo "🔍 Performing health check..."
+            if curl -f http://localhost:8000/api/v1/health; then
+              echo "✅ Deployment successful!"
+              echo "🌐 API available at: http://${{ secrets.VM_HOST }}:8000"
+            else
+              echo "❌ Health check failed!"
+              docker-compose logs
+              exit 1
+            fi
+
+      - name: 💬 Discord Success Notification
+        if: success()
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d '{
+                 "embeds": [{
+                   "title": "✅ Dietify API Deployed Successfully!",
+                   "description": "🚀 Latest changes deployed to Campus VM",
+                   "color": 65280,
+                   "fields": [
+                     {"name": "🌐 API URL", "value": "http://${{ secrets.VM_HOST }}:8000", "inline": true},
+                     {"name": "📊 Health Check", "value": "http://${{ secrets.VM_HOST }}:8000/api/v1/health", "inline": true},
+                     {"name": "📖 Docs", "value": "http://${{ secrets.VM_HOST }}:8000/docs", "inline": true},
+                     {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": false}
+                   ],
+                   "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'"
+                 }]
+               }' \
+               ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: 💬 Discord Failure Notification
+        if: failure()
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d '{
+                 "embeds": [{
+                   "title": "❌ Dietify API Deployment Failed!",
+                   "description": "🚨 Deployment to Campus VM encountered errors",
+                   "color": 16711680,
+                   "fields": [
+                     {"name": "🔧 Commit", "value": "`${{ github.sha }}`", "inline": true},
+                     {"name": "🌐 Check Logs", "value": "https://github.com/${{ github.repository }}/actions", "inline": true}
+                   ],
+                   "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'"
+                 }]
+               }' \
+               ${{ secrets.DISCORD_WEBHOOK }}
