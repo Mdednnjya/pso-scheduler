@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/279522120757750951/c4723a56bea54c479a4b6f531100313f/artifacts
+end_time: 1748059084405
+entry_point_name: ''
+experiment_id: '279522120757750951'
+lifecycle_stage: active
+run_id: c4723a56bea54c479a4b6f531100313f
+run_name: PSO Optimization
+run_uuid: c4723a56bea54c479a4b6f531100313f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748059065019
+status: 3
+tags: []
+user_id: naray

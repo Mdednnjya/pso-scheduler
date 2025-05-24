@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/651649803766521312/78b4311d0c2e4f25b215d8a3995e7408/artifacts
+end_time: 1748045392077
+entry_point_name: ''
+experiment_id: '651649803766521312'
+lifecycle_stage: active
+run_id: 78b4311d0c2e4f25b215d8a3995e7408
+run_name: PSO Meal Plan
+run_uuid: 78b4311d0c2e4f25b215d8a3995e7408
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748045368903
+status: 3
+tags: []
+user_id: naray
