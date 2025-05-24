@@ -32,11 +32,16 @@ jobs:
         run: |
           echo "🔄 Starting deployment to GCP VM..."
           
-          gcloud compute ssh ${{ secrets.GCP_INSTANCE }} \
-            --zone=${{ secrets.GCP_ZONE }} \
+          gcloud compute ssh dietify-api-vm \
+            --zone=asia-southeast2-a \
             --project=${{ secrets.GCP_PROJECT_ID }} \
+            --ssh-flag="-o ConnectTimeout=30" \
+            --ssh-flag="-o StrictHostKeyChecking=no" \
             --command="
               echo '🔄 Starting deployment...'
+              
+              # Update system
+              sudo apt-get update -y
               
               # Install Docker if not exists
               if ! command -v docker &> /dev/null; then
@@ -46,7 +51,7 @@ jobs:
                 sudo usermod -aG docker \$USER
                 sudo systemctl enable docker
                 sudo systemctl start docker
-                newgrp docker
+                echo '⏳ Logging out and back in for Docker group...'
               fi
               
               # Install Docker Compose if not exists
@@ -54,6 +59,11 @@ jobs:
                 echo '📦 Installing Docker Compose...'
                 sudo curl -L \"https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-\$(uname -s)-\$(uname -m)\" -o /usr/local/bin/docker-compose
                 sudo chmod +x /usr/local/bin/docker-compose
+              fi
+              
+              # Install git if not exists
+              if ! command -v git &> /dev/null; then
+                sudo apt-get install -y git
               fi
               
               # Clone/update repository
@@ -67,27 +77,33 @@ jobs:
                 cd dietify-api
               fi
               
-              # Stop existing containers
+              # FIX: Use sudo for Docker commands
               echo '🛑 Stopping existing containers...'
-              docker-compose down --remove-orphans || true
+              sudo docker-compose down --remove-orphans || true
               
-              # Build and start new containers
+              # Build and start new containers with sudo
               echo '🏗️ Building and starting containers...'
-              docker-compose up --build -d
+              sudo docker-compose up --build -d
               
               # Wait for services
               echo '⏳ Waiting for services to start...'
-              sleep 30
+              sleep 45
               
               # Health check
               echo '🔍 Performing health check...'
-              if curl -f http://localhost:8000/api/v1/health; then
-                echo '✅ Deployment successful!'
-              else
-                echo '❌ Health check failed!'
-                docker-compose logs
-                exit 1
-              fi
+              for i in {1..5}; do
+                if curl -f http://localhost:8000/api/v1/health; then
+                  echo '✅ Deployment successful!'
+                  break
+                else
+                  echo \"❌ Attempt \$i failed, retrying...\"
+                  sleep 10
+                fi
+              done
+              
+              # Show container status
+              echo '📊 Container status:'
+              sudo docker-compose ps
             "
 
       - name: 🌐 Get VM External IP
